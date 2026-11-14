@@ -1,0 +1,47 @@
+# Netlify Configuration for Sai Lakshmi - Netherlands Career Command Center
+# Target Domain: https://sailakshminl.netlify.app
+# Site ID: c48ae112-95f4-4603-bfbb-1201e50dd3fc
+
+[build]
+  publish = "."
+  command = "python3 tests/run_all_tests.py"
+
+# Enforce HTTPS, HSTS, and GDPR-Compliant Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';"
+
+# Optimized Caching for Static PDF CVs and CSS
+[[headers]]
+  for = "/*.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+    Content-Disposition = "inline"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
+
+# Redirect rules
+[[redirects]]
+  from = "/cv"
+  to = "/cv_power_bi_developer.pdf"
+  status = 302
+
+[[redirects]]
+  from = "/pm-cv"
+  to = "/cv_bi_project_delivery.pdf"
+  status = 302
+
+[[redirects]]
+  from = "/hub"
+  to = "/index.html"
+  status = 301

@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Influencer Insights · Netherlands Job Hunt · Sai Lakshmi</title>
+  <meta name="description" content="Curated wisdom from YouTube creators, Reddit expats, LinkedIn coaches & Dutch career communities — for landing a Power BI / Data Analyst job in the Netherlands from India."/>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    :root{
+      --bg:#02090f;--bg2:#051018;--bg3:#081524;
+      --card:#0c1e33;--card2:#0f2540;
+      --blue:#3b82f6;--cyan:#06b6d4;--purple:#8b5cf6;
+      --green:#10b981;--orange:#f59e0b;--red:#ef4444;--pink:#ec4899;--yellow:#eab308;
+      --txt:#e4f0ff;--txt2:#7ea8cc;--txt3:#3a5a75;
+      --border:rgba(59,130,246,0.15);
+      --g1:linear-gradient(135deg,#3b82f6,#8b5cf6 50%,#06b6d4);
+      --g2:linear-gradient(135deg,#10b981,#06b6d4);
+      --g3:linear-gradient(135deg,#f59e0b,#ef4444);
+      --g4:linear-gradient(135deg,#ec4899,#8b5cf6);
+      --g5:linear-gradient(135deg,#eab308,#f59e0b);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);overflow-x:hidden}
+
+    /* bg orbs */
+    .bg-orbs{position:fixed;inset:0;pointer-events:none;z-index:0}
+    .orb{position:absolute;border-radius:50%;filter:blur(110px);opacity:.08;animation:drift 25s ease-in-out infinite alternate}
+    .o1{width:900px;height:900px;background:#3b82f6;top:-350px;left:-350px}
+    .o2{width:650px;height:650px;background:#8b5cf6;bottom:-250px;right:-250px;animation-delay:-9s}
+    .o3{width:500px;height:500px;background:#ec4899;top:40%;left:55%;animation-delay:-17s}
+    @keyframes drift{from{transform:translate(0,0)}to{transform:translate(70px,50px)}}
+
+    .wrap{max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+    /* NAVBAR */
+    nav{
+      position:sticky;top:0;z-index:100;
+      background:rgba(2,9,15,0.92);backdrop-filter:blur(16px);
+      border-bottom:1px solid var(--border);
+      padding:14px 0;
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .nav-brand{display:flex;align-items:center;gap:10px}
+    .nav-logo{
+      width:36px;height:36px;border-radius:10px;
+      background:var(--g1);display:flex;align-items:center;justify-content:center;
+      font-size:.85rem;font-weight:800;color:#fff;flex-shrink:0;
+    }
+    .nav-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1rem}
+    .nav-sub{font-size:.72rem;color:var(--txt2)}
+    .nav-links{display:flex;gap:6px;flex-wrap:wrap}
+    .nav-link{
+      padding:6px 14px;border-radius:8px;font-size:.78rem;font-weight:500;
+      color:var(--txt2);text-decoration:none;border:1px solid transparent;
+      transition:all .2s ease;
+    }
+    .nav-link:hover{color:var(--txt);background:rgba(255,255,255,.06);border-color:var(--border)}
+    .nav-link.active{background:rgba(59,130,246,.15);border-color:rgba(59,130,246,.3);color:#93c5fd}
+
+    /* HERO */
+    header{padding:70px 0 40px;text-align:center}
+    .top-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(236,72,153,.12);border:1px solid rgba(236,72,153,.3);
+      border-radius:99px;padding:6px 18px;font-size:.8rem;color:#f9a8d4;
+      margin-bottom:22px;
+    }
+    .live-dot{width:7px;height:7px;border-radius:50%;background:#ec4899;animation:pulse 1.8s ease infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.6)}}
+    h1.hero{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.1;margin-bottom:14px}
+    .grd{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{font-size:.98rem;color:var(--txt2);max-width:600px;margin:0 auto 30px;line-height:1.65}
+    .source-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+    .src-pill{
+      display:flex;align-items:center;gap:6px;
+      padding:6px 14px;border-radius:99px;font-size:.78rem;font-weight:500;
+      border:1px solid;transition:all .2s ease;text-decoration:none;
+    }
+    .src-pill:hover{transform:translateY(-2px)}
+    .s-yt{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.3);color:#f87171}
+    .s-ig{background:rgba(236,72,153,.1);border-color:rgba(236,72,153,.3);color:#f9a8d4}
+    .s-rd{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.3);color:#fbbf24}
+    .s-li{background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.3);color:#93c5fd}
+    .s-ex{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.3);color:#6ee7b7}
+
+    /* SECTION */
+    .sec-wrap{padding:50px 0 10px}
+    .sec-head{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+    .sec-emoji{font-size:1.6rem}
+    .sec-title{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700}
+    .sec-line{flex:1;height:1px;background:var(--border)}
+
+    /* INSIGHT CARDS */
+    .insights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:18px}
+    @media(max-width:760px){.insights-grid{grid-template-columns:1fr}}
+
+    .insight-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:20px;padding:22px;
+      transition:all .28s ease;
+      position:relative;overflow:hidden;
+      display:flex;flex-direction:column;gap:14px;
+    }
+    .insight-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+      opacity:0;transition:opacity .3s ease;
+    }
+    .insight-card:hover{background:var(--card2);border-color:rgba(59,130,246,.35);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+    .insight-card:hover::before{opacity:1}
+
+    .ic-g1::before{background:var(--g1)}
+    .ic-g2::before{background:var(--g2)}
+    .ic-g3::before{background:var(--g3)}
+    .ic-g4::before{background:var(--g4)}
+    .ic-g5::before{background:var(--g5)}
+
+    .ic-header{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+    .ic-icon{font-size:1.8rem;flex-shrink:0}
+    .ic-source{
+      display:flex;align-items:center;gap:5px;
+      padding:3px 10px;border-radius:99px;font-size:.7rem;font-weight:600;
+    }
+    .source-yt{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.25)}
+    .source-ig{background:rgba(236,72,153,.12);color:#f9a8d4;border:1px solid rgba(236,72,153,.25)}
+    .source-rd{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.25)}
+    .source-li{background:rgba(59,130,246,.12);color:#93c5fd;border:1px solid rgba(59,130,246,.25)}
+    .source-ex{background:rgba(16,185,129,.12);color:#6ee7b7;border:1px solid rgba(16,185,129,.25)}
+    .source-bl{background:rgba(139,92,246,.12);color:#c4b5fd;border:1px solid rgba(139,92,246,.25)}
+
+    .ic-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;margin-bottom:4px}
+    .ic-creator{font-size:.78rem;color:var(--txt2);margin-bottom:10px;display:flex;align-items:center;gap:5px}
+    .ic-body{font-size:.83rem;color:var(--txt2);line-height:1.68;flex:1}
+    .ic-body strong{color:var(--txt)}
+    .ic-body a{color:var(--cyan);text-decoration:none}
+    .ic-body a:hover{text-decoration:underline}
+
+    .ic-quote{
+      background:rgba(59,130,246,.07);border-left:3px solid var(--blue);
+      border-radius:0 10px 10px 0;padding:10px 14px;
+      font-size:.82rem;font-style:italic;color:var(--txt2);
+      line-height:1.6;
+    }
+    .ic-quote strong{color:var(--cyan);font-style:normal}
+
+    .ic-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+    .ic-tag{
+      padding:2px 9px;border-radius:6px;font-size:.71rem;font-weight:500;
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);
+      color:var(--txt3);
+    }
+
+    .ic-impact{
+      display:inline-flex;align-items:center;gap:5px;
+      padding:3px 10px;border-radius:99px;font-size:.72rem;font-weight:700;
+    }
+    .imp-high{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.25)}
+    .imp-med{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.25)}
+    .imp-key{background:rgba(16,185,129,.12);color:#6ee7b7;border:1px solid rgba(16,185,129,.25)}
+
+    /* MYTH BUSTERS */
+    .myths-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+    .myth-card{
+      background:var(--card);border:1px solid rgba(239,68,68,.2);
+      border-radius:18px;padding:20px;
+      transition:all .25s ease;
+    }
+    .myth-card:hover{transform:translateY(-3px);border-color:rgba(239,68,68,.4)}
+    .myth-label{font-size:.72rem;font-weight:700;color:#f87171;text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+    .myth-text{font-size:.88rem;font-weight:700;color:var(--txt);margin-bottom:10px;line-height:1.4}
+    .reality-label{font-size:.72rem;font-weight:700;color:#34d399;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+    .reality-text{font-size:.83rem;color:var(--txt2);line-height:1.6}
+    .reality-text strong{color:var(--txt)}
+
+    /* CREATOR PROFILES */
+    .creators-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+    .creator-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:16px;padding:18px;
+      display:flex;gap:14px;align-items:flex-start;
+      text-decoration:none;color:inherit;
+      transition:all .25s ease;
+    }
+    .creator-card:hover{background:var(--card2);border-color:rgba(59,130,246,.35);transform:translateY(-3px)}
+    .creator-avatar{
+      width:44px;height:44px;border-radius:12px;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.1rem;font-weight:800;color:#fff;
+    }
+    .creator-name{font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:700;margin-bottom:2px}
+    .creator-platform{font-size:.72rem;color:var(--txt2);margin-bottom:6px}
+    .creator-desc{font-size:.78rem;color:var(--txt2);line-height:1.5}
+    .creator-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+    .ctag{padding:2px 8px;border-radius:5px;font-size:.68rem;font-weight:500;background:rgba(59,130,246,.1);color:#93c5fd;border:1px solid rgba(59,130,246,.2)}
+
+    /* GOLDEN RULES */
+    .rules-list{display:flex;flex-direction:column;gap:12px}
+    .rule-item{
+      display:flex;gap:16px;align-items:flex-start;
+      background:var(--card);border:1px solid var(--border);
+      border-radius:16px;padding:18px 20px;
+      transition:all .2s ease;
+    }
+    .rule-item:hover{border-color:rgba(59,130,246,.35);background:var(--card2)}
+    .rule-num{
+      width:34px;height:34px;border-radius:10px;flex-shrink:0;
+      background:var(--g1);
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Space Grotesk',sans-serif;font-size:.9rem;font-weight:800;color:#fff;
+    }
+    .rule-content h4{font-size:.9rem;font-weight:700;margin-bottom:5px;display:flex;align-items:center;gap:8px}
+    .rule-content p{font-size:.82rem;color:var(--txt2);line-height:1.65}
+    .rule-content p strong{color:var(--txt)}
+    .rule-content a{color:var(--cyan);text-decoration:none}
+    .rule-content a:hover{text-decoration:underline}
+
+    /* TIME ALLOCATION */
+    .time-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:16px}
+    .time-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:16px;padding:20px;text-align:center;
+      transition:all .25s ease;
+    }
+    .time-card:hover{transform:translateY(-3px)}
+    .time-pct{font-family:'Space Grotesk',sans-serif;font-size:2.4rem;font-weight:800;line-height:1;margin-bottom:6px}
+    .time-label{font-size:.82rem;color:var(--txt2);line-height:1.4}
+    .time-bar{width:100%;height:6px;border-radius:99px;margin-top:12px;background:rgba(255,255,255,.06)}
+    .time-fill{height:100%;border-radius:99px}
+
+    /* COPY BLOCK */
+    .copy-block{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;position:relative;margin:12px 0}
+    .copy-block pre{font-family:'Fira Code',monospace;font-size:.79rem;color:var(--txt);white-space:pre-wrap;line-height:1.7}
+    .copy-btn{position:absolute;top:12px;right:12px;padding:4px 12px;border-radius:7px;background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);color:var(--blue);font-size:.72rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif}
+    .copy-btn:hover{background:rgba(59,130,246,.25)}
+    .copy-btn.done{background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.3);color:var(--green)}
+
+    /* ALERT */
+    .alert{border-radius:14px;padding:16px 20px;margin:16px 0;display:flex;gap:12px;font-size:.85rem;line-height:1.65}
+    .alert-icon{font-size:1.3rem;flex-shrink:0}
+    .alert strong{display:block;margin-bottom:3px}
+    .alert-green{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);color:#6ee7b7}
+    .alert-green strong{color:#34d399}
+    .alert-orange{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);color:#fcd34d}
+    .alert-orange strong{color:var(--orange)}
+    .alert-red{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);color:#fca5a5}
+    .alert-red strong{color:#f87171}
+    .alert-blue{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.25);color:#93c5fd}
+    .alert-blue strong{color:#60a5fa}
+    .alert-purple{background:rgba(139,92,246,.08);border:1px solid rgba(139,92,246,.25);color:#c4b5fd}
+    .alert-purple strong{color:#a78bfa}
+
+    footer{text-align:center;padding:50px 0 30px;border-top:1px solid var(--border);margin-top:60px;color:var(--txt3);font-size:.8rem}
+    footer a{color:var(--cyan);text-decoration:none}
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:rgba(59,130,246,.3);border-radius:99px}
+  </style>
+</head>
+<body>
+<div class="bg-orbs"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo">SL</div>
+      <div class="nav-brand-text">
+        <div class="nav-title">Sai Lakshmi · NL Career Hub</div>
+        <div class="nav-subtitle">Power BI Developer · Netherlands</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">🏠 Home</a>
+      <a href="job-finder.html" class="nav-link">🔍 Jobs</a>
+      <a href="linkedin-optimizer.html" class="nav-link">💼 LinkedIn</a>
+      <a href="resume.html" class="nav-link">📄 Resume</a>
+      <a href="strategy.html" class="nav-link">🗺️ Strategy</a>
+      <a href="influencer-insights.html" class="nav-link active active-pink">✨ Insights</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <header>
+    <div class="top-badge"><div class="live-dot"></div> Curated from YouTube · Instagram · Reddit · LinkedIn · Expat Communities</div>
+    <h1 class="hero">Real Advice from<br/><span class="grd">People Who've Done It</span></h1>
+    <p class="hero-sub">Distilled wisdom from Indian expats, NL career influencers, and the Dutch expat community — filtered for your <strong style="color:#fff">Power BI / Data Analyst</strong> profile. No fluff. No scams. Just what actually works.</p>
+    <div class="source-pills">
+      <span class="src-pill s-yt">▶ YouTube Creators</span>
+      <span class="src-pill s-ig">📸 Instagram Reels</span>
+      <span class="src-pill s-rd">🔴 Reddit r/Netherlands</span>
+      <span class="src-pill s-li">💼 LinkedIn Coaches</span>
+      <span class="src-pill s-ex">🌍 Expat Communities</span>
+    </div>
+  </header>
+
+  <!-- GOLDEN RULES -->
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <div class="sec-emoji">🏆</div>
+      <div class="sec-title">The Golden Rules — What Every NL Expat Creator Says</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="alert alert-purple">
+      <div class="alert-icon">⭐</div>
+      <div><strong>The #1 consensus across ALL influencers</strong> — Spend 60–70% of your job search time on networking and direct outreach, not job boards. The Dutch "hidden job market" accounts for 70–80% of all hires. Job boards are just 20–30% of reality.</div>
+    </div>
+    <div class="rules-list">
+      <div class="rule-item">
+        <div class="rule-num">1</div>
+        <div class="rule-content">
+          <h4>🕵️ "Sponsor-First" Strategy <span class="ic-impact imp-high">🔥 Critical</span></h4>
+          <p>Every credible creator — from YouTube expats to Reddit veterans — says the same thing: <strong>before applying anywhere, verify the company is on the IND Recognised Sponsors list.</strong> Applying to non-sponsors is 100% wasted time. Check: <a href="https://ind.nl/en/public-register-recognised-sponsors" target="_blank">ind.nl/en/public-register-recognised-sponsors</a>. Cross-reference this list before every single application.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">2</div>
+        <div class="rule-content">
+          <h4>☕ "Virtual Coffee Chat" Method <span class="ic-impact imp-high">🔥 Critical</span></h4>
+          <p>The most repeated advice from Indian expats who landed NL jobs: <strong>ask for a 20-min coffee chat, not a job.</strong> Message people already working in Power BI / Data roles at target companies. Ask about their day-to-day, the company culture, how they got in. This creates referrals without asking for them. The Dutch hiring culture is <strong>relationship-first</strong> — be memorable, not desperate.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">3</div>
+        <div class="rule-content">
+          <h4>🎯 Quality Over Quantity in Applications <span class="ic-impact imp-med">⚡ High</span></h4>
+          <p>Reddit r/Netherlands and multiple YouTube creators warn against mass-applying (sending 100+ generic CVs). The Dutch ATS filters are strict. <strong>Send 3–5 deeply tailored applications per week</strong> instead. Each should reference a specific project from the job description, include a custom cover letter para, and mention something you've researched about the company.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">4</div>
+        <div class="rule-content">
+          <h4>📝 The "English Job Posting" Filter <span class="ic-impact imp-med">⚡ High</span></h4>
+          <p><strong>Only apply to jobs posted in English.</strong> This is a hard rule from Dutch expat influencers. If a posting is in Dutch, it is almost always intended for a local or EU candidate. English postings signal that the company is open to, and experienced with, international hires. This one filter alone saves you massive wasted effort.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">5</div>
+        <div class="rule-content">
+          <h4>💡 "Mid-Size is the Sweet Spot" <span class="ic-impact imp-med">⚡ High</span></h4>
+          <p>Career coaches consistently point to <strong>companies with 50–500 employees</strong> as the sweet spot for visa sponsorship. They have the budget (unlike tiny startups) but move faster than mega-corporations like Shell or ING. Think: <strong>Ordina, NIBC, NN Group, Backbase, Temenos</strong> — mid-market tech and fintech firms with IND recognition and lean HR processes.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">6</div>
+        <div class="rule-content">
+          <h4>🌷 "Say Hoi!" — Cultural Fit Matters More Than You Think <span class="ic-impact imp-key">✅ Key</span></h4>
+          <p>Dutch companies do a "cultural fit" check on every candidate. Expat creators are unanimous: <strong>the Dutch value directness, punctuality, and honesty above credentials.</strong> In interviews, don't over-sell — be genuine, concise, and direct. Show curiosity about NL culture. Even saying "I've been learning some Dutch" during a call creates enormous goodwill. The Dutch will choose a culturally-aligned mid-skill over a brilliant but "too formal" candidate every time.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">7</div>
+        <div class="rule-content">
+          <h4>📊 Proof Beats Promise — Portfolio is Non-Negotiable <span class="ic-impact imp-key">✅ Key</span></h4>
+          <p>Dutch hiring managers for data roles don't just want CVs — they want to <strong>see your work.</strong> Multiple LinkedIn coaches and YouTube creators say the same: a GitHub repo with 2–3 Power BI .pbix files, DAX measures documented, or an Azure pipeline demo gives you a massive edge. Use public datasets (Kaggle, EU Open Data). Link it from your LinkedIn Featured section. This turns "trust me" into "here's proof."</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">8</div>
+        <div class="rule-content">
+          <h4>🏃 The Follow-Up Rule <span class="ic-impact imp-key">✅ Key</span></h4>
+          <p>Reddit threads show a <strong>40% response rate improvement</strong> with a well-timed follow-up. The rule: wait exactly <strong>5–7 business days</strong> after applying or after an interview. Send one short, professional follow-up — not a second application. After an interview: "I wanted to reiterate my enthusiasm for [role] and confirm I can start within [X weeks]. Happy to answer any further questions." Never follow up more than twice.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TIME ALLOCATION -->
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <div class="sec-emoji">⏱️</div>
+      <div class="sec-title">How to Spend Your Job Search Time — Expert Consensus</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="time-grid">
+      <div class="time-card">
+        <div class="time-pct" style="color:#ec4899">50%</div>
+        <div class="time-label">Networking & Coffee Chats<br/>LinkedIn outreach, virtual meetups, community engagement</div>
+        <div class="time-bar"><div class="time-fill" style="width:50%;background:var(--g4)"></div></div>
+      </div>
+      <div class="time-card">
+        <div class="time-pct" style="color:#3b82f6">20%</div>
+        <div class="time-label">Targeted Applications<br/>3–5 deeply tailored apps/week to IND sponsors only</div>
+        <div class="time-bar"><div class="time-fill" style="width:20%;background:var(--g1)"></div></div>
+      </div>
+      <div class="time-card">
+        <div class="time-pct" style="color:#10b981">15%</div>
+        <div class="time-label">Profile Building<br/>Portfolio, PL-300 study, LinkedIn content creation</div>
+        <div class="time-bar"><div class="time-fill" style="width:15%;background:var(--g2)"></div></div>
+      </div>
+      <div class="time-card">
+        <div class="time-pct" style="color:#f59e0b">10%</div>
+        <div class="time-label">Research & Prep<br/>Company research, interview prep, salary benchmarking</div>
+        <div class="time-bar"><div class="time-fill" style="width:10%;background:var(--g3)"></div></div>
+      </div>
+      <div class="time-card">
+        <div class="time-pct" style="color:#8b5cf6">5%</div>
+        <div class="time-label">Follow-Ups<br/>Recruiter follow-ups, application status checks</div>
+        <div class="time-bar"><div class="time-fill" style="width:5%;background:var(--g4)"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY INSIGHTS CARDS -->
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <div class="sec-emoji">💡</div>
+      <div class="sec-title">Creator Insights — Translated to Your Situation</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="insights-grid">
+
+      <!-- 1 -->
+      <div class="insight-card ic-g3">
+        <div class="ic-header">
+          <div class="ic-icon">🧲</div>
+          <div class="ic-source source-yt">▶ YouTube / Expats</div>
+        </div>
+        <div>
+          <div class="ic-title">The "Inbound Magnet" LinkedIn Strategy</div>
+          <div class="ic-creator">⭐ Multiple Indian NL expat creators</div>
+        </div>
+        <div class="ic-body">
+          Instead of only cold-applying, turn your LinkedIn into a <strong>magnet that pulls recruiters to you</strong>. Creators advise posting 2–3 times per week about your work: share a DAX tip, post a mini Power BI tutorial, comment insightfully on data news. Dutch tech recruiters actively scout LinkedIn content. <strong>One viral post from someone in your target field can generate 10 recruiter DMs.</strong>
+          <div class="ic-quote">
+            <strong>Sai's action:</strong> Post one Power BI insight or "before & after" dashboard improvement weekly. Tag it with #PowerBI #Netherlands #DataAnalytics. You become visible to Dutch recruiters passively.
+          </div>
+        </div>
+        <div class="ic-tags"><span class="ic-tag">LinkedIn</span><span class="ic-tag">Content</span><span class="ic-tag">Passive</span></div>
+        <div class="ic-impact imp-high">🔥 High Impact</div>
+      </div>
+
+      <!-- 2 -->
+      <div class="insight-card ic-g1">
+        <div class="ic-header">
+          <div class="ic-icon">🎭</div>
+          <div class="ic-source source-rd">🔴 Reddit r/Netherlands</div>
+        </div>
+        <div>
+          <div class="ic-title">"Don't Set Location to NL Until You're Actually There"</div>
+          <div class="ic-creator">⚠️ Widely discussed on r/Netherlands & r/expats</div>
+        </div>
+        <div class="ic-body">
+          Many Indian candidates set their LinkedIn location to Amsterdam before moving, thinking it increases visibility. Reddit consensus says this <strong>backfires in interviews</strong> when employers discover you're still in India. Instead, be transparent: set location to "India" but write in your headline: <strong>"Relocating to Netherlands · Available within 4 months"</strong>. Dutch employers value honesty — deception at any stage kills your candidacy immediately.
+          <div class="ic-quote">
+            <strong>Reality check:</strong> Being honest about your timeline (4 months) is actually an advantage — it shows planning and seriousness. Dishonesty is a non-recoverable mistake in Dutch business culture.
+          </div>
+        </div>
+        <div class="ic-tags"><span class="ic-tag">LinkedIn</span><span class="ic-tag">Honesty</span><span class="ic-tag">Timing</span></div>
+        <div class="ic-impact imp-high">🔥 Must Know</div>
+      </div>
+
+      <!-- 3 -->
+      <div class="insight-card ic-g2">
+        <div class="ic-header">
+          <div class="ic-icon">🏭</div>
+          <div class="ic-source source-li">💼 LinkedIn Coaches</div>
+        </div>
+        <div>
+          <div class="ic-title">Target Indian IT Firms in NL First</div>
+          <div class="ic-creator">🌍 Career coaches specialising in India→NL transition</div>
+        </div>
+        <div class="ic-body">
+          The fastest path to a sponsored NL role for Indian candidates is through <strong>Indian IT companies with NL offices</strong>. TCS, Cognizant, Infosys BV, Wipro NL, HCL Technologies, Tech Mahindra — they <em>all</em> understand Indian credentials, know the IND process intimately, and have dedicated mobility teams. You don't need to "explain yourself." These companies <strong>typically process Kennismigrant visas in under 3 weeks</strong> because they do it constantly.
+          <div class="ic-quote">
+            <strong>Sai's advantage:</strong> Your Accenture background is a direct trust signal to TCS/Cognizant/Infosys. Apply directly to their NL portals — your profile will be understood immediately.
+          </div>
+        </div>
+        <div class="ic-tags"><span class="ic-tag">TCS</span><span class="ic-tag">Cognizant</span><span class="ic-tag">Infosys NL</span><span class="ic-tag">Fast Track</span></div>
+        <div class="ic-impact imp-high">🔥 Fast Track</div>
+      </div>
+
+      <!-- 4 -->
+      <div class="insight-card ic-g4">
+        <div class="ic-header">
+          <div class="ic-icon">🤫</div>
+          <div class="ic-source source-ex">🌍 Expat Community</div>
+        </div>
+        <div>
+          <div class="ic-title">The "Hidden Job Market" — 70% of NL Jobs Never Posted</div>
+          <div class="ic-creator">📊 Consistently reported by Dutch career coaches</div>
+        </div>
+        <div class="ic-body">
+          The single biggest insight from successful NL job seekers: <strong>most jobs are never publicly advertised</strong>. Dutch companies prefer referrals, internal promotions, and pre-vetted candidates over open job board applications. To access this:
+          <br/><br/>
+          1. Connect with <strong>Power BI professionals already at your target companies</strong> — ask for coffee chats.<br/>
+          2. <strong>Join Dutch data Meetup groups</strong> virtually — hiring managers attend these.<br/>
+          3. Ask: <em>"Do you know of any openings at your company or in your network?"</em> at the end of every chat.
+        </div>
+        <div class="ic-tags"><span class="ic-tag">Networking</span><span class="ic-tag">Referrals</span><span class="ic-tag">Hidden Market</span></div>
+        <div class="ic-impact imp-high">🔥 Critical</div>
+      </div>
+
+      <!-- 5 -->
+      <div class="insight-card ic-g5">
+        <div class="ic-header">
+          <div class="ic-icon">📱</div>
+          <div class="ic-source source-ig">📸 Instagram / Reels</div>
+        </div>
+        <div>
+          <div class="ic-title">The "Celonis + Power BI" Differentiator is RARE</div>
+          <div class="ic-creator">🎯 Data & BI career influencers, NL market analysis</div>
+        </div>
+        <div class="ic-body">
+          Dutch employers consistently struggle to find candidates who can bridge <strong>process mining (Celonis) and BI reporting (Power BI)</strong>. Most Power BI candidates have zero Celonis exposure. You have both — this is a <strong>premium differentiator</strong> that justifies higher salary negotiation and makes you stand out in a crowded field.
+          <br/><br/>
+          Action: In every application and LinkedIn post, explicitly call this out: <em>"Power BI + Celonis integration specialist"</em>. ABN AMRO, KPMG Advisory, and Deloitte NL actively seek this combo.
+          <div class="ic-quote"><strong>Use this exact phrase:</strong> "One of the few BI developers in market with both Celonis process mining and Power BI enterprise reporting experience."</div>
+        </div>
+        <div class="ic-tags"><span class="ic-tag">Celonis</span><span class="ic-tag">Power BI</span><span class="ic-tag">Rare Skill</span></div>
+        <div class="ic-impact imp-key">✅ Unique Edge</div>
+      </div>
+
+      <!-- 6 -->
+      <div class="insight-card ic-g1">
+        <div class="ic-header">
+          <div class="ic-icon">🎓</div>
+          <div class="ic-source source-yt">▶ YouTube / Career Coaches</div>
+        </div>
+        <div>
+          <div class="ic-title">PL-300 Cert = ATS Green Light in the Netherlands</div>
+          <div class="ic-creator">📜 Microsoft certification advisors, NL recruiters</div>
+        </div>
+        <div class="ic-body">
+          Dutch companies have <strong>heavy ATS (Applicant Tracking System) filtering</strong>. The PL-300 (Microsoft Certified: Power BI Data Analyst Associate) is listed as a keyword in over 60% of Dutch Power BI job postings. Without it, automated filters can reject your CV before a human sees it — even if your experience is stronger.
+          <br/><br/>
+          <strong>Free learning path:</strong> <a href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/" target="_blank">learn.microsoft.com PL-300</a> · Exam fee: ~$165. Timeline to certify: 4–6 weeks studying 1hr/day.
+        </div>
+        <div class="ic-tags"><span class="ic-tag">PL-300</span><span class="ic-tag">ATS</span><span class="ic-tag">Certification</span></div>
+        <div class="ic-impact imp-high">🔥 Get This First</div>
+      </div>
+
+      <!-- 7 -->
+      <div class="insight-card ic-g3">
+        <div class="ic-header">
+          <div class="ic-icon">💼</div>
+          <div class="ic-source source-ex">🌍 Undutchables / IamExpat</div>
+        </div>
+        <div>
+          <div class="ic-title">Register Directly with Specialist Agencies — Don't Just Apply Online</div>
+          <div class="ic-creator">🏢 Harnham, Undutchables, Yacht, MeetFrank</div>
+        </div>
+        <div class="ic-body">
+          Simply applying to jobs on agency websites puts you in a pile. The power move: <strong>proactively email the specific recruiter</strong> at the agency who handles data/BI roles. Introduce yourself, attach your CV, explain your Kennismigrant situation upfront. Recruiters at Harnham (data specialist) and Undutchables (international) have <strong>pre-screened company relationships</strong> — they can place you faster than direct applications.
+          <div class="ic-quote">
+            <strong>Priority agencies for Sai:</strong> Harnham NL (data specialist), Undutchables (international talent), Yacht (IT contractor), Michael Page NL (senior roles), Brunel (tech roles)
+          </div>
+        </div>
+        <div class="ic-tags"><span class="ic-tag">Harnham</span><span class="ic-tag">Undutchables</span><span class="ic-tag">Agencies</span></div>
+        <div class="ic-impact imp-med">⚡ Smart Move</div>
+      </div>
+
+      <!-- 8 -->
+      <div class="insight-card ic-g2">
+        <div class="ic-header">
+          <div class="ic-icon">🧪</div>
+          <div class="ic-source source-rd">🔴 Reddit Expats</div>
+        </div>
+        <div>
+          <div class="ic-title">The "Technical Test" Reality — Prepare for Live DAX Challenges</div>
+          <div class="ic-creator">👩‍💻 Indian IT professionals who landed NL BI jobs</div>
+        </div>
+        <div class="ic-body">
+          Dutch Power BI interviews almost always include a <strong>live technical challenge</strong>: you may be asked to write a DAX measure on screen, optimise a slow report, or explain a star schema design decision. Reddit threads consistently report this surprises Indian candidates who prepared only behavioural answers.
+          <br/><br/>
+          <strong>Prepare by practising:</strong> Complex CALCULATE() with multiple filters, RANKX(), time intelligence (SAMEPERIODLASTYEAR), and schema redesign questions. Platform: <a href="https://www.sqlbi.com/articles/" target="_blank">sqlbi.com</a> (the #1 DAX resource used by NL BI professionals).
+        </div>
+        <div class="ic-tags"><span class="ic-tag">DAX</span><span class="ic-tag">Interview Prep</span><span class="ic-tag">Technical Test</span></div>
+        <div class="ic-impact imp-high">🔥 Prepare Now</div>
+      </div>
+
+      <!-- 9 -->
+      <div class="insight-card ic-g4">
+        <div class="ic-header">
+          <div class="ic-icon">💬</div>
+          <div class="ic-source source-li">💼 LinkedIn Coaches</div>
+        </div>
+        <div>
+          <div class="ic-title">Be Transparent About Visa Early — It Builds Trust</div>
+          <div class="ic-creator">🛂 NL immigration-aware career coaches</div>
+        </div>
+        <div class="ic-body">
+          Many Indian candidates hide their visa requirements until deep in the interview process, fearing it'll hurt their chances. <strong>The opposite is true in the Netherlands.</strong> Dutch employers hate surprises. Mentioning Kennismigrant sponsorship in your cover letter or first recruiter call <strong>filters for companies that CAN sponsor</strong> and signals professionalism. Companies that back out after you mention visa needs were never going to sponsor you anyway — you saved yourself 3 weeks of interview rounds.
+        </div>
+        <div class="ic-tags"><span class="ic-tag">Visa</span><span class="ic-tag">Transparency</span><span class="ic-tag">Trust</span></div>
+        <div class="ic-impact imp-key">✅ Dutch Culture</div>
+      </div>
+
+      <!-- 10 -->
+      <div class="insight-card ic-g1">
+        <div class="ic-header">
+          <div class="ic-icon">🌐</div>
+          <div class="ic-source source-yt">▶ YouTube · Expat NL Channels</div>
+        </div>
+        <div>
+          <div class="ic-title">MeetFrank App — Hidden Gem for NL Data Roles</div>
+          <div class="ic-creator">📱 Recommended by multiple expat YouTubers</div>
+        </div>
+        <div class="ic-body">
+          <a href="https://meetfrank.com" target="_blank">MeetFrank</a> is consistently recommended by European expat career creators as an underutilised platform for tech roles in the Netherlands. Companies actively <strong>headhunt candidates on MeetFrank</strong> (reversed from traditional job boards). Set up a profile with your Power BI / Azure skills and preferred NL cities — recruiters come to you.
+          <br/><br/>
+          Also recommended: <strong>Undutchables</strong> (specifically for international talent) and <strong>IamExpat Jobs</strong> for English-language NL postings.
+        </div>
+        <div class="ic-tags"><span class="ic-tag">MeetFrank</span><span class="ic-tag">App</span><span class="ic-tag">Headhunting</span></div>
+        <div class="ic-impact imp-med">⚡ Underused</div>
+      </div>
+
+      <!-- 11 -->
+      <div class="insight-card ic-g3">
+        <div class="ic-header">
+          <div class="ic-icon">🧠</div>
+          <div class="ic-source source-rd">🔴 Reddit r/datascience</div>
+        </div>
+        <div>
+          <div class="ic-title">Microsoft Fabric is the "Next Power BI" — Double Down on It</div>
+          <div class="ic-creator">📊 Dutch data community, Microsoft MVPs</div>
+        </div>
+        <div class="ic-body">
+          The NL data community is actively transitioning to <strong>Microsoft Fabric</strong>. Your existing Lakehouse fundamentals experience is ahead of 90% of current Power BI developers in the market. Dutch companies are desperately looking for people who understand both the legacy Power BI stack AND the Fabric direction.
+          <br/><br/>
+          <strong>Action:</strong> Study for the <strong>DP-600 (Fabric Analytics Engineer Associate)</strong> cert. Add "Microsoft Fabric" prominently in your headline and skills. This one keyword will soon replace "Power BI" in NL job postings.
+        </div>
+        <div class="ic-tags"><span class="ic-tag">Microsoft Fabric</span><span class="ic-tag">DP-600</span><span class="ic-tag">Future-Proof</span></div>
+        <div class="ic-impact imp-high">🔥 Future Skill</div>
+      </div>
+
+      <!-- 12 -->
+      <div class="insight-card ic-g2">
+        <div class="ic-header">
+          <div class="ic-icon">🚫</div>
+          <div class="ic-source source-ex">🌍 Expat Community Warning</div>
+        </div>
+        <div>
+          <div class="ic-title">Warning: Avoid These Common Scams Targeting Indian Job Seekers</div>
+          <div class="ic-creator">⚠️ r/Netherlands, IamExpat forums</div>
+        </div>
+        <div class="ic-body">
+          The NL job seeker space has scams specifically targeting Indian candidates:
+          <br/><br/>
+          🚩 <strong>Never pay for "visa processing" or "job placement" fees</strong> — legitimate employers pay all visa costs.<br/>
+          🚩 <strong>Avoid consultancies offering "guaranteed NL jobs"</strong> for upfront fees.<br/>
+          🚩 <strong>Be wary of WhatsApp/Telegram job groups</strong> promising NL placements — mostly fraud.<br/>
+          🚩 <strong>Cross-check company IND sponsor status</strong> before sharing personal documents.<br/><br/>
+          Legitimate process: Employer applies to IND. You pay nothing. IND communicates directly with employer.
+        </div>
+        <div class="ic-tags"><span class="ic-tag">Safety</span><span class="ic-tag">Scam Alert</span><span class="ic-tag">Must Know</span></div>
+        <div class="ic-impact imp-high">🔥 Warning</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MYTH BUSTERS -->
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <div class="sec-emoji">💥</div>
+      <div class="sec-title">Myth Busters — What Indian Job Seekers Get Wrong About NL</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="myths-grid">
+      <div class="myth-card">
+        <div class="myth-label">❌ Myth</div>
+        <div class="myth-text">"I need to speak Dutch to get a tech job in the Netherlands"</div>
+        <div class="reality-label">✅ Reality</div>
+        <div class="reality-text">The Netherlands ranks <strong>#1 globally in English proficiency</strong> among non-native speaking countries. 99% of tech, data, and analytics roles in international companies operate 100% in English. Dutch language is only required for client-facing roles in purely Dutch organisations.</div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-label">❌ Myth</div>
+        <div class="myth-text">"Applying to 50 jobs per day maximises my chances"</div>
+        <div class="reality-label">✅ Reality</div>
+        <div class="reality-text">Dutch ATS and recruiters instantly detect generic applications. <strong>3–5 deeply researched, tailored applications per week</strong> outperforms 50 generic ones every time. Spend 30–45 minutes per application customising it. Dutch HR managers are meticulous — they read cover letters carefully.</div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-label">❌ Myth</div>
+        <div class="myth-text">"Only Big 4 and FAANG companies sponsor visas"</div>
+        <div class="reality-label">✅ Reality</div>
+        <div class="reality-text">There are <strong>over 5,000 IND-recognised sponsors</strong> in the Netherlands — including hundreds of mid-sized tech firms, fintechs, and scale-ups. Mid-size companies often sponsor faster (less bureaucracy) and offer more flexibility than large corporations.</div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-label">❌ Myth</div>
+        <div class="myth-text">"My Indian salary history will hurt my NL negotiation"</div>
+        <div class="reality-label">✅ Reality</div>
+        <div class="reality-text">Dutch employers <strong>do not ask for your Indian salary history</strong> (unlike some other markets). Negotiation is based purely on <em>market rate</em> for the role. Your 6 years + Accenture background justifies <strong>€68K–€82K</strong> regardless of what you earned in India.</div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-label">❌ Myth</div>
+        <div class="myth-text">"Mentioning visa sponsorship early will get me rejected"</div>
+        <div class="reality-label">✅ Reality</div>
+        <div class="reality-text">Being upfront about visa needs <strong>saves time for everyone</strong> and is respected in Dutch culture. Companies that reject you for needing sponsorship were never going to hire you anyway. Early transparency filters your target list to only companies that CAN and WILL sponsor.</div>
+      </div>
+      <div class="myth-card">
+        <div class="myth-label">❌ Myth</div>
+        <div class="myth-text">"My experience at Accenture India is less valued than NL experience"</div>
+        <div class="reality-label">✅ Reality</div>
+        <div class="reality-text"><strong>Accenture is a globally recognised brand</strong>. Dutch hiring managers know exactly what it means. Your enterprise-level project experience, ADF pipelines, and Medallion Architecture work are directly relevant. If anything, Accenture India experience signals high-pressure, enterprise-scale capability.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREATOR PROFILES -->
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <div class="sec-emoji">🎥</div>
+      <div class="sec-title">Recommended Creators & Communities to Follow</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="alert alert-orange">
+      <div class="alert-icon">⚠️</div>
+      <div><strong>Critical Warning:</strong> Never pay any creator, consultant, or agency an upfront fee for "job placement" or "visa processing." Legitimate guidance is free or subscription-based for general content — not for specific job promises.</div>
+    </div>
+    <div class="creators-grid">
+      <a href="https://www.youtube.com/@AbsolutelyAshika" target="_blank" class="creator-card">
+        <div class="creator-avatar" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)">A</div>
+        <div>
+          <div class="creator-name">Absolutely Ashika</div>
+          <div class="creator-platform">▶ YouTube · NL Expat Life</div>
+          <div class="creator-desc">Indian expat in Netherlands covering job search, visa process, daily life. Practical, honest advice from lived experience.</div>
+          <div class="creator-tags"><span class="ctag">Expat Life</span><span class="ctag">Visa Tips</span><span class="ctag">NL Culture</span></div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/results?search_query=netherlands+job+search+india+IT+2025" target="_blank" class="creator-card">
+        <div class="creator-avatar" style="background:linear-gradient(135deg,#3b82f6,#06b6d4)">RL</div>
+        <div>
+          <div class="creator-name">Rajeev LifeStyle</div>
+          <div class="creator-platform">▶ YouTube · Career & NL Life</div>
+          <div class="creator-desc">Weekly insights on NL job search, CV fixes, sponsor lists, and cultural integration for Indian professionals.</div>
+          <div class="creator-tags"><span class="ctag">Job Search</span><span class="ctag">CV Tips</span><span class="ctag">India→NL</span></div>
+        </div>
+      </a>
+      <a href="https://www.iamexpat.nl" target="_blank" class="creator-card">
+        <div class="creator-avatar" style="background:linear-gradient(135deg,#10b981,#06b6d4)">IE</div>
+        <div>
+          <div class="creator-name">IamExpat.nl</div>
+          <div class="creator-platform">🌍 Community + Job Board</div>
+          <div class="creator-desc">The largest English-language expat community in NL. Job board, visa guides, housing tips, and forums with thousands of Indian expats who've already done what you're doing.</div>
+          <div class="creator-tags"><span class="ctag">Community</span><span class="ctag">Jobs</span><span class="ctag">Visa</span></div>
+        </div>
+      </a>
+      <a href="https://www.undutchables.nl" target="_blank" class="creator-card">
+        <div class="creator-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">UD</div>
+        <div>
+          <div class="creator-name">Undutchables</div>
+          <div class="creator-platform">🏢 Recruitment Agency NL</div>
+          <div class="creator-desc">Specialist recruiter for international talent in the Netherlands. Focused on English-speaking professionals. Actively places candidates with Kennismigrant status.</div>
+          <div class="creator-tags"><span class="ctag">Recruiter</span><span class="ctag">International</span><span class="ctag">Sponsor</span></div>
+        </div>
+      </a>
+      <a href="https://www.harnham.com/netherlands" target="_blank" class="creator-card">
+        <div class="creator-avatar" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">H</div>
+        <div>
+          <div class="creator-name">Harnham NL</div>
+          <div class="creator-platform">📊 Data & AI Recruitment Specialist</div>
+          <div class="creator-desc">The #1 specialist data recruitment agency in the Netherlands. They ONLY do data/analytics/BI. Their NL team knows every Power BI opening in Amsterdam, Rotterdam, Utrecht.</div>
+          <div class="creator-tags"><span class="ctag">Power BI</span><span class="ctag">Data</span><span class="ctag">Specialist</span></div>
+        </div>
+      </a>
+      <a href="https://www.reddit.com/r/Netherlands/" target="_blank" class="creator-card">
+        <div class="creator-avatar" style="background:linear-gradient(135deg,#ef4444,#f59e0b)">r/</div>
+        <div>
+          <div class="creator-name">r/Netherlands & r/expats</div>
+          <div class="creator-platform">🔴 Reddit Communities</div>
+          <div class="creator-desc">Raw, unfiltered advice from people living in the Netherlands. Search "job sponsorship India" for dozens of threads with real experiences from the last 12 months.</div>
+          <div class="creator-tags"><span class="ctag">Real Advice</span><span class="ctag">Community</span><span class="ctag">Raw Truth</span></div>
+        </div>
+      </a>
+      <a href="https://meetfrank.com" target="_blank" class="creator-card">
+        <div class="creator-avatar" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)">MF</div>
+        <div>
+          <div class="creator-name">MeetFrank App</div>
+          <div class="creator-platform">📱 Reverse Job Board (NL)</div>
+          <div class="creator-desc">Create a profile and companies headhunt YOU. Very strong in Netherlands tech market. Recommended by multiple expat YouTube channels as an underused gem.</div>
+          <div class="creator-tags"><span class="ctag">Headhunting</span><span class="ctag">App</span><span class="ctag">Tech</span></div>
+        </div>
+      </a>
+      <a href="https://www.sqlbi.com" target="_blank" class="creator-card">
+        <div class="creator-avatar" style="background:linear-gradient(135deg,#eab308,#f59e0b)">SQ</div>
+        <div>
+          <div class="creator-name">SQLBI.com</div>
+          <div class="creator-platform">📚 DAX Learning Resource</div>
+          <div class="creator-desc">The definitive DAX learning resource, used by Dutch Power BI professionals. Study their articles on CALCULATE, RANKX, and time intelligence to ace NL technical interviews.</div>
+          <div class="creator-tags"><span class="ctag">DAX</span><span class="ctag">Interview Prep</span><span class="ctag">Free</span></div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- COFFEE CHAT TEMPLATE -->
+  <div class="sec-wrap" style="padding-bottom:50px">
+    <div class="sec-head">
+      <div class="sec-emoji">☕</div>
+      <div class="sec-title">The "Virtual Coffee Chat" Script — Copy & Personalise</div>
+      <div class="sec-line"></div>
+    </div>
+    <p style="font-size:.88rem;color:var(--txt2);margin-bottom:16px">Used by the most successful Indian expats who landed NL jobs. Send this to Power BI / Data professionals already working at your target companies. <strong>Do NOT ask for a job</strong> — ask for their time and wisdom.</p>
+    <div class="copy-block">
+      <button class="copy-btn" onclick="cp(this,'coffee-msg')">Copy</button>
+      <pre id="coffee-msg">Hi [Name],
+
+I came across your profile while researching Power BI roles in the Netherlands and was genuinely impressed by your work at [Company].
+
+I'm a Power BI Developer with 6+ years of enterprise experience (currently at Accenture in Hyderabad) planning to relocate to the Netherlands within 4 months. I'm trying to understand the NL data market better before I make the move.
+
+Would you be open to a 20-minute virtual coffee chat? I'd love to hear about:
+• What your day-to-day looks like as a [their role] at [Company]
+• What skills the Dutch market values most in BI/analytics roles
+• Any advice you'd give someone transitioning from the Indian market
+
+I have no agenda other than learning from someone who's been in the field in NL — no job requests, I promise! 😊
+
+Thank you for considering it — I completely understand if you're busy!
+
+Best regards,
+Sai Lakshmi Elusuri
+Power BI Developer | 6+ yrs | Accenture
+📧 sailakshmi.elusuri@gmail.com
+🔗 linkedin.com/in/sailakshmielusuri-data-analyst</pre>
+    </div>
+    <div class="alert alert-green">
+      <div class="alert-icon">✅</div>
+      <div><strong>Why this works:</strong> It's specific (mentions their company/role), low-pressure (no job ask), and shows genuine curiosity. Dutch professionals respond well to sincerity and directness. Aim to send 5–10 of these per week. Even a 10% response rate = 5 coffee chats = potential referrals.</div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">Sai Lakshmi Elusuri</div>
+  <div class="footer-links">
+    <a href="mailto:sailakshmi.elusuri@gmail.com">✉️ sailakshmi.elusuri@gmail.com</a>
+    <a href="https://linkedin.com/in/sailakshmielusuri-data-analyst" target="_blank">🔗 LinkedIn Profile</a>
+    <a href="resume.html">📄 Download Resume</a>
+    <span style="color:var(--text-muted)">·</span>
+    <a href="job-finder.html">🔍 Jobs</a>
+    <a href="strategy.html">🗺️ Strategy</a>
+  </div>
+  <p>Insights distilled from YouTube, Reddit r/Netherlands, LinkedIn coaches & expat communities. Always verify at <a href="https://ind.nl">ind.nl</a>.</p>
+</footer>
+
+<script>
+function cp(btn, id) {
+  navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
+    btn.textContent = '✅ Copied!'; btn.classList.add('done');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('done'); }, 2500);
+  });
+}
+</script>
+</body>
+</html>

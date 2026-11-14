@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sai Lakshmi Elusuri – Resume | Power BI Developer | Netherlands</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    /* ── SCREEN UI ── */
+    body {
+      margin: 0; padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+    }
+
+    .screen-toolbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(13,17,23,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(59,130,246,0.2);
+      padding: 12px 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px;
+    }
+    .toolbar-left { display: flex; align-items: center; gap: 12px; }
+    .toolbar-logo {
+      width: 34px; height: 34px; border-radius: 8px;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .85rem; font-weight: 800; color: #fff;
+    }
+    .toolbar-title { font-size: .9rem; font-weight: 600; color: #e6edf3; }
+    .toolbar-sub { font-size: .75rem; color: #6e7681; }
+    .toolbar-right { display: flex; gap: 10px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 9px 20px; border-radius: 10px;
+      font-size: .83rem; font-weight: 600; cursor: pointer;
+      border: none; font-family: 'Inter', sans-serif;
+      transition: all .2s ease; text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(59,130,246,0.35);
+    }
+    .btn-primary:hover { opacity: .88; transform: translateY(-1px); }
+    .btn-secondary {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.12);
+      color: #c9d1d9;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,.12); }
+
+    .page-wrap {
+      padding: 90px 24px 60px;
+      display: flex; justify-content: center;
+    }
+
+    /* ── RESUME PAPER ── */
+    .resume {
+      width: 794px;
+      background: #ffffff;
+      color: #1a1a2e;
+      box-shadow: 0 0 60px rgba(0,0,0,0.5);
+      border-radius: 4px;
+      font-size: 9.5pt;
+      line-height: 1.45;
+    }
+
+    /* Header strip */
+    .r-header {
+      background: linear-gradient(135deg, #1e3a5f 0%, #0f2644 100%);
+      color: #fff;
+      padding: 30px 36px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .r-header::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+    }
+    .r-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22pt; font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 3px;
+    }
+    .r-role {
+      font-size: 10pt; color: #93c5fd;
+      font-weight: 500; letter-spacing: 0.3px;
+      margin-bottom: 14px;
+    }
+    .r-contact {
+      display: flex; flex-wrap: wrap; gap: 6px 20px;
+      font-size: 8pt; color: #bfdbfe;
+    }
+    .r-contact span { display: flex; align-items: center; gap: 4px; }
+
+    /* Body */
+    .r-body { display: grid; grid-template-columns: 1fr 220px; }
+
+    /* Main column */
+    .r-main { padding: 22px 24px 24px 36px; border-right: 1px solid #e8ecf0; }
+
+    /* Sidebar */
+    .r-side { padding: 22px 20px 24px 18px; background: #f7f9fb; }
+
+    /* Section title */
+    .sec {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 8pt; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1.2px;
+      color: #1e3a5f;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+      margin-top: 18px;
+    }
+    .sec:first-child { margin-top: 0; }
+
+    /* Profile summary */
+    .r-summary {
+      font-size: 9pt; color: #374151; line-height: 1.55;
+      margin-bottom: 4px;
+    }
+
+    /* Job entry */
+    .job { margin-bottom: 14px; }
+    .job-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1px; }
+    .job-title { font-weight: 700; font-size: 9.5pt; color: #1e3a5f; }
+    .job-date { font-size: 8pt; color: #6b7280; white-space: nowrap; }
+    .job-company { font-size: 8.5pt; color: #3b82f6; font-weight: 600; margin-bottom: 5px; }
+    .job-loc { font-size: 7.5pt; color: #9ca3af; }
+    ul.bullets { padding-left: 13px; margin: 0; }
+    ul.bullets li { font-size: 8.8pt; color: #374151; margin-bottom: 3px; line-height: 1.45; }
+    ul.bullets li strong { color: #1e3a5f; }
+    .achievement {
+      background: #eff6ff; border-left: 3px solid #3b82f6;
+      padding: 5px 9px; border-radius: 0 5px 5px 0;
+      font-size: 8.5pt; color: #1e40af; font-weight: 600;
+      margin: 6px 0;
+    }
+
+    /* Tech tags under job */
+    .tech-line { margin-top: 5px; font-size: 7.8pt; color: #6b7280; }
+    .tech-line span { color: #4b5563; font-weight: 500; }
+
+    /* Project entry */
+    .project { margin-bottom: 10px; }
+    .project-title { font-weight: 700; font-size: 9pt; color: #1e3a5f; }
+    .project-tech { font-size: 7.5pt; color: #6b7280; margin-bottom: 3px; }
+
+    /* Sidebar sections */
+    .side-sec {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 7.8pt; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 1px;
+      color: #1e3a5f;
+      border-bottom: 1.5px solid #3b82f6;
+      padding-bottom: 3px;
+      margin-bottom: 10px; margin-top: 16px;
+    }
+    .side-sec:first-child { margin-top: 0; }
+
+    .skill-group { margin-bottom: 8px; }
+    .skill-group-name { font-size: 7.8pt; font-weight: 700; color: #374151; margin-bottom: 3px; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 3px; }
+    .stag {
+      padding: 2px 7px; border-radius: 4px;
+      font-size: 7pt; font-weight: 500;
+      background: #dbeafe; color: #1e40af;
+      white-space: nowrap;
+    }
+    .stag.green { background: #d1fae5; color: #065f46; }
+    .stag.purple { background: #ede9fe; color: #5b21b6; }
+    .stag.orange { background: #fef3c7; color: #92400e; }
+    .stag.gray { background: #f3f4f6; color: #374151; }
+
+    .edu-item { margin-bottom: 6px; }
+    .edu-deg { font-size: 8.5pt; font-weight: 700; color: #1e3a5f; }
+    .edu-school { font-size: 7.8pt; color: #6b7280; }
+    .edu-year { font-size: 7.5pt; color: #9ca3af; }
+
+    .info-row { display: flex; gap: 5px; align-items: baseline; font-size: 8pt; margin-bottom: 4px; color: #374151; }
+    .info-label { font-weight: 700; color: #1e3a5f; width: 70px; flex-shrink: 0; }
+
+    .comp-item { font-size: 8pt; color: #374151; margin-bottom: 3px; padding-left: 8px; position: relative; }
+    .comp-item::before { content: '▸'; position: absolute; left: 0; color: #3b82f6; font-size: 7pt; top: 1px; }
+
+    .lang-row { display: flex; justify-content: space-between; font-size: 8pt; margin-bottom: 3px; }
+    .lang-name { color: #374151; font-weight: 600; }
+    .lang-level { color: #6b7280; }
+
+    /* NL visa highlight box */
+    .visa-box {
+      background: #fff7ed;
+      border: 1.5px solid #fb923c;
+      border-radius: 5px;
+      padding: 7px 10px;
+      margin-top: 10px;
+      font-size: 7.8pt;
+      color: #9a3412;
+    }
+    .visa-box strong { display: block; font-size: 8pt; color: #c2410c; margin-bottom: 2px; }
+
+    /* ── PRINT STYLES ── */
+    @media print {
+      body { background: #fff !important; }
+      .screen-toolbar { display: none !important; }
+      .nav { display: none !important; }
+      .page-wrap { padding: 0 !important; }
+      .resume {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .page-wrap { padding: 80px 0 40px; }
+      .resume { width: 100%; border-radius: 0; }
+    }
+</style>
+</head>
+<body>
+
+<!-- SHARED NAV (hidden on print) -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo">SL</div>
+      <div class="nav-brand-text">
+        <div class="nav-title">Sai Lakshmi · NL Career Hub</div>
+        <div class="nav-subtitle">Power BI Developer · Netherlands</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">🏠 Home</a>
+      <a href="job-finder.html" class="nav-link">🔍 Jobs</a>
+      <a href="linkedin-optimizer.html" class="nav-link">💼 LinkedIn</a>
+      <a href="resume.html" class="nav-link active active-cyan">📄 Resume</a>
+      <a href="strategy.html" class="nav-link">🗺️ Strategy</a>
+      <a href="influencer-insights.html" class="nav-link">✨ Insights</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- TOOLBAR -->
+<div class="screen-toolbar">
+  <div class="toolbar-left">
+    <div class="toolbar-logo">SL</div>
+    <div>
+      <div class="toolbar-title">Sai Lakshmi Elusuri — Resume</div>
+      <div class="toolbar-sub">Power BI Developer · Netherlands Edition</div>
+    </div>
+  </div>
+  <div class="toolbar-right">
+    <button class="btn btn-secondary" onclick="window.print()">🖨️ Print / Save PDF</button>
+    <button class="btn btn-primary" onclick="downloadPDF()">⬇️ Download PDF</button>
+  </div>
+</div>
+
+<!-- RESUME PAPER -->
+<div class="page-wrap">
+<div class="resume">
+
+  <!-- HEADER -->
+  <div class="r-header">
+    <div class="r-name">SAI LAKSHMI ELUSURI</div>
+    <div class="r-role">Power BI Developer &amp; Azure Data Analytics Specialist &nbsp;|&nbsp; 6+ Years Enterprise BI Experience</div>
+    <div class="r-contact">
+      <span>📧 sailakshmi.elusuri@gmail.com</span>
+      <span>📱 +91 8142674401</span>
+      <span>📍 Hyderabad, India → Netherlands (Relocating)</span>
+      <span>🔗 linkedin.com/in/sailakshmielusuri-data-analyst</span>
+      <span>🛂 Kennismigrant / Visa Sponsorship Required</span>
+    </div>
+  </div>
+
+  <div class="r-body">
+
+    <!-- MAIN COLUMN -->
+    <div class="r-main">
+
+      <!-- SUMMARY -->
+      <div class="sec">Professional Summary</div>
+      <div class="r-summary">
+        Results-driven <strong>Power BI Developer &amp; Data Analyst</strong> with <strong>6+ years</strong> of enterprise analytics experience at Accenture, Genpact, and Conduent. Proven expertise in designing scalable semantic data models, optimising DAX measures, and building Azure-based data pipelines using <strong>Medallion Architecture (Bronze–Silver–Gold)</strong>. Demonstrated success migrating legacy BI tools (Qlik Sense, Celonis) to unified Power BI solutions. Recognised for reducing dashboard load time by <strong>40%</strong> through advanced data modelling and SQL query optimisation. Seeking a <strong>Power BI / Data Analyst role in the Netherlands</strong> with Kennismigrant visa sponsorship.
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="sec">Work Experience</div>
+
+      <!-- Accenture -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Power BI Developer</div>
+          <div class="job-date">Feb 2022 – Present</div>
+        </div>
+        <div class="job-company">Accenture &nbsp;<span class="job-loc">· Hyderabad, India</span></div>
+        <div class="achievement">🏆 Reduced dashboard load time by 40% via DAX optimisation, star schema redesign &amp; SQL tuning</div>
+        <ul class="bullets">
+          <li>Designed and delivered <strong>enterprise-grade Power BI dashboards</strong> for sustainability, operational, and financial reporting across global business units</li>
+          <li>Built <strong>end-to-end Azure data pipelines</strong> (ADF → ADLS Gen2 → Power BI) using Medallion Architecture, improving data reliability and long-term maintainability</li>
+          <li>Optimised <strong>DAX measures and semantic models</strong> to accelerate report performance and enable sub-second query responses for executive dashboards</li>
+          <li>Led <strong>full migration</strong> of legacy Qlik Sense dashboards to Power BI — redesigned data models, converted business logic to DAX, and standardised enterprise reporting</li>
+          <li>Integrated <strong>Celonis process mining</strong> outputs into Power BI for unified cross-platform KPI visibility</li>
+          <li>Implemented <strong>Row-Level Security (RLS)</strong> to enforce role-based data access, strengthening governance and compliance</li>
+          <li>Collaborated with cross-functional teams via <strong>Jira, Confluence, and ServiceNow</strong>, managing requirements and delivering under tight timelines</li>
+        </ul>
+        <div class="tech-line">Tools: <span>Power BI Desktop &amp; Service · DAX · Power Query (M) · Azure Data Factory · ADLS Gen2 · Microsoft Fabric · SQL Server · Qlik Sense · Celonis · Git</span></div>
+      </div>
+
+      <!-- Genpact -->
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Data Risk Analyst</div>
+          <div class="job-date">Apr 2021 – Jan 2022</div>
+        </div>
+        <div class="job-company">Genpact &nbsp;<span class="job-loc">· Noida, India</span></div>
+        <ul class="bullets">
+          <li>Developed <strong>Power BI dashboards</strong> for mortgage insurance risk analytics, consolidating multi-source data into unified decision-support views</li>
+          <li>Built and optimised <strong>SQL Server datasets</strong> for accurate, real-time financial risk analytics and reporting</li>
+          <li>Delivered actionable insights through interactive visual dashboards, enabling data-driven risk management decisions</li>
+        </ul>
+        <div class="tech-line">Tools: <span>Power BI · MS SQL Server · Data Visualisation · Financial Analytics</span></div>
+      </div>
+
+      <!-- Conduent -->
+      <div class="job" style="margin-bottom:4px">
+        <div class="job-header">
+          <div class="job-title">Data Analyst</div>
+          <div class="job-date">Jun 2018 – Apr 2021</div>
+        </div>
+        <div class="job-company">Conduent &nbsp;<span class="job-loc">· Visakhapatnam, India</span></div>
+        <ul class="bullets">
+          <li><strong>Automated financial and operational reporting</strong> using Power BI dashboards, reducing manual effort and improving reporting consistency</li>
+          <li>Developed SQL queries for efficient data extraction and transformation supporting business operations</li>
+          <li>Generated analytics insights through dashboards and ad-hoc analysis to support stakeholder decisions</li>
+        </ul>
+        <div class="tech-line">Tools: <span>Power BI · SQL · Excel · Reporting Automation</span></div>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="sec">Major Projects</div>
+
+      <div class="project">
+        <div class="project-title">Enterprise Sustainability Analytics Platform &nbsp;|&nbsp; Accenture</div>
+        <div class="project-tech">Power BI · Azure Data Factory · ADLS Gen2 · Microsoft Fabric · Qlik Sense · Celonis</div>
+        <ul class="bullets">
+          <li>Designed enterprise dashboards monitoring sustainability, operational, and environmental KPIs for senior business stakeholders</li>
+          <li>Implemented Medallion Architecture (Bronze–Silver–Gold) for scalable data transformation and high-performance reporting</li>
+          <li>Led full migration from Qlik Sense → Power BI including data model redesign, DAX conversion, and visualisation standardisation</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Operational Process Intelligence Dashboard &nbsp;|&nbsp; Accenture</div>
+        <div class="project-tech">Celonis · Power BI · Qlik Sense</div>
+        <ul class="bullets">
+          <li>Integrated Celonis process mining with Power BI to provide end-to-end operational workflow visibility</li>
+          <li>Developed interactive dashboards tracking process bottlenecks, cycle times, and efficiency KPIs for leadership reporting</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="r-side">
+
+      <!-- Key Info -->
+      <div class="side-sec">Key Details</div>
+      <div class="info-row"><span class="info-label">Experience</span><span>6+ Years</span></div>
+      <div class="info-row"><span class="info-label">Location</span><span>Hyderabad → Netherlands</span></div>
+      <div class="info-row"><span class="info-label">Availability</span><span>Within 4 months</span></div>
+      <div class="info-row"><span class="info-label">Work Type</span><span>Full-time / Contract</span></div>
+      <div class="visa-box">
+        <strong>🛂 Visa Sponsorship</strong>
+        Requires Kennismigrant (Highly Skilled Migrant) sponsorship via IND-recognised employer. Ready to process immediately upon offer.
+      </div>
+
+      <!-- Skills -->
+      <div class="side-sec" style="margin-top:14px">Technical Skills</div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">BI &amp; Visualization</div>
+        <div class="skill-tags">
+          <span class="stag">Power BI Desktop</span>
+          <span class="stag">Power BI Service</span>
+          <span class="stag">DAX</span>
+          <span class="stag">Power Query (M)</span>
+          <span class="stag">KPI Dashboards</span>
+        </div>
+      </div>
+
+      <div class="skill-group" style="margin-top:7px">
+        <div class="skill-group-name">Azure &amp; Cloud</div>
+        <div class="skill-tags">
+          <span class="stag green">Azure Data Factory</span>
+          <span class="stag green">ADLS Gen2</span>
+          <span class="stag green">Microsoft Fabric</span>
+          <span class="stag green">Medallion Arch.</span>
+          <span class="stag green">ETL Pipelines</span>
+        </div>
+      </div>
+
+      <div class="skill-group" style="margin-top:7px">
+        <div class="skill-group-name">Database &amp; Query</div>
+        <div class="skill-tags">
+          <span class="stag purple">SQL Server</span>
+          <span class="stag purple">Data Modeling</span>
+          <span class="stag purple">Star Schema</span>
+          <span class="stag purple">Joins &amp; Aggregations</span>
+        </div>
+      </div>
+
+      <div class="skill-group" style="margin-top:7px">
+        <div class="skill-group-name">Analytics Tools</div>
+        <div class="skill-tags">
+          <span class="stag orange">Qlik Sense</span>
+          <span class="stag orange">Celonis</span>
+          <span class="stag orange">Process Mining</span>
+        </div>
+      </div>
+
+      <div class="skill-group" style="margin-top:7px">
+        <div class="skill-group-name">Governance &amp; Security</div>
+        <div class="skill-tags">
+          <span class="stag gray">Row-Level Security</span>
+          <span class="stag gray">Data Governance</span>
+          <span class="stag gray">Access Control</span>
+        </div>
+      </div>
+
+      <div class="skill-group" style="margin-top:7px">
+        <div class="skill-group-name">Collaboration</div>
+        <div class="skill-tags">
+          <span class="stag gray">Git</span>
+          <span class="stag gray">Jira</span>
+          <span class="stag gray">Confluence</span>
+          <span class="stag gray">ServiceNow</span>
+        </div>
+      </div>
+
+      <!-- Core Competencies -->
+      <div class="side-sec">Core Competencies</div>
+      <div class="comp-item">Enterprise Data Architecture</div>
+      <div class="comp-item">Cloud Data Platform Strategy</div>
+      <div class="comp-item">Scalable Analytics Frameworks</div>
+      <div class="comp-item">Business Intelligence Delivery</div>
+      <div class="comp-item">Data Governance &amp; Compliance</div>
+      <div class="comp-item">Stakeholder Engagement</div>
+      <div class="comp-item">Performance Optimisation</div>
+      <div class="comp-item">BI Tool Migration</div>
+
+      <!-- Education -->
+      <div class="side-sec">Education</div>
+      <div class="edu-item">
+        <div class="edu-deg">B.Tech – Computer Science</div>
+        <div class="edu-school">Raghu Engineering College</div>
+        <div class="edu-school">Visakhapatnam, India</div>
+        <div class="edu-year">2013 – 2017</div>
+      </div>
+
+      <!-- Languages -->
+      <div class="side-sec">Languages</div>
+      <div class="lang-row"><span class="lang-name">English</span><span class="lang-level">Professional (C1)</span></div>
+      <div class="lang-row"><span class="lang-name">Telugu</span><span class="lang-level">Native</span></div>
+      <div class="lang-row"><span class="lang-name">Hindi</span><span class="lang-level">Conversational</span></div>
+      <div class="lang-row"><span class="lang-name">Dutch</span><span class="lang-level">Beginner (learning)</span></div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function downloadPDF() {
+  // Show print dialog with PDF save option
+  const instructions = `To save as PDF:
+1. In the print dialog that opens, change the Destination/Printer to "Save as PDF"
+2. Set Paper Size to A4
+3. Set Margins to Minimum or None
+4. Enable "Background graphics" under More settings
+5. Click Save
+
+This will produce a clean, ATS-friendly PDF resume.`;
+  alert(instructions);
+  window.print();
+}
+</script>
+</body>
+</html>

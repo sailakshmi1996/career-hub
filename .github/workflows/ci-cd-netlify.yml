@@ -1,0 +1,59 @@
+name: CI/CD Pipeline - Test & Deploy to Netlify
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Run Automated Test Suite
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run Integrity, GDPR & Date Compliance Tests
+        run: |
+          python3 tests/run_all_tests.py
+
+  deploy:
+    name: Deploy to Netlify (sailakshminl.netlify.app)
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Package Production Bundle
+        run: |
+          python3 scripts/deploy_netlify.py
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+      - name: Deploy to Netlify CLI (Fallback / Redundant)
+        if: env.NETLIFY_AUTH_TOKEN != ''
+        run: |
+          npx netlify-cli deploy \
+            --dir=. \
+            --site=${{ secrets.NETLIFY_SITE_ID || 'c48ae112-95f4-4603-bfbb-1201e50dd3fc' }} \
+            --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} \
+            ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' && '--prod' || '' }}
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}

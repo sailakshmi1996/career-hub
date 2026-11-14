@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Lakshmi – Netherlands Job Finder | Power BI & Azure Analytics</title>
+  <meta name="description" content="Personalized Netherlands job finder for Sai Lakshmi Elusuri – Power BI Developer & Azure Data Analytics Specialist seeking visa-sponsored roles in the Netherlands." />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    :root {
+      --bg-primary: #050914;
+      --bg-secondary: #0a1628;
+      --bg-card: #0e1f3d;
+      --bg-card-hover: #132547;
+      --accent-blue: #3b82f6;
+      --accent-cyan: #06b6d4;
+      --accent-purple: #8b5cf6;
+      --accent-orange: #f59e0b;
+      --accent-green: #10b981;
+      --accent-pink: #ec4899;
+      --text-primary: #f0f6ff;
+      --text-secondary: #94a3b8;
+      --text-muted: #475569;
+      --border: rgba(59, 130, 246, 0.18);
+      --glass: rgba(14, 31, 61, 0.6);
+      --nl-orange: #ff6b00;
+      --nl-blue: #003DA5;
+      --gradient-main: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Animated Background ── */
+    .bg-orbs {
+      position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden;
+    }
+    .orb {
+      position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.12;
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    .orb-1 { width: 600px; height: 600px; background: #3b82f6; top: -200px; left: -200px; animation-delay: 0s; }
+    .orb-2 { width: 500px; height: 500px; background: #8b5cf6; bottom: -150px; right: -150px; animation-delay: -6s; }
+    .orb-3 { width: 350px; height: 350px; background: #06b6d4; top: 40%; left: 50%; animation-delay: -12s; }
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to { transform: translate(40px, 30px) scale(1.08); }
+    }
+
+    /* ── Layout ── */
+    .container { max-width: 1300px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    /* ── Header ── */
+    header {
+      padding: 60px 0 40px;
+      text-align: center;
+      position: relative;
+    }
+    .nl-flag-strip {
+      display: flex; justify-content: center; gap: 6px; margin-bottom: 28px;
+    }
+    .flag-bar {
+      height: 5px; width: 48px; border-radius: 99px;
+    }
+    .flag-bar.red { background: #AE1C28; }
+    .flag-bar.white { background: #fff; }
+    .flag-bar.blue { background: #21468B; }
+
+    .header-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(59,130,246,0.12);
+      border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 99px;
+      padding: 6px 18px;
+      font-size: 0.8rem;
+      color: var(--accent-cyan);
+      letter-spacing: 0.05em;
+      margin-bottom: 24px;
+      animation: fadeInDown 0.6s ease;
+    }
+    .badge-dot {
+      width: 7px; height: 7px; border-radius: 50%; background: var(--accent-cyan);
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    h1.hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      animation: fadeInDown 0.7s ease;
+    }
+    .gradient-text {
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto 12px;
+      animation: fadeInDown 0.8s ease;
+    }
+    .visa-note {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.35);
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-size: 0.88rem;
+      color: var(--accent-orange);
+      margin-top: 16px;
+      animation: fadeInDown 0.9s ease;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Profile Card ── */
+    .profile-section { padding: 40px 0 20px; }
+    .profile-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px 40px;
+      backdrop-filter: blur(20px);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: center;
+      animation: fadeInUp 0.6s ease;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .avatar {
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: var(--gradient-main);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.4rem; font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 0 40px rgba(59,130,246,0.35);
+    }
+    .profile-info h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.7rem; font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .profile-role {
+      color: var(--accent-cyan);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+      font-weight: 500;
+    }
+    .profile-stats {
+      display: flex; flex-wrap: wrap; gap: 20px;
+    }
+    .stat-item {
+      display: flex; align-items: center; gap: 7px;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+    .stat-icon { font-size: 1rem; }
+
+    /* ── Skills Grid ── */
+    .skills-section { padding: 30px 0; }
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .section-title .title-line {
+      flex: 1; height: 1px; background: var(--border);
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 10px;
+    }
+    .skill-tag {
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+      cursor: default;
+      text-align: center;
+    }
+    .skill-tag:hover {
+      background: rgba(59,130,246,0.2);
+      border-color: var(--accent-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59,130,246,0.2);
+    }
+    .skill-tag.hot { border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.08); }
+    .skill-tag.hot:hover { background: rgba(245,158,11,0.18); border-color: var(--accent-orange); }
+
+    /* ── Tabs ── */
+    .tabs-wrapper { padding: 30px 0 10px; }
+    .tabs {
+      display: flex; gap: 4px;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 5px;
+      width: fit-content;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 9px 22px;
+      border-radius: 10px;
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: 'Inter', sans-serif;
+      white-space: nowrap;
+    }
+    .tab-btn.active {
+      background: var(--gradient-main);
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(59,130,246,0.35);
+    }
+    .tab-btn:hover:not(.active) {
+      color: var(--text-primary);
+      background: rgba(255,255,255,0.06);
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; animation: fadeInUp 0.4s ease; }
+
+    /* ── Job Cards ── */
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 20px;
+    }
+    .job-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 26px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      position: relative;
+      overflow: hidden;
+    }
+    .job-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--gradient-main);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .job-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(59,130,246,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(59,130,246,0.15);
+    }
+    .job-card:hover::before { opacity: 1; }
+
+    .job-card-header {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .company-logo {
+      width: 46px; height: 46px; border-radius: 12px;
+      background: var(--gradient-main);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; font-weight: 800; color: #fff;
+      flex-shrink: 0;
+    }
+    .job-badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+    .badge {
+      padding: 3px 10px;
+      border-radius: 99px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+    }
+    .badge-visa { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.3); }
+    .badge-remote { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
+    .badge-hybrid { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
+    .badge-onsite { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+    .badge-senior { background: rgba(236,72,153,0.15); color: #f472b6; border: 1px solid rgba(236,72,153,0.3); }
+
+    .job-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.05rem; font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+    .job-company {
+      font-size: 0.88rem; color: var(--accent-cyan);
+      margin-bottom: 12px; font-weight: 500;
+    }
+    .job-meta {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      margin-bottom: 16px;
+    }
+    .job-meta-item {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 0.8rem; color: var(--text-secondary);
+    }
+    .job-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .job-tag {
+      padding: 3px 10px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      font-size: 0.74rem;
+      color: var(--text-secondary);
+    }
+    .job-salary {
+      font-size: 0.9rem;
+      color: var(--accent-green);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+    .apply-btn {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      width: 100%;
+      padding: 11px;
+      background: var(--gradient-main);
+      border-radius: 10px;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    .apply-btn:hover {
+      opacity: 0.88;
+      transform: scale(1.02);
+    }
+
+    /* ── Job Boards ── */
+    .boards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .board-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .board-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59,130,246,0.4);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+    .board-icon { font-size: 2rem; margin-bottom: 14px; }
+    .board-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .board-desc { font-size: 0.82rem; color: var(--text-secondary); margin-bottom: 14px; line-height: 1.5; }
+    .board-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+    .board-tag {
+      padding: 2px 8px;
+      background: rgba(59,130,246,0.1);
+      border-radius: 5px;
+      font-size: 0.72rem;
+      color: var(--accent-cyan);
+    }
+    .board-arrow {
+      position: absolute; top: 20px; right: 20px;
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+    .board-card:hover .board-arrow {
+      color: var(--accent-blue);
+      transform: translate(3px, -3px);
+    }
+
+    /* ── Tips Section ── */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .tip-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      transition: all 0.25s ease;
+    }
+    .tip-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(139,92,246,0.4);
+    }
+    .tip-icon { font-size: 1.8rem; margin-bottom: 14px; }
+    .tip-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem; font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .tip-body { font-size: 0.84rem; color: var(--text-secondary); line-height: 1.65; }
+    .tip-body strong { color: var(--accent-cyan); }
+
+    /* ── Visa Section ── */
+    .visa-card {
+      background: linear-gradient(135deg, rgba(245,158,11,0.08) 0%, rgba(239,68,68,0.06) 100%);
+      border: 1px solid rgba(245,158,11,0.25);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 30px;
+    }
+    .visa-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.3rem; font-weight: 700;
+      color: var(--accent-orange);
+      margin-bottom: 16px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .visa-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+    }
+    .visa-item {
+      background: rgba(245,158,11,0.06);
+      border: 1px solid rgba(245,158,11,0.15);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    .visa-item h4 {
+      font-size: 0.9rem; font-weight: 700;
+      margin-bottom: 8px; color: var(--text-primary);
+    }
+    .visa-item p { font-size: 0.81rem; color: var(--text-secondary); line-height: 1.6; }
+    .visa-item a { color: var(--accent-cyan); text-decoration: none; }
+    .visa-item a:hover { text-decoration: underline; }
+
+    /* ── Search Bar ── */
+    .search-bar-wrapper {
+      position: relative;
+      margin-bottom: 28px;
+    }
+    .search-bar {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 20px 14px 52px;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.25s ease;
+    }
+    .search-bar:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+    }
+    .search-bar::placeholder { color: var(--text-muted); }
+    .search-icon {
+      position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+      font-size: 1.1rem; color: var(--text-muted);
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 50px 0 30px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      border-top: 1px solid var(--border);
+      margin-top: 60px;
+    }
+    footer a { color: var(--accent-cyan); text-decoration: none; }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg-primary); }
+    ::-webkit-scrollbar-thumb { background: rgba(59,130,246,0.3); border-radius: 99px; }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .profile-card { grid-template-columns: 1fr; text-align: center; }
+      .profile-stats { justify-content: center; }
+      .jobs-grid { grid-template-columns: 1fr; }
+      .avatar { margin: 0 auto; }
+    }
+    @media (max-width: 500px) {
+      .tabs { width: 100%; }
+      .tab-btn { flex: 1; text-align: center; padding: 9px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SHARED NAV -->
+<nav class="nav">
+  <div class="nav-inner" style="max-width:1300px">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo">SL</div>
+      <div class="nav-brand-text">
+        <div class="nav-title">Sai Lakshmi · NL Career Hub</div>
+        <div class="nav-subtitle">Power BI Developer · Netherlands</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">🏠 Home</a>
+      <a href="job-finder.html" class="nav-link active active-blue">🔍 Jobs</a>
+      <a href="linkedin-optimizer.html" class="nav-link">💼 LinkedIn</a>
+      <a href="resume.html" class="nav-link">📄 Resume</a>
+      <a href="strategy.html" class="nav-link">🗺️ Strategy</a>
+      <a href="influencer-insights.html" class="nav-link">✨ Insights</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Animated Background -->
+<div class="bg-orbs">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+</div>
+
+<div class="container">
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="nl-flag-strip">
+      <div class="flag-bar red"></div>
+      <div class="flag-bar red"></div>
+      <div class="flag-bar white"></div>
+      <div class="flag-bar white"></div>
+      <div class="flag-bar blue"></div>
+      <div class="flag-bar blue"></div>
+    </div>
+    <div class="header-badge">
+      <div class="badge-dot"></div>
+      Personalized for Sai Lakshmi · Netherlands Job Search
+    </div>
+    <h1 class="hero-title">
+      Find Your Dream Job<br/>
+      <span class="gradient-text">in the Netherlands 🇳🇱</span>
+    </h1>
+    <p class="hero-sub">
+      Curated Power BI, Azure & Data Analytics roles with <strong style="color:#fff">visa sponsorship</strong> — tailored to your 6+ years of expertise.
+    </p>
+    <div class="visa-note">
+      🛂 &nbsp;<strong>Visa Status:</strong> Travelling as dependent — actively seeking employer-sponsored roles (IND Highly Skilled Migrant)
+    </div>
+  </header>
+
+  <!-- ── Profile ── -->
+  <section class="profile-section">
+    <div class="profile-card">
+      <div class="avatar">SL</div>
+      <div class="profile-info">
+        <h2>Sai Lakshmi Elusuri</h2>
+        <div class="profile-role">Power BI Developer &amp; Azure Data Analytics Specialist</div>
+        <div class="profile-stats">
+          <span class="stat-item"><span class="stat-icon">💼</span> 6+ Years Experience</span>
+          <span class="stat-item"><span class="stat-icon">🏢</span> Accenture, Genpact, Conduent</span>
+          <span class="stat-item"><span class="stat-icon">🎓</span> B.Tech – Raghu Engineering College</span>
+          <span class="stat-item"><span class="stat-icon">📍</span> Hyderabad → Netherlands</span>
+          <span class="stat-item"><span class="stat-icon">🔗</span> <a href="https://linkedin.com/in/sailakshmielusuri" target="_blank" style="color:var(--accent-cyan); text-decoration:none;">linkedin.com/in/sailakshmielusuri</a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills ── -->
+  <section class="skills-section">
+    <div class="section-title">
+      🛠 Your Key Skills
+      <div class="title-line"></div>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-tag hot">⭐ Power BI</div>
+      <div class="skill-tag hot">⭐ Azure Data Factory</div>
+      <div class="skill-tag hot">⭐ DAX</div>
+      <div class="skill-tag hot">⭐ ADLS Gen2</div>
+      <div class="skill-tag">Data Modeling</div>
+      <div class="skill-tag">Power Query (M)</div>
+      <div class="skill-tag">SQL Server</div>
+      <div class="skill-tag">Microsoft Fabric</div>
+      <div class="skill-tag">Qlik Sense</div>
+      <div class="skill-tag">Celonis</div>
+      <div class="skill-tag">ETL Pipelines</div>
+      <div class="skill-tag">Medallion Architecture</div>
+      <div class="skill-tag">Row-Level Security</div>
+      <div class="skill-tag">Star Schema</div>
+      <div class="skill-tag">KPI Dashboards</div>
+      <div class="skill-tag">AI Prompt Engineering</div>
+      <div class="skill-tag">Git</div>
+      <div class="skill-tag">Jira / Confluence</div>
+    </div>
+  </section>
+
+  <!-- ── Main Tabs ── -->
+  <section class="tabs-wrapper">
+    <div class="tabs" id="main-tabs">
+      <button class="tab-btn active" onclick="switchTab('jobs')" id="tab-jobs">🔍 Matched Jobs</button>
+      <button class="tab-btn" onclick="switchTab('boards')" id="tab-boards">🌐 Job Boards</button>
+      <button class="tab-btn" onclick="switchTab('visa')" id="tab-visa">🛂 Visa Guide</button>
+      <button class="tab-btn" onclick="switchTab('tips')" id="tab-tips">💡 Job Hunt Tips</button>
+    </div>
+
+    <!-- ── Tab: Jobs ── -->
+    <div class="tab-panel active" id="panel-jobs">
+      <div class="search-bar-wrapper">
+        <span class="search-icon">🔍</span>
+        <input class="search-bar" type="text" id="job-search" placeholder="Filter jobs by title, company or skill…" oninput="filterJobs()" />
+      </div>
+      <div class="jobs-grid" id="jobs-grid">
+        <!-- Populated by JS -->
+      </div>
+      <p id="no-jobs" style="display:none; text-align:center; color:var(--text-muted); padding:40px 0;">No jobs match your search.</p>
+    </div>
+
+    <!-- ── Tab: Job Boards ── -->
+    <div class="tab-panel" id="panel-boards">
+      <div class="boards-grid">
+
+        <a href="https://www.linkedin.com/jobs/search/?keywords=Power+BI+Developer&location=Netherlands&f_WT=1%2C3&f_TPR=r604800" target="_blank" class="board-card">
+          <div class="board-arrow">↗</div>
+          <div class="board-icon">💼</div>
+          <div class="board-name">LinkedIn Jobs</div>
+          <div class="board-desc">Pre-filtered for Power BI roles in Netherlands. Toggle "Visa Sponsorship" filter in the More Filters section.</div>
+          <div class="board-tags"><span class="board-tag">Power BI</span><span class="board-tag">Netherlands</span><span class="board-tag">Hybrid/Remote</span></div>
+        </a>
+
+        <a href="https://www.indeed.nl/jobs?q=Power+BI+Developer&l=Netherlands&fromage=14" target="_blank" class="board-card">
+          <div class="board-arrow">↗</div>
+          <div class="board-icon">🔎</div>
+          <div class="board-name">Indeed.nl</div>
+          <div class="board-desc">Dutch job board with thousands of tech listings. Search "Power BI" or "Azure Data" with visa filter.</div>
+          <div class="board-tags"><span class="board-tag">All Levels</span><span class="board-tag">Visa Sponsors</span></div>
+        </a>
+
+        <a href="https://www.glassdoor.nl/Job/netherlands-power-bi-developer-jobs-SRCH_IL.0,11_IN178_KO12,30.htm" target="_blank" class="board-card">
+          <div class="board-arrow">↗</div>
+          <div class="board-icon">🏢</div>
+          <div class="board-name">Glassdoor NL</div>
+          <div class="board-desc">Research salaries, company culture & reviews before applying. Great for Amsterdam/Rotterdam tech companies.</div>
+          <div class="board-tags"><span class="board-tag">Salary Data</span><span class="board-tag">Reviews</span></div>
+        </a>
+
+        <a href="https://www.werken.nl/vacatures/power-bi" target="_blank" class="board-card">
+          <div class="board-arrow">↗</div>
+          <div class="board-icon">🇳🇱</div>
+          <div class="board-name">Werken.nl</div>
+          <div class="board-desc">Netherlands-specific job platform. Highly active for Dutch employers. Filter by region: Amsterdam, Utrecht, Rotterdam.</div>
+          <div class="board-tags"><span class="board-tag">Dutch Platform</span><span class="board-tag">Local Employers</span></div>
+        </a>
+
+        <a href="https://www.monsterboard.nl/vacatures/zoeken?q=Power+BI&where=Netherlands" target="_blank" class="board-card">
+          <div class="board-arrow">↗</div>
+          <div class="board-icon">👾</div>
+          <div class="board-name">Monsterboard.nl</div>
+          <div class="board-desc">Large Dutch job portal with IT-specific filters. Good for consulting firms that sponsor visas.</div>
+          <div class="board-tags"><span class="board-tag">IT Focus</span><span class="board-tag">Consulting</span></div>
+        </a>
+
+        <a href="https://www.techleap.nl/jobs" target="_blank" class="board-card">
+          <div class="board-arrow">↗</div>
+          <div class="board-icon">🚀</div>
+          <div class="board-name">Techleap.nl</div>
+          <div class="board-desc">Netherlands' startup & scaleup ecosystem. Many tech companies here actively sponsor knowledge migrant visas.</div>
+          <div class="board-tags"><span class="board-tag">Startups</span><span class="board-tag">Scaleups</span><span class="board-tag">Tech</span></div>
+        </a>
+
+        <a href="https://www.amsterdam.nl/en/work-amsterdam/" target="_blank" class="board-card">
+          <div class="board-arrow">↗</div>
+          <div class="board-icon">🌷</div>
+          <div class="board-name">Amsterdam Jobs</div>
+          <div class="board-desc">Official city portal for Amsterdam. Great for municipality and large corporate roles needing Knowledge Migrant status.</div>
+          <div class="board-tags"><span class="board-tag">Amsterdam</span><span class="board-tag">Corporate</span></div>
+        </a>
+
+        <a href="https://careers.microsoft.com/global/en/search?q=power+bi&lc=Netherlands" target="_blank" class="board-card">
+          <div class="board-arrow">↗</div>
+          <div class="board-icon">⊞</div>
+          <div class="board-name">Microsoft Careers NL</div>
+          <div class="board-desc">Microsoft Amsterdam/Netherlands openings. Your Power BI + Microsoft Fabric expertise is a strong match.</div>
+          <div class="board-tags"><span class="board-tag">Microsoft</span><span class="board-tag">FAANG</span><span class="board-tag">Visa</span></div>
+        </a>
+
+        <a href="https://www.accenture.com/nl-en/careers" target="_blank" class="board-card">
+          <div class="board-arrow">↗</div>
+          <div class="board-icon">♦</div>
+          <div class="board-name">Accenture Netherlands</div>
+          <div class="board-desc">You have existing Accenture experience — internal transfers to the Netherlands office may be possible! Ask your HR.</div>
+          <div class="board-tags"><span class="board-tag">Internal Transfer</span><span class="board-tag">Consulting</span></div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- ── Tab: Visa Guide ── -->
+    <div class="tab-panel" id="panel-visa">
+      <div class="visa-card">
+        <div class="visa-title">🛂 Understanding Your Visa Situation</div>
+        <p style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:20px; line-height:1.7;">
+          As a dependent spouse/partner in the Netherlands, you are likely on a <strong style="color:#fff">MVV (Machtiging tot Voorlopig Verblijf)</strong> or a residence permit as a dependent of your husband.
+          The good news: <strong style="color:#10b981">you may already have the right to work</strong> without additional employer sponsorship in many cases.
+          However, if you need your own independent sponsorship, here's what you need to know:
+        </p>
+        <div class="visa-grid">
+          <div class="visa-item">
+            <h4>✅ Check Your Current Permit</h4>
+            <p>Many dependent permits in NL already allow free labour market access (marked "Arbeid vrij toegestaan"). Check your IND residence permit sticker — if it says this, <strong>you can work freely</strong> without employer sponsorship!</p>
+          </div>
+          <div class="visa-item">
+            <h4>🎯 Highly Skilled Migrant (HSM)</h4>
+            <p>If you need independent sponsorship, target IND-recognised sponsors. Your role as a Power BI Developer likely qualifies. Salary threshold (2025): <strong>€5,008/month</strong> (30-year+). Check: <a href="https://ind.nl" target="_blank">ind.nl</a></p>
+          </div>
+          <div class="visa-item">
+            <h4>🏢 IND-Recognised Employers</h4>
+            <p>Only employers with IND recognition can sponsor. Large firms like Accenture, KPMG, Deloitte, Microsoft, Capgemini, IBM, TCS all qualify. Look for "kennismigrant" in job postings.</p>
+          </div>
+          <div class="visa-item">
+            <h4>💰 30% Tax Ruling</h4>
+            <p>As a skilled migrant, you may qualify for the Dutch 30% tax ruling — meaning 30% of your salary is tax-free. This makes NL salaries even more attractive. Discuss with employer.</p>
+          </div>
+          <div class="visa-item">
+            <h4>⏱ Processing Time</h4>
+            <p>HSM visa processing: typically <strong>2–4 weeks</strong> once employer submits application. Your employer does the heavy lifting via IND's online portal.</p>
+          </div>
+          <div class="visa-item">
+            <h4>📋 Key Search Terms</h4>
+            <p>Use these in your job search: <strong>"visa sponsorship"</strong>, <strong>"kennismigrant"</strong>, <strong>"IND recognised sponsor"</strong>, <strong>"relocation support"</strong>, <strong>"expat friendly"</strong>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="tip-card" style="background: rgba(16,185,129,0.06); border-color: rgba(16,185,129,0.25);">
+        <div class="tip-icon">🔗</div>
+        <div class="tip-title" style="color:var(--accent-green);">Official Resources</div>
+        <div class="tip-body">
+          <strong>IND (Dutch Immigration):</strong> <a href="https://ind.nl/en/work/Pages/Highly-skilled-migrant.aspx" target="_blank" style="color:var(--accent-cyan);">ind.nl/en/work/highly-skilled-migrant</a><br/>
+          <strong>Recognised Sponsors List:</strong> <a href="https://ind.nl/en/public-register-recognised-sponsors" target="_blank" style="color:var(--accent-cyan);">ind.nl/en/public-register-recognised-sponsors</a><br/>
+          <strong>BSN & DigiD:</strong> Register at your local Gemeente after arrival. Required to start working.<br/>
+          <strong>Belastingdienst (Tax):</strong> <a href="https://belastingdienst.nl" target="_blank" style="color:var(--accent-cyan);">belastingdienst.nl</a> — 30% ruling info here.
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Tab: Tips ── -->
+    <div class="tab-panel" id="panel-tips">
+      <div class="tips-grid">
+        <div class="tip-card">
+          <div class="tip-icon">🎯</div>
+          <div class="tip-title">Tailor Your CV for Dutch Market</div>
+          <div class="tip-body">Dutch employers prefer <strong>concise, results-focused CVs</strong> (max 2 pages). Lead with your 40% dashboard performance improvement achievement. Quantify everything. Avoid photos on CVs unless asked.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🔍</div>
+          <div class="tip-title">LinkedIn is King in Netherlands</div>
+          <div class="tip-body">Over 80% of Dutch tech hiring happens via LinkedIn. Set your profile to <strong>"Open to Work"</strong>, set location to Netherlands, and enable the "Actively looking" flag. Recruiters will reach out within days.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">💬</div>
+          <div class="tip-title">Target Big 4 & Consulting Firms</div>
+          <div class="tip-body"><strong>KPMG, Deloitte, PwC, EY, Capgemini, Cognizant, TCS, Infosys</strong> all have large Dutch offices and regularly sponsor. Your Accenture background makes you an <strong>ideal candidate</strong> for these firms.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">📧</div>
+          <div class="tip-title">Reach Out to Dutch Recruiters</div>
+          <div class="tip-body">Search LinkedIn for <strong>"Power BI recruiter Netherlands"</strong>. Key agencies: <strong>Yacht, Huxley, Michael Page, Robert Half, Brunel</strong>. Send a direct message with your skills and visa situation upfront.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🌍</div>
+          <div class="tip-title">Highlight English Fluency</div>
+          <div class="tip-body">Netherlands has the <strong>#1 English proficiency</strong> in non-native speaking world. Most tech companies work 100% in English. You do NOT need Dutch language skills for most tech roles. Emphasize this!</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">💰</div>
+          <div class="tip-title">Know Your Worth</div>
+          <div class="tip-body">Power BI Developers with 6+ years earn <strong>€55,000 – €85,000/year</strong> in Netherlands. Senior Azure roles go up to <strong>€95,000+</strong>. Don't undersell! With 30% ruling, your effective take-home is significantly higher.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">🤝</div>
+          <div class="tip-title">Network at Dutch Tech Events</div>
+          <div class="tip-body">Join <strong>Power BI User Group Netherlands</strong> (meetup.com), <strong>Data Science NL</strong>, and <strong>Azure User Group</strong>. Amsterdam & Rotterdam host regular tech meetups — great for meeting hiring managers.</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">📱</div>
+          <div class="tip-title">Use Microsoft Fabric as Differentiator</div>
+          <div class="tip-body">Microsoft Fabric is a <strong>hot, emerging skill</strong> in 2024–2025. Your Lakehouse fundamentals experience puts you ahead of 90% of candidates. Highlight this prominently in your applications!</div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-icon">✉️</div>
+          <div class="tip-title">Write a Compelling Cover Letter</div>
+          <div class="tip-body">Dutch employers appreciate transparency. Mention your <strong>dependent visa status</strong> and that you may need sponsorship. Many companies are experienced with this process and won't be deterred by an honest, upfront candidate.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-brand">Sai Lakshmi Elusuri</div>
+  <div class="footer-links">
+    <a href="mailto:sailakshmi.elusuri@gmail.com">✉️ sailakshmi.elusuri@gmail.com</a>
+    <a href="https://linkedin.com/in/sailakshmielusuri" target="_blank">🔗 LinkedIn Profile</a>
+    <a href="resume.html">📄 Download Resume</a>
+  </div>
+  <p>Power BI Developer &amp; Azure Analytics Specialist · Netherlands 🇳🇱</p>
+  <p style="margin-top:8px">Job listings are curated &amp; updated manually. Always verify visa sponsorship directly with employer.</p>
+</footer>
+
+<script>
+  // ── Job Data ──
+  const JOBS = [
+    {
+      title: "Power BI Developer",
+      company: "KPMG Netherlands",
+      location: "Amsterdam",
+      type: "Hybrid",
+      salary: "€65,000 – €80,000/yr",
+      visa: true,
+      tags: ["Power BI", "DAX", "SQL", "Data Modeling"],
+      badge: "Senior",
+      logo: "K",
+      color: "#0075BE",
+      url: "https://www.linkedin.com/jobs/search/?keywords=Power+BI+Developer+KPMG&location=Netherlands",
+      desc: "Build enterprise dashboards and semantic models for financial services. KPMG is an IND-recognized sponsor with relocation support."
+    },
+    {
+      title: "Senior BI Developer – Power BI",
+      company: "Deloitte Netherlands",
+      location: "Rotterdam",
+      type: "Hybrid",
+      salary: "€70,000 – €90,000/yr",
+      visa: true,
+      tags: ["Power BI", "Azure", "DAX", "ETL"],
+      badge: "Senior",
+      logo: "D",
+      color: "#86BC25",
+      url: "https://www2.deloitte.com/nl/en/pages/careers/solutions/jobs.html",
+      desc: "Lead BI transformation projects for global clients. Deloitte sponsors Highly Skilled Migrant visas and offers 30% ruling support."
+    },
+    {
+      title: "Azure Data Engineer / BI Specialist",
+      company: "Capgemini Netherlands",
+      location: "Utrecht",
+      type: "Hybrid",
+      salary: "€60,000 – €78,000/yr",
+      visa: true,
+      tags: ["ADF", "ADLS Gen2", "Power BI", "Medallion"],
+      badge: "Mid-Senior",
+      logo: "C",
+      color: "#0070AD",
+      url: "https://www.capgemini.com/nl-en/careers/",
+      desc: "Work on Azure Data Platform projects with global clients. Capgemini actively hires Indian talent and facilitates visa sponsorship."
+    },
+    {
+      title: "Power BI & Data Analytics Consultant",
+      company: "PwC Netherlands",
+      location: "Amsterdam",
+      type: "Hybrid",
+      salary: "€65,000 – €82,000/yr",
+      visa: true,
+      tags: ["Power BI", "Data Strategy", "KPI", "SQL"],
+      badge: "Senior",
+      logo: "P",
+      color: "#E0301E",
+      url: "https://www.pwc.nl/nl/carriere.html",
+      desc: "Drive analytics transformation across PwC client engagements. PwC NL is a recognised sponsor with structured onboarding for expats."
+    },
+    {
+      title: "BI Developer – Microsoft Fabric & Power BI",
+      company: "Ordina (Sopra Steria)",
+      location: "Nieuwegein / Remote",
+      type: "Remote",
+      salary: "€58,000 – €75,000/yr",
+      visa: true,
+      tags: ["Microsoft Fabric", "Power BI", "Lakehouse", "DAX"],
+      badge: "Mid-Senior",
+      logo: "O",
+      color: "#6D2C91",
+      url: "https://www.ordina.nl/vacatures",
+      desc: "Cutting-edge Microsoft Fabric projects. Your Lakehouse fundamentals are a direct match. Remote-first culture, great for newcomers."
+    },
+    {
+      title: "Data Analyst – Power BI & Azure",
+      company: "ING Bank Netherlands",
+      location: "Amsterdam",
+      type: "Hybrid",
+      salary: "€62,000 – €78,000/yr",
+      visa: true,
+      tags: ["Power BI", "Azure", "SQL", "Financial Analytics"],
+      badge: "Mid-Senior",
+      logo: "I",
+      color: "#FF6200",
+      url: "https://www.ing.jobs/netherlands",
+      desc: "Join ING's Data & Analytics tribe. Work on financial risk dashboards and KPI reporting. ING sponsors internationally at scale."
+    },
+    {
+      title: "Power BI Developer – Sustainability Analytics",
+      company: "Shell Netherlands",
+      location: "The Hague",
+      type: "Hybrid",
+      salary: "€68,000 – €88,000/yr",
+      visa: true,
+      tags: ["Power BI", "Sustainability", "ADF", "RLS"],
+      badge: "Senior",
+      logo: "S",
+      color: "#FBCE07",
+      url: "https://www.shell.com/careers",
+      desc: "Your Accenture sustainability analytics experience is a perfect match! Shell NL sponsors HSM visas and offers global mobility."
+    },
+    {
+      title: "Business Intelligence Developer",
+      company: "Philips Netherlands",
+      location: "Amsterdam / Eindhoven",
+      type: "Hybrid",
+      salary: "€63,000 – €80,000/yr",
+      visa: true,
+      tags: ["Power BI", "Data Modeling", "Star Schema", "KPI"],
+      badge: "Senior",
+      logo: "Ph",
+      color: "#0B5ED7",
+      url: "https://www.careers.philips.com",
+      desc: "Build healthcare analytics solutions at one of Europe's top tech companies. Philips is an IND recognized sponsor with expat packages."
+    },
+    {
+      title: "Data & Analytics Specialist – Process Mining",
+      company: "ABN AMRO Bank",
+      location: "Amsterdam",
+      type: "Hybrid",
+      salary: "€60,000 – €76,000/yr",
+      visa: true,
+      tags: ["Power BI", "Celonis", "Process Mining", "SQL"],
+      badge: "Mid-Senior",
+      logo: "A",
+      color: "#009900",
+      url: "https://www.werkenbijabnamro.nl",
+      desc: "Your rare combination of Celonis + Power BI skills makes you a standout candidate. Process mining + BI integration focus."
+    },
+    {
+      title: "Senior Power BI Developer – Cloud Analytics",
+      company: "Cognizant Netherlands",
+      location: "Amsterdam",
+      type: "Hybrid",
+      salary: "€58,000 – €74,000/yr",
+      visa: true,
+      tags: ["Power BI", "Azure", "DAX", "ETL"],
+      badge: "Senior",
+      logo: "Cg",
+      color: "#1D68D9",
+      url: "https://careers.cognizant.com",
+      desc: "Cognizant Netherlands extensively hires Indian talent and has a well-established visa sponsorship process. Strong internal culture."
+    },
+    {
+      title: "Azure Data Analyst & BI Developer",
+      company: "Heineken International",
+      location: "Amsterdam",
+      type: "Hybrid",
+      salary: "€62,000 – €78,000/yr",
+      visa: true,
+      tags: ["Azure", "Power BI", "ADLS", "Analytics"],
+      badge: "Mid-Senior",
+      logo: "H",
+      color: "#007A33",
+      url: "https://careers.heineken.com",
+      desc: "Build global analytics solutions for the world's most international brewer. Amsterdam HQ with international teams."
+    },
+    {
+      title: "Power Platform & BI Consultant",
+      company: "Atos Netherlands",
+      location: "Utrecht / Remote",
+      type: "Remote",
+      salary: "€55,000 – €72,000/yr",
+      visa: true,
+      tags: ["Power BI", "Power Platform", "Azure", "Governance"],
+      badge: "Mid-Senior",
+      logo: "At",
+      color: "#3F51B5",
+      url: "https://atos.net/en/careers",
+      desc: "Consulting-driven role across multiple client sectors. Atos actively recruits internationally and supports visa processes."
+    },
+  ];
+
+  // ── Render Jobs ──
+  function renderJobs(data) {
+    const grid = document.getElementById('jobs-grid');
+    const noJobs = document.getElementById('no-jobs');
+    if (!data.length) {
+      grid.innerHTML = '';
+      noJobs.style.display = 'block';
+      return;
+    }
+    noJobs.style.display = 'none';
+    grid.innerHTML = data.map(j => `
+      <a href="${j.url}" target="_blank" class="job-card">
+        <div class="job-card-header">
+          <div class="company-logo" style="background: linear-gradient(135deg, ${j.color}cc, ${j.color}88)">${j.logo}</div>
+          <div class="job-badges">
+            ${j.visa ? '<span class="badge badge-visa">✅ Visa Sponsor</span>' : ''}
+            ${j.type === 'Remote' ? '<span class="badge badge-remote">🌐 Remote</span>' : j.type === 'Hybrid' ? '<span class="badge badge-hybrid">🏠 Hybrid</span>' : '<span class="badge badge-onsite">🏢 On-site</span>'}
+            <span class="badge badge-senior">${j.badge}</span>
+          </div>
+        </div>
+        <div class="job-title">${j.title}</div>
+        <div class="job-company">${j.company}</div>
+        <div class="job-meta">
+          <span class="job-meta-item">📍 ${j.location}</span>
+          <span class="job-meta-item">💰 ${j.salary}</span>
+        </div>
+        <div class="job-tags">${j.tags.map(t => `<span class="job-tag">${t}</span>`).join('')}</div>
+        <p style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.55;">${j.desc}</p>
+        <div class="apply-btn">Apply / View Job &nbsp;↗</div>
+      </a>
+    `).join('');
+  }
+
+  function filterJobs() {
+    const q = document.getElementById('job-search').value.toLowerCase();
+    const filtered = JOBS.filter(j =>
+      j.title.toLowerCase().includes(q) ||
+      j.company.toLowerCase().includes(q) ||
+      j.tags.some(t => t.toLowerCase().includes(q)) ||
+      j.location.toLowerCase().includes(q)
+    );
+    renderJobs(filtered);
+  }
+
+  // ── Tab Switching ──
+  function switchTab(name) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('tab-' + name).classList.add('active');
+    document.getElementById('panel-' + name).classList.add('active');
+  }
+
+  // ── Init ──
+  renderJobs(JOBS);
+</script>
+</body>
+</html>

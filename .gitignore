@@ -1,0 +1,24 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Node / npm
+node_modules/
+.npm/
+
+# IDE / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Preview images generated during inspection
+preview_*.png
+test_*.html

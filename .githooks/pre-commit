@@ -1,0 +1,15 @@
+#!/bin/bash
+# Git pre-commit hook
+# Validates site integrity, zero-date constraints, and GDPR compliance before commit
+
+echo "🔍 Running pre-commit validation tests..."
+python3 tests/run_all_tests.py
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ Commit rejected! Fix the test failures before committing."
+  exit 1
+fi
+
+echo "✅ All tests passed. Proceeding with commit."
+exit 0

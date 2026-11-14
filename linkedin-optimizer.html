@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LinkedIn Optimizer · Sai Lakshmi · Netherlands BI Jobs</title>
+  <meta name="description" content="Step-by-step LinkedIn profile optimization guide for Sai Lakshmi Elusuri targeting Power BI & Data Analyst roles in the Netherlands." />
+  <link rel="stylesheet" href="shared.css" />
+  <style>
+    :root {
+      --bg: #030B18;
+      --bg2: #071428;
+      --bg3: #0C1E3A;
+      --card: #0f2040;
+      --card2: #132850;
+      --blue: #3b82f6;
+      --cyan: #06b6d4;
+      --purple: #8b5cf6;
+      --green: #10b981;
+      --orange: #f59e0b;
+      --red: #ef4444;
+      --pink: #ec4899;
+      --txt: #e8f1ff;
+      --txt2: #8ba5c8;
+      --txt3: #4a6280;
+      --border: rgba(59,130,246,0.16);
+      --glass: rgba(12,30,58,0.65);
+      --gradient: linear-gradient(135deg, #3b82f6, #8b5cf6 50%, #06b6d4);
+      --gradient-o: linear-gradient(135deg, #f59e0b, #ef4444);
+      --gradient-g: linear-gradient(135deg, #10b981, #06b6d4);
+      --li-blue: #0077B5;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden}
+
+    /* BG */
+    .bg-mesh{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+    .orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.1;animation:float 20s ease-in-out infinite alternate}
+    .o1{width:700px;height:700px;background:#3b82f6;top:-250px;left:-250px;animation-delay:0s}
+    .o2{width:550px;height:550px;background:#8b5cf6;bottom:-200px;right:-200px;animation-delay:-7s}
+    .o3{width:400px;height:400px;background:#06b6d4;top:45%;left:55%;animation-delay:-14s}
+    @keyframes float{from{transform:translate(0,0) scale(1)} to{transform:translate(50px,35px) scale(1.1)}}
+
+    /* Layout */
+    .wrap{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+    /* Header */
+    header{padding:64px 0 40px;text-align:center}
+    .li-badge{
+      display:inline-flex;align-items:center;gap:10px;
+      background:rgba(0,119,181,0.15);
+      border:1px solid rgba(0,119,181,0.4);
+      border-radius:99px;padding:7px 20px;font-size:.82rem;
+      color:#4fc3f7;margin-bottom:26px;
+    }
+    .li-dot{width:8px;height:8px;border-radius:50%;background:#0077B5;animation:pulse 2s ease infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.5)}}
+    h1.hero{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:800;line-height:1.1;margin-bottom:14px}
+    .grad{background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{font-size:1rem;color:var(--txt2);max-width:560px;margin:0 auto 20px;line-height:1.65}
+    .score-bar{
+      display:inline-flex;align-items:center;gap:14px;
+      background:var(--glass);border:1px solid var(--border);
+      border-radius:16px;padding:14px 28px;
+      backdrop-filter:blur(16px);margin-top:10px;
+    }
+    .score-label{font-size:.82rem;color:var(--txt2)}
+    .score-track{width:180px;height:8px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden}
+    .score-fill{height:100%;border-radius:99px;background:var(--gradient-o);animation:growBar 1.2s ease 0.5s both;transform-origin:left}
+    @keyframes growBar{from{width:0} to{width:38%}}
+    .score-val{font-size:1.1rem;font-weight:800;color:var(--orange)}
+
+    /* Progress Steps */
+    .steps-nav{
+      display:flex;justify-content:center;flex-wrap:wrap;gap:8px;
+      padding:32px 0 12px;
+    }
+    .step-pill{
+      display:flex;align-items:center;gap:8px;
+      padding:8px 18px;border-radius:99px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      font-size:.8rem;color:var(--txt2);
+      cursor:pointer;transition:all .25s ease;
+      text-decoration:none;
+    }
+    .step-pill:hover{border-color:var(--blue);color:var(--txt);background:rgba(59,130,246,.08)}
+    .step-pill .num{
+      width:20px;height:20px;border-radius:50%;
+      background:var(--gradient);
+      display:flex;align-items:center;justify-content:center;
+      font-size:.72rem;font-weight:700;color:#fff;flex-shrink:0;
+    }
+
+    /* Section */
+    section{padding:50px 0 10px}
+    .sec-head{
+      display:flex;align-items:center;gap:14px;
+      margin-bottom:30px;
+    }
+    .sec-num{
+      width:40px;height:40px;border-radius:12px;
+      background:var(--gradient);
+      display:flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:1rem;flex-shrink:0;
+    }
+    .sec-title{font-family:'Space Grotesk',sans-serif;font-size:1.35rem;font-weight:700}
+    .sec-sub{font-size:.85rem;color:var(--txt2);margin-top:2px}
+    .sec-line{flex:1;height:1px;background:var(--border)}
+
+    /* Before/After Card */
+    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+    @media(max-width:680px){.ba-grid{grid-template-columns:1fr}}
+    .ba-card{
+      border-radius:18px;padding:22px;
+      border:1px solid;
+      position:relative;overflow:hidden;
+    }
+    .ba-before{border-color:rgba(239,68,68,.25);background:rgba(239,68,68,.05)}
+    .ba-after{border-color:rgba(16,185,129,.25);background:rgba(16,185,129,.05)}
+    .ba-label{
+      display:inline-block;padding:3px 12px;border-radius:99px;
+      font-size:.72rem;font-weight:700;letter-spacing:.04em;margin-bottom:12px;
+    }
+    .ba-before .ba-label{background:rgba(239,68,68,.15);color:#f87171}
+    .ba-after .ba-label{background:rgba(16,185,129,.15);color:#34d399}
+    .ba-content{font-size:.88rem;line-height:1.65;color:var(--txt2)}
+    .ba-after .ba-content{color:var(--txt)}
+    .ba-content strong{color:var(--cyan)}
+    .ba-content .hi{
+      display:inline-block;
+      background:rgba(245,158,11,.15);color:var(--orange);
+      padding:1px 6px;border-radius:5px;font-weight:600;
+    }
+
+    /* Copy Block */
+    .copy-block{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:16px;padding:20px 22px;
+      position:relative;margin-bottom:20px;
+    }
+    .copy-block pre{
+      font-family:'Fira Code',monospace;font-size:.82rem;
+      color:var(--txt);white-space:pre-wrap;word-break:break-word;
+      line-height:1.7;
+    }
+    .copy-block .kw{color:#60a5fa}
+    .copy-block .str{color:#a5f3fc}
+    .copy-block .num{color:#fbbf24}
+    .copy-block .cmt{color:var(--txt3)}
+    .copy-btn{
+      position:absolute;top:14px;right:14px;
+      padding:5px 14px;border-radius:8px;
+      background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);
+      color:var(--blue);font-size:.75rem;font-weight:600;
+      cursor:pointer;transition:all .2s ease;font-family:'Inter',sans-serif;
+    }
+    .copy-btn:hover{background:rgba(59,130,246,.25)}
+    .copy-btn.copied{background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.3);color:var(--green)}
+
+    /* Info Card */
+    .info-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:18px;padding:24px;margin-bottom:16px;
+    }
+    .info-card h3{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+    .info-card p,.info-card li{font-size:.85rem;color:var(--txt2);line-height:1.7}
+    .info-card ul{padding-left:18px}
+    .info-card li{margin-bottom:4px}
+    .info-card strong{color:var(--txt)}
+    .info-card a{color:var(--cyan);text-decoration:none}
+    .info-card a:hover{text-decoration:underline}
+
+    /* Skill Tags */
+    .tag-cloud{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+    .tag{
+      padding:5px 14px;border-radius:8px;font-size:.8rem;font-weight:500;
+      border:1px solid;transition:all .2s ease;cursor:default;
+    }
+    .tag-must{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.3);color:#34d399}
+    .tag-high{background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.3);color:#93c5fd}
+    .tag-nice{background:rgba(139,92,246,.1);border-color:rgba(139,92,246,.3);color:#c4b5fd}
+    .tag:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.4)}
+
+    /* Checklist */
+    .checklist{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+    .check-item{
+      display:flex;align-items:flex-start;gap:12px;
+      background:var(--card);border:1px solid var(--border);
+      border-radius:12px;padding:14px 18px;
+      transition:all .2s ease;
+    }
+    .check-item:hover{border-color:rgba(59,130,246,.35);background:var(--card2)}
+    .check-box{
+      width:22px;height:22px;border-radius:6px;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;
+      font-size:.9rem;cursor:pointer;
+      border:1.5px solid var(--border);
+      transition:all .2s ease;margin-top:1px;
+      user-select:none;
+    }
+    .check-box.done{background:var(--green);border-color:var(--green)}
+    .check-text{font-size:.85rem;line-height:1.6;color:var(--txt2)}
+    .check-text strong{color:var(--txt)}
+    .check-text .tag-inline{
+      display:inline-block;background:rgba(245,158,11,.12);
+      color:var(--orange);padding:1px 7px;border-radius:5px;
+      font-size:.78rem;font-weight:600;
+    }
+
+    /* Score cards */
+    .metrics-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:14px}
+    .metric-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:16px;padding:20px;text-align:center;
+      transition:all .25s ease;
+    }
+    .metric-card:hover{transform:translateY(-3px);border-color:rgba(59,130,246,.35)}
+    .metric-val{font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:800;margin-bottom:6px}
+    .metric-label{font-size:.78rem;color:var(--txt2);line-height:1.4}
+
+    /* Alert banner */
+    .alert{
+      border-radius:14px;padding:18px 22px;margin-bottom:16px;
+      display:flex;gap:12px;align-items:flex-start;
+      font-size:.85rem;line-height:1.65;
+    }
+    .alert-icon{font-size:1.3rem;flex-shrink:0;margin-top:1px}
+    .alert-content strong{display:block;font-size:.9rem;margin-bottom:4px}
+    .alert-green{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);color:#6ee7b7}
+    .alert-green strong{color:#34d399}
+    .alert-orange{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);color:#fcd34d}
+    .alert-orange strong{color:var(--orange)}
+    .alert-blue{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.25);color:#93c5fd}
+    .alert-blue strong{color:#60a5fa}
+
+    /* Footer */
+    footer{text-align:center;padding:50px 0 30px;border-top:1px solid var(--border);margin-top:70px;color:var(--txt3);font-size:.82rem}
+    footer a{color:var(--cyan);text-decoration:none}
+
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:rgba(59,130,246,.3);border-radius:99px}
+  </style>
+</head>
+<body>
+<div class="bg-mesh"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo">SL</div>
+      <div class="nav-brand-text">
+        <div class="nav-title">Sai Lakshmi · NL Career Hub</div>
+        <div class="nav-subtitle">Power BI Developer · Netherlands</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">🏠 Home</a>
+      <a href="job-finder.html" class="nav-link">🔍 Jobs</a>
+      <a href="linkedin-optimizer.html" class="nav-link active active-purple">💼 LinkedIn</a>
+      <a href="resume.html" class="nav-link">📄 Resume</a>
+      <a href="strategy.html" class="nav-link">🗺️ Strategy</a>
+      <a href="influencer-insights.html" class="nav-link">✨ Insights</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="li-badge"><div class="li-dot"></div> LinkedIn Profile Optimizer · Netherlands Market 🇳🇱</div>
+    <h1 class="hero">Make Your LinkedIn<br/><span class="grad">Irresistible to Dutch Recruiters</span></h1>
+    <p class="hero-sub">A complete, ready-to-copy optimization guide for <strong style="color:#fff">Sai Lakshmi Elusuri</strong> — targeting Power BI &amp; Data Analyst roles with visa sponsorship in the Netherlands.</p>
+    <div class="score-bar">
+      <span class="score-label">Current profile strength (est.):</span>
+      <div class="score-track"><div class="score-fill"></div></div>
+      <span class="score-val">~38%</span>
+      <span class="score-label">→ Target: <strong style="color:var(--green)">90%+</strong></span>
+    </div>
+  </header>
+
+
+  <!-- QUICK NAV -->
+  <div class="steps-nav">
+    <a href="#step1" class="step-pill"><div class="num">1</div>Profile Photo & Banner</a>
+    <a href="#step2" class="step-pill"><div class="num">2</div>Headline</a>
+    <a href="#step3" class="step-pill"><div class="num">3</div>About / Summary</a>
+    <a href="#step4" class="step-pill"><div class="num">4</div>Experience</a>
+    <a href="#step5" class="step-pill"><div class="num">5</div>Skills & Endorsements</a>
+    <a href="#step6" class="step-pill"><div class="num">6</div>Open to Work</a>
+    <a href="#step7" class="step-pill"><div class="num">7</div>Keywords & SEO</a>
+    <a href="#step8" class="step-pill"><div class="num">8</div>Checklist</a>
+  </div>
+
+  <!-- METRICS -->
+  <section style="padding:30px 0 0">
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <div class="metric-val" style="background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">6+</div>
+        <div class="metric-label">Years of experience — highlight this prominently</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" style="color:var(--green)">40%</div>
+        <div class="metric-label">Dashboard performance improvement — your #1 achievement</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" style="color:var(--orange)">€68K</div>
+        <div class="metric-label">Avg NL salary target for your level (€55K–€85K range)</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val" style="color:var(--cyan)">2–4wk</div>
+        <div class="metric-label">IND Kennismigrant visa processing once employer applies</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 1: PHOTO & BANNER -->
+  <section id="step1">
+    <div class="sec-head">
+      <div class="sec-num">1</div>
+      <div><div class="sec-title">Profile Photo &amp; Background Banner</div><div class="sec-sub">First impressions take 50ms — make them count</div></div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="info-card">
+      <h3>📸 Profile Photo — Non-Negotiable</h3>
+      <ul>
+        <li>Use a <strong>professional headshot</strong> — well-lit, neutral or office background, business casual clothing</li>
+        <li>Face should fill <strong>60–70%</strong> of the frame, direct eye contact, genuine smile</li>
+        <li>Dutch employers are professional but approachable — avoid overly formal passport-style shots</li>
+        <li>Profiles with photos get <strong>21× more views</strong> and <strong>36× more messages</strong></li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h3>🖼️ Background Banner — Your Silent Branding</h3>
+      <p>Create a custom banner (1584 × 396px) that conveys your expertise. Recommended content:</p>
+      <ul style="margin-top:8px">
+        <li>"Power BI Developer | Azure Data Analytics | 6+ Years Experience"</li>
+        <li>Include subtle visual elements: data charts, Dutch flag colors, tech icons</li>
+        <li>Use <a href="https://canva.com" target="_blank">Canva.com</a> (free) — search "LinkedIn Banner Data Analyst" template</li>
+        <li>Add your key tools as icons: Power BI, Azure, SQL logos</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STEP 2: HEADLINE -->
+  <section id="step2">
+    <div class="sec-head">
+      <div class="sec-num">2</div>
+      <div><div class="sec-title">Headline — Your Most Critical 220 Characters</div><div class="sec-sub">This appears in every search result & notification</div></div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="ba-grid">
+      <div class="ba-card ba-before">
+        <div class="ba-label">❌ CURRENT (Generic)</div>
+        <div class="ba-content">"Power BI Developer &amp; Azure Data Analytics Specialist"<br/><br/>
+          <em>Problems: No quantification, no keywords, no location signal, no visa mention, won't appear in recruiter Boolean searches for NL.</em>
+        </div>
+      </div>
+      <div class="ba-card ba-after">
+        <div class="ba-label">✅ OPTIMIZED (Netherlands-Ready)</div>
+        <div class="ba-content">
+          <strong class="hi">Power BI Developer</strong> | <strong class="hi">Azure Data Analyst</strong> | <strong>DAX · SQL · ADF · Medallion</strong> | <strong>6 Yrs</strong> @ Accenture | 🇳🇱 Relocating to <strong>Netherlands</strong> | <strong>Kennismigrant / Visa Sponsorship</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-blue">
+      <div class="alert-icon">💡</div>
+      <div class="alert-content">
+        <strong>Why this headline works</strong>
+        Recruiters in NL use Boolean searches like: <code style="background:rgba(0,0,0,.3);padding:2px 8px;border-radius:5px;font-family:'Fira Code',monospace">("Power BI" AND "DAX") AND "Netherlands"</code>. Every keyword in your headline is searchable. The 🇳🇱 flag + "Kennismigrant" signals immediately to Dutch HR that you've done your homework.
+      </div>
+    </div>
+
+    <div class="copy-block">
+      <button class="copy-btn" onclick="copyText(this, 'headline-text')">Copy</button>
+      <pre id="headline-text">Power BI Developer | Azure Data Analyst | DAX · SQL · ADF · Medallion Architecture | 6 Yrs @ Accenture | 🇳🇱 Relocating to Netherlands | Kennismigrant / Visa Sponsorship</pre>
+    </div>
+
+    <div class="info-card">
+      <h3>🔁 Alternative Headlines (pick what feels authentic)</h3>
+      <ul>
+        <li><strong>Option A (Senior-focused):</strong> Senior Power BI Developer | Azure ADF · ADLS Gen2 · DAX | 6+ Yrs Enterprise BI | Open to Netherlands (Visa Sponsorship Welcome)</li>
+        <li><strong>Option B (Tech-stack-focused):</strong> Power BI &amp; Microsoft Fabric Developer | DAX · SQL · Celonis · Qlik | Seeking Netherlands Roles | Kennismigrant Ready</li>
+        <li><strong>Option C (Impact-focused):</strong> Power BI Developer | Reduced Dashboard Load Time 40% | Azure · DAX · RLS | Relocating to 🇳🇱 Netherlands | Visa Sponsorship</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STEP 3: ABOUT -->
+  <section id="step3">
+    <div class="sec-head">
+      <div class="sec-num">3</div>
+      <div><div class="sec-title">About / Summary Section</div><div class="sec-sub">2,600 characters — write it like a story Dutch employers want to read</div></div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="alert alert-orange">
+      <div class="alert-icon">⚠️</div>
+      <div class="alert-content">
+        <strong>Common Mistake</strong>
+        Most Indian candidates copy their CV bullet points into the About section. Dutch recruiters find this robotic. Write in <strong>first person, narrative style</strong> — like you're talking to the hiring manager. Be confident, specific, and human.
+      </div>
+    </div>
+
+    <div class="copy-block">
+      <button class="copy-btn" onclick="copyText(this, 'about-text')">Copy Full About Section</button>
+      <pre id="about-text">I turn raw, messy data into clear, actionable business intelligence — and I've been doing it across enterprise environments for 6+ years.
+
+At Accenture, I built and optimised Power BI dashboards that directly improved decision-making speed for sustainability, operational, and financial reporting teams. My proudest win? Cutting dashboard load times by 40% through advanced data modelling and optimised DAX — something that sounds technical, but for stakeholders meant getting to insights in seconds instead of minutes.
+
+🔧 What I do best:
+• Power BI (Desktop & Service) — Dashboard design, KPI reporting, semantic modelling
+• DAX — Complex measures, calculated columns, performance optimisation
+• Azure Data Platform — ADF pipelines, ADLS Gen2, Medallion Architecture (Bronze-Silver-Gold)
+• Microsoft Fabric — Lakehouse fundamentals
+• Data Governance — Row-Level Security, access control, data quality
+• Legacy Migrations — Qlik Sense & Celonis → Power BI (full stack conversion)
+
+🌍 Why the Netherlands?
+I'm relocating to the Netherlands and am actively seeking Power BI / Data Analyst roles. I am applying for a Highly Skilled Migrant (Kennismigrant) visa and require employer sponsorship. I have experience working with global, cross-functional teams in English and am ready to contribute from day one.
+
+🤝 I thrive in environments where data drives decisions — whether that's a startup building its first analytics stack or an enterprise modernising legacy BI systems. I bring the technical depth of an engineer and the communication style of a business partner.
+
+📩 Open to opportunities in Amsterdam, Rotterdam, Utrecht, The Hague and beyond.
+Let's connect: sailakshmi.elusuri@gmail.com</pre>
+    </div>
+  </section>
+
+  <!-- STEP 4: EXPERIENCE -->
+  <section id="step4">
+    <div class="sec-head">
+      <div class="sec-num">4</div>
+      <div><div class="sec-title">Experience Section — Rewrite with Impact Numbers</div><div class="sec-sub">Dutch ATS systems and recruiters scan for measurable results</div></div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="alert alert-green">
+      <div class="alert-icon">✅</div>
+      <div class="alert-content">
+        <strong>The Dutch Employer Mindset</strong>
+        Dutch companies are <strong>direct, results-driven, and efficiency-focused</strong>. They want to see: "What did YOU achieve?" not "What were you responsible for?". Every bullet should follow: <em>Action Verb → What You Did → Measurable Result</em>.
+      </div>
+    </div>
+
+    <!-- Accenture -->
+    <div class="info-card" style="border-color:rgba(106,58,237,.3)">
+      <h3>🏢 Accenture | Power BI Developer | Feb 2022 – Present</h3>
+    </div>
+    <div class="copy-block">
+      <button class="copy-btn" onclick="copyText(this, 'accenture-text')">Copy</button>
+      <pre id="accenture-text">Delivered enterprise-grade analytics solutions for sustainability, operational, and financial reporting across global business units at Accenture.
+
+Key Contributions:
+▸ Reduced Power BI dashboard load time by 40% via advanced DAX optimisation, star schema redesign, and SQL query tuning — directly accelerating stakeholder decision-making speed
+▸ Architected end-to-end Azure data pipelines (ADF → ADLS Gen2 → Power BI) using Medallion Architecture (Bronze–Silver–Gold), improving data reliability and long-term maintainability
+▸ Led migration of legacy Qlik Sense dashboards to Power BI, redesigning data models and converting business logic to optimised DAX measures — resulting in a unified, enterprise-standard reporting framework
+▸ Integrated Celonis process mining outputs into Power BI, enabling cross-platform visibility of operational KPIs for leadership reporting
+▸ Implemented Row-Level Security (RLS) across reporting environments, strengthening data governance and regulatory compliance
+▸ Collaborated across Jira, Confluence, and ServiceNow with cross-functional stakeholders, delivering high-priority analytics under tight timelines
+
+Tools: Power BI Desktop & Service · DAX · Power Query (M) · Azure Data Factory · ADLS Gen2 · Microsoft Fabric · SQL Server · Qlik Sense · Celonis · Git</pre>
+    </div>
+
+    <!-- Genpact -->
+    <div class="info-card" style="margin-top:16px;border-color:rgba(59,130,246,.3)">
+      <h3>🏢 Genpact | Data Risk Analyst | Apr 2021 – Jan 2022</h3>
+    </div>
+    <div class="copy-block">
+      <button class="copy-btn" onclick="copyText(this, 'genpact-text')">Copy</button>
+      <pre id="genpact-text">Built Power BI dashboards and SQL-driven datasets for mortgage insurance risk analytics, enabling faster and more accurate risk reporting for financial stakeholders.
+
+▸ Developed interactive Power BI dashboards for mortgage risk tracking, consolidating data from multiple sources into a single decision-support view
+▸ Built and optimised SQL datasets (MS SQL Server) to power accurate, real-time financial analytics
+▸ Delivered data-driven insights through visual storytelling, enabling data-backed risk management decisions
+
+Tools: Power BI · SQL Server · MS SQL · Data Visualisation</pre>
+    </div>
+
+    <!-- Conduent -->
+    <div class="info-card" style="margin-top:16px;border-color:rgba(6,182,212,.3)">
+      <h3>🏢 Conduent | Data Analyst | Jun 2018 – Apr 2021</h3>
+    </div>
+    <div class="copy-block">
+      <button class="copy-btn" onclick="copyText(this, 'conduent-text')">Copy</button>
+      <pre id="conduent-text">Automated financial and operational reporting processes using Power BI, delivering significant time savings and accuracy improvements for business stakeholders.
+
+▸ Automated financial and operational reporting workflows using Power BI dashboards, reducing manual effort and improving reporting consistency
+▸ Developed SQL queries for efficient data extraction and transformation, enabling fast, reliable analytics delivery
+▸ Provided actionable analytical insights that directly supported operational business decisions
+
+Tools: Power BI · SQL · Excel · Reporting Automation</pre>
+    </div>
+  </section>
+
+  <!-- STEP 5: SKILLS -->
+  <section id="step5">
+    <div class="sec-head">
+      <div class="sec-num">5</div>
+      <div><div class="sec-title">Skills Section — Keyword Priority Order</div><div class="sec-sub">LinkedIn shows top 3 skills prominently — choose them strategically</div></div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="info-card">
+      <h3>⭐ Must-Have Skills (LinkedIn's Top 3 — most visible)</h3>
+      <div class="tag-cloud">
+        <span class="tag tag-must">Power BI</span>
+        <span class="tag tag-must">DAX (Data Analysis Expressions)</span>
+        <span class="tag tag-must">Microsoft Azure</span>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>🔵 High Priority (Add all of these)</h3>
+      <div class="tag-cloud">
+        <span class="tag tag-high">Azure Data Factory</span>
+        <span class="tag tag-high">Azure Data Lake Storage</span>
+        <span class="tag tag-high">Data Modeling</span>
+        <span class="tag tag-high">SQL</span>
+        <span class="tag tag-high">Power Query</span>
+        <span class="tag tag-high">Microsoft Fabric</span>
+        <span class="tag tag-high">ETL</span>
+        <span class="tag tag-high">Business Intelligence (BI)</span>
+        <span class="tag tag-high">Data Visualization</span>
+        <span class="tag tag-high">KPI Development</span>
+        <span class="tag tag-high">Row-Level Security (RLS)</span>
+        <span class="tag tag-high">Stakeholder Management</span>
+      </div>
+    </div>
+    <div class="info-card">
+      <h3>💜 Differentiators (Set you apart in Netherlands market)</h3>
+      <div class="tag-cloud">
+        <span class="tag tag-nice">Celonis</span>
+        <span class="tag tag-nice">Qlik Sense</span>
+        <span class="tag tag-nice">Process Mining</span>
+        <span class="tag tag-nice">Medallion Architecture</span>
+        <span class="tag tag-nice">Microsoft Fabric Lakehouse</span>
+        <span class="tag tag-nice">Data Governance</span>
+        <span class="tag tag-nice">AI Prompt Engineering</span>
+        <span class="tag tag-nice">Agentic AI</span>
+        <span class="tag tag-nice">Data Storytelling</span>
+        <span class="tag tag-nice">Star Schema</span>
+      </div>
+    </div>
+    <div class="alert alert-blue">
+      <div class="alert-icon">🎯</div>
+      <div class="alert-content">
+        <strong>Pro Tip: Get Endorsements</strong>
+        Ask 5–10 colleagues from Accenture to endorse your top skills on LinkedIn. Skills with 10+ endorsements rank higher in recruiter search results. Send a message: "Hey [name], could you endorse my Power BI and Azure skills on LinkedIn? Happy to return the favour!"
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 6: OPEN TO WORK -->
+  <section id="step6">
+    <div class="sec-head">
+      <div class="sec-num">6</div>
+      <div><div class="sec-title">"Open to Work" Settings — Get Found by Dutch Recruiters</div><div class="sec-sub">The most underused LinkedIn feature for international job seekers</div></div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="info-card">
+      <h3>⚙️ Exact Settings to Configure</h3>
+      <ul>
+        <li><strong>Job Titles to Add:</strong> Power BI Developer, BI Developer, Data Analyst, Business Intelligence Analyst, Azure Data Analyst, Senior BI Developer, Data Visualization Analyst</li>
+        <li><strong>Locations:</strong> Amsterdam, Rotterdam, Utrecht, The Hague, Eindhoven, Netherlands (Remote)</li>
+        <li><strong>Job Types:</strong> Full-time, Contract</li>
+        <li><strong>Visa / Work Authorization:</strong> Select <strong>"I will need a visa sponsorship"</strong> or equivalent — this filters you into recruiter pools specifically looking for visa candidates</li>
+        <li><strong>Visibility:</strong> Set to <strong>"All LinkedIn members"</strong> (not just recruiters) — this adds the green "Open to Work" banner visible to everyone</li>
+        <li><strong>Start Date:</strong> Immediately (or within 1 month)</li>
+      </ul>
+    </div>
+
+    <div class="alert alert-green">
+      <div class="alert-icon">🟢</div>
+      <div class="alert-content">
+        <strong>The Green "Open to Work" Banner Works</strong>
+        Profiles with this banner receive <strong>40% more InMail messages</strong> from recruiters. Dutch tech recruiters at firms like Yacht, Huxley, and Michael Page actively filter by this flag. Don't hide it.
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 7: KEYWORDS & SEO -->
+  <section id="step7">
+    <div class="sec-head">
+      <div class="sec-num">7</div>
+      <div><div class="sec-title">LinkedIn SEO — Keywords Dutch Recruiters Actually Search</div><div class="sec-sub">Based on Netherlands job market analysis 2025</div></div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="ba-grid" style="grid-template-columns:1fr 1fr">
+      <div class="info-card" style="margin-bottom:0">
+        <h3>🔍 Top Recruiter Search Terms (NL)</h3>
+        <ul>
+          <li>"Power BI Developer Netherlands"</li>
+          <li>"BI Developer Azure"</li>
+          <li>"DAX SQL Power BI"</li>
+          <li>"Data Analyst Amsterdam"</li>
+          <li>"Azure Data Factory engineer"</li>
+          <li>"Kennismigrant Power BI"</li>
+          <li>"Microsoft Fabric developer"</li>
+          <li>"Business Intelligence consultant NL"</li>
+        </ul>
+      </div>
+      <div class="info-card" style="margin-bottom:0">
+        <h3>📍 Where to Place These Keywords</h3>
+        <ul>
+          <li>✅ <strong>Headline</strong> (highest weight)</li>
+          <li>✅ <strong>About section</strong> (first 3 lines are visible without clicking "more")</li>
+          <li>✅ <strong>Experience descriptions</strong> (every job entry)</li>
+          <li>✅ <strong>Skills section</strong></li>
+          <li>✅ <strong>Certifications</strong> (add any Microsoft certs)</li>
+          <li>✅ <strong>Projects section</strong> (describe each project)</li>
+          <li>❌ <strong>Do NOT</strong> keyword-stuff — 1–2 per sentence max</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info-card" style="margin-top:16px">
+      <h3>🏆 Recommended Certifications to Add (or Pursue)</h3>
+      <ul>
+        <li><strong>Microsoft Certified: Power BI Data Analyst Associate (PL-300)</strong> — Most searched cert in NL for your role. High ROI. Free study materials at <a href="https://learn.microsoft.com" target="_blank">learn.microsoft.com</a></li>
+        <li><strong>Microsoft Certified: Azure Data Engineer Associate (DP-203)</strong> — Strongly aligns with your ADF/ADLS experience</li>
+        <li><strong>Microsoft Certified: Fabric Analytics Engineer Associate (DP-600)</strong> — Brand new, very hot in NL market 2025</li>
+      </ul>
+    </div>
+
+    <div class="info-card" style="margin-top:16px">
+      <h3>📌 Add a Featured Section — Your Visual Portfolio</h3>
+      <p>The <strong>Featured section</strong> appears below your About — it's prime real estate. Add:</p>
+      <ul style="margin-top:8px">
+        <li>A PDF of your resume (renamed "Sai Lakshmi Elusuri – Power BI Developer NL.pdf")</li>
+        <li>Screenshots of Power BI dashboards you've built (anonymise client data)</li>
+        <li>Link to a GitHub repo with sample Power BI .pbix or DAX projects</li>
+        <li>A short Loom video (2 min) walking through a dashboard you built</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- STEP 8: CHECKLIST -->
+  <section id="step8" style="padding-bottom:40px">
+    <div class="sec-head">
+      <div class="sec-num">8</div>
+      <div><div class="sec-title">Your Action Checklist — Do This Today</div><div class="sec-sub">Click each item when done — track your progress</div></div>
+      <div class="sec-line"></div>
+    </div>
+
+    <div class="checklist" id="checklist">
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Update Headline</strong> — Copy the optimized headline from Step 2 above. Paste directly into LinkedIn → Edit Profile → Headline. <span class="tag-inline">High Impact</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Rewrite About Section</strong> — Copy the About text from Step 3. Goes in Edit Profile → About. Include your relocation intent and Kennismigrant mention. <span class="tag-inline">High Impact</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Update Accenture Experience</strong> — Replace current description with the quantified version from Step 4. Focus on the <strong>40% load time reduction</strong> as your first bullet. <span class="tag-inline">High Impact</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Set Location to Netherlands</strong> — Edit Profile → Location. Set to "Netherlands". This dramatically increases recruiter discovery. <span class="tag-inline">Quick Win</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Enable Open to Work</strong> — Follow Step 6 settings exactly. Include Amsterdam, Rotterdam, Utrecht, The Hague. Enable the public green banner. <span class="tag-inline">Quick Win</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Add All 22 Skills</strong> — Go to Add Section → Skills. Pin Power BI, DAX, and Microsoft Azure as your Top 3. Add all tags listed in Step 5. <span class="tag-inline">Medium Impact</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Upload Professional Photo</strong> — Ensure your photo is high resolution, professional background, friendly expression. Profiles with photos get 21× more views. <span class="tag-inline">Medium Impact</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Create &amp; Upload LinkedIn Banner</strong> — Use <a href="https://canva.com" target="_blank" style="color:var(--cyan)">Canva.com</a> free template. Size: 1584×396px. Add your title + NL focus + tech stack icons. <span class="tag-inline">Medium Impact</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Add Custom Profile URL</strong> — Edit Profile → Edit public profile URL. Set to: <strong>linkedin.com/in/sailakshmi-powerbi-nl</strong> or similar. Cleaner for applications. <span class="tag-inline">Quick Win</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Add Projects Section</strong> — Add "Enterprise Sustainability Analytics Platform" and "Operational Process Intelligence Dashboard" with full tech stack descriptions. <span class="tag-inline">Medium Impact</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Request 5 Endorsements</strong> — Message Accenture colleagues to endorse Power BI, DAX, and Azure Data Factory. Aim for 10+ endorsements on each top skill. <span class="tag-inline">Medium Impact</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Request 2–3 Recommendations</strong> — Ask your Accenture manager or senior colleagues for a written recommendation focused on your Power BI and Azure delivery impact. <span class="tag-inline">High Impact</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Add Featured Section</strong> — Add your resume PDF and/or a link to a portfolio/GitHub. Dashboard screenshots (anonymised) are very powerful. <span class="tag-inline">Medium Impact</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Follow Key NL Companies</strong> — Follow: KPMG NL, Deloitte NL, Capgemini NL, ING, ABN AMRO, Philips, Shell NL, Microsoft NL. Engage with their posts — recruiters notice. <span class="tag-inline">Networking</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Connect with Dutch Recruiters</strong> — Search "Power BI recruiter Netherlands" → connect with 10–15 recruiters from Yacht, Huxley, Michael Page, Robert Half. Send a short intro note. <span class="tag-inline">Networking</span></div>
+      </div>
+
+      <div class="check-item" onclick="toggleCheck(this)">
+        <div class="check-box">☐</div>
+        <div class="check-text"><strong>Start PL-300 Certification</strong> — Microsoft Power BI Data Analyst Associate. Free at <a href="https://learn.microsoft.com/en-us/certifications/power-bi-data-analyst-associate/" target="_blank" style="color:var(--cyan)">learn.microsoft.com</a>. Adds significant credibility. <span class="tag-inline">Long Term</span></div>
+      </div>
+
+    </div>
+
+    <div style="margin-top:24px;text-align:center">
+      <div id="progress-display" style="font-size:.85rem;color:var(--txt2);margin-bottom:8px">Completed: <span id="done-count" style="color:var(--green);font-weight:700">0</span> / 16 items</div>
+      <div style="width:100%;height:8px;background:rgba(255,255,255,.06);border-radius:99px;overflow:hidden">
+        <div id="progress-bar" style="height:100%;background:var(--gradient-g);border-radius:99px;width:0%;transition:width .4s ease"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECRUITER MESSAGE TEMPLATE -->
+  <section style="padding:10px 0 50px">
+    <div class="sec-head">
+      <div class="sec-num" style="background:var(--gradient-g)">✉</div>
+      <div><div class="sec-title">Bonus: Ready-to-Send Recruiter Outreach Message</div><div class="sec-sub">Send this to Dutch recruiters on LinkedIn — personalise the [name] only</div></div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="copy-block">
+      <button class="copy-btn" onclick="copyText(this, 'recruiter-msg')">Copy Message</button>
+      <pre id="recruiter-msg">Hi [Recruiter Name],
+
+I came across your profile while exploring opportunities in the Netherlands and wanted to reach out directly.
+
+I'm a Power BI Developer with 6+ years of enterprise analytics experience at Accenture, Genpact, and Conduent — specialising in Power BI dashboards, DAX, Azure Data Factory, and Medallion Architecture.
+
+I'm currently relocating to the Netherlands and require Kennismigrant (Highly Skilled Migrant) visa sponsorship. I have a strong track record of delivering complex BI solutions under tight timelines — most recently, reducing dashboard load time by 40% at Accenture through advanced data modelling and query optimisation.
+
+I'd love to learn about any Power BI Developer or Data Analyst roles at companies you work with that offer visa sponsorship. Happy to share my CV or connect for a quick call.
+
+Thank you for your time!
+
+Best regards,
+Sai Lakshmi Elusuri
+📧 sailakshmi.elusuri@gmail.com
+🔗 linkedin.com/in/sailakshmielusuri-data-analyst</pre>
+    </div>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">Sai Lakshmi Elusuri</div>
+  <div class="footer-links">
+    <a href="mailto:sailakshmi.elusuri@gmail.com">✉️ sailakshmi.elusuri@gmail.com</a>
+    <a href="https://linkedin.com/in/sailakshmielusuri-data-analyst" target="_blank">🔗 LinkedIn Profile</a>
+    <a href="resume.html">📄 Download Resume</a>
+  </div>
+  <p>LinkedIn keyword data based on Netherlands market analysis 2025.</p>
+</footer>
+
+<script>
+  function copyText(btn, id) {
+    const text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = '✅ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  function toggleCheck(item) {
+    const box = item.querySelector('.check-box');
+    const isDone = box.classList.toggle('done');
+    box.textContent = isDone ? '✓' : '☐';
+    item.style.opacity = isDone ? '.6' : '1';
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const total = document.querySelectorAll('.check-item').length;
+    const done = document.querySelectorAll('.check-box.done').length;
+    document.getElementById('done-count').textContent = done;
+    document.getElementById('progress-bar').style.width = (done / total * 100) + '%';
+  }
+</script>
+</body>
+</html>

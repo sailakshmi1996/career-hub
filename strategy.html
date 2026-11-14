@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>4-Month Netherlands Job Strategy | Sai Lakshmi</title>
+  <meta name="description" content="Complete 4-month action plan to land a visa-sponsored Power BI / Data Analyst job in Netherlands from India."/>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    :root {
+      --bg: #030c18; --bg2: #061425; --bg3: #0b1e38;
+      --card: #0e2040; --card2: #122548;
+      --blue: #3b82f6; --cyan: #06b6d4; --purple: #8b5cf6;
+      --green: #10b981; --orange: #f59e0b; --red: #ef4444; --pink: #ec4899;
+      --txt: #e8f2ff; --txt2: #7ea3cc; --txt3: #3d5a7a;
+      --border: rgba(59,130,246,0.16);
+      --g1: linear-gradient(135deg,#3b82f6,#8b5cf6 50%,#06b6d4);
+      --g2: linear-gradient(135deg,#10b981,#06b6d4);
+      --g3: linear-gradient(135deg,#f59e0b,#ef4444);
+      --g4: linear-gradient(135deg,#8b5cf6,#ec4899);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);min-height:100vh;overflow-x:hidden}
+
+    /* BG */
+    .bg-fx{position:fixed;inset:0;pointer-events:none;z-index:0}
+    .orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.09;animation:drift 22s ease-in-out infinite alternate}
+    .o1{width:800px;height:800px;background:#3b82f6;top:-300px;left:-300px}
+    .o2{width:600px;height:600px;background:#8b5cf6;bottom:-200px;right:-200px;animation-delay:-8s}
+    .o3{width:450px;height:450px;background:#06b6d4;top:50%;left:60%;animation-delay:-15s}
+    @keyframes drift{from{transform:translate(0,0)} to{transform:translate(60px,40px)}}
+
+    .wrap{max-width:1120px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
+
+    /* Header */
+    header{padding:70px 0 40px;text-align:center}
+    .top-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);
+      border-radius:99px;padding:6px 18px;font-size:.8rem;
+      color:#f87171;margin-bottom:24px;
+    }
+    .urgency-dot{width:7px;height:7px;border-radius:50%;background:#ef4444;animation:pulse 1.5s ease infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.6)}}
+    h1.hero{font-family:'Space Grotesk',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.1;margin-bottom:14px}
+    .g{background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{font-size:1.02rem;color:var(--txt2);max-width:580px;margin:0 auto 28px;line-height:1.65}
+
+    /* Countdown cards */
+    .countdown-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:50px}
+    @media(max-width:700px){.countdown-row{grid-template-columns:repeat(2,1fr)}}
+    .cd-card{
+      background:var(--card);border:1px solid var(--border);border-radius:18px;
+      padding:20px;text-align:center;
+      transition:all .25s ease;
+      position:relative;overflow:hidden;
+    }
+    .cd-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+    }
+    .cd-card:nth-child(1)::before{background:var(--g3)}
+    .cd-card:nth-child(2)::before{background:var(--g1)}
+    .cd-card:nth-child(3)::before{background:var(--g2)}
+    .cd-card:nth-child(4)::before{background:var(--g4)}
+    .cd-card:hover{transform:translateY(-4px);border-color:rgba(59,130,246,.35)}
+    .cd-num{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:800;margin-bottom:4px}
+    .cd-label{font-size:.78rem;color:var(--txt2);line-height:1.4}
+
+    /* Timeline */
+    .timeline{position:relative;margin-top:10px}
+    .timeline::before{
+      content:'';position:absolute;left:38px;top:0;bottom:0;width:2px;
+      background:linear-gradient(to bottom,var(--blue),var(--purple),var(--cyan),var(--green));
+      opacity:.35;
+    }
+
+    .month-block{margin-bottom:50px;position:relative}
+    .month-header{
+      display:flex;align-items:center;gap:16px;
+      margin-bottom:24px;
+      padding-left:0;
+    }
+    .month-circle{
+      width:76px;height:76px;border-radius:50%;flex-shrink:0;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      border:2px solid;z-index:1;
+      font-family:'Space Grotesk',sans-serif;
+    }
+    .month-circle .m-num{font-size:1.6rem;font-weight:800;line-height:1}
+    .month-circle .m-label{font-size:.55rem;text-transform:uppercase;letter-spacing:.08em;margin-top:1px}
+
+    .m1 .month-circle{background:rgba(239,68,68,.1);border-color:rgba(239,68,68,.4);color:#f87171}
+    .m2 .month-circle{background:rgba(245,158,11,.1);border-color:rgba(245,158,11,.4);color:#fbbf24}
+    .m3 .month-circle{background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.4);color:#93c5fd}
+    .m4 .month-circle{background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.4);color:#34d399}
+
+    .month-meta{flex:1}
+    .month-title{font-family:'Space Grotesk',sans-serif;font-size:1.25rem;font-weight:700;margin-bottom:3px}
+    .month-subtitle{font-size:.85rem;color:var(--txt2)}
+    .month-goal{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:4px 12px;border-radius:99px;font-size:.75rem;font-weight:600;
+      margin-top:6px;
+    }
+    .m1 .month-goal{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.3)}
+    .m2 .month-goal{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.3)}
+    .m3 .month-goal{background:rgba(59,130,246,.12);color:#93c5fd;border:1px solid rgba(59,130,246,.3)}
+    .m4 .month-goal{background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.3)}
+
+    .tasks-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;padding-left:92px}
+    @media(max-width:650px){.tasks-grid{padding-left:0;margin-top:12px}}
+
+    .task-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:16px;padding:18px;
+      transition:all .25s ease;
+    }
+    .task-card:hover{background:var(--card2);border-color:rgba(59,130,246,.3);transform:translateY(-2px)}
+    .task-icon{font-size:1.5rem;margin-bottom:10px}
+    .task-title{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;margin-bottom:7px}
+    .task-body{font-size:.82rem;color:var(--txt2);line-height:1.65}
+    .task-body strong{color:var(--txt)}
+    .task-body a{color:var(--cyan);text-decoration:none}
+    .task-body a:hover{text-decoration:underline}
+    .task-tag{
+      display:inline-block;margin-top:8px;
+      padding:2px 10px;border-radius:99px;font-size:.72rem;font-weight:600;
+    }
+    .tag-daily{background:rgba(239,68,68,.12);color:#f87171;border:1px solid rgba(239,68,68,.25)}
+    .tag-weekly{background:rgba(245,158,11,.12);color:#fbbf24;border:1px solid rgba(245,158,11,.25)}
+    .tag-once{background:rgba(16,185,129,.12);color:#34d399;border:1px solid rgba(16,185,129,.25)}
+    .tag-asap{background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.25)}
+
+    /* Company targets */
+    .companies-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:16px}
+    .co-card{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:12px;padding:14px;
+      display:flex;align-items:flex-start;gap:10px;
+      transition:all .2s ease;
+      text-decoration:none;color:inherit;
+    }
+    .co-card:hover{border-color:rgba(59,130,246,.35);background:var(--card2);transform:translateY(-2px)}
+    .co-logo{
+      width:36px;height:36px;border-radius:9px;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;
+      font-size:.85rem;font-weight:800;color:#fff;
+    }
+    .co-info{}
+    .co-name{font-size:.85rem;font-weight:700;margin-bottom:2px}
+    .co-detail{font-size:.74rem;color:var(--txt2);line-height:1.4}
+    .co-visa{font-size:.7rem;color:var(--green);margin-top:2px}
+
+    /* Salary table */
+    .sal-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.83rem}
+    .sal-table th{
+      background:rgba(59,130,246,.12);color:var(--cyan);
+      padding:10px 14px;text-align:left;font-weight:600;font-size:.78rem;
+      border-bottom:1px solid var(--border);
+    }
+    .sal-table td{
+      padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.05);
+      color:var(--txt2);
+    }
+    .sal-table tr:hover td{background:rgba(255,255,255,.025);color:var(--txt)}
+    .sal-table td:first-child{color:var(--txt);font-weight:600}
+    .hi{color:var(--green);font-weight:600}
+
+    /* Alert */
+    .alert{
+      border-radius:14px;padding:16px 20px;margin:20px 0;
+      display:flex;gap:12px;font-size:.85rem;line-height:1.65;
+    }
+    .alert-icon{font-size:1.3rem;flex-shrink:0}
+    .alert strong{display:block;margin-bottom:3px}
+    .alert-green{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.25);color:#6ee7b7}
+    .alert-green strong{color:#34d399}
+    .alert-orange{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);color:#fcd34d}
+    .alert-orange strong{color:var(--orange)}
+    .alert-red{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);color:#fca5a5}
+    .alert-red strong{color:#f87171}
+    .alert-blue{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.25);color:#93c5fd}
+    .alert-blue strong{color:#60a5fa}
+
+    /* Recruiter message */
+    .copy-block{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:14px;padding:18px 20px;position:relative;margin:14px 0;
+    }
+    .copy-block pre{font-family:'Fira Code',monospace;font-size:.79rem;color:var(--txt);white-space:pre-wrap;line-height:1.65}
+    .copy-btn{
+      position:absolute;top:12px;right:12px;
+      padding:4px 12px;border-radius:7px;
+      background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.3);
+      color:var(--blue);font-size:.72rem;font-weight:600;cursor:pointer;
+      transition:all .2s ease;font-family:'Inter',sans-serif;
+    }
+    .copy-btn:hover{background:rgba(59,130,246,.25)}
+    .copy-btn.done{background:rgba(16,185,129,.15);border-color:rgba(16,185,129,.3);color:var(--green)}
+
+    /* Progress tracker */
+    .progress-section{
+      background:var(--card);border:1px solid var(--border);
+      border-radius:20px;padding:30px;margin:40px 0;
+    }
+    .progress-title{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;margin-bottom:20px;text-align:center}
+    .week-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px}
+    .week-cell{
+      background:rgba(255,255,255,.04);border:1px solid var(--border);
+      border-radius:10px;padding:12px;text-align:center;cursor:pointer;
+      transition:all .2s ease;user-select:none;
+    }
+    .week-cell:hover{border-color:rgba(59,130,246,.4);background:rgba(59,130,246,.07)}
+    .week-cell.wk-done{
+      background:rgba(16,185,129,.1);border-color:rgba(16,185,129,.4);
+    }
+    .week-num{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:700;margin-bottom:3px}
+    .week-label{font-size:.7rem;color:var(--txt2);line-height:1.3}
+    .week-cell.wk-done .week-num{color:var(--green)}
+    .week-cell.wk-done .week-label{color:#34d399}
+
+    /* Section wrapper */
+    .sec-wrap{padding:40px 0 10px}
+    .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+    .sec-icon{font-size:1.5rem}
+    .sec-title{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700}
+    .sec-line{flex:1;height:1px;background:var(--border)}
+
+    /* Visa flowchart */
+    .flow{display:flex;flex-direction:column;gap:0}
+    .flow-step{
+      display:flex;align-items:flex-start;gap:16px;
+      padding:16px 0;border-bottom:1px solid var(--border);
+    }
+    .flow-step:last-child{border-bottom:none}
+    .flow-circle{
+      width:40px;height:40px;border-radius:50%;flex-shrink:0;
+      background:var(--g1);
+      display:flex;align-items:center;justify-content:center;
+      font-size:.9rem;font-weight:800;color:#fff;
+      box-shadow:0 0 16px rgba(59,130,246,.3);
+    }
+    .flow-content h4{font-size:.9rem;font-weight:700;margin-bottom:4px}
+    .flow-content p{font-size:.82rem;color:var(--txt2);line-height:1.6}
+    .flow-content .timeline-est{
+      display:inline-block;margin-top:6px;
+      padding:2px 10px;border-radius:99px;
+      background:rgba(59,130,246,.12);color:#93c5fd;
+      border:1px solid rgba(59,130,246,.25);font-size:.72rem;font-weight:600;
+    }
+
+    footer{text-align:center;padding:50px 0 30px;border-top:1px solid var(--border);margin-top:60px;color:var(--txt3);font-size:.82rem}
+    footer a{color:var(--cyan);text-decoration:none}
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:rgba(59,130,246,.3);border-radius:99px}
+  </style>
+</head>
+<body>
+<div class="bg-fx"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+
+<!-- SHARED NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo">SL</div>
+      <div class="nav-brand-text">
+        <div class="nav-title">Sai Lakshmi · NL Career Hub</div>
+        <div class="nav-subtitle">Power BI Developer · Netherlands</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">🏠 Home</a>
+      <a href="job-finder.html" class="nav-link">🔍 Jobs</a>
+      <a href="linkedin-optimizer.html" class="nav-link">💼 LinkedIn</a>
+      <a href="resume.html" class="nav-link">📄 Resume</a>
+      <a href="strategy.html" class="nav-link active active-orange">🗺️ Strategy</a>
+      <a href="influencer-insights.html" class="nav-link">✨ Insights</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="top-badge"><div class="urgency-dot"></div> ⏰ 4-Month Countdown · Travel Deadline Active</div>
+    <h1 class="hero">Your <span class="g">4-Month Roadmap</span><br/>to a Netherlands Job Offer</h1>
+    <p class="hero-sub">A week-by-week action plan to land a <strong style="color:#fff">visa-sponsored Power BI / Data Analyst role</strong> in the Netherlands — built specifically for Sai Lakshmi's profile and timeline.</p>
+  </header>
+
+  <!-- COUNTDOWN CARDS -->
+  <div class="countdown-row">
+    <div class="cd-card">
+      <div class="cd-num" style="background:var(--g3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">~16</div>
+      <div class="cd-label">Weeks to travel<br/>Every week matters</div>
+    </div>
+    <div class="cd-card">
+      <div class="cd-num" style="background:var(--g1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">50+</div>
+      <div class="cd-label">IND-recognised sponsors<br/>to target in NL</div>
+    </div>
+    <div class="cd-card">
+      <div class="cd-num" style="background:var(--g2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">2–4wk</div>
+      <div class="cd-label">IND visa processing<br/>after employer applies</div>
+    </div>
+    <div class="cd-card">
+      <div class="cd-num" style="background:var(--g4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">€68K</div>
+      <div class="cd-label">Average target salary<br/>for your level in NL</div>
+    </div>
+  </div>
+
+  <div class="alert alert-red">
+    <div class="alert-icon">🚨</div>
+    <div>
+      <strong>Critical Timeline Insight</strong>
+      Visa-sponsored hiring takes 6–10 weeks from application to offer (interview rounds + IND processing). You must start applying by <strong>Week 1–2</strong> to receive an offer and complete onboarding before your travel date. Do NOT wait.
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <div class="sec-icon">📅</div>
+      <div class="sec-title">Month-by-Month Action Plan</div>
+      <div class="sec-line"></div>
+    </div>
+  </div>
+
+  <div class="timeline">
+
+    <!-- MONTH 1 -->
+    <div class="month-block m1">
+      <div class="month-header">
+        <div class="month-circle">
+          <div class="m-num">M1</div>
+          <div class="m-label">Weeks 1–4</div>
+        </div>
+        <div class="month-meta">
+          <div class="month-title">🔥 Foundation &amp; Blitz Launch</div>
+          <div class="month-subtitle">Build everything. Apply everywhere. Create visibility.</div>
+          <div class="month-goal">🎯 Goal: Profile live + 30 applications sent + 5 recruiter calls booked</div>
+        </div>
+      </div>
+      <div class="tasks-grid">
+        <div class="task-card">
+          <div class="task-icon">📄</div>
+          <div class="task-title">Finalize Resume &amp; Cover Letter</div>
+          <div class="task-body">Use the <strong>Netherlands-optimized resume</strong> from the resume page. Create a base cover letter template mentioning Kennismigrant visa, 6+ years, and the 40% performance achievement. Customise for each application.</div>
+          <div class="task-tag tag-asap">Do This Week 1</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">💼</div>
+          <div class="task-title">LinkedIn Full Optimization</div>
+          <div class="task-body">Complete all 16 items in the LinkedIn Optimizer checklist. Set location to Netherlands. Enable "Open to Work" public banner. Pin top 3 skills: <strong>Power BI, DAX, Microsoft Azure</strong>.</div>
+          <div class="task-tag tag-asap">Do This Week 1</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🎯</div>
+          <div class="task-title">Apply to 5 Jobs Per Day</div>
+          <div class="task-body">Set a daily target of <strong>5 applications</strong>. Use LinkedIn Easy Apply + direct company portals. Target companies with IND recognition: Accenture NL, Capgemini, KPMG, Deloitte, Cognizant, TCS NL, Infosys NL.</div>
+          <div class="task-tag tag-daily">Daily Habit</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🤝</div>
+          <div class="task-title">Connect 20 Dutch Recruiters</div>
+          <div class="task-body">Search "Power BI recruiter Netherlands" on LinkedIn. Send personalised connection requests to 20 recruiters from: <strong>Yacht, Huxley, Michael Page, Robert Half, Brunel, Adecco NL</strong>. Use the message template below.</div>
+          <div class="task-tag tag-asap">Week 1–2</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🏢</div>
+          <div class="task-title">Internal Accenture Transfer</div>
+          <div class="task-body">Contact your <strong>Accenture HR / Talent Mobility team immediately</strong>. Accenture has a large Amsterdam office. Internal transfers within Accenture are the fastest path — no external interview process, same sponsor.</div>
+          <div class="task-tag tag-asap">Contact HR Week 1</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">📧</div>
+          <div class="task-title">Set Up Job Alerts</div>
+          <div class="task-body">Set email alerts on: LinkedIn, Indeed.nl, Glassdoor.nl, Werken.nl. Keywords: <strong>"Power BI Developer Netherlands"</strong>, <strong>"BI Analyst Amsterdam"</strong>, <strong>"Azure Data Netherlands"</strong>. Check daily.</div>
+          <div class="task-tag tag-once">One-Time Setup</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MONTH 2 -->
+    <div class="month-block m2">
+      <div class="month-header">
+        <div class="month-circle">
+          <div class="m-num">M2</div>
+          <div class="m-label">Weeks 5–8</div>
+        </div>
+        <div class="month-meta">
+          <div class="month-title">⚡ Network Hard &amp; Interview Prep</div>
+          <div class="month-subtitle">Convert connections into conversations. Prepare to ace Dutch interviews.</div>
+          <div class="month-goal">🎯 Goal: 3–5 interviews in progress + 2 offers being negotiated</div>
+        </div>
+      </div>
+      <div class="tasks-grid">
+        <div class="task-card">
+          <div class="task-icon">🎤</div>
+          <div class="task-title">Dutch Interview Preparation</div>
+          <div class="task-body">Dutch interviews are <strong>direct, competency-based</strong>. Practice STAR method answers for: dashboard performance improvement, migration projects, stakeholder communication. Expect technical DAX/SQL live tests.</div>
+          <div class="task-tag tag-weekly">Weekly Practice</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🌍</div>
+          <div class="task-title">Join Dutch Data Communities</div>
+          <div class="task-body">Join: <strong>Power BI User Group Netherlands</strong> (meetup.com), <strong>Data Science NL</strong>, <strong>Azure User Group NL</strong> on LinkedIn. Attend virtual meetups. Comment on posts from NL hiring managers — visibility matters.</div>
+          <div class="task-tag tag-weekly">Weekly Activity</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">📊</div>
+          <div class="task-title">Build a Portfolio</div>
+          <div class="task-body">Create a GitHub repo with <strong>2–3 sample Power BI projects</strong>: a sales KPI dashboard, an Azure pipeline demo, a DAX calculation showcase. Use public datasets (Kaggle). Link from your LinkedIn Featured section.</div>
+          <div class="task-tag tag-weekly">Week 5–6</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">📜</div>
+          <div class="task-title">Start PL-300 Certification</div>
+          <div class="task-body">Begin <a href="https://learn.microsoft.com/en-us/credentials/certifications/power-bi-data-analyst-associate/" target="_blank">Microsoft PL-300 (Power BI Data Analyst Associate)</a>. Free learning path on Microsoft Learn. Exam ~$165. Adds strong credibility — often listed as "preferred" in NL job postings.</div>
+          <div class="task-tag tag-weekly">Study 1hr/day</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">💬</div>
+          <div class="task-title">Follow-up on Month 1 Apps</div>
+          <div class="task-body">Send follow-up emails to applications sent in Month 1 that haven't responded. Template: "I applied on [date] for [role] — I wanted to confirm receipt and reiterate my strong interest. Happy to provide additional info." <strong>40% response rate improvement</strong> with follow-ups.</div>
+          <div class="task-tag tag-weekly">Weekly Follow-up</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🏦</div>
+          <div class="task-title">Contact Indian IT Firms in NL</div>
+          <div class="task-body">Target Indian firms with large NL presence: <strong>TCS Netherlands, Infosys BV, Wipro NL, HCL Technologies, Tech Mahindra</strong>. They understand Indian visa processes deeply and have dedicated mobility teams. Apply directly on their portals.</div>
+          <div class="task-tag tag-weekly">Ongoing</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MONTH 3 -->
+    <div class="month-block m3">
+      <div class="month-header">
+        <div class="month-circle">
+          <div class="m-num">M3</div>
+          <div class="m-label">Weeks 9–12</div>
+        </div>
+        <div class="month-meta">
+          <div class="month-title">🎯 Offer Stage &amp; Visa Initiation</div>
+          <div class="month-subtitle">Negotiate your offer. Start the IND visa process immediately upon offer.</div>
+          <div class="month-goal">🎯 Goal: Job offer signed + IND Kennismigrant application submitted</div>
+        </div>
+      </div>
+      <div class="tasks-grid">
+        <div class="task-card">
+          <div class="task-icon">💰</div>
+          <div class="task-title">Salary Negotiation Strategy</div>
+          <div class="task-body">Know your numbers: <strong>Senior PBI Developer = €65K–€85K gross/yr</strong>. Never accept the first offer. Counter 10–15% higher. Always ask about: 8% holiday allowance, 30% tax ruling eligibility, relocation budget (€2K–€5K typical), laptop/tools.</div>
+          <div class="task-tag tag-once">When Offer Comes</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🛂</div>
+          <div class="task-title">IND Visa Application Kickoff</div>
+          <div class="task-body">The moment you sign the offer, push your employer HR to submit the <strong>IND Kennismigrant application</strong> immediately. You need: passport, degree certificate, employment contract. Employer submits via IND portal. Takes <strong>2–4 weeks</strong>.</div>
+          <div class="task-tag tag-asap">Immediately After Offer</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">📋</div>
+          <div class="task-title">Document Checklist for IND</div>
+          <div class="task-body">Prepare in advance: <strong>Passport (valid 6+ months), degree certificate + apostille, experience letters from all 3 employers, PL-300 cert if obtained, marriage certificate (for partner visa), police clearance certificate</strong>. Apostille takes 2–3 weeks in India!</div>
+          <div class="task-tag tag-asap">Start Documents M2</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🏠</div>
+          <div class="task-title">Research Accommodation</div>
+          <div class="task-body">Start looking at <a href="https://www.funda.nl" target="_blank" style="color:var(--cyan)">Funda.nl</a>, <a href="https://www.pararius.nl" target="_blank" style="color:var(--cyan)">Pararius.nl</a>. NL housing market is tight — start early. Budget: €1,200–€2,000/month for Amsterdam. Consider Rotterdam/Utrecht (cheaper, great transport).</div>
+          <div class="task-tag tag-weekly">Research Ongoing</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🏦</div>
+          <div class="task-title">30% Ruling Application</div>
+          <div class="task-body">Ask your employer to apply for the <strong>Dutch 30% tax ruling</strong> simultaneously with visa. If approved, 30% of salary is tax-free. On €70K/yr, that's ~€8K+ extra take-home annually. Employer applies via Belastingdienst.</div>
+          <div class="task-tag tag-once">Ask Employer HR</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">📞</div>
+          <div class="task-title">Keep Applying (Don't Stop)</div>
+          <div class="task-body"><strong>Never stop applying</strong> until you have a signed, IND-approved visa in hand. Keep 5 applications/day running even with active interviews. Having competing offers gives you <strong>negotiation leverage</strong>.</div>
+          <div class="task-tag tag-daily">Daily Until Visa Confirmed</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MONTH 4 -->
+    <div class="month-block m4">
+      <div class="month-header">
+        <div class="month-circle">
+          <div class="m-num">M4</div>
+          <div class="m-label">Weeks 13–16</div>
+        </div>
+        <div class="month-meta">
+          <div class="month-title">✅ Visa Received &amp; Relocation</div>
+          <div class="month-subtitle">Finalise legal steps, relocate, and hit the ground running.</div>
+          <div class="month-goal">🎯 Goal: Landed in Netherlands, BSN registered, starting your new role</div>
+        </div>
+      </div>
+      <div class="tasks-grid">
+        <div class="task-card">
+          <div class="task-icon">✈️</div>
+          <div class="task-title">Book Travel</div>
+          <div class="task-body">Book flights to the Netherlands after MVV (visa) is granted. Hyderabad → Amsterdam (AMS) direct or via Dubai/Doha. Budget: ₹50K–₹80K one way. Bring hard copies of all IND documents in hand luggage.</div>
+          <div class="task-tag tag-once">After Visa Grant</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🏛️</div>
+          <div class="task-title">Gemeente Registration (BRP)</div>
+          <div class="task-body">Within 5 days of arrival, register at your local <strong>Gemeente (municipality)</strong>. You'll receive your <strong>BSN number</strong> — essential for opening bank account, getting paid, healthcare. Book appointment online in advance.</div>
+          <div class="task-tag tag-once">Within 5 Days of Arrival</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🏥</div>
+          <div class="task-title">Dutch Health Insurance</div>
+          <div class="task-body">All NL residents must have <strong>zorgverzekering (health insurance)</strong> within 4 months of arrival. Compare at <a href="https://www.zorgwijzer.nl" target="_blank" style="color:var(--cyan)">zorgwijzer.nl</a>. Budget: ~€130–€160/month. Employer sometimes contributes.</div>
+          <div class="task-tag tag-once">Within 1 Month</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🏦</div>
+          <div class="task-title">Open Dutch Bank Account</div>
+          <div class="task-body">Open account at <strong>ING, Rabobank, or ABN AMRO</strong> (most expat-friendly). You need BSN + proof of address. Required for salary payments. Process takes 1–2 weeks — start immediately after Gemeente registration.</div>
+          <div class="task-tag tag-once">Week 1 in NL</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🎉</div>
+          <div class="task-title">Start Your New Role</div>
+          <div class="task-body">Congratulations! Dutch work culture is flat hierarchy — address everyone by first name. Meetings are direct and agenda-driven. The <strong>Dutch value honesty and punctuality</strong> above all. Show your analytics impact fast in the first 30 days.</div>
+          <div class="task-tag tag-once">Day 1 Mindset</div>
+        </div>
+        <div class="task-card">
+          <div class="task-icon">🌷</div>
+          <div class="task-title">Learn Basic Dutch</div>
+          <div class="task-body">Use <a href="https://www.duolingo.com" target="_blank" style="color:var(--cyan)">Duolingo</a> (free) — just 10 min/day. Learn greetings, workplace phrases. Dutch colleagues <em>will</em> notice and appreciate the effort enormously. Say "Hoi!" and "Dank je!" — instant goodwill!</div>
+          <div class="task-tag tag-daily">10 min/day starting now</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WEEK TRACKER -->
+  <div class="progress-section">
+    <div class="progress-title">📅 Weekly Progress Tracker — Click to Mark Complete</div>
+    <div class="week-grid" id="week-grid">
+      <!-- Generated by JS -->
+    </div>
+  </div>
+
+  <!-- TARGET COMPANIES -->
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <div class="sec-icon">🏢</div>
+      <div class="sec-title">Priority Target Companies — IND Recognised Sponsors</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="alert alert-green">
+      <div class="alert-icon">✅</div>
+      <div><strong>Apply to these FIRST</strong> — All are IND-recognised sponsors with active NL offices and established visa processes for Indian candidates.</div>
+    </div>
+    <div class="companies-grid">
+      <a href="https://www.accenture.com/nl-en/careers" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#6d2c91,#a855f7)">Ac</div>
+        <div class="co-info">
+          <div class="co-name">Accenture NL</div>
+          <div class="co-detail">Amsterdam · Consulting</div>
+          <div class="co-visa">✅ Internal transfer possible</div>
+        </div>
+      </a>
+      <a href="https://www2.deloitte.com/nl/en/pages/careers" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#15803d,#22c55e)">De</div>
+        <div class="co-info">
+          <div class="co-name">Deloitte NL</div>
+          <div class="co-detail">Amsterdam · Big 4</div>
+          <div class="co-visa">✅ Active HSM sponsor</div>
+        </div>
+      </a>
+      <a href="https://www.kpmg.nl/carriere" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#0075BE,#00AEEF)">KP</div>
+        <div class="co-info">
+          <div class="co-name">KPMG NL</div>
+          <div class="co-detail">Amsterdam · Big 4</div>
+          <div class="co-visa">✅ Active HSM sponsor</div>
+        </div>
+      </a>
+      <a href="https://www.capgemini.com/nl-en/careers" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#0070AD,#00ADEF)">Ca</div>
+        <div class="co-info">
+          <div class="co-name">Capgemini NL</div>
+          <div class="co-detail">Utrecht · IT Consulting</div>
+          <div class="co-visa">✅ Hires Indian talent actively</div>
+        </div>
+      </a>
+      <a href="https://www.tata.com/careers" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#0033CC,#4466FF)">TCS</div>
+        <div class="co-info">
+          <div class="co-name">TCS Netherlands</div>
+          <div class="co-detail">Amsterdam · IT Services</div>
+          <div class="co-visa">✅ Indian talent specialist</div>
+        </div>
+      </a>
+      <a href="https://careers.cognizant.com" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#1D68D9,#4B8EF1)">Cg</div>
+        <div class="co-info">
+          <div class="co-name">Cognizant NL</div>
+          <div class="co-detail">Amsterdam · IT Services</div>
+          <div class="co-visa">✅ Active HSM sponsor</div>
+        </div>
+      </a>
+      <a href="https://careers.microsoft.com/global/en/search?q=power+bi&lc=Netherlands" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#00A4EF,#0078D4)">MS</div>
+        <div class="co-info">
+          <div class="co-name">Microsoft NL</div>
+          <div class="co-detail">Amsterdam · FAANG</div>
+          <div class="co-visa">✅ Top-tier sponsor</div>
+        </div>
+      </a>
+      <a href="https://www.ing.jobs/netherlands" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#FF6200,#FF8533)">ING</div>
+        <div class="co-info">
+          <div class="co-name">ING Bank NL</div>
+          <div class="co-detail">Amsterdam · Banking</div>
+          <div class="co-visa">✅ Active HSM sponsor</div>
+        </div>
+      </a>
+      <a href="https://careers.shell.com" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#FBCE07,#F59E0B)">Sh</div>
+        <div class="co-info">
+          <div class="co-name">Shell Netherlands</div>
+          <div class="co-detail">The Hague · Energy</div>
+          <div class="co-visa">✅ Sustainability BI match</div>
+        </div>
+      </a>
+      <a href="https://www.careers.philips.com" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#0B5ED7,#3B82F6)">Ph</div>
+        <div class="co-info">
+          <div class="co-name">Philips NL</div>
+          <div class="co-detail">Amsterdam · HealthTech</div>
+          <div class="co-visa">✅ Active HSM sponsor</div>
+        </div>
+      </a>
+      <a href="https://www.werkenbijabnamro.nl" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#007A33,#10B981)">ABN</div>
+        <div class="co-info">
+          <div class="co-name">ABN AMRO</div>
+          <div class="co-detail">Amsterdam · Banking</div>
+          <div class="co-visa">✅ Celonis+BI perfect match</div>
+        </div>
+      </a>
+      <a href="https://www.pwc.nl/nl/carriere.html" target="_blank" class="co-card">
+        <div class="co-logo" style="background:linear-gradient(135deg,#E0301E,#F87171)">PwC</div>
+        <div class="co-info">
+          <div class="co-name">PwC Netherlands</div>
+          <div class="co-detail">Amsterdam · Big 4</div>
+          <div class="co-visa">✅ Active HSM sponsor</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- SALARY TABLE -->
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <div class="sec-icon">💰</div>
+      <div class="sec-title">Netherlands Salary Guide — Know Your Worth</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="alert alert-orange">
+      <div class="alert-icon">⚠️</div>
+      <div><strong>Important:</strong> Minimum Kennismigrant salary threshold (2025) is <strong>€5,688/month gross</strong> (~€68K/yr) for those 30 years or older. You MUST negotiate at or above this. Aim for €70K–€80K.</div>
+    </div>
+    <table class="sal-table">
+      <thead>
+        <tr>
+          <th>Role</th>
+          <th>Gross/Year</th>
+          <th>Gross/Month</th>
+          <th>Net Est. (after tax)</th>
+          <th>With 30% Ruling</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>BI Analyst (Mid-level)</td>
+          <td>€55,000–€65,000</td>
+          <td>€4,583–€5,417</td>
+          <td>~€3,200–€3,700/mo</td>
+          <td class="hi">~€3,700–€4,300/mo</td>
+        </tr>
+        <tr>
+          <td>Power BI Developer (Senior)</td>
+          <td>€65,000–€80,000</td>
+          <td>€5,417–€6,667</td>
+          <td>~€3,700–€4,400/mo</td>
+          <td class="hi">~€4,400–€5,100/mo</td>
+        </tr>
+        <tr>
+          <td>Azure Data Engineer</td>
+          <td>€70,000–€90,000</td>
+          <td>€5,833–€7,500</td>
+          <td>~€4,000–€4,900/mo</td>
+          <td class="hi">~€4,800–€5,800/mo</td>
+        </tr>
+        <tr>
+          <td>BI Consultant (Consulting firm)</td>
+          <td>€75,000–€95,000</td>
+          <td>€6,250–€7,917</td>
+          <td>~€4,200–€5,200/mo</td>
+          <td class="hi">~€5,000–€6,100/mo</td>
+        </tr>
+        <tr style="background:rgba(16,185,129,.05)">
+          <td><strong>Your Target (6+ yrs, Senior)</strong></td>
+          <td><strong class="hi">€68,000–€82,000</strong></td>
+          <td><strong class="hi">€5,667–€6,833</strong></td>
+          <td class="hi">~€3,900–€4,700/mo</td>
+          <td class="hi">~€4,600–€5,500/mo ⭐</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:.75rem;color:var(--txt3);margin-top:8px">*Net estimates based on 2025 Dutch income tax. Includes 8% holiday allowance. 30% ruling is not guaranteed and must be applied for separately.</p>
+  </div>
+
+  <!-- VISA FLOW -->
+  <div class="sec-wrap">
+    <div class="sec-head">
+      <div class="sec-icon">🛂</div>
+      <div class="sec-title">Kennismigrant Visa — Step by Step Process</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="card" style="background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px">
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-circle">1</div>
+          <div class="flow-content">
+            <h4>Receive &amp; Sign Job Offer Letter</h4>
+            <p>The offer must be from an <a href="https://ind.nl/en/public-register-recognised-sponsors" target="_blank" style="color:var(--cyan)">IND-recognised sponsor</a>. Salary must be at or above the Kennismigrant threshold (€5,688/mo gross for 30+). Verify before signing.</p>
+            <div class="timeline-est">Timeline: Week 0</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-circle">2</div>
+          <div class="flow-content">
+            <h4>Employer Submits IND Application</h4>
+            <p>Your employer's HR submits the Kennismigrant application via the IND online portal (IND's Business portal). You provide: passport copy, diploma/degree, employment contract, recent passport photos.</p>
+            <div class="timeline-est">Timeline: Within 1 week of signing</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-circle">3</div>
+          <div class="flow-content">
+            <h4>IND Processes Application</h4>
+            <p>IND reviews and approves. For recognised sponsors, processing is typically <strong>2–4 weeks</strong>. You'll receive an MVV (Machtiging tot Voorlopig Verblijf) — the entry visa sticker for your passport.</p>
+            <div class="timeline-est">Timeline: 2–4 weeks</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-circle">4</div>
+          <div class="flow-content">
+            <h4>Collect MVV at Dutch Embassy India</h4>
+            <p>Visit the Dutch Embassy/Consulate in <strong>New Delhi or Mumbai</strong> (or via VFS) to collect your MVV sticker. Book appointment online well in advance — slots fill up. Bring original documents.</p>
+            <div class="timeline-est">Timeline: 1–2 weeks (appointment dependent)</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-circle">5</div>
+          <div class="flow-content">
+            <h4>Travel to Netherlands</h4>
+            <p>Fly to Amsterdam (AMS). At border control, show your MVV and employment documents. You're entering to work — be clear and confident with border officers.</p>
+            <div class="timeline-est">Timeline: Book flights after MVV received</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-circle">6</div>
+          <div class="flow-content">
+            <h4>Collect Residence Permit (IDP) in Netherlands</h4>
+            <p>Within ~3 months of arrival, collect your <strong>Verblijfsvergunning (Residence Permit)</strong> from the IND Service Counter (IND Loket). This is your actual 1–5 year permit. Your employer coordinates this appointment.</p>
+            <div class="timeline-est">Timeline: Within 90 days of arrival</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-circle">7</div>
+          <div class="flow-content">
+            <h4>Register at Gemeente + Get BSN</h4>
+            <p>Register at local municipality <strong>within 5 days</strong>. Receive your BSN (citizen service number). Required for payroll, healthcare, banking. Your employer usually helps book this appointment in advance.</p>
+            <div class="timeline-est">Timeline: Day 1–5 after arrival</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECRUITER OUTREACH -->
+  <div class="sec-wrap" style="padding-bottom:40px">
+    <div class="sec-head">
+      <div class="sec-icon">✉️</div>
+      <div class="sec-title">Ready-to-Send Templates</div>
+      <div class="sec-line"></div>
+    </div>
+
+    <p style="font-size:.88rem;color:var(--txt2);margin-bottom:16px">Copy these word-for-word. Only change [Name] and [Company].</p>
+
+    <p style="font-size:.9rem;font-weight:600;margin-bottom:8px;color:var(--txt)">📧 LinkedIn Recruiter Connection Message (300 char limit):</p>
+    <div class="copy-block">
+      <button class="copy-btn" onclick="cp(this,'msg1')">Copy</button>
+      <pre id="msg1">Hi [Name], Power BI Developer with 6+ yrs @ Accenture seeking NL roles. Kennismigrant visa sponsorship needed. Specialise in DAX, Azure ADF &amp; Medallion Architecture. Would love to connect about opportunities you're working on!</pre>
+    </div>
+
+    <p style="font-size:.9rem;font-weight:600;margin-bottom:8px;color:var(--txt)">📧 Full Recruiter Email (for email outreach):</p>
+    <div class="copy-block">
+      <button class="copy-btn" onclick="cp(this,'msg2')">Copy</button>
+      <pre id="msg2">Subject: Power BI Developer | 6+ Yrs | Kennismigrant | Open for Netherlands Roles
+
+Hi [Name],
+
+I'm reaching out as an experienced Power BI Developer actively seeking opportunities in the Netherlands.
+
+Quick profile snapshot:
+• 6+ years enterprise BI experience at Accenture, Genpact &amp; Conduent
+• Specialising in Power BI, DAX, Azure Data Factory, ADLS Gen2, Medallion Architecture
+• Key achievement: Reduced dashboard load time by 40% via data model optimisation
+• Rare combo: Celonis + Qlik Sense + Power BI migration expertise
+
+Visa: I require Kennismigrant sponsorship and am fully prepared to provide all documentation. I can be available in the Netherlands within 4 months.
+
+I'd appreciate any roles you're actively recruiting for that match this profile. I'm targeting Power BI Developer, BI Analyst, and Azure Data Analyst roles at IND-recognised companies.
+
+My LinkedIn: linkedin.com/in/sailakshmielusuri-data-analyst
+CV available on request.
+
+Thank you for your time,
+Sai Lakshmi Elusuri
+📧 sailakshmi.elusuri@gmail.com | 📱 +91 8142674401</pre>
+    </div>
+
+    <p style="font-size:.9rem;font-weight:600;margin-bottom:8px;color:var(--txt)">📧 Internal Accenture Transfer Request (email to HR/Mobility team):</p>
+    <div class="copy-block">
+      <button class="copy-btn" onclick="cp(this,'msg3')">Copy</button>
+      <pre id="msg3">Subject: Request for Internal Transfer – Netherlands | Power BI Developer
+
+Dear [HR/Mobility Team],
+
+I am writing to formally express my interest in an internal transfer opportunity to Accenture Netherlands.
+
+I have been with Accenture as a Power BI Developer since February 2022, working on enterprise sustainability and operational analytics projects. I have consistently delivered high-impact solutions, including a 40% reduction in dashboard load time for key client dashboards.
+
+My husband is relocating to the Netherlands, and I am eager to continue my career with Accenture in the Amsterdam office rather than leave the organization. I believe my Power BI, Azure Data Factory, and Medallion Architecture expertise aligns strongly with current Accenture Netherlands project demands.
+
+I would greatly appreciate guidance on:
+1. Available Power BI / BI Developer roles in the Netherlands office
+2. The internal mobility process and Kennismigrant visa sponsorship support
+3. Any relevant job postings on the internal portal
+
+Thank you for considering my request. I am available for a call at your earliest convenience.
+
+Best regards,
+Sai Lakshmi Elusuri
+Employee ID: [Your ID]
+📧 sailakshmi.elusuri@gmail.com | 📱 +91 8142674401</pre>
+    </div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="footer-brand">Sai Lakshmi Elusuri</div>
+  <div class="footer-links">
+    <a href="mailto:sailakshmi.elusuri@gmail.com">✉️ sailakshmi.elusuri@gmail.com</a>
+    <a href="https://linkedin.com/in/sailakshmielusuri-data-analyst" target="_blank">🔗 LinkedIn Profile</a>
+    <a href="resume.html">📄 Download Resume</a>
+  </div>
+  <p>Visa thresholds &amp; processes based on IND.nl 2025 data. Always verify at <a href="https://ind.nl">ind.nl</a>.</p>
+</footer>
+
+<script>
+// Copy function
+function cp(btn, id) {
+  navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
+    btn.textContent = '✅ Copied!';
+    btn.classList.add('done');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('done'); }, 2500);
+  });
+}
+
+// Week tracker
+const WEEKS = [
+  {n:'W1', label:'Optimize LinkedIn\n& resume'},
+  {n:'W2', label:'Launch applications\n& connect recruiters'},
+  {n:'W3', label:'5 apps/day\nRecruiter calls'},
+  {n:'W4', label:'Follow ups\nInterview prep'},
+  {n:'W5', label:'Interviews begin\nPortfolio build'},
+  {n:'W6', label:'More interviews\nPL-300 study'},
+  {n:'W7', label:'Join NL communities\nNetworking'},
+  {n:'W8', label:'Follow up M1 apps\nKeep applying'},
+  {n:'W9', label:'Offer negotiations\nDoc preparation'},
+  {n:'W10', label:'IND visa kick-off\nApostilles'},
+  {n:'W11', label:'Housing research\n30% ruling request'},
+  {n:'W12', label:'IND processing\nKeep applying'},
+  {n:'W13', label:'MVV collection\nBook flights'},
+  {n:'W14', label:'Travel to NL\nGemeente reg'},
+  {n:'W15', label:'BSN & bank\nStart work'},
+  {n:'W16', label:'🎉 Settling in\nNew chapter!'},
+];
+
+const grid = document.getElementById('week-grid');
+const saved = JSON.parse(localStorage.getItem('week_tracker') || '{}');
+
+WEEKS.forEach((w, i) => {
+  const cell = document.createElement('div');
+  cell.className = 'week-cell' + (saved[i] ? ' wk-done' : '');
+  cell.innerHTML = `<div class="week-num">${w.n}</div><div class="week-label">${w.label}</div>`;
+  cell.onclick = () => {
+    cell.classList.toggle('wk-done');
+    saved[i] = cell.classList.contains('wk-done');
+    localStorage.setItem('week_tracker', JSON.stringify(saved));
+  };
+  grid.appendChild(cell);
+});
+</script>
+</body>
+</html>

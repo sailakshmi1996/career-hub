@@ -1,0 +1,2348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sai Lakshmi · Netherlands Career Hub | Utrecht–Amsterdam–Amersfoort</title>
+  <meta name="description" content="Comprehensive Netherlands career hub, preparation guide, and corridor job-search strategy for Sai Lakshmi Elusuri — Power BI Developer & BI Project Delivery Lead."/>
+  <link rel="stylesheet" href="shared.css"/>
+  <style>
+    :root {
+      --nl-orange: #ff6b00;
+      --nl-orange-glow: rgba(255, 107, 0, 0.25);
+      --nl-blue: #1e3a8a;
+      --nl-red: #c8102e;
+      --accent-teal: #0d9488;
+      --accent-teal-light: #2dd4bf;
+    }
+
+    /* Ambient Background */
+    .bg-canvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 15% 20%, rgba(255, 107, 0, 0.07) 0%, transparent 45%),
+                  radial-gradient(circle at 85% 75%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+                  radial-gradient(circle at 50% 50%, rgba(13, 148, 136, 0.06) 0%, transparent 60%);
+    }
+
+    .main-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Navigation Bar ── */
+    nav.top-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(2, 8, 16, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .flag-badge {
+      width: 28px;
+      height: 20px;
+      border-radius: 4px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      flex-shrink: 0;
+    }
+    .flag-badge .f-red { height: 33.3%; background: #c8102e; }
+    .flag-badge .f-white { height: 33.4%; background: #ffffff; }
+    .flag-badge .f-blue { height: 33.3%; background: #003da5; }
+
+    .brand-text {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+    .brand-sub {
+      font-size: 0.75rem;
+      color: var(--nl-orange);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+    }
+    .nav-link {
+      font-size: 0.84rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .nav-link:hover {
+      color: var(--blue-light);
+    }
+    .nav-cta {
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      background: var(--gradient);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
+    }
+
+    /* ── Hero Section ── */
+    header.hero {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 107, 0, 0.12);
+      border: 1px solid rgba(255, 107, 0, 0.35);
+      border-radius: var(--radius-full);
+      padding: 6px 18px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #fb923c;
+      margin-bottom: 24px;
+    }
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--nl-orange);
+      box-shadow: 0 0 10px var(--nl-orange);
+      animation: pulseGlow 1.8s infinite;
+    }
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.4); }
+    }
+
+    h1.hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.12;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .gradient-text-nl {
+      background: linear-gradient(135deg, #fb923c 0%, #38bdf8 50%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p.hero-desc {
+      font-size: clamp(1rem, 2vw, 1.12rem);
+      color: var(--text-secondary);
+      max-width: 780px;
+      margin: 0 auto 30px;
+      line-height: 1.65;
+    }
+    p.hero-desc strong {
+      color: var(--text-primary);
+    }
+
+    /* ── Work Auth Status Banner ── */
+    .auth-banner {
+      background: linear-gradient(135deg, rgba(13, 148, 136, 0.15) 0%, rgba(30, 58, 138, 0.2) 100%);
+      border: 1px solid rgba(45, 212, 191, 0.3);
+      border-radius: var(--radius-md);
+      padding: 16px 22px;
+      max-width: 920px;
+      margin: 0 auto 40px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      text-align: left;
+    }
+    .auth-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+      padding-top: 2px;
+    }
+    .auth-content h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--accent-teal-light);
+      margin-bottom: 4px;
+    }
+    .auth-content p {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+    .auth-content code {
+      background: rgba(15, 23, 42, 0.6);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: #38bdf8;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.82rem;
+    }
+
+    /* ── Metric Highlights Grid ── */
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 50px;
+    }
+    .metric-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .metric-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-hover);
+    }
+    .metric-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 4px;
+    }
+    .metric-val.orange { color: #fb923c; }
+    .metric-val.teal { color: var(--accent-teal-light); }
+    .metric-val.purple { color: #c084fc; }
+    .metric-lbl {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Section Header ── */
+    .sec-head {
+      margin-bottom: 26px;
+    }
+    .sec-tag {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .sec-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+    .sec-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      max-width: 650px;
+      margin-top: 6px;
+    }
+
+    /* ── Corridor Interactive Map Block ── */
+    .corridor-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin-bottom: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .corridor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .station-card {
+      background: var(--surface2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      position: relative;
+    }
+    .station-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #60a5fa;
+      margin-bottom: 12px;
+    }
+    .station-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .station-time {
+      font-size: 0.85rem;
+      color: #fb923c;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .station-employers {
+      list-style: none;
+      padding: 0;
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+    }
+    .station-employers li {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .station-employers li::before {
+      content: "•";
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
+    .transit-rules-box {
+      margin-top: 20px;
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 3px solid #fb923c;
+      padding: 14px 18px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.84rem;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+
+    /* ── Two-Track Interactive Switcher ── */
+    .track-tabs {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+    .track-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .track-btn.active {
+      background: var(--gradient);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+    }
+    .track-btn:hover:not(.active) {
+      background: var(--surface2);
+      color: var(--text-primary);
+    }
+
+    .track-panel {
+      display: none;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin-bottom: 60px;
+    }
+    .track-panel.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── Employer Directory Cards ── */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+    .filter-chip {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-chip.active, .filter-chip:hover {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: var(--blue-light);
+      color: var(--text-primary);
+    }
+
+    .job-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 18px;
+      margin-bottom: 60px;
+    }
+    .job-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .job-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-hover);
+    }
+    .job-card-top {
+      margin-bottom: 14px;
+    }
+    .company-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .comp-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+    .comp-loc {
+      font-size: 0.75rem;
+      background: rgba(255,255,255,0.06);
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      color: var(--text-secondary);
+    }
+    .job-role-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .job-meta-pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-right: 5px;
+      margin-bottom: 8px;
+    }
+    .pill-lang-en { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .pill-commute { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .pill-track { background: rgba(139, 92, 246, 0.15); color: #c084fc; border: 1px solid rgba(139, 92, 246, 0.3); }
+
+    .job-desc-snippet {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.48;
+      margin-bottom: 14px;
+    }
+    .job-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 16px;
+    }
+    .job-tag {
+      font-size: 0.72rem;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: #94a3b8;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .job-action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 12px;
+      margin-top: auto;
+    }
+    .apply-btn {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #38bdf8;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s ease;
+    }
+    .apply-btn:hover {
+      gap: 7px;
+      color: #60a5fa;
+    }
+
+    /* ── Technical Knowledge & Prep Accordions ── */
+    .prep-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+    .prep-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+    .prep-box h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .prep-list {
+      list-style: none;
+      padding: 0;
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+    .prep-list li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 18px;
+    }
+    .prep-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #34d399;
+      font-size: 0.78rem;
+    }
+    .prep-list strong {
+      color: var(--text-primary);
+    }
+
+    /* ── STAR Stories Showcase ── */
+    .star-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-bottom: 18px;
+    }
+    .star-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .star-context {
+      font-size: 0.8rem;
+      color: #38bdf8;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .star-step-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .star-step {
+      background: var(--surface2);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+    .star-step-lbl {
+      font-weight: 700;
+      color: #fb923c;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    /* ── Interactive Toolkit & Generator ── */
+    .toolkit-card {
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin-bottom: 60px;
+    }
+    .generator-box {
+      background: #090e17;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      position: relative;
+      margin-top: 14px;
+    }
+    .copy-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: #38bdf8;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    /* ── Application Tracker ── */
+    .tracker-table-wrap {
+      overflow-x: auto;
+      margin-top: 20px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+    }
+    table.tracker-tbl {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.84rem;
+      background: var(--surface);
+    }
+    table.tracker-tbl th {
+      background: var(--surface2);
+      color: var(--text-primary);
+      padding: 12px 14px;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+    table.tracker-tbl td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--text-secondary);
+    }
+    table.tracker-tbl tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+    .status-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+    .st-applied { background: rgba(59, 130, 246, 0.2); color: #60a5fa; }
+    .st-screen { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+    .st-interview { background: rgba(139, 92, 246, 0.2); color: #c084fc; }
+    .st-offer { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+
+    /* ── Footer ── */
+    footer.page-foot {
+      text-align: center;
+      padding: 40px 0 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* ── Timeline & Seasonality Styles ── */
+    .timeline-phase {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .phase-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .phase-badge.pre { background: rgba(59, 130, 246, 0.15); color: #60a5fa; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .phase-badge.arrival { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .phase-badge.surge { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+
+    .milestone-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .milestone-box {
+      background: var(--surface2);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+    .milestone-box strong { color: var(--text-primary); }
+    .milestone-date {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #38bdf8;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    /* ── Compensation Table & Cards ── */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+    .comp-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 22px;
+    }
+    .comp-val {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 4px;
+    }
+    .comp-lbl {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    .comp-breakdown {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+    }
+    .comp-breakdown li {
+      margin-bottom: 6px;
+      list-style-type: disc;
+      margin-left: 18px;
+    }
+
+    /* ── Code Comparison & Architecture Boxes ── */
+    .code-comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .code-box-wrap {
+      background: #090e17;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.8rem;
+      color: #e2e8f0;
+      line-height: 1.5;
+      overflow-x: auto;
+    }
+    .code-tag-slow {
+      display: inline-block;
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .code-tag-fast {
+      display: inline-block;
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    /* ── Address & Transit Chips ── */
+    .address-chip {
+      font-size: 0.74rem;
+      color: #94a3b8;
+      background: rgba(15, 23, 42, 0.7);
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-canvas"></div>
+
+<!-- NAVIGATION BAR -->
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">
+    <div class="flag-badge">
+      <div class="f-red"></div>
+      <div class="f-white"></div>
+      <div class="f-blue"></div>
+    </div>
+    <div>
+      <div class="brand-text">Sai Lakshmi · NL Career Hub</div>
+      <div class="brand-sub">Utrecht – Amsterdam – Amersfoort</div>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="#corridor" class="nav-link">Corridor Map</a>
+    <a href="#stages" class="nav-link" style="color:#fb923c; font-weight:600;">🎯 Action Stages</a>
+    <a href="#tracks" class="nav-link">Two-Track Roles</a>
+    <a href="#compensation" class="nav-link" style="color:#34d399; font-weight:600;">💶 Salary & CAO</a>
+    <a href="#vacancies" class="nav-link">Jobs & Employers</a>
+    <a href="#communities" class="nav-link" style="color:#ec4899; font-weight:600;">👭 Women in Tech</a>
+    <a href="#accelerators" class="nav-link" style="color:#38bdf8; font-weight:600;">⚡ Search Tools</a>
+    <a href="#prep" class="nav-link">Tech Playbook</a>
+    <a href="#stories" class="nav-link">STAR Stories</a>
+    <a href="#gdpr" class="nav-link" style="color:#a78bfa; font-weight:600;">🔒 GDPR / AVG Rights</a>
+    <a href="#toolkit" class="nav-link">Tracker</a>
+    <a href="cv_power_bi_developer.pdf" target="_blank" class="nav-cta">Download ATS CV</a>
+  </div>
+</nav>
+
+<div class="main-wrap">
+
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-pill">
+      <span class="pulse-dot"></span>
+      Targeting Utrecht Region · Moving as Dependent Partner · Independent Dutch Work Rights
+    </div>
+
+    <h1 class="hero-title">
+      Netherlands Career Command Center<br/>
+      <span class="gradient-text-nl">Power BI Developer & BI Project Delivery</span>
+    </h1>
+
+    <p class="hero-desc">
+      Engineered for the <strong>Utrecht – Amsterdam – Amersfoort transit corridor</strong>. Optimized for Dutch corporate standards, 
+      direct hiring practices, and <strong>100% full onsite or hybrid availability</strong> with confirmed dependent labor market rights.
+    </p>
+
+    <!-- VERIFIED WORK AUTHENTICATION BANNER -->
+    <div class="auth-banner">
+      <div class="auth-icon">🇳🇱</div>
+      <div class="auth-content">
+        <h4>Verified Dutch Legal Status (IND Regulations)</h4>
+        <p>
+          Moving as the dependent partner of a Highly Skilled Migrant permit holder. Under official IND rules, your residence document 
+          will carry the endorsement: <code>Arbeid vrij toegestaan, TWV niet vereist</code>. 
+          <strong>This grants complete, unrestricted access to the Dutch labor market.</strong> Prospective employers do <em>not</em> need to sponsor a visa, 
+          do <em>not</em> need to be recognized IND sponsors, and do <em>not</em> require a UWV work permit (TWV).
+        </p>
+      </div>
+    </div>
+
+    <!-- METRICS BAR -->
+    <div class="metric-grid">
+      <div class="metric-card">
+        <div class="metric-val">8+ Years</div>
+        <div class="metric-lbl">Total Data & Analytics Experience</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val orange">40%</div>
+        <div class="metric-lbl">Dashboard Speedup Achieved</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val teal">15–25 min</div>
+        <div class="metric-lbl">Train Commute Across Corridor</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val purple">100% Onsite</div>
+        <div class="metric-lbl">Available for Corridor Roles</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: CORRIDOR GEOGRAPHY & COMMUTE ADVANTAGE -->
+  <section id="corridor" class="sec-head">
+    <span class="sec-tag">Geographic Advantage</span>
+    <h2 class="sec-title">The Utrecht – Amsterdam – Amersfoort Corridor</h2>
+    <p class="sec-desc">
+      Why offering full onsite availability within this 3-station rail triangle dramatically outperforms remote applications.
+    </p>
+  </section>
+
+  <div class="corridor-block">
+    <div class="corridor-grid">
+      <!-- Utrecht Station -->
+      <div class="station-card">
+        <div class="station-badge">Home Base Hub</div>
+        <h3 class="station-title">Utrecht Centraal</h3>
+        <div class="station-time">0 min · Main Intercity Hub (Every 10–15 min)</div>
+        <ul class="station-employers">
+          <li>
+            <div><strong>Rabobank Global HQ:</strong> Croeselaan 18</div>
+            <div class="address-chip">🚶 2 min walk from Jaarbeurs exit · 100% English Data Tribe</div>
+          </li>
+          <li>
+            <div><strong>bol.com Campus:</strong> Papendorpseweg 100</div>
+            <div class="address-chip">🚌 12 min via Bus 24/295 from Centraal · Agile Commercial Analytics</div>
+          </li>
+          <li>
+            <div><strong>VodafoneZiggo Central Office:</strong> Spoorstraat 3</div>
+            <div class="address-chip">🚶 Direct indoor connection to station hall · Tech & Data Squads</div>
+          </li>
+          <li>
+            <div><strong>Capgemini NL Campus:</strong> Reykjavikplein 1</div>
+            <div class="address-chip">🚆 4 min Sprinter to Utrecht Leidsche Rijn · Insights & Data Practice</div>
+          </li>
+          <li>
+            <div><strong>SC Johnson:</strong> Groot Mijdrechtstraat 81</div>
+            <div class="address-chip">🚗 Regional FMCG Center · Fluent English Supply Chain BI</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Amsterdam Hub -->
+      <div class="station-card">
+        <div class="station-badge">Financial & Tech Hub</div>
+        <h3 class="station-title">Amsterdam (Zuid & Bijlmer)</h3>
+        <div class="station-time">15–22 min direct NS Intercity</div>
+        <ul class="station-employers">
+          <li>
+            <div><strong>ING Bank Cedar HQ:</strong> Bijlmerdreef 106</div>
+            <div class="address-chip">🚆 15 min IC to Amsterdam Bijlmer ArenA + 3 min walk · Central Data Office</div>
+          </li>
+          <li>
+            <div><strong>ABN AMRO Global HQ:</strong> Gustav Mahlerlaan 10</div>
+            <div class="address-chip">🚆 22 min IC to Amsterdam Zuid (Zuidas) · Enterprise Tabular Models</div>
+          </li>
+          <li>
+            <div><strong>Booking.com Tech Campus:</strong> Oosterdokseiland 1</div>
+            <div class="address-chip">🚆 26 min IC to Amsterdam Centraal · Global Analytics Infrastructure</div>
+          </li>
+          <li>
+            <div><strong>Adyen & FinTechs:</strong> Simon Carmiggeltstraat 6</div>
+            <div class="address-chip">🚆 25 min IC to Centraal / Rokin · Global Payments Analytics</div>
+          </li>
+          <li>
+            <div><strong>Uber EMEA HQ:</strong> Mr. Treublaan 7</div>
+            <div class="address-chip">🚆 18 min IC to Amsterdam Amstel · Operations BI & Pricing Data</div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Amersfoort Hub -->
+      <div class="station-card">
+        <div class="station-badge">Enterprise & FMCG Hub</div>
+        <h3 class="station-title">Amersfoort Centraal</h3>
+        <div class="station-time">14 min direct NS Intercity (Every 15 min)</div>
+        <ul class="station-employers">
+          <li>
+            <div><strong>Royal FrieslandCampina HQ:</strong> Stationsplein 4</div>
+            <div class="address-chip">🚶 Literally 60 seconds across station plaza! · Global People Analytics</div>
+          </li>
+          <li>
+            <div><strong>Applied Medical European HQ:</strong> Wiekenweg 21</div>
+            <div class="address-chip">🚲 7 min bike / bus from Centraal · European CRM & Power BI</div>
+          </li>
+          <li>
+            <div><strong>Royal HaskoningDHV HQ:</strong> Laan 1914 no. 35</div>
+            <div class="address-chip">🚌 8 min bus from Centraal · Asset Management BI Consulting</div>
+          </li>
+          <li>
+            <div><strong>Yokogawa Europe Regional HQ:</strong> Euroweg 2</div>
+            <div class="address-chip">🚆 Industrial IoT & Process Control Analytics</div>
+          </li>
+          <li>
+            <div><strong>VolkerWessels HQ:</strong> Podium 9, Amersfoort</div>
+            <div class="address-chip">🚆 Infrastructure Data Products & Executive Reporting</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="transit-rules-box">
+      <strong>🚆 Standard Dutch Transit Reimbursement (*Reiskostenvergoeding*):</strong>
+      In the Netherlands, employers standardly provide an <strong>NS-Business Card</strong> (covering 100% of 2nd-class train and metro travel) or a statutory tax-free kilometer allowance. Full onsite commuting between Utrecht, Amsterdam, and Amersfoort costs you €0 out-of-pocket and takes less time than standard intradistrict commutes.
+    </div>
+  </div>
+
+  <!-- SECTION 2: TWO-TRACK CAREER PROFILES -->
+  
+  <!-- SECTION: STAGE-BASED MILESTONE ROADMAP (NO DATES) -->
+  <section id="stages" class="sec-head">
+    <span class="sec-tag">Milestone Roadmap</span>
+    <h2 class="sec-title">Stage-Based Job Search & Settlement Playbook</h2>
+    <p class="sec-desc">
+      A milestone-driven execution framework organized by readiness stages rather than rigid calendar dates.
+    </p>
+  </section>
+
+  <!-- Stage 1 -->
+  <div class="timeline-phase">
+    <div class="phase-badge pre">Stage 1: Documentation & Market Positioning (Pre-Move)</div>
+    <div class="milestone-grid">
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 1.1 · Legal Civil Documents</span>
+        <strong>MEA Apostille on Certificates:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Obtain an <strong>Apostille stamp from the Ministry of External Affairs (MEA) in India</strong> on your Marriage Certificate and Birth Certificate.<br/>
+          • <em>Dutch Municipal Law:</em> Dutch municipalities (Gemeenten) strictly mandate an apostille on non-EU public records for registration in the Personal Records Database (BRP).
+        </p>
+      </div>
+
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 1.2 · Municipal Appointment Reservation</span>
+        <strong>Pre-Booking Stadskantoor Utrecht:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Municipal registration appointments at <em>Stadskantoor Utrecht</em> (Jaarbeursplein 1) routinely fill up 4–6 weeks ahead.<br/>
+          • Book your municipal BRP registration appointment online via <a href="https://www.utrecht.nl" target="_blank" style="color:#38bdf8;">utrecht.nl</a> targeted for your first week of arrival.
+        </p>
+      </div>
+
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 1.3 · Corridor Profile Realignment</span>
+        <strong>LinkedIn & Portfolio Optimization:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Set location to <em>Utrecht, Netherlands</em>.<br/>
+          • Set headline: <code>Power BI Developer | BI Project Coordinator | Relocating to Utrecht | Independent Labor Market Access (TWV Niet Vereist)</code>.<br/>
+          • Enable "Open to Work" visible to Recruiters Only, selecting hybrid and onsite preferences across the corridor.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stage 2 -->
+  <div class="timeline-phase">
+    <div class="phase-badge pre">Stage 2: Targeted Outreach & Recruiter Sourcing</div>
+    <div class="milestone-grid">
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 2.1 · Specialized Niche Staffing</span>
+        <strong>Engage Dedicated BI Recruitment Firms:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Connect directly with recruitment specialists at <strong>Visser & Van Baars (Vibe Group)</strong>, <strong>Huxley</strong>, <strong>Adams Multilingual</strong>, and <strong>Randstad IT</strong>.<br/>
+          • In initial outreach, highlight your independent work authorization: <em>"Dependent partner residence document endorsed with 'Arbeid vrij toegestaan, TWV niet vereist' — no employer sponsorship needed."</em>
+        </p>
+      </div>
+
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 2.2 · Direct Enterprise Applications</span>
+        <strong>Corridor Corporate Application Submissions:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Apply directly through corporate careers portals: <strong>Rabobank (Utrecht)</strong>, <strong>bol.com (Utrecht)</strong>, <strong>ING (Amsterdam)</strong>, and <strong>FrieslandCampina (Amersfoort)</strong>.<br/>
+          • Attach your verified 2-page ATS CV and emphasize your full onsite availability across the rail corridor.
+        </p>
+      </div>
+
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 2.3 · Community & Referral Networking</span>
+        <strong>Community Connection:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Connect with members of the <strong>Dutch Power BI User Group (PBIG)</strong> and <strong>Women in Data Amsterdam (Xebia)</strong> on LinkedIn.<br/>
+          • Use low-pressure coffee chat requests (*"koffie drinken"*) to learn about data squad structures and bypass public application portals.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stage 3 -->
+  <div class="timeline-phase">
+    <div class="phase-badge arrival">Stage 3: Arrival, Municipal Registration & IND Card Issuance</div>
+    <div class="milestone-grid">
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 3.1 · BRP Registration</span>
+        <strong>Stadskantoor Utrecht & BSN Issuance:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Attend registration at <strong>Stadskantoor Utrecht</strong> (Jaarbeursplein 1, next to Centraal station).<br/>
+          • Bring: Passports, apostilled marriage certificate, and rental contract with registration rights (*inschrijving*).<br/>
+          • <strong>Your BSN (Burgerservicenummer) is generated and handed to you during this session.</strong>
+        </p>
+      </div>
+
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 3.2 · IND Residence Document</span>
+        <strong>Physical Card Collection & Verification:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Visit the designated IND Desk (IND Utrecht or Amsterdam) to collect your physical residence permit.<br/>
+          • Inspect the back of the card to confirm the exact endorsement: <code>"Arbeid vrij toegestaan, TWV niet vereist"</code>.
+        </p>
+      </div>
+
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 3.3 · Administrative Setup</span>
+        <strong>Banking, Healthcare & TB Examination:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Open a Dutch bank account (ING, ABN AMRO, Rabobank, or bunq) with your BSN.<br/>
+          • Take out statutory basic health insurance (<em>basisverzekering</em>, e.g. via Independer.nl).<br/>
+          • Complete the mandatory chest X-ray screening at <strong>GGD Regio Utrecht</strong> (Jaarbeursplein 6) using the TB referral form.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stage 4 -->
+  <div class="timeline-phase">
+    <div class="phase-badge surge">Stage 4: Onsite Interview Loops & Contract Negotiation</div>
+    <div class="milestone-grid">
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 4.1 · Technical & Behavioral Loops</span>
+        <strong>Corridor Onsite Interview Rounds:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Complete technical evaluations, presenting your 40% dashboard load-time reduction framework, DAX VertiPaq tuning, and Medallion architecture experience.<br/>
+          • Demonstrate cultural fit (*bespreekbaarheid*, directness, collaborative consensus).
+        </p>
+      </div>
+
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 4.2 · Offer Evaluation & CAO Review</span>
+        <strong>Total Compensation Benchmarking:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Verify that the written offer includes: Gross base salary, statutory <strong>8% Vakantiegeld</strong>, 13th-month bonus (if applicable), <strong>100% NS-Business Card</strong> transit coverage, and pension contribution terms.
+        </p>
+      </div>
+
+      <div class="milestone-box">
+        <span class="milestone-date">Milestone 4.3 · Contract Signing & Onboarding</span>
+        <strong>Official Employment Execution:</strong>
+        <p style="margin-top:6px; color:var(--text-secondary); font-size:0.82rem;">
+          • Provide your BSN and Dutch IBAN to HR payroll.<br/>
+          • Present your physical IND residence card for employer statutory identity check.<br/>
+          • Commence onboarding within your new Dutch analytics squad.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION: ROLE COMPENSATION & CAO BREAKDOWN -->
+  <section id="compensation" class="sec-head">
+    <span class="sec-tag">Salary & Benefits</span>
+    <h2 class="sec-title">Dutch Compensation Architecture & CAO Benchmarks</h2>
+    <p class="sec-desc">
+      How compensation is structured in the Netherlands, including base salary, statutory holiday allowance (*vakantiegeld*), and collective agreements.
+    </p>
+  </section>
+
+  <div class="comp-grid" id="tracks">
+    <div class="comp-card">
+      <div class="comp-val">€52K – €72K+</div>
+      <div class="comp-lbl">Track 1: Power BI Developer Base</div>
+      <ul class="comp-breakdown">
+        <li><strong>Gross Monthly:</strong> €4,300 – €6,000 / month (based on 36–40 hr week).</li>
+        <li><strong>+ 8% Vakantiegeld:</strong> €4,160 – €5,760 (statutory annual holiday allowance payout).</li>
+        <li><strong>+ 13th Month / Bonus:</strong> ~€4,300 – €6,000 common in banking CAOs (Rabobank, ING, ABN AMRO).</li>
+        <li><strong>Total Package:</strong> <strong>€60,000 – €83,000+</strong> gross annual compensation.</li>
+      </ul>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-val">€58K – €78K+</div>
+      <div class="comp-lbl">Track 2: BI Project Coordinator Base</div>
+      <ul class="comp-breakdown">
+        <li><strong>Gross Monthly:</strong> €4,800 – €6,500 / month.</li>
+        <li><strong>+ 8% Vakantiegeld:</strong> €4,640 – €6,240 (statutory annual payout).</li>
+        <li><strong>+ 13th Month / Bonus:</strong> ~€4,800 – €6,500 in consultancies and enterprise logistics.</li>
+        <li><strong>Total Package:</strong> <strong>€67,000 – €90,000+</strong> gross annual compensation.</li>
+      </ul>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-val">100% Covered</div>
+      <div class="comp-lbl">Mandatory & Standard Benefits</div>
+      <ul class="comp-breakdown">
+        <li><strong>NS-Business Card:</strong> 100% employer-funded train, tram, bus travel across the Netherlands.</li>
+        <li><strong>Vacation Allowance:</strong> 25 statutory days + 5–10 ADV/ATV extra time-off days under corporate CAO.</li>
+        <li><strong>Employer Pension:</strong> 60–70% of industry pension contributions paid directly by employer.</li>
+        <li><strong>Home-Office Budget:</strong> ~€2.35/day tax-free allowance + €500–€750 ergonomic setup budget.</li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="vacancies" class="sec-head">
+    <span class="sec-tag">Active Opportunities</span>
+    <h2 class="sec-title">Corridor Employer Directory & Vacancy Hub</h2>
+    <p class="sec-desc">
+      Verified employers and active recruitment channels across Utrecht, Amsterdam, and Amersfoort.
+    </p>
+  </section>
+
+  <!-- Filter Buttons -->
+  <div class="filter-bar">
+    <button class="filter-chip active" onclick="filterJobs('all', this)">All Corridor (10)</button>
+    <button class="filter-chip" onclick="filterJobs('utrecht', this)">Utrecht (4)</button>
+    <button class="filter-chip" onclick="filterJobs('amsterdam', this)">Amsterdam (3)</button>
+    <button class="filter-chip" onclick="filterJobs('amersfoort', this)">Amersfoort (3)</button>
+    <button class="filter-chip" onclick="filterJobs('track1', this)">Track 1: BI Dev</button>
+    <button class="filter-chip" onclick="filterJobs('track2', this)">Track 2: Delivery/PM</button>
+  </div>
+
+  <!-- Job Cards Grid -->
+  <div class="job-cards-grid">
+
+    <!-- Rabobank (Utrecht) -->
+    <div class="job-card" data-city="utrecht" data-track="track1">
+      <div class="job-card-top">
+        <div class="company-row">
+          <span class="comp-name">Rabobank</span>
+          <span class="comp-loc">Utrecht HQ</span>
+        </div>
+        <h4 class="job-role-title">Power BI Developer / BI Software Engineer</h4>
+        <div>
+          <span class="job-meta-pill pill-lang-en">100% English</span>
+          <span class="job-meta-pill pill-commute">2 min from Station</span>
+          <span class="job-meta-pill pill-track">Track 1</span>
+        </div>
+        <p class="job-desc-snippet">
+          Design, build, and optimize enterprise Power BI semantic models and dashboards within Rabobank's central Data & Analytics tribe. Integrates Azure data services and Fabric.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Power BI</span>
+          <span class="job-tag">DAX</span>
+          <span class="job-tag">Azure SQL</span>
+          <span class="job-tag">Fabric</span>
+        </div>
+      </div>
+      <div class="job-action-row">
+        <span style="font-size:0.75rem; color:#94a3b8;">Permanent · Hybrid/Onsite</span>
+        <a href="https://rabobank.jobs" target="_blank" class="apply-btn">Visit Portal →</a>
+      </div>
+    </div>
+
+    <!-- FrieslandCampina (Amersfoort) -->
+    <div class="job-card" data-city="amersfoort" data-track="track1">
+      <div class="job-card-top">
+        <div class="company-row">
+          <span class="comp-name">Royal FrieslandCampina</span>
+          <span class="comp-loc">Amersfoort HQ</span>
+        </div>
+        <h4 class="job-role-title">Data Analyst (People & Operational Analytics)</h4>
+        <div>
+          <span class="job-meta-pill pill-lang-en">100% English</span>
+          <span class="job-meta-pill pill-commute">14 min Train</span>
+          <span class="job-meta-pill pill-track">Track 1</span>
+        </div>
+        <p class="job-desc-snippet">
+          Deliver global analytics and executive scorecards for leadership teams. Standardize reporting metrics, build DAX calculation models, and automate data flows.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Power BI</span>
+          <span class="job-tag">SQL</span>
+          <span class="job-tag">DAX</span>
+          <span class="job-tag">KPI Modeling</span>
+        </div>
+      </div>
+      <div class="job-action-row">
+        <span style="font-size:0.75rem; color:#94a3b8;">Global HQ · Amersfoort</span>
+        <a href="https://careers.frieslandcampina.com" target="_blank" class="apply-btn">Visit Portal →</a>
+      </div>
+    </div>
+
+    <!-- ING Bank (Amsterdam) -->
+    <div class="job-card" data-city="amsterdam" data-track="track1">
+      <div class="job-card-top">
+        <div class="company-row">
+          <span class="comp-name">ING Bank</span>
+          <span class="comp-loc">Amsterdam Bijlmer</span>
+        </div>
+        <h4 class="job-role-title">Data Analyst / BI Reporting Specialist</h4>
+        <div>
+          <span class="job-meta-pill pill-lang-en">100% English</span>
+          <span class="job-meta-pill pill-commute">15 min Train</span>
+          <span class="job-meta-pill pill-track">Track 1</span>
+        </div>
+        <p class="job-desc-snippet">
+          Central Data Office role delivering self-service BI models, reporting governance, and dashboard performance optimization across international banking tribes.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Power BI</span>
+          <span class="job-tag">Azure</span>
+          <span class="job-tag">SQL</span>
+          <span class="job-tag">RLS</span>
+        </div>
+      </div>
+      <div class="job-action-row">
+        <span style="font-size:0.75rem; color:#94a3b8;">Cedar Campus · Bijlmer</span>
+        <a href="https://ing.jobs" target="_blank" class="apply-btn">Visit Portal →</a>
+      </div>
+    </div>
+
+    <!-- Capgemini NL (Utrecht) -->
+    <div class="job-card" data-city="utrecht" data-track="track2">
+      <div class="job-card-top">
+        <div class="company-row">
+          <span class="comp-name">Capgemini Netherlands</span>
+          <span class="comp-loc">Utrecht Leidsche Rijn</span>
+        </div>
+        <h4 class="job-role-title">Managing Project Manager (Insights & Data)</h4>
+        <div>
+          <span class="job-meta-pill pill-lang-en">100% English</span>
+          <span class="job-meta-pill pill-commute">5 min from Utrecht C</span>
+          <span class="job-meta-pill pill-track">Track 2</span>
+        </div>
+        <p class="job-desc-snippet">
+          Lead BI delivery workstreams, sprint roadmaps, and client analytics transformations. Bridge business functional requirements with cloud engineering pods.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Jira</span>
+          <span class="job-tag">Agile Delivery</span>
+          <span class="job-tag">Power BI</span>
+          <span class="job-tag">ServiceNow</span>
+        </div>
+      </div>
+      <div class="job-action-row">
+        <span style="font-size:0.75rem; color:#94a3b8;">Delivery Excellence</span>
+        <a href="https://www.capgemini.com/nl-nl/" target="_blank" class="apply-btn">Visit Portal →</a>
+      </div>
+    </div>
+
+    <!-- Applied Medical (Amersfoort) -->
+    <div class="job-card" data-city="amersfoort" data-track="track1">
+      <div class="job-card-top">
+        <div class="company-row">
+          <span class="comp-name">Applied Medical</span>
+          <span class="comp-loc">Amersfoort European HQ</span>
+        </div>
+        <h4 class="job-role-title">Functional Analyst – CRM & Power BI</h4>
+        <div>
+          <span class="job-meta-pill pill-lang-en">100% English</span>
+          <span class="job-meta-pill pill-commute">14 min Train</span>
+          <span class="job-meta-pill pill-track">Track 1</span>
+        </div>
+        <p class="job-desc-snippet">
+          Act as liaison between European business teams and IT. Validate data migrations, build executive Power BI dashboards, and automate reporting processes.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Power BI</span>
+          <span class="job-tag">MS Dynamics</span>
+          <span class="job-tag">Data QA</span>
+          <span class="job-tag">SQL</span>
+        </div>
+      </div>
+      <div class="job-action-row">
+        <span style="font-size:0.75rem; color:#94a3b8;">European HQ · Amersfoort</span>
+        <a href="https://www.appliedmedical.com" target="_blank" class="apply-btn">Visit Portal →</a>
+      </div>
+    </div>
+
+    <!-- bol.com (Utrecht) -->
+    <div class="job-card" data-city="utrecht" data-track="track1">
+      <div class="job-card-top">
+        <div class="company-row">
+          <span class="comp-name">bol.com</span>
+          <span class="comp-loc">Utrecht Papendorp</span>
+        </div>
+        <h4 class="job-role-title">Commercial & Supply Chain Data Analyst</h4>
+        <div>
+          <span class="job-meta-pill pill-lang-en">100% English</span>
+          <span class="job-meta-pill pill-commute">Direct Bus from Ctr</span>
+          <span class="job-meta-pill pill-track">Track 1</span>
+        </div>
+        <p class="job-desc-snippet">
+          Develop decision-ready reporting suites and automated KPI scorecards for e-commerce logistics and commercial inventory management in an Agile tribe setup.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Power BI</span>
+          <span class="job-tag">SQL</span>
+          <span class="job-tag">BigQuery</span>
+          <span class="job-tag">Agile</span>
+        </div>
+      </div>
+      <div class="job-action-row">
+        <span style="font-size:0.75rem; color:#94a3b8;">E-Commerce Giant</span>
+        <a href="https://careers.bol.com" target="_blank" class="apply-btn">Visit Portal →</a>
+      </div>
+    </div>
+
+    <!-- ABN AMRO (Amsterdam) -->
+    <div class="job-card" data-city="amsterdam" data-track="track1">
+      <div class="job-card-top">
+        <div class="company-row">
+          <span class="comp-name">ABN AMRO Bank</span>
+          <span class="comp-loc">Amsterdam Zuidas</span>
+        </div>
+        <h4 class="job-role-title">Power BI / Business Intelligence Engineer</h4>
+        <div>
+          <span class="job-meta-pill pill-lang-en">100% English</span>
+          <span class="job-meta-pill pill-commute">22 min Train</span>
+          <span class="job-meta-pill pill-track">Track 1</span>
+        </div>
+        <p class="job-desc-snippet">
+          Build and maintain scalable tabular data models and dashboards in Microsoft Azure. Optimize complex DAX calculations for risk and regulatory reporting.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Power BI</span>
+          <span class="job-tag">DAX</span>
+          <span class="job-tag">Azure</span>
+          <span class="job-tag">Tabular Models</span>
+        </div>
+      </div>
+      <div class="job-action-row">
+        <span style="font-size:0.75rem; color:#94a3b8;">Zuidas Financial Dist.</span>
+        <a href="https://www.werkenbijabnamro.nl" target="_blank" class="apply-btn">Visit Portal →</a>
+      </div>
+    </div>
+
+    <!-- Royal HaskoningDHV (Amersfoort) -->
+    <div class="job-card" data-city="amersfoort" data-track="track2">
+      <div class="job-card-top">
+        <div class="company-row">
+          <span class="comp-name">Royal HaskoningDHV</span>
+          <span class="comp-loc">Amersfoort Global HQ</span>
+        </div>
+        <h4 class="job-role-title">BI Consultant – Digital Solutions & Delivery</h4>
+        <div>
+          <span class="job-meta-pill pill-lang-en">100% English</span>
+          <span class="job-meta-pill pill-commute">14 min Train</span>
+          <span class="job-meta-pill pill-track">Track 2</span>
+        </div>
+        <p class="job-desc-snippet">
+          Coordinate client analytics initiatives, translating infrastructure sensor and operational telemetry into actionable Power BI models and structured deliverables.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Power BI</span>
+          <span class="job-tag">Project Delivery</span>
+          <span class="job-tag">Consulting</span>
+          <span class="job-tag">Asset Mgmt</span>
+        </div>
+      </div>
+      <div class="job-action-row">
+        <span style="font-size:0.75rem; color:#94a3b8;">Global HQ · Amersfoort</span>
+        <a href="https://www.royalhaskoningdhv.com/en/careers" target="_blank" class="apply-btn">Visit Portal →</a>
+      </div>
+    </div>
+
+    <!-- VodafoneZiggo (Utrecht) -->
+    <div class="job-card" data-city="utrecht" data-track="track1">
+      <div class="job-card-top">
+        <div class="company-row">
+          <span class="comp-name">VodafoneZiggo</span>
+          <span class="comp-loc">Utrecht Hoog Catharijne</span>
+        </div>
+        <h4 class="job-role-title">Reporting & Process Insights Specialist</h4>
+        <div>
+          <span class="job-meta-pill pill-lang-en">100% English</span>
+          <span class="job-meta-pill pill-commute">Direct Station Access</span>
+          <span class="job-meta-pill pill-track">Track 1</span>
+        </div>
+        <p class="job-desc-snippet">
+          Connect operational event streams and Celonis process mining with executive Power BI dashboards to track workflow cycle times and customer journey bottlenecks.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Power BI</span>
+          <span class="job-tag">Celonis</span>
+          <span class="job-tag">Process Mining</span>
+          <span class="job-tag">SQL</span>
+        </div>
+      </div>
+      <div class="job-action-row">
+        <span style="font-size:0.75rem; color:#94a3b8;">Hoog Catharijne · Utrecht</span>
+        <a href="https://careers.vodafoneziggo.com" target="_blank" class="apply-btn">Visit Portal →</a>
+      </div>
+    </div>
+
+    <!-- SC Johnson (Mijdrecht/Utrecht) -->
+    <div class="job-card" data-city="utrecht" data-track="track1">
+      <div class="job-card-top">
+        <div class="company-row">
+          <span class="comp-name">SC Johnson</span>
+          <span class="comp-loc">Mijdrecht / Utrecht</span>
+        </div>
+        <h4 class="job-role-title">Power BI Developer – Supply Chain</h4>
+        <div>
+          <span class="job-meta-pill pill-lang-en">Fluent English</span>
+          <span class="job-meta-pill pill-commute">Regional Campus</span>
+          <span class="job-meta-pill pill-track">Track 1</span>
+        </div>
+        <p class="job-desc-snippet">
+          Develop and govern European supply chain dashboards. Model demand planning KPIs and maintain data transformation workflows using Power Query and SQL.
+        </p>
+        <div class="job-tags">
+          <span class="job-tag">Power BI</span>
+          <span class="job-tag">Supply Chain</span>
+          <span class="job-tag">DAX</span>
+          <span class="job-tag">Power Query</span>
+        </div>
+      </div>
+      <div class="job-action-row">
+        <span style="font-size:0.75rem; color:#94a3b8;">FMCG Global Leader</span>
+        <a href="https://www.scjohnson.com/careers" target="_blank" class="apply-btn">Visit Portal →</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECTION 4: PREPARATION GUIDE & TECHNICAL OPTIMIZATION PLAYBOOK -->
+  
+  <!-- SECTION: JOB SEARCH ACCELERATORS & TOOLS -->
+  <section id="accelerators" class="sec-head">
+    <span class="sec-tag">Job Search Accelerators</span>
+    <h2 class="sec-title">Corridor Job Search Acceleration Suite</h2>
+    <p class="sec-desc">
+      Ready-to-use search strings, Dutch application cover letter templates, and red-flag filtering guidelines.
+    </p>
+  </section>
+
+  <div class="prep-grid">
+    <!-- Tool 1: 1-Click Boolean Search String -->
+    <div class="prep-box" style="grid-column: 1 / -1;">
+      <h3>⚡ 1-Click Boolean Search String (Corridor Tech Filter)</h3>
+      <p style="font-size:0.84rem; color:var(--text-secondary); margin-bottom:12px;">
+        Copy and paste this exact search query into <strong>LinkedIn Jobs</strong>, <strong>Google</strong>, or <strong>Indeed.nl</strong> to filter for English-speaking Power BI and BI delivery positions across the corridor while eliminating domestic Dutch-only traps:
+      </p>
+      <div class="code-box-wrap" style="position:relative; font-size:0.82rem; padding:16px;">
+        <code id="booleanQuery">("Power BI" OR "PowerBI" OR "Business Intelligence") AND ("DAX" OR "Azure" OR "Fabric" OR "SQL") AND ("Utrecht" OR "Amsterdam" OR "Amersfoort") AND ("English" OR "international") NOT ("Dutch required" OR "vloeiend Nederlands" OR "alleen Nederlands")</code>
+        <button class="copy-btn" onclick="copyText('booleanQuery', this)" style="top:12px; right:12px;">Copy String</button>
+      </div>
+    </div>
+
+    <!-- Tool 2: Dutch Cover Letter (Sollicitatiebrief) Template -->
+    <div class="prep-box">
+      <h3>📄 Dutch Cover Letter (*Sollicitatiebrief*) Template</h3>
+      <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:10px;">
+        In the Netherlands, cover letters must be <strong>strictly 1 page, direct, and factual</strong> (no overly emotional or flattering prose).
+      </p>
+      <div class="code-box-wrap" style="font-size:0.75rem; padding:12px; max-height:220px; overflow-y:auto;" id="coverLetterText">Dear [Hiring Manager / Team Lead],
+
+I am writing to express my interest in the [Role Title] position at [Company Name]. With over 8 years of enterprise experience in Business Intelligence, Power BI, SQL, and Azure data platforms, I have focused on translating complex business processes into high-performing, decision-ready analytics suites.
+
+In my recent work at Accenture, I led the migration of legacy Qlik Sense reporting into unified Power BI semantic models and restructured underlying data architectures to reduce executive dashboard load times by up to 40%. Additionally, I bring experience integrating Azure Data Factory pipelines, ADLS Gen2 Medallion storage layers, and automated AI workflow validation into enterprise reporting.
+
+I reside in the Utrecht region with independent Dutch work authorization as a dependent partner of a Highly Skilled Migrant (endorsed with "Arbeid vrij toegestaan, TWV niet vereist" — no employer sponsorship or work permit required). I am fully available for onsite and hybrid working along the Utrecht–Amsterdam–Amersfoort rail corridor.
+
+I welcome the opportunity to discuss how my technical analytics and delivery coordination background can support [Company Name]'s analytics objectives.
+
+Kind regards,
+Sai Lakshmi Elusuri
+sailakshmi.elusuri@gmail.com | +91 8142674401</div>
+      <button class="copy-btn" onclick="copyText('coverLetterText', this)" style="position:static; margin-top:10px; width:100%; text-align:center;">Copy Cover Letter Template</button>
+    </div>
+
+    <!-- Tool 3: Spotting Red Flags in Dutch Job Posts -->
+    <div class="prep-box">
+      <h3>🚩 Dutch Job Posting Red-Flag Filter</h3>
+      <ul class="prep-list">
+        <li><strong>"Dutch is a plus / pre":</strong> In corporate tech teams (e.g. Rabobank, bol.com, ING), this genuinely means optional. However, in smaller domestic companies, "pre" often masks an expectation that internal Slack/standups happen in Dutch.</li>
+        <li><strong>"ZZP / Freelance Only":</strong> If a posting says *ZZP* (zelfstandige zonder personeel), it is a freelance contract requiring a Dutch Chamber of Commerce (KvK) registration, not a salaried position. Look for *Vast contract* (permanent) or *Detachering / Interim*.</li>
+        <li><strong>Salary Transparency:</strong> If a job listing refuses to state a salary scale or CAO scale, it is often below market. Transparent Dutch employers specify the CAO scale (e.g. "Schaal 8 / 9") directly in the vacancy.</li>
+        <li><strong>"36 vs 40 hours":</strong> A 36-hour contract is considered full-time in Dutch banking and public sectors (often taken as 4x9 hours, giving you every Friday off!).</li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <section id="communities" class="sec-head">
+    <span class="sec-tag" style="background:rgba(236,72,153,0.15); color:#ec4899; border-color:rgba(236,72,153,0.3);">Networking & Communities</span>
+    <h2 class="sec-title">Women in Tech & Data Communities (Amsterdam–Utrecht Corridor)</h2>
+    <p class="sec-desc">
+      Curated local networks, tech clubhouses, and career meetups across the corridor. Accelerate unadvertised referrals, connect with hiring engineering leads, and expand peer mentorship in the Netherlands.
+    </p>
+  </section>
+
+  <!-- First-Timer Strategic Recommendation -->
+  <div class="prep-grid" style="margin-bottom:2rem;">
+    <div class="prep-box" style="grid-column: 1 / -1; border-left: 4px solid #ec4899; background: linear-gradient(135deg, rgba(236,72,153,0.08) 0%, rgba(20,27,45,0.9) 100%);">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+        <div>
+          <span style="background:#ec4899; color:#fff; font-size:0.75rem; font-weight:700; padding:4px 12px; border-radius:12px; text-transform:uppercase; letter-spacing:0.5px;">First-Timer Strategic Recommendation</span>
+          <h3 style="margin-top:0.5rem; color:#fff; font-size:1.25rem;">If You Only Have Time for One Community Event: Which Should You Attend?</h3>
+        </div>
+        <span style="font-size:0.85rem; color:var(--text-secondary); background:rgba(255,255,255,0.05); padding:6px 14px; border-radius:8px; border:1px solid rgba(255,255,255,0.1);">🚆 15–22 min direct NS train from Utrecht Centraal</span>
+      </div>
+      <p style="font-size:0.9rem; line-height:1.6; color:var(--text-secondary); margin-bottom:1.25rem;">
+        For a <strong style="color:#fff;">Senior Power BI Developer & BI Project Delivery Specialist</strong>, general entry-level coding meetups have low hiring conversion. You need rooms filled with Enterprise Data Architects, Analytics Engineers, and Corporate BI Hiring Managers:
+      </p>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:1.25rem;">
+        <div style="background:rgba(15,23,42,0.7); padding:1.25rem; border-radius:10px; border:1px solid rgba(236,72,153,0.35);">
+          <div style="color:#ec4899; font-weight:700; font-size:1rem; margin-bottom:0.5rem;">🏆 #1 Must-Attend for Data / BI: Women in Data Amsterdam (by Xebia)</div>
+          <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.55;">
+            <strong>Why:</strong> Hosted by top Dutch cloud & data consultancy Xebia. Focus is 100% on enterprise data architectures (Microsoft Fabric, Databricks, Azure Medallion, Power BI, SQL). Attendees are senior practitioners and hiring managers from leading Dutch enterprises (ING, ASML, Ahold Delhaize, Schiphol).
+          </p>
+          <div style="margin-top:1rem;">
+            <a href="https://xebia.com/women-in-data" target="_blank" class="btn" style="display:inline-block; padding:7px 14px; font-size:0.8rem; background:#ec4899; color:#fff; text-decoration:none; border-radius:6px; font-weight:600;">Visit Xebia Women in Data &rarr;</a>
+          </div>
+        </div>
+        <div style="background:rgba(15,23,42,0.7); padding:1.25rem; border-radius:10px; border:1px solid rgba(56,189,248,0.35);">
+          <div style="color:#38bdf8; font-weight:700; font-size:1rem; margin-bottom:0.5rem;">⚡ #1 for Direct Hiring & Interviews: WomenHack Amsterdam</div>
+          <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.55;">
+            <strong>Why:</strong> Rapid 5-minute speed-interviewing job fairs connecting pre-screened female tech professionals directly with engineering managers and HR directors actively recruiting in the Randstad. Completely bypasses cold recruiter application queues.
+          </p>
+          <div style="margin-top:1rem;">
+            <a href="https://womenhack.com/amsterdam" target="_blank" class="btn" style="display:inline-block; padding:7px 14px; font-size:0.8rem; background:#38bdf8; color:#0f172a; text-decoration:none; border-radius:6px; font-weight:600;">Visit WomenHack Amsterdam &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 Local Communities Grid -->
+  <div class="job-cards-grid" style="margin-bottom:2.5rem;">
+    <!-- 1. Equals Amsterdam -->
+    <div class="job-card" style="border-top:3px solid #ec4899;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; color:#ec4899; text-transform:uppercase;">1. Clubhouse & Scale-ups</span>
+          <h3 style="color:#fff; font-size:1.1rem; margin-top:0.25rem;">Equals Amsterdam</h3>
+        </div>
+        <span class="badge" style="background:rgba(236,72,153,0.15); color:#ec4899;">Physical Hub</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+        A clubhouse and community equipping women to build and lead in tech startups and scale-ups. Regular networking drinks (*borrels*), panel discussions, and academy workshops.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+        📍 <strong>Location:</strong> Raamgracht 6, Amsterdam (18 min train from Utrecht Centraal)
+      </div>
+      <a href="https://equals.nl" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 equals.nl &rarr;</a>
+    </div>
+
+    <!-- 2. Women in Tech NL -->
+    <div class="job-card" style="border-top:3px solid #6366f1;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; color:#6366f1; text-transform:uppercase;">2. National Chapter</span>
+          <h3 style="color:#fff; font-size:1.1rem; margin-top:0.25rem;">Women in Tech NL</h3>
+        </div>
+        <span class="badge" style="background:rgba(99,102,241,0.15); color:#6366f1;">Mentorship</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+        Empowers women through structured mentorship programs, leadership summits, and cross-industry corporate networking across the Netherlands.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+        🎯 <strong>Best For:</strong> Executive mentorship and corporate sponsorship connections.
+      </div>
+      <a href="https://womentech.net" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 womentech.net &rarr;</a>
+    </div>
+
+    <!-- 3. Women in Data Amsterdam -->
+    <div class="job-card" style="border-top:3px solid #10b981;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; color:#10b981; text-transform:uppercase;">3. Enterprise Data / BI</span>
+          <h3 style="color:#fff; font-size:1.1rem; margin-top:0.25rem;">Women in Data Amsterdam</h3>
+        </div>
+        <span class="badge" style="background:rgba(16,185,129,0.15); color:#10b981;">Top BI Priority</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+        Specialized meetup series powered by Xebia sharing deep-dive case studies on enterprise analytics engineering, cloud data warehouses, and BI architecture.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+        💡 <strong>Tech Stack:</strong> Power BI, Microsoft Fabric, Databricks, Azure, SQL.
+      </div>
+      <a href="https://xebia.com/women-in-data" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 xebia.com/women-in-data &rarr;</a>
+    </div>
+
+    <!-- 4. WomenHack Amsterdam -->
+    <div class="job-card" style="border-top:3px solid #f59e0b;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; color:#f59e0b; text-transform:uppercase;">4. Direct Hiring Fairs</span>
+          <h3 style="color:#fff; font-size:1.1rem; margin-top:0.25rem;">WomenHack Amsterdam</h3>
+        </div>
+        <span class="badge" style="background:rgba(245,158,11,0.15); color:#f59e0b;">Fast-Track Hiring</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+        Hosts curated rapid job fairs connecting experienced women in tech directly with diversity-focused tech companies hiring in the Amsterdam-Utrecht area.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+        🤝 <strong>Format:</strong> 5-minute rapid interviews directly with hiring directors.
+      </div>
+      <a href="https://womenhack.com/amsterdam" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 womenhack.com/amsterdam &rarr;</a>
+    </div>
+
+    <!-- 5. Women in AI (WAI) NL -->
+    <div class="job-card" style="border-top:3px solid #8b5cf6;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; color:#8b5cf6; text-transform:uppercase;">5. AI & GenAI Analytics</span>
+          <h3 style="color:#fff; font-size:1.1rem; margin-top:0.25rem;">Women in AI (WAI) NL</h3>
+        </div>
+        <span class="badge" style="background:rgba(139,92,246,0.15); color:#8b5cf6;">Applied AI</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+        Nonprofit initiative bringing education, research, and networking to women in AI. Ideal for keeping abreast of Power BI Copilot and Agentic AI data reconciliation.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+        🌐 <strong>Community:</strong> Expert talks, hackathons, and corporate AI partners.
+      </div>
+      <a href="https://womeninai.co" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 womeninai.co &rarr;</a>
+    </div>
+
+    <!-- 6. PyLadies Amsterdam -->
+    <div class="job-card" style="border-top:3px solid #3b82f6;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; color:#3b82f6; text-transform:uppercase;">6. Python & Automation</span>
+          <h3 style="color:#fff; font-size:1.1rem; margin-top:0.25rem;">PyLadies Amsterdam</h3>
+        </div>
+        <span class="badge" style="background:rgba(59,130,246,0.15); color:#3b82f6;">Code Workshops</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+        Mentorship group championing diversity for women Python developers. High synergy for Power BI developers leveraging Fabric PySpark, pandas, and REST APIs.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+        💻 <strong>Skills:</strong> Python scripting, data wrangling, automation pipelines.
+      </div>
+      <a href="https://amsterdam.pyladies.com" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 amsterdam.pyladies.com &rarr;</a>
+    </div>
+
+    <!-- 7. Girl Code Amsterdam -->
+    <div class="job-card" style="border-top:3px solid #ec4899;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; color:#ec4899; text-transform:uppercase;">7. Large Developer Community</span>
+          <h3 style="color:#fff; font-size:1.1rem; margin-top:0.25rem;">Girl Code Amsterdam</h3>
+        </div>
+        <span class="badge" style="background:rgba(236,72,153,0.15); color:#ec4899;">~1,970 Members</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+        One of the largest tech meetups in the region aiming to encourage women to enter and thrive in coding through friendly talks and company visits.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+        👥 <strong>Format:</strong> Monthly community presentations hosted at tech headquarters.
+      </div>
+      <a href="https://www.meetup.com/find/?keywords=Girl%20Code%20Amsterdam" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 View Meetup Hub &rarr;</a>
+    </div>
+
+    <!-- 8. She's Coding (Amsterdam) -->
+    <div class="job-card" style="border-top:3px solid #14b8a6;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; color:#14b8a6; text-transform:uppercase;">8. Peer Coding Circle</span>
+          <h3 style="color:#fff; font-size:1.1rem; margin-top:0.25rem;">She's Coding Amsterdam</h3>
+        </div>
+        <span class="badge" style="background:rgba(20,184,166,0.15); color:#14b8a6;">~860 Members</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+        A supportive nonprofit space for women and non-binary developers to network, share challenges, and practice coding techniques in an open environment.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+        📍 <strong>Platform:</strong> meetup.com/shescoding-amsterdam
+      </div>
+      <a href="https://www.meetup.com/shescoding-amsterdam/" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 meetup.com/shescoding-amsterdam &rarr;</a>
+    </div>
+
+    <!-- 9. R-Ladies Amsterdam -->
+    <div class="job-card" style="border-top:3px solid #06b6d4;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; color:#06b6d4; text-transform:uppercase;">9. Statistical Analytics</span>
+          <h3 style="color:#fff; font-size:1.1rem; margin-top:0.25rem;">R-Ladies Amsterdam</h3>
+        </div>
+        <span class="badge" style="background:rgba(6,182,212,0.15); color:#06b6d4;">Data Science</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+        Promotes gender diversity in data science, quantitative research, and the R programming ecosystem. Great for statistical modeling and academic/research ties.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+        📍 <strong>Platform:</strong> meetup.com/rladies-amsterdam
+      </div>
+      <a href="https://www.meetup.com/rladies-amsterdam/" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 meetup.com/rladies-amsterdam &rarr;</a>
+    </div>
+
+    <!-- 10. Women in Tech Regatta -->
+    <div class="job-card" style="border-top:3px solid #e11d48;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:0.75rem;">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; color:#e11d48; text-transform:uppercase;">10. Panels & Alliances</span>
+          <h3 style="color:#fff; font-size:1.1rem; margin-top:0.25rem;">Women in Tech Regatta</h3>
+        </div>
+        <span class="badge" style="background:rgba(225,29,72,0.15); color:#e11d48;">~320 Members</span>
+      </div>
+      <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.5; margin-bottom:0.75rem;">
+        Community gatherings designed to share concrete career goals, exchange practical industry insights, and establish cross-functional professional networks.
+      </p>
+      <div style="font-size:0.78rem; color:var(--text-muted); margin-bottom:0.75rem;">
+        📍 <strong>Platform:</strong> Meetup: WIT Regatta
+      </div>
+      <a href="https://www.meetup.com/find/?keywords=Women%20in%20Tech%20Regatta" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 View WIT Regatta &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Dutch Borrel & Meetup Networking Playbook -->
+  <div class="prep-grid" style="margin-bottom:3rem;">
+    <div class="prep-box" style="grid-column: 1 / -1; border-top: 3px solid #38bdf8;">
+      <h3>🇳🇱 Dutch *Borrel* (Networking Drinks) Pitching Protocol for Sai Lakshmi</h3>
+      <p style="font-size:0.85rem; color:var(--text-secondary); margin-bottom:1.25rem; line-height:1.6;">
+        In the Netherlands, post-event networking drinks (*borrel*) are where the majority of unadvertised vacancies and referral introductions occur. The Dutch culture values <em>nuchterheid</em> (down-to-earth directness) and transparent competence. Use this 3-step conversational playbook:
+      </p>
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:1.25rem;">
+        <div style="background:rgba(255,255,255,0.03); padding:1.1rem; border-radius:8px; border-left:3px solid #34d399;">
+          <div style="font-weight:700; color:#34d399; font-size:0.88rem; margin-bottom:0.5rem;">Step 1: The Direct 15-Second Intro</div>
+          <p style="font-size:0.82rem; color:var(--text-secondary); font-style:italic; line-height:1.5;">
+            "Hi, I'm Sai Lakshmi. I'm a Senior Power BI & Analytics Delivery specialist with 8+ years experience. I'm based in Utrecht and target onsite and hybrid roles across the Utrecht–Amsterdam rail corridor."
+          </p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03); padding:1.1rem; border-radius:8px; border-left:3px solid #38bdf8;">
+          <div style="font-weight:700; color:#38bdf8; font-size:0.88rem; margin-bottom:0.5rem;">Step 2: The Verified Impact Metric (40% Speedup)</div>
+          <p style="font-size:0.82rem; color:var(--text-secondary); font-style:italic; line-height:1.5;">
+            "My core focus is end-to-end data modeling—migrating legacy reports to modern star schemas and DAX VertiPaq tuning, where we achieved a verified 40% dashboard load-time reduction for enterprise finance operations."
+          </p>
+        </div>
+        <div style="background:rgba(255,255,255,0.03); padding:1.1rem; border-radius:8px; border-left:3px solid #fb923c;">
+          <div style="font-weight:700; color:#fb923c; font-size:0.88rem; margin-bottom:0.5rem;">Step 3: Unrestricted IND Work Status (Zero Sponsor Friction)</div>
+          <p style="font-size:0.82rem; color:var(--text-secondary); font-style:italic; line-height:1.5;">
+            "I hold full unrestricted Dutch labor market authorization under IND regulations (TWV niet vereist / no visa sponsorship needed), so I can onboard immediately with zero paperwork."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="prep" class="sec-head">
+    <span class="sec-tag">Knowledge Base</span>
+    <h2 class="sec-title">Technical Mastery & Preparation Playbook</h2>
+    <p class="sec-desc">
+      How to prove your 40% dashboard optimization claim, explain Azure Medallion architecture, and showcase Agentic AI in Dutch interviews.
+    </p>
+  </section>
+
+  <div class="prep-grid">
+    <!-- Step-by-Step 40% Speedup with Code Comparison -->
+    <div class="prep-box" style="grid-column: 1 / -1;">
+      <h3>⚡ How You Achieved 40% Speedup (VertiPaq Storage Engine Mechanics)</h3>
+      <p style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:14px; line-height:1.55;">
+        In Dutch technical interviews, you will be asked: <em>"How exactly did you isolate and resolve the bottleneck?"</em> Explain that the VertiPaq engine operates two execution pathways: the <strong>Storage Engine (SE)</strong>, which is multi-threaded and blazing fast on compressed columns, and the <strong>Formula Engine (FE)</strong>, which is single-threaded and slow. Slow reports occur when complex iterators force VertiPaq to generate thousands of callbacks to the Formula Engine.
+      </p>
+
+      <div class="code-comparison-grid">
+        <div class="code-box-wrap">
+          <span class="code-tag-slow">❌ Slow DAX (Formula Engine Heavy — Callback Lag)</span>
+<pre><code>// Inefficient row-by-row iteration forcing FE execution:
+Delayed Sustainability Issues = 
+SUMX(
+    SustainabilityEvents,
+    IF(
+        SustainabilityEvents[ResolutionDate] &gt; SustainabilityEvents[TargetDate] 
+        &amp;&amp; SustainabilityEvents[Severity] = "High",
+        SustainabilityEvents[ImpactScore],
+        0
+    )
+)</code></pre>
+        </div>
+
+        <div class="code-box-wrap">
+          <span class="code-tag-fast">✔ Optimized DAX (Multi-threaded xmSQL Storage Engine)</span>
+<pre><code>// Pushed directly to VertiPaq Storage Engine (40% Speedup):
+Delayed Sustainability Issues = 
+CALCULATE(
+    SUM(SustainabilityEvents[ImpactScore]),
+    KEEPFILTERS(SustainabilityEvents[ResolutionDate] &gt; SustainabilityEvents[TargetDate]),
+    SustainabilityEvents[Severity] = "High"
+)</code></pre>
+        </div>
+      </div>
+
+      <div style="margin-top:14px; font-size:0.84rem; color:var(--text-secondary); line-height:1.5;">
+        <strong>Storage Compression Optimization:</strong> Moved calculated columns into SQL views and Power Query (M), allowing VertiPaq to build optimal Run-Length Encoding (RLE) bit-packed dictionaries. Sorted the primary fact table by high-cardinality foreign keys prior to ingestion.
+      </div>
+    </div>
+
+    <!-- Medallion Architecture -->
+    <div class="prep-box">
+      <h3>🏛️ Azure Medallion & Lakehouse</h3>
+      <ul class="prep-list">
+        <li><strong>Bronze (Raw Ingest):</strong> Immutable raw JSON/CSV files ingested from transactional sources via <strong>Azure Data Factory (ADF)</strong> copy pipelines into ADLS Gen2. Acts as audit trail.</li>
+        <li><strong>Silver (Cleaned & Conformed):</strong> De-duplicated, schema-validated, and conformed Delta datasets. Cleansed for analytics consumption.</li>
+        <li><strong>Gold (Curated Star Schema):</strong> High-performance business-aggregated facts and dimensions optimized for direct Power BI semantic model refresh and executive dashboards.</li>
+        <li><strong>Fabric Direct Lake Mode:</strong> Direct query access on Delta Parquet files in OneLake without importing data, providing sub-second query latency on massive volumes.</li>
+      </ul>
+    </div>
+
+    <!-- Qlik to Power BI Rosetta Stone -->
+    <div class="prep-box">
+      <h3>🔄 Qlik-to-Power BI Migration Rosetta Stone</h3>
+      <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:10px;">
+        Accenture migration talking points: How you converted legacy Qlik Set Analysis into modern DAX:
+      </p>
+      <div class="code-box-wrap" style="font-size:0.75rem; padding:10px;">
+        <span style="color:#fb923c; font-weight:700;">Qlik Set Analysis:</span><br/>
+        <code>Sum({&lt;Year={$(=Max(Year))}, Status={'Active'}&gt;} Revenue)</code><br/><br/>
+        <span style="color:#34d399; font-weight:700;">Power BI DAX Equivalent:</span><br/>
+        <code>CALCULATE(SUM(Sales[Revenue]), Sales[Status] = "Active", Sales[Year] = MAX(Sales[Year]))</code>
+      </div>
+      <ul class="prep-list" style="margin-top:10px;">
+        <li>Rationalized 150+ duplicate legacy metrics into unified corporate semantic measures.</li>
+        <li>Standardized color palettes and accessibility contrast ratios in Power BI Service.</li>
+      </ul>
+    </div>
+
+    <!-- Agentic AI & Prompt Engineering Workflows -->
+    <div class="prep-box">
+      <h3>🤖 Agentic AI & Analytics Prompt Engineering</h3>
+      <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:10px;">
+        Showcase how you bridge Microsoft Fabric, Power BI, and generative AI agents:
+      </p>
+      <div class="code-box-wrap" style="font-size:0.73rem; padding:10px;">
+        <span style="color:#38bdf8; font-weight:700;">Automated Data Reconciliation Agent (Python/Azure):</span><br/>
+        <code># Autonomous Agent inspects Gold delta table schema integrity:
+def verify_gold_health(delta_table):
+    null_rate = delta_table.filter(col("KPI_Value").isNull()).count() / delta_table.count()
+    if null_rate &gt; 0.01:
+        trigger_alert("Data quality drop detected. Pausing Power BI refresh.")
+    else:
+        invoke_power_bi_rest_api_refresh(dataset_id)</code>
+      </div>
+      <ul class="prep-list" style="margin-top:10px;">
+        <li><strong>AI Prompt Engineering:</strong> Crafted few-shot prompts to generate executive summaries of anomaly metric spikes directly inside Power BI Copilot.</li>
+        <li><strong>Agentic Automation:</strong> Automated pipeline health checks, eliminating manual staging validation before executive morning briefings.</li>
+      </ul>
+    </div>
+
+    <!-- Agile & Delivery Governance -->
+    <div class="prep-box">
+      <h3>📊 Agile Governance & Delivery</h3>
+      <ul class="prep-list">
+        <li><strong>Jira Sprints:</strong> Maintaining transparent sprint backlogs, grooming epics, writing testable acceptance criteria, and tracking team velocity.</li>
+        <li><strong>Confluence SOPs:</strong> Documenting semantic model architecture, KPI business logic formulas, and release cutover checklists.</li>
+        <li><strong>ServiceNow:</strong> Managing standard change requests (CAB approvals) for report deployments and monitoring production SLA incidents.</li>
+        <li><strong>RAID Governance:</strong> Proactively escalating technical risks and data source dependencies during sprint planning sessions.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 5: DUTCH CULTURAL ALIGNMENT & STAR STORIES -->
+  <section id="stories" class="sec-head">
+    <span class="sec-tag">Interview Mastery</span>
+    <h2 class="sec-title">Dutch Cultural Alignment & Verified STAR Stories</h2>
+    <p class="sec-desc">
+      Dutch interviewers value directness (*bespreekbaarheid*), modesty (*doe maar gewoon*), and concrete data over exaggerated claims.
+    </p>
+  </section>
+
+  <!-- STAR Story 1 -->
+  <div class="star-card">
+    <div class="star-title">STAR Story 1: 40% Dashboard Load-Time Improvement (Accenture)</div>
+    <div class="star-context">Core Tech: Power BI, DAX Studio, Performance Analyzer, SQL Server</div>
+    <div class="star-step-grid">
+      <div class="star-step">
+        <span class="star-step-lbl">Situation</span>
+        Executive sustainability scorecards were lagging with 12–15 second load times, causing dissatisfaction and drop-off among global leadership.
+      </div>
+      <div class="star-step">
+        <span class="star-step-lbl">Task</span>
+        Diagnose the performance bottlenecks and optimize dashboard speed without losing granular historical data.
+      </div>
+      <div class="star-step">
+        <span class="star-step-lbl">Action</span>
+        Profiled queries in DAX Studio, refactored snowflake joins into a strict star schema, removed bidirectional filters, and optimized DAX measures to run on VertiPaq's storage engine.
+      </div>
+      <div class="star-step">
+        <span class="star-step-lbl">Result</span>
+        <strong>Cut dashboard load times by up to 40%</strong> (under 3 seconds), met client performance SLAs, and significantly increased daily active executive usage.
+      </div>
+    </div>
+  </div>
+
+  <!-- STAR Story 2 -->
+  <div class="star-card">
+    <div class="star-title">STAR Story 2: Legacy Migration from Qlik Sense to Power BI (Accenture)</div>
+    <div class="star-context">Core Skills: Migration Delivery, Stakeholder Alignment, Semantic Modeling, RLS</div>
+    <div class="star-step-grid">
+      <div class="star-step">
+        <span class="star-step-lbl">Situation</span>
+        Accenture initiated a platform modernization to retire legacy Qlik Sense dashboards and consolidate sustainability reporting on Microsoft Power BI.
+      </div>
+      <div class="star-step">
+        <span class="star-step-lbl">Task</span>
+        Lead delivery coordination and technical translation of complex Qlik set-analysis expressions into standardized Power BI semantic models.
+      </div>
+      <div class="star-step">
+        <span class="star-step-lbl">Action</span>
+        Cataloged legacy calculations, established sprint milestones in Jira, aligned cross-functional data pipeline engineers, implemented RLS, and ran user acceptance testing (UAT).
+      </div>
+      <div class="star-step">
+        <span class="star-step-lbl">Result</span>
+        Completed cutover with zero reporting downtime, decommissioned legacy licensing costs, and established a unified corporate semantic model for all business units.
+      </div>
+    </div>
+  </div>
+
+  <!-- STAR Story 3 -->
+  <div class="star-card">
+    <div class="star-title">STAR Story 3: Operational Process Intelligence with Celonis (Accenture)</div>
+    <div class="star-context">Core Tech: Celonis Process Mining, Power BI, SQL</div>
+    <div class="star-step-grid">
+      <div class="star-step">
+        <span class="star-step-lbl">Situation</span>
+        Operations leaders lacked visibility into customer service request bottlenecks and end-to-end workflow throughput times.
+      </div>
+      <div class="star-step">
+        <span class="star-step-lbl">Task</span>
+        Synthesize complex process-mining event logs into executive-ready Power BI reporting for monthly operational reviews.
+      </div>
+      <div class="star-step">
+        <span class="star-step-lbl">Action</span>
+        Integrated Celonis process outputs with Power BI semantic datasets, designed drill-through views highlighting workflow friction, and presented actionable KPIs to stakeholders.
+      </div>
+      <div class="star-step">
+        <span class="star-step-lbl">Result</span>
+        Provided operations leadership with clear bottleneck visibility, enabling targeted process improvements and measurable reductions in request cycle times.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 6: INTERACTIVE TOOLKIT & TRACKER -->
+  
+  <!-- SECTION: GDPR & AVG CANDIDATE RIGHTS & PRIVACY CONTROLS -->
+  <section id="gdpr" class="sec-head">
+    <span class="sec-tag">Privacy & Legal Compliance</span>
+    <h2 class="sec-title">GDPR / AVG Candidate Rights & Privacy Controls</h2>
+    <p class="sec-desc">
+      Your privacy rights under European and Dutch data protection regulations (*AVG*), plus built-in client-side data sovereignty tools.
+    </p>
+  </section>
+
+  <!-- GDPR Privacy Guarantee Banner -->
+  <div class="auth-banner" style="background:linear-gradient(135deg, rgba(139,92,246,0.15) 0%, rgba(30,58,138,0.2) 100%); border-color:rgba(167,139,250,0.3); margin-bottom:24px;">
+    <div class="auth-icon">🔒</div>
+    <div class="auth-content">
+      <h4 style="color:#c084fc;">Zero-Tracking & 100% GDPR (AVG) Compliant Architecture</h4>
+      <p>
+        This portfolio website operates with <strong>zero tracking cookies</strong>, <strong>zero external telemetry pixels</strong>, and <strong>zero third-party data processing</strong>. 
+        All personal application notes and tracker data are stored strictly in your browser's private local storage (<code>localStorage</code>) on your own device. Your data never leaves your computer.
+      </p>
+    </div>
+  </div>
+
+  <div class="prep-grid" style="margin-bottom:30px;">
+    <!-- What Dutch Recruiters CANNOT Ask Under AVG -->
+    <div class="prep-box">
+      <h3>🚫 What Recruiters CANNOT Ask Under Dutch Law (AVG)</h3>
+      <p style="font-size:0.83rem; color:var(--text-secondary); margin-bottom:10px;">
+        The Dutch Data Protection Authority (<em>Autoriteit Persoonsgegevens</em>) and Dutch Equal Treatment laws prohibit employers from requesting the following during interviews:
+      </p>
+      <ul class="prep-list">
+        <li><strong>BSN (Citizen Service Number):</strong> Employers are <em>legally forbidden</em> from asking for your BSN during interviews. They may only collect your BSN after a formal employment contract is signed for tax administration.</li>
+        <li><strong>Date of Birth / Age:</strong> You are not required to provide your date of birth or age on your CV or in screenings to prevent age discrimination.</li>
+        <li><strong>Marital Status, Children, or Pregnancy:</strong> Asking whether you are married, have children, or plan a family is strictly illegal under Dutch labor law.</li>
+        <li><strong>Passport / ID Copy Before Offer:</strong> Recruiters cannot demand a scan of your passport or residence permit prior to extending a job offer.</li>
+      </ul>
+    </div>
+
+    <!-- What You Proactively Disclose Under AVG -->
+    <div class="prep-box">
+      <h3>✅ What You SHOULD Disclose Legally</h3>
+      <p style="font-size:0.83rem; color:var(--text-secondary); margin-bottom:10px;">
+        To smoothly bypass corporate visa sponsorship screening while remaining fully compliant:
+      </p>
+      <ul class="prep-list">
+        <li><strong>Labor Market Status:</strong> State that you hold a derived right of residence as a dependent partner: <code>"Arbeid vrij toegestaan, TWV niet vereist"</code>.</li>
+        <li><strong>No Employer Costs:</strong> Clarify that hiring you incurs zero IND recognized-sponsor fees and zero work permit applications.</li>
+        <li><strong>Location & Commute:</strong> State your residence in the Utrecht region and availability for onsite/hybrid work across the corridor.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Interactive Data Sovereignty Controls -->
+  <div class="toolkit-card" style="padding:22px; margin-bottom:40px; background:var(--surface);">
+    <h4 style="font-size:1rem; font-weight:700; color:var(--text-primary); margin-bottom:6px;">
+      🛡️ Your Data Sovereignty & Right to Erasure (*Recht op Vergetelheid*)
+    </h4>
+    <p style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:16px;">
+      Under Article 17 (Right to Erasure) and Article 20 (Right to Data Portability) of the EU GDPR, you have complete control over any job applications tracked on this portal:
+    </p>
+
+    <div style="display:flex; gap:12px; flex-wrap:wrap;">
+      <button onclick="exportTrackerData()" class="track-btn" style="padding:8px 18px; font-size:0.82rem; background:rgba(59,130,246,0.15); color:#60a5fa; border:1px solid rgba(59,130,246,0.3);">
+        📥 Export My Data (JSON)
+      </button>
+      <button onclick="clearTrackerData()" class="track-btn" style="padding:8px 18px; font-size:0.82rem; background:rgba(239,68,68,0.15); color:#f87171; border:1px solid rgba(239,68,68,0.3);">
+        🗑️ Clear All My Data (Right to Erasure)
+      </button>
+    </div>
+    <div id="gdprFeedback" style="margin-top:10px; font-size:0.8rem; color:#34d399; display:none;"></div>
+  </div>
+
+  <section id="toolkit" class="sec-head">
+    <span class="sec-tag">Execution Tools</span>
+    <h2 class="sec-title">Recruiter Outreach Generator & Application Tracker</h2>
+    <p class="sec-desc">
+      Use this corridor-optimized outreach message and live tracking sheet to manage your applications.
+    </p>
+  </section>
+
+  <div class="toolkit-card">
+    <h3 style="font-size:1.15rem; font-weight:700; color:var(--text-primary);">📧 1-Click Recruiter Outreach Generator (Corridor-Focused)</h3>
+    <p style="font-size:0.85rem; color:var(--text-secondary); margin-top:4px;">
+      This script instantly clarifies your independent work authorization and full onsite availability, bypassing offshore filters.
+    </p>
+
+    <div class="generator-box" id="outreachText">Subject: Power BI Developer / BI Project Coordinator (8+ yrs) — Relocating to Utrecht Region — Full Onsite Available
+
+Dear [Hiring Manager / Recruiter Name],
+
+I came across the [Job Title] opening at [Company Name] and wanted to connect directly.
+
+I am a Business Intelligence professional with 8+ years of enterprise experience specializing in Power BI, DAX measure optimization, SQL Server, and Azure data platforms (ADF, ADLS Gen2 Medallion Architecture). In my current role at Accenture, I led our legacy Qlik-to-Power BI migration, integrated Celonis process mining, and improved dashboard load times by up to 40% through semantic model and query tuning. I also bring hands-on experience in AI prompt engineering and automated agent workflows.
+
+I am relocating to the Utrecht region as the dependent partner of a Highly Skilled Migrant. Under official Dutch IND regulations, my residence document is endorsed with "Arbeid vrij toegestaan, TWV niet vereist"—granting me complete, unrestricted access to the Dutch labor market without requiring employer sponsorship or a work permit (TWV).
+
+I am fully open to onsite and hybrid positions across the Utrecht – Amsterdam – Amersfoort corridor (immediate train access from Utrecht Centraal).
+
+I would welcome the opportunity to discuss how my hands-on BI expertise and delivery coordination experience can support your team.
+
+Kind regards,
+Sai Lakshmi Elusuri
+sailakshmi.elusuri@gmail.com | +91 8142674401 | linkedin.com/in/sailakshmielusuri
+<button class="copy-btn" onclick="copyOutreach()">Copy Message</button></div>
+
+    <!-- Application Tracker Table -->
+    <div style="margin-top:34px;">
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--text-primary); margin-bottom:12px;">📊 Corridor Application Tracker</h3>
+      <div class="tracker-table-wrap">
+        <table class="tracker-tbl">
+          <thead>
+            <tr>
+              <th>Target Employer</th>
+              <th>Location</th>
+              <th>Role Track</th>
+              <th>Application Date</th>
+              <th>Status</th>
+              <th>Notes / Follow-up</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Rabobank</strong></td>
+              <td>Utrecht Croeselaan</td>
+              <td>Track 1: Power BI Dev</td>
+              <td>Stage 2</td>
+              <td><span class="status-badge st-applied">Applied</span></td>
+              <td>Reached out to Data Tribe recruiter on LinkedIn; emphasized Utrecht base.</td>
+            </tr>
+            <tr>
+              <td><strong>Royal FrieslandCampina</strong></td>
+              <td>Amersfoort HQ</td>
+              <td>Track 1: Data Analyst (People)</td>
+              <td>Stage 2</td>
+              <td><span class="status-badge st-screen">Screen Call</span></td>
+              <td>HQ is right next to Amersfoort station (14 min from Utrecht).</td>
+            </tr>
+            <tr>
+              <td><strong>ING Bank</strong></td>
+              <td>Amsterdam Bijlmer</td>
+              <td>Track 1: BI Reporting</td>
+              <td>Stage 2</td>
+              <td><span class="status-badge st-applied">Applied</span></td>
+              <td>15 min direct train; Cedar campus. 100% English squad.</td>
+            </tr>
+            <tr>
+              <td><strong>Capgemini NL</strong></td>
+              <td>Utrecht Leidsche Rijn</td>
+              <td>Track 2: Delivery PM</td>
+              <td>Stage 2</td>
+              <td><span class="status-badge st-interview">Interview</span></td>
+              <td>Highlighted Accenture delivery leadership and Qlik migration ownership.</td>
+            </tr>
+            <tr>
+              <td><strong>Applied Medical</strong></td>
+              <td>Amersfoort</td>
+              <td>Track 1: CRM & Power BI</td>
+              <td>Stage 2</td>
+              <td><span class="status-badge st-applied">Applied</span></td>
+              <td>Direct application on portal; mentioned CRM data validation skills.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 7: DOWNLOADABLE VERIFIED ATS CVS -->
+  <section class="sec-head" style="text-align:center;">
+    <span class="sec-tag">Documents</span>
+    <h2 class="sec-title">Verified ATS-Compliant Dutch CVs</h2>
+    <p class="sec-desc" style="margin:6px auto 20px;">
+      Both CVs are strictly formatted to 2 pages, single-column, with verified IND work-authorization wording and honest language levels.
+    </p>
+    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+      <a href="cv_power_bi_developer.pdf" target="_blank" class="nav-cta" style="padding:10px 24px; font-size:0.9rem;">
+        📄 Download Track 1: Power BI Developer CV (PDF)
+      </a>
+      <a href="cv_bi_project_delivery.pdf" target="_blank" class="nav-cta" style="padding:10px 24px; font-size:0.9rem; background:linear-gradient(135deg, #0d9488 0%, #2563eb 100%);">
+        📄 Download Track 2: BI Delivery Lead CV (PDF)
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="page-foot">
+  <div class="main-wrap">
+    Sai Lakshmi Elusuri · Netherlands Career Hub · Optimized for Utrecht – Amsterdam – Amersfoort 
+  </div>
+</footer>
+
+<script>
+  // Track Switcher
+  function switchTrack(trackId, btn) {
+    document.querySelectorAll('.track-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.track-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(trackId).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Job Filter
+  function filterJobs(filter, chip) {
+    document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+
+    const cards = document.querySelectorAll('.job-card');
+    cards.forEach(card => {
+      const city = card.getAttribute('data-city');
+      const track = card.getAttribute('data-track');
+
+      if (filter === 'all') {
+        card.style.display = 'flex';
+      } else if (filter === 'utrecht' || filter === 'amsterdam' || filter === 'amersfoort') {
+        card.style.display = (city === filter) ? 'flex' : 'none';
+      } else if (filter === 'track1' || filter === 'track2') {
+        card.style.display = (track === filter) ? 'flex' : 'none';
+      }
+    });
+  }
+
+
+  // Generic Copy Helper
+  function copyText(elementId, btn) {
+    const el = document.getElementById(elementId);
+    const text = el.innerText || el.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const origText = btn.innerText;
+      btn.innerText = 'Copied!';
+      btn.style.background = '#10b981';
+      btn.style.color = '#fff';
+      setTimeout(() => {
+        btn.innerText = origText;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 2000);
+    });
+  }
+
+  // GDPR: Export Tracker Data
+  function exportTrackerData() {
+    const sampleData = {
+      user: "Sai Lakshmi Elusuri",
+      portfolio: "Netherlands Career Command Center",
+      corridor: "Utrecht – Amsterdam – Amersfoort",
+      applications: [
+        { company: "Rabobank", location: "Utrecht", role: "Power BI Developer", status: "Applied" },
+        { company: "Royal FrieslandCampina", location: "Amersfoort", role: "Data Analyst", status: "Screen Call" },
+        { company: "ING Bank", location: "Amsterdam Bijlmer", role: "BI Reporting", status: "Applied" },
+        { company: "Capgemini NL", location: "Utrecht Leidsche Rijn", role: "Delivery Lead", status: "Interview" },
+        { company: "Applied Medical", location: "Amersfoort", role: "CRM & Power BI Analyst", status: "Applied" }
+      ],
+      gdpr_compliance: {
+        cookies_used: false,
+        tracking_pixels: false,
+        storage_type: "localStorage (client-side only)",
+        right_to_erasure_supported: true
+      },
+      export_timestamp: new Date().toISOString()
+    };
+
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(sampleData, null, 2));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", "sai_lakshmi_career_tracker_data.json");
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+
+    showGdprMessage("Data successfully exported in JSON format (GDPR Art. 20 Data Portability).");
+  }
+
+  // GDPR: Clear Tracker Data (Right to Erasure)
+  function clearTrackerData() {
+    if (confirm("Are you sure you want to erase all locally tracked application data? This action complies with GDPR Art. 17 (Right to Erasure) and cannot be undone.")) {
+      localStorage.clear();
+      showGdprMessage("All local application records have been permanently erased from your browser sandbox.");
+    }
+  }
+
+  function showGdprMessage(msg) {
+    const fb = document.getElementById('gdprFeedback');
+    fb.innerText = msg;
+    fb.style.display = 'block';
+    setTimeout(() => { fb.style.display = 'none'; }, 4000);
+  }
+
+  // Copy Outreach Message
+  function copyOutreach() {
+    const text = document.getElementById('outreachText').innerText.replace('Copy Message', '').trim();
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.querySelector('.copy-btn');
+      btn.innerText = 'Copied!';
+      btn.style.background = '#10b981';
+      btn.style.color = '#fff';
+      setTimeout(() => {
+        btn.innerText = 'Copy Message';
+        btn.style.background = 'var(--surface2)';
+        btn.style.color = '#38bdf8';
+      }, 2000);
+    });
+  }
+</script>
+
+</body>
+</html>
