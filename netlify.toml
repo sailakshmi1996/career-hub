@@ -3,8 +3,8 @@
 # Site ID: c48ae112-95f4-4603-bfbb-1201e50dd3fc
 
 [build]
-  publish = "."
-  command = "python3 tests/run_all_tests.py"
+  publish = "dist"
+  command = "python3 build.py"
 
 # Enforce HTTPS, HSTS, and GDPR-Compliant Security Headers
 [[headers]]

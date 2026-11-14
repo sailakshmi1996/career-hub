@@ -2,6 +2,9 @@
 .DS_Store
 Thumbs.db
 
+# Build Artifacts
+dist/
+
 # Python caches
 __pycache__/
 *.pyc

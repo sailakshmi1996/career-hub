@@ -736,10 +736,301 @@
       font-size: 0.82rem;
       color: var(--text-muted);
     }
+
+    /* ── Scroll Progress Bar ── */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2px;
+      width: 0%;
+      background: linear-gradient(90deg, #2563eb, #0d9488, #38bdf8);
+      z-index: 9999;
+      transition: width 0.1s linear;
+      pointer-events: none;
+    }
+
+    /* ── Hamburger / Mobile Nav ── */
+    .nav-hamburger {
+      display: none;
+      background: none;
+      border: 1px solid var(--border-subtle);
+      color: #fff;
+      font-size: 1.3rem;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+    @media (max-width: 768px) {
+      .nav-hamburger { display: flex; align-items: center; }
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; right: 0; background: rgba(2, 8, 19, 0.98); border-bottom: 1px solid var(--border-subtle); padding: 16px 24px; gap: 14px; z-index: 99; }
+      .nav-links.open { display: flex; }
+      .nav-actions { display: none; }
+      nav.top-nav { flex-wrap: wrap; position: relative; }
+    }
+
+    /* ── Scroll-spy active nav link ── */
+    .nav-link.active {
+      color: #38bdf8 !important;
+      font-weight: 600;
+    }
+
+    /* ── Quick Stats Bar ── */
+    .quick-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border-subtle);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 36px;
+    }
+    .qs-item {
+      background: rgba(13, 31, 53, 0.9);
+      text-align: center;
+      padding: 18px 12px;
+    }
+    .qs-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #38bdf8;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .qs-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+    @media (max-width: 600px) {
+      .quick-stats-bar { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* ── Professional Profile Card ── */
+    .profile-card {
+      background: linear-gradient(135deg, rgba(13, 31, 53, 0.95) 0%, rgba(10, 20, 40, 0.98) 100%);
+      border: 1px solid var(--border-accent);
+      border-radius: 20px;
+      padding: 36px;
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+    }
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2563eb 0%, #0d9488 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 8px 24px rgba(37,99,235,0.4);
+    }
+    .profile-info { flex: 1; min-width: 260px; }
+    .profile-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 4px;
+    }
+    .profile-role {
+      font-size: 1rem;
+      color: #38bdf8;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    .profile-current {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    .profile-status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #34d399;
+      margin-bottom: 14px;
+    }
+    .profile-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .skill-chip {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: #93c5fd;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .profile-ctas {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .profile-linkedin {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #38bdf8;
+      text-decoration: none;
+      border: 1px solid rgba(56,189,248,0.3);
+      padding: 7px 14px;
+      border-radius: 20px;
+      transition: all 0.2s ease;
+    }
+    .profile-linkedin:hover { background: rgba(56,189,248,0.1); }
+
+    /* ── Enhanced Footer ── */
+    footer.page-foot {
+      border-top: 1px solid var(--border-subtle);
+      padding: 40px 0 24px;
+      background: rgba(2, 8, 19, 0.6);
+      margin-top: 60px;
+    }
+    .footer-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .footer-tagline {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .footer-links a {
+      font-size: 0.84rem;
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-legal {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* ── Tracker Add Form ── */
+    #tracker-add-form {
+      display: none;
+      background: rgba(13, 31, 53, 0.95);
+      border: 1px solid var(--border-accent);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 16px;
+      display: none;
+    }
+    #tracker-add-form.visible { display: block; }
+    .tracker-form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .tracker-form-grid input, .tracker-form-grid select {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      color: #e2f0ff;
+      padding: 8px 12px;
+      font-size: 0.84rem;
+      font-family: inherit;
+      outline: none;
+    }
+    .tracker-form-grid input:focus, .tracker-form-grid select:focus {
+      border-color: var(--border-accent);
+    }
+    .tracker-form-grid select option { background: #0d1f35; }
+    .btn-add-app {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #2563eb 0%, #0d9488 100%);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .btn-add-app:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,99,235,0.4); }
+    .btn-submit-app {
+      padding: 8px 20px;
+      background: rgba(16,185,129,0.2);
+      color: #34d399;
+      border: 1px solid rgba(16,185,129,0.4);
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.2s;
+    }
+    .btn-submit-app:hover { background: rgba(16,185,129,0.35); }
+    .btn-cancel-app {
+      padding: 8px 16px;
+      background: rgba(255,255,255,0.05);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      font-size: 0.84rem;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    /* ── Animated Job Card Filtering ── */
+    .job-card {
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+    .job-card.hidden-card {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+    }
   </style>
 </head>
 <body>
 
+<div id="scroll-progress"></div>
 <div class="ambient-bg"></div>
 
 <!-- NAVIGATION -->
@@ -755,23 +1046,20 @@
     </div>
   </a>
 
-  <div class="nav-links">
-    <a href="#about" class="nav-link">Overview</a>
-    <a href="#tracks" class="nav-link">Two Capabilities</a>
-    <a href="#showcase" class="nav-link">Live BI Showcase</a>
-    <a href="#architecture" class="nav-link">DAX VertiPaq</a>
-    <a href="#communities" class="nav-link" style="color:#ec4899; font-weight:600;">👭 Tech Communities</a>
-    <a href="#impact" class="nav-link">Dutch Fit & Work Rights</a>
-    <a href="#gdpr" class="nav-link" style="color:#a78bfa;">🔒 GDPR Privacy</a>
-    <a href="#contact" class="nav-link">Contact</a>
+  <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMobileNav()" aria-label="Toggle menu">☰</button>
+
+  <div class="nav-links" id="nav-links">
+    <a href="#about" class="nav-link" data-section="about">Home</a>
+    <a href="#corridor" class="nav-link" data-section="corridor">Job Corridor</a>
+    <a href="#vacancies" class="nav-link" data-section="vacancies">Job Openings</a>
+    <a href="#prep" class="nav-link" data-section="prep">Interview Prep</a>
+    <a href="#communities" class="nav-link" data-section="communities">Communities</a>
+    <a href="#gdpr" class="nav-link" data-section="gdpr">GDPR Rights</a>
   </div>
 
   <div class="nav-actions">
     <a href="cv_power_bi_developer.pdf" target="_blank" class="nav-btn nav-btn-primary">
-      📄 Power BI CV (PDF)
-    </a>
-    <a href="cv_bi_project_delivery.pdf" target="_blank" class="nav-btn nav-btn-outline">
-      📋 Delivery Lead CV (PDF)
+      📄 Download CV
     </a>
   </div>
 </nav>
@@ -829,6 +1117,51 @@
       </div>
     </div>
   </header>
+
+  <!-- QUICK STATS BAR -->
+  <div class="quick-stats-bar">
+    <div class="qs-item">
+      <div class="qs-number">10+</div>
+      <div class="qs-label">Companies in Corridor Directory</div>
+    </div>
+    <div class="qs-item">
+      <div class="qs-number">2</div>
+      <div class="qs-label">CV Tracks Optimized for Dutch ATS</div>
+    </div>
+    <div class="qs-item">
+      <div class="qs-number">€52K–€90K+</div>
+      <div class="qs-label">Target Salary Range (NL Market)</div>
+    </div>
+    <div class="qs-item">
+      <div class="qs-number">15–22 min</div>
+      <div class="qs-label">Max NS Rail Commute from Utrecht</div>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL PROFILE CARD -->
+  <div class="profile-card" id="profile">
+    <div class="profile-avatar">SL</div>
+    <div class="profile-info">
+      <div class="profile-name">Sai Lakshmi Elusuri</div>
+      <div class="profile-role">Senior Power BI Developer &amp; BI Project Delivery Lead</div>
+      <div class="profile-current">Accenture · 8+ Years Analytics Experience</div>
+      <div class="profile-status-pill">🇳🇱 Relocating to Utrecht · Independent Work Rights (TWV Niet Vereist)</div>
+      <div class="profile-skills">
+        <span class="skill-chip">Power BI</span>
+        <span class="skill-chip">DAX</span>
+        <span class="skill-chip">Azure Fabric</span>
+        <span class="skill-chip">SQL</span>
+        <span class="skill-chip">Qlik Migration</span>
+        <span class="skill-chip">Agile Delivery</span>
+        <span class="skill-chip">Celonis</span>
+      </div>
+      <div class="profile-ctas">
+        <a href="cv_power_bi_developer.pdf" target="_blank" class="nav-btn nav-btn-primary" style="font-size:0.82rem; padding:8px 18px;">📄 Download CV (Track 1)</a>
+        <a href="cv_bi_project_delivery.pdf" target="_blank" class="nav-btn nav-btn-outline" style="font-size:0.82rem; padding:8px 18px;">📋 Download CV (Track 2)</a>
+        <a href="https://linkedin.com/in/sailakshmielusuri" target="_blank" class="profile-linkedin">🔗 LinkedIn</a>
+      </div>
+    </div>
+  </div>
 
   <!-- TWO CAPABILITIES INTERACTIVE SWITCHER -->
   <section class="sec-head" id="tracks">
@@ -922,8 +1255,9 @@
 
   <!-- LIVE INTERACTIVE BI SHOWCASE SIMULATOR -->
   <section class="sec-head" id="showcase">
+    <span id="vacancies" style="display:block; height:0; overflow:hidden;"></span>
     <span class="sec-tag">Interactive Capability Demonstration</span>
-    <h2 class="sec-title">Enterprise BI Simulator & Case Studies</h2>
+    <h2 class="sec-title">Enterprise BI Simulator &amp; Case Studies</h2>
     <p class="sec-desc">
       Interact with this live operational reporting simulation built to showcase data architecture, sub-second query latency, and DAX calculation patterns.
     </p>
@@ -1118,6 +1452,7 @@
 
   <!-- DAX VERTIPAQ ARCHITECTURE DEEP-DIVE -->
   <section class="sec-head" id="architecture">
+    <span id="prep" style="display:block; height:0; overflow:hidden;"></span>
     <span class="sec-tag">Engineering Rigor</span>
     <h2 class="sec-title">How the 40% Speedup Was Achieved: DAX VertiPaq Architecture</h2>
     <p class="sec-desc">
@@ -1206,6 +1541,7 @@ CALCULATE(
 
   <!-- DUTCH DATA & WOMEN IN TECH ECOSYSTEM -->
   <section class="sec-head" id="communities">
+    <span id="corridor" style="display:block; height:0; overflow:hidden;"></span>
     <span class="sec-tag" style="background:rgba(236,72,153,0.15); color:#ec4899; border-color:rgba(236,72,153,0.3);">Professional Community & Peer Networks</span>
     <h2 class="sec-title">Women in Tech & Data Communities (Amsterdam–Utrecht Corridor)</h2>
     <p class="sec-desc">
@@ -1476,6 +1812,61 @@ CALCULATE(
     <div id="gdprFeedback" style="display:none; padding:10px 16px; background:rgba(16,185,129,0.2); border:1px solid #10b981; color:#34d399; border-radius:6px; font-size:0.82rem; text-align:center;"></div>
   </div>
 
+  <!-- APPLICATION TRACKER -->
+  <section class="sec-head" id="tracker" style="margin-bottom:16px;">
+    <span class="sec-tag">Personal Job Search Tracker</span>
+    <h2 class="sec-title">Application Tracker</h2>
+    <p class="sec-desc">Track your job applications in this GDPR-compliant local browser sandbox. Data stays on your device only.</p>
+  </section>
+
+  <div style="background:var(--surface-glass); border:1px solid var(--border-subtle); border-radius:16px; padding:28px; margin-bottom:60px;">
+    <div style="overflow-x:auto;">
+      <table id="app-tracker-table" style="width:100%; border-collapse:collapse; font-size:0.86rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--border-subtle);">
+            <th style="text-align:left; padding:10px 14px; color:#38bdf8; font-weight:600;">Company</th>
+            <th style="text-align:left; padding:10px 14px; color:#38bdf8; font-weight:600;">Location</th>
+            <th style="text-align:left; padding:10px 14px; color:#38bdf8; font-weight:600;">Role</th>
+            <th style="text-align:left; padding:10px 14px; color:#38bdf8; font-weight:600;">Status</th>
+          </tr>
+        </thead>
+        <tbody id="app-tracker-body">
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:10px 14px; color:#e2f0ff;">ASML</td>
+            <td style="padding:10px 14px; color:var(--text-secondary);">Eindhoven</td>
+            <td style="padding:10px 14px; color:var(--text-secondary);">Senior Power BI Developer</td>
+            <td style="padding:10px 14px;"><span style="background:rgba(16,185,129,0.15); color:#34d399; border:1px solid rgba(16,185,129,0.3); border-radius:12px; padding:2px 10px; font-size:0.76rem; font-weight:600;">Applied</span></td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.05);">
+            <td style="padding:10px 14px; color:#e2f0ff;">ING Bank</td>
+            <td style="padding:10px 14px; color:var(--text-secondary);">Amsterdam</td>
+            <td style="padding:10px 14px; color:var(--text-secondary);">BI Analytics Lead</td>
+            <td style="padding:10px 14px;"><span style="background:rgba(245,158,11,0.15); color:#f59e0b; border:1px solid rgba(245,158,11,0.3); border-radius:12px; padding:2px 10px; font-size:0.76rem; font-weight:600;">Interview</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <button class="btn-add-app" onclick="toggleAddAppForm()">➕ Add New Application</button>
+
+    <div id="tracker-add-form">
+      <div class="tracker-form-grid">
+        <input type="text" id="app-company" placeholder="Company name" />
+        <input type="text" id="app-location" placeholder="City / Location" />
+        <input type="text" id="app-role" placeholder="Role / Position" />
+        <select id="app-status">
+          <option value="Researching">Researching</option>
+          <option value="Applied">Applied</option>
+          <option value="Interview">Interview</option>
+          <option value="Offer">Offer</option>
+          <option value="Rejected">Rejected</option>
+        </select>
+      </div>
+      <button class="btn-submit-app" onclick="addTrackerRow()">✔ Add Entry</button>
+      <button class="btn-cancel-app" onclick="toggleAddAppForm()" style="margin-left:8px;">Cancel</button>
+    </div>
+  </div>
+
   <!-- CONTACT & SCHEDULING SECTION -->
   <section class="contact-container" id="contact">
     <span class="sec-tag">Connect & Schedule</span>
@@ -1504,13 +1895,58 @@ CALCULATE(
 </div>
 
 <!-- SITE FOOTER -->
-<footer class="site-footer">
-  <div class="main-wrap">
-    Sai Lakshmi Elusuri · Senior Power BI Developer & Analytics Delivery Lead · Utrecht – Amsterdam – Amersfoort · Netherlands
+<footer class="page-foot">
+  <div class="main-wrap" style="text-align:center;">
+    <div class="footer-brand">Sai Lakshmi Elusuri</div>
+    <div class="footer-tagline">Senior Power BI Developer · Relocating to Utrecht, Netherlands</div>
+    <div class="footer-links">
+      <a href="cv_power_bi_developer.pdf" target="_blank">CV: Track 1</a>
+      <a href="cv_bi_project_delivery.pdf" target="_blank">CV: Track 2</a>
+      <a href="https://linkedin.com/in/sailakshmielusuri" target="_blank">LinkedIn</a>
+      <a href="#gdpr">GDPR Rights</a>
+    </div>
+    <div class="footer-legal">🔒 Zero tracking · 100% GDPR compliant · No cookies · © Sai Lakshmi Elusuri</div>
   </div>
 </footer>
 
 <script>
+  // ── Scroll Progress Bar ──
+  window.addEventListener('scroll', function() {
+    var scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+    var totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var pct = totalHeight > 0 ? (scrolled / totalHeight * 100) : 0;
+    var bar = document.getElementById('scroll-progress');
+    if (bar) bar.style.width = pct + '%';
+  });
+
+  // ── Mobile Hamburger Nav ──
+  function toggleMobileNav() {
+    var links = document.getElementById('nav-links');
+    if (links) links.classList.toggle('open');
+  }
+
+  // ── Scroll-Spy via IntersectionObserver ──
+  (function() {
+    var sections = document.querySelectorAll('section[id], header[id], div[id]');
+    var navLinks = document.querySelectorAll('.nav-link[data-section]');
+    if (!navLinks.length) return;
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          navLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('data-section') === entry.target.id) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    document.querySelectorAll('#about,#corridor,#vacancies,#prep,#communities,#gdpr').forEach(function(el) {
+      if (el) observer.observe(el);
+    });
+  })();
+
   // Track Switcher Function
   function switchTrack(trackId, btn) {
     document.querySelectorAll('.track-content-panel').forEach(p => p.classList.remove('active'));
@@ -1580,6 +2016,73 @@ CALCULATE(
       setTimeout(() => { fb.style.display = 'none'; }, 4000);
     }
   }
+
+  // ── Application Tracker ──
+  function toggleAddAppForm() {
+    var form = document.getElementById('tracker-add-form');
+    if (form) form.classList.toggle('visible');
+  }
+
+  function addTrackerRow() {
+    var company = (document.getElementById('app-company').value || '').trim();
+    var location = (document.getElementById('app-location').value || '').trim();
+    var role = (document.getElementById('app-role').value || '').trim();
+    var status = document.getElementById('app-status').value;
+    if (!company && !role) { alert('Please enter at least a company or role.'); return; }
+
+    var statusColors = {
+      'Researching': { bg:'rgba(56,189,248,0.15)', color:'#38bdf8', border:'rgba(56,189,248,0.3)' },
+      'Applied': { bg:'rgba(16,185,129,0.15)', color:'#34d399', border:'rgba(16,185,129,0.3)' },
+      'Interview': { bg:'rgba(245,158,11,0.15)', color:'#f59e0b', border:'rgba(245,158,11,0.3)' },
+      'Offer': { bg:'rgba(139,92,246,0.15)', color:'#a78bfa', border:'rgba(139,92,246,0.3)' },
+      'Rejected': { bg:'rgba(239,68,68,0.15)', color:'#f87171', border:'rgba(239,68,68,0.3)' }
+    };
+    var sc = statusColors[status] || statusColors['Applied'];
+    var tbody = document.getElementById('app-tracker-body');
+    var row = document.createElement('tr');
+    row.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+    row.innerHTML = '<td style="padding:10px 14px; color:#e2f0ff;">' + (company || '—') + '</td>' +
+      '<td style="padding:10px 14px; color:var(--text-secondary);">' + (location || '—') + '</td>' +
+      '<td style="padding:10px 14px; color:var(--text-secondary);">' + (role || '—') + '</td>' +
+      '<td style="padding:10px 14px;"><span style="background:' + sc.bg + '; color:' + sc.color + '; border:1px solid ' + sc.border + '; border-radius:12px; padding:2px 10px; font-size:0.76rem; font-weight:600;">' + status + '</span></td>';
+    tbody.appendChild(row);
+
+    // Save to localStorage
+    var entries = JSON.parse(localStorage.getItem('tracker_entries') || '[]');
+    entries.push({ company: company, location: location, role: role, status: status });
+    localStorage.setItem('tracker_entries', JSON.stringify(entries));
+
+    // Clear form
+    ['app-company','app-location','app-role'].forEach(id => { document.getElementById(id).value = ''; });
+    document.getElementById('app-status').selectedIndex = 0;
+    document.getElementById('tracker-add-form').classList.remove('visible');
+  }
+
+  // Load tracker entries from localStorage on page load
+  (function() {
+    var entries = JSON.parse(localStorage.getItem('tracker_entries') || '[]');
+    if (entries.length) {
+      entries.forEach(function(e) {
+        var statusColors = {
+          'Researching': { bg:'rgba(56,189,248,0.15)', color:'#38bdf8', border:'rgba(56,189,248,0.3)' },
+          'Applied': { bg:'rgba(16,185,129,0.15)', color:'#34d399', border:'rgba(16,185,129,0.3)' },
+          'Interview': { bg:'rgba(245,158,11,0.15)', color:'#f59e0b', border:'rgba(245,158,11,0.3)' },
+          'Offer': { bg:'rgba(139,92,246,0.15)', color:'#a78bfa', border:'rgba(139,92,246,0.3)' },
+          'Rejected': { bg:'rgba(239,68,68,0.15)', color:'#f87171', border:'rgba(239,68,68,0.3)' }
+        };
+        var sc = statusColors[e.status] || statusColors['Applied'];
+        var tbody = document.getElementById('app-tracker-body');
+        if (!tbody) return;
+        var row = document.createElement('tr');
+        row.style.borderBottom = '1px solid rgba(255,255,255,0.05)';
+        row.innerHTML = '<td style="padding:10px 14px; color:#e2f0ff;">' + (e.company || '—') + '</td>' +
+          '<td style="padding:10px 14px; color:var(--text-secondary);">' + (e.location || '—') + '</td>' +
+          '<td style="padding:10px 14px; color:var(--text-secondary);">' + (e.role || '—') + '</td>' +
+          '<td style="padding:10px 14px;"><span style="background:' + sc.bg + '; color:' + sc.color + '; border:1px solid ' + sc.border + '; border-radius:12px; padding:2px 10px; font-size:0.76rem; font-weight:600;">' + e.status + '</span></td>';
+        tbody.appendChild(row);
+      });
+    }
+  })();
 </script>
 
 </body>
