@@ -5,6 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sai Lakshmi – Netherlands Job Finder | Power BI &amp; Azure Analytics</title>
   <meta name="description" content="Personalized Netherlands job finder for Sai Lakshmi Elusuri – Senior Power BI Developer &amp; Lakehouse Analytics Specialist with unrestricted Dutch labor market access (TWV niet vereist) in the Utrecht region, Netherlands." />
+  <link rel="canonical" href="https://sailakshmi1996.github.io/career-hub/job-finder.html" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sai Lakshmi Elusuri | Netherlands Career Hub" />
+  <meta property="og:title" content="Sai Lakshmi – Netherlands Job Finder | Power BI &amp; Azure Analytics" />
+  <meta property="og:description" content="Curated senior Power BI, Microsoft Fabric, and Azure Lakehouse roles across the Netherlands with verified visa sponsorship details." />
+  <meta property="og:url" content="https://sailakshmi1996.github.io/career-hub/job-finder.html" />
+  <meta property="og:locale" content="en_NL" />
+
+  <!-- Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Netherlands Job Finder | Power BI &amp; Azure Analytics" />
+  <meta name="twitter:description" content="Curated Power BI and Lakehouse job listings in the Netherlands with verified visa sponsorship details." />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://sailakshmi1996.github.io/career-hub/job-finder.html",
+        "url": "https://sailakshmi1996.github.io/career-hub/job-finder.html",
+        "name": "Netherlands Job Finder | Power BI & Azure Analytics",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://sailakshmi1996.github.io/career-hub/#website",
+          "url": "https://sailakshmi1996.github.io/career-hub/",
+          "name": "Sai Lakshmi Elusuri Career Hub"
+        }
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Power BI Developer",
+        "description": "Build enterprise dashboards and semantic models for financial services with VertiPaq and star-schema optimization.",
+        "datePosted": "2026-04-01",
+        "employmentType": "FULL_TIME",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "KPMG Netherlands"
+        },
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Amsterdam",
+            "addressCountry": "NL"
+          }
+        },
+        "baseSalary": {
+          "@type": "MonetaryAmount",
+          "currency": "EUR",
+          "value": {
+            "@type": "QuantitativeValue",
+            "minValue": 65000,
+            "maxValue": 80000,
+            "unitText": "YEAR"
+          }
+        }
+      },
+      {
+        "@type": "JobPosting",
+        "title": "Senior BI Developer – Power BI",
+        "description": "Lead BI transformation projects for global clients. Focus on Power BI, Azure Synapse, and enterprise business stakeholder enablement.",
+        "datePosted": "2026-04-01",
+        "employmentType": "FULL_TIME",
+        "hiringOrganization": {
+          "@type": "Organization",
+          "name": "Deloitte Netherlands"
+        },
+        "jobLocation": {
+          "@type": "Place",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Rotterdam",
+            "addressCountry": "NL"
+          }
+        },
+        "baseSalary": {
+          "@type": "MonetaryAmount",
+          "currency": "EUR",
+          "value": {
+            "@type": "QuantitativeValue",
+            "minValue": 70000,
+            "maxValue": 90000,
+            "unitText": "YEAR"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="shared.css" />
   <style>
     :root {
@@ -20,7 +114,7 @@
       --accent-pink: #ec4899;
       --text-primary: #f0f6ff;
       --text-secondary: #94a3b8;
-      --text-muted: #475569;
+      --text-muted: #94a3b8;
       --border: rgba(59, 130, 246, 0.18);
       --glass: rgba(14, 31, 61, 0.6);
       --nl-orange: #ff6b00;
@@ -30,14 +124,50 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background: var(--bg-primary);
       color: var(--text-primary);
       min-height: 100vh;
       overflow-x: hidden;
+    }
+
+    /* ── Sticky Top Navigation ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 9, 20, 0.88);
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: background-color 0.25s ease;
+    }
+
+    /* ── Touch Targets & Screen Reader Utilities ── */
+    .nav-link, .tab-btn, .copy-btn, .apply-btn {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     /* ── Animated Background ── */
@@ -318,9 +448,9 @@
     .badge-senior { background: rgba(236,72,153,0.15); color: #f472b6; border: 1px solid rgba(236,72,153,0.3); }
 
     .job-title {
-      font-family: 'Space Grotesk', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       font-size: 1.05rem; font-weight: 700;
-      margin-bottom: 4px;
+      margin: 0 0 4px 0;
       color: var(--text-primary);
     }
     .job-company {
@@ -657,9 +787,11 @@
     <!-- ── Tab: Jobs ── -->
     <div class="tab-panel active" id="panel-jobs">
       <div class="search-bar-wrapper">
-        <span class="search-icon">🔍</span>
+        <label for="job-search" class="sr-only">Filter job listings by title, company, or tech stack</label>
+        <span class="search-icon" aria-hidden="true">🔍</span>
         <input class="search-bar" type="text" id="job-search" placeholder="Filter jobs by title, company or skill…" oninput="filterJobs()" />
       </div>
+      <div id="search-live-status" class="sr-only" role="status" aria-live="polite"></div>
       <div class="jobs-grid" id="jobs-grid">
         <!-- Populated by JS -->
       </div>
@@ -1111,44 +1243,55 @@ Sai Lakshmi Elusuri</pre>
   function renderJobs(data) {
     const grid = document.getElementById('jobs-grid');
     const noJobs = document.getElementById('no-jobs');
+    const liveStatus = document.getElementById('search-live-status');
     if (!data.length) {
       grid.innerHTML = '';
       noJobs.style.display = 'block';
+      if (liveStatus) liveStatus.textContent = 'No jobs match your search.';
       return;
     }
     noJobs.style.display = 'none';
-    grid.innerHTML = data.map(j => `
-      <a href="${j.url}" target="_blank" class="job-card">
+    if (liveStatus) liveStatus.textContent = `${data.length} job listing${data.length > 1 ? 's' : ''} available.`;
+
+    grid.innerHTML = data.map((j, idx) => `
+      <article class="job-card" aria-labelledby="job-title-${idx}">
         <div class="job-card-header">
-          <div class="company-logo" style="background: linear-gradient(135deg, ${j.color}cc, ${j.color}88)">${j.logo}</div>
+          <div class="company-logo" aria-hidden="true" style="background: linear-gradient(135deg, ${j.color}cc, ${j.color}88)">${j.logo}</div>
           <div class="job-badges">
-            ${j.visa ? '<span class="badge badge-visa">✅ Visa Sponsor</span>' : ''}
-            ${j.type === 'Remote' ? '<span class="badge badge-remote">🌐 Remote</span>' : j.type === 'Hybrid' ? '<span class="badge badge-hybrid">🏠 Hybrid</span>' : '<span class="badge badge-onsite">🏢 On-site</span>'}
+            ${j.visa ? '<span class="badge badge-visa"><span aria-hidden="true">✅</span> Visa Sponsor</span>' : ''}
+            ${j.type === 'Remote' ? '<span class="badge badge-remote"><span aria-hidden="true">🌐</span> Remote</span>' : j.type === 'Hybrid' ? '<span class="badge badge-hybrid"><span aria-hidden="true">🏠</span> Hybrid</span>' : '<span class="badge badge-onsite"><span aria-hidden="true">🏢</span> On-site</span>'}
             <span class="badge badge-senior">${j.badge}</span>
           </div>
         </div>
-        <div class="job-title">${j.title}</div>
+        <h3 class="job-title" id="job-title-${idx}">${j.title}</h3>
         <div class="job-company">${j.company}</div>
         <div class="job-meta">
-          <span class="job-meta-item">📍 ${j.location}</span>
-          <span class="job-meta-item">💰 ${j.salary}</span>
+          <span class="job-meta-item"><span aria-hidden="true">📍</span> ${j.location}</span>
+          <span class="job-meta-item"><span aria-hidden="true">💰</span> ${j.salary}</span>
         </div>
         <div class="job-tags">${j.tags.map(t => `<span class="job-tag">${t}</span>`).join('')}</div>
         <p style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.55;">${j.desc}</p>
-        <div class="apply-btn">Apply / View Job &nbsp;↗</div>
-      </a>
+        <a href="${j.url}" target="_blank" rel="noopener noreferrer" class="apply-btn" aria-label="Apply for ${j.title} at ${j.company} (opens in new window)">
+          Apply / View Job &nbsp;<span aria-hidden="true">↗</span>
+          <span class="sr-only">(opens in new window)</span>
+        </a>
+      </article>
     `).join('');
   }
 
+  let filterDebounceTimer = null;
   function filterJobs() {
-    const q = document.getElementById('job-search').value.toLowerCase();
-    const filtered = JOBS.filter(j =>
-      j.title.toLowerCase().includes(q) ||
-      j.company.toLowerCase().includes(q) ||
-      j.tags.some(t => t.toLowerCase().includes(q)) ||
-      j.location.toLowerCase().includes(q)
-    );
-    renderJobs(filtered);
+    clearTimeout(filterDebounceTimer);
+    filterDebounceTimer = setTimeout(() => {
+      const q = document.getElementById('job-search').value.toLowerCase();
+      const filtered = JOBS.filter(j =>
+        j.title.toLowerCase().includes(q) ||
+        j.company.toLowerCase().includes(q) ||
+        j.tags.some(t => t.toLowerCase().includes(q)) ||
+        j.location.toLowerCase().includes(q)
+      );
+      renderJobs(filtered);
+    }, 100);
   }
 
   // ── Tab Switching ──
