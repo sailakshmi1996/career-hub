@@ -15,8 +15,9 @@ import subprocess
 SITE_ID = "c48ae112-95f4-4603-bfbb-1201e50dd3fc"
 TARGET_URL = "https://sailakshminl.netlify.app"
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ZIP_FILENAME = "Netherlands_Career_Hub_Sai_Lakshmi.zip"
-ZIP_PATH = os.path.join(BASE_DIR, ZIP_FILENAME)
+NETLIFY_ZIP_FILENAME = "netlify_deploy.zip"
+RECRUITER_ZIP_FILENAME = "Netherlands_Career_Hub_Sai_Lakshmi.zip"
+ZIP_PATH = os.path.join(BASE_DIR, NETLIFY_ZIP_FILENAME)
 DIST_DIR = os.path.join(BASE_DIR, "dist")
 
 def run_build():
@@ -34,7 +35,7 @@ def deploy_to_netlify():
     
     if token:
         print(f"🔑 Detected NETLIFY_AUTH_TOKEN.")
-        print(f"🚀 Uploading {ZIP_FILENAME} directly to Netlify API (Site ID: {SITE_ID})...")
+        print(f"🚀 Uploading {NETLIFY_ZIP_FILENAME} directly to Netlify API (Site ID: {SITE_ID})...")
         api_url = f"https://api.netlify.com/api/v1/sites/{SITE_ID}/deploys"
         
         with open(ZIP_PATH, 'rb') as f:
@@ -69,11 +70,10 @@ def deploy_to_netlify():
         print("ℹ️  No NETLIFY_AUTH_TOKEN detected in environment.")
         print("\n   👉 HOW TO DEPLOY IN 5 SECONDS (CHOOSE ONE):")
         print(f"   ─────────────────────────────────────────────────────────────")
-        print(f"   [OPTION 1 - RECOMMENDED] Drag the 'dist' FOLDER:")
-        print(f"   1. Open: https://app.netlify.com/sites/sailakshminl/deploys")
-        print(f"   2. In macOS Finder, drag the '{DIST_DIR}' FOLDER")
-        print(f"      and drop it into the Netlify drop zone.")
-        print(f"      (Netlify web requires dropping the FOLDER, not the .zip!)")
+        print(f"   [OPTION 1 - DRAG & DROP NETLIFY ZIP]:")
+        print(f"   1. Open: https://app.netlify.com/sites/sailakshminl/deploys (or https://app.netlify.com/drop)")
+        print(f"   2. Drag and drop '{ZIP_PATH}' (or the '{DIST_DIR}' folder)")
+        print(f"      into the Netlify drop zone.")
         print(f"   ─────────────────────────────────────────────────────────────")
         print(f"   [OPTION 2] CLI / Token Deploy:")
         print(f"      export NETLIFY_AUTH_TOKEN=\"<your_token>\"")

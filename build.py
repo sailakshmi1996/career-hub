@@ -223,12 +223,27 @@ def step4_package_zip():
                     print(f"  ⚠️ Warning: {src_name} missing for zip packaging")
         print(f"📦 Archive compiled: {target_zip} ({os.path.getsize(target_zip):,} bytes)\n")
 
+def step5_package_netlify_deploy_zip():
+    print("=" * 60)
+    print("STEP 5: COMPILING COMPLETE NETLIFY DEPLOYMENT ZIP")
+    print("=" * 60)
+    netlify_zip_path = os.path.join(BASE_DIR, "netlify_deploy.zip")
+    with zipfile.ZipFile(netlify_zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
+        for root, _, files in os.walk(DIST_DIR):
+            for file in files:
+                file_path = os.path.join(root, file)
+                arcname = os.path.relpath(file_path, DIST_DIR)
+                zf.write(file_path, arcname)
+                print(f"  + Added to netlify_deploy.zip: {arcname}")
+    print(f"🚀 Netlify deployment package compiled: {netlify_zip_path} ({os.path.getsize(netlify_zip_path):,} bytes)\n")
+
 if __name__ == "__main__":
     step0_verify_canonical_sync()
     step1_compile_pdfs()
     step3_assemble_dist()
     step2_run_tests()
     step4_package_zip()
+    step5_package_netlify_deploy_zip()
     print("=" * 60)
     print("🎉 BUILD SUCCESSFUL! FULLY READY FOR PRODUCTION NETLIFY DEPLOYMENT")
     print("=" * 60)
