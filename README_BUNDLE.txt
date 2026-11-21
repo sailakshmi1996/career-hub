@@ -8,7 +8,7 @@ Secondary Focus: BI Delivery Coordinator / Analytics Delivery Lead
 Location: Utrecht region, Netherlands
 Contact: sailakshmi.elusuri@gmail.com | +91 8142674401 (Direct / WhatsApp)
 LinkedIn: https://www.linkedin.com/in/sailakshmielusuri-data-analyst/
-Portfolio Website: https://sailakshminl.netlify.app/
+Portfolio Website: https://sailakshmi1996.github.io/career-hub/
 
 DUTCH WORK AUTHORIZATION STATUS:
 Full unrestricted labor market access in the Netherlands under official IND endorsement:

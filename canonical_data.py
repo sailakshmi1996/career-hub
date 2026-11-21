@@ -18,7 +18,7 @@ CANDIDATE = {
     "linkedin_url": "https://www.linkedin.com/in/sailakshmielusuri-data-analyst/",
     "linkedin_display": "linkedin.com/in/sailakshmielusuri-data-analyst",
     "github_url": "https://github.com/sailakshmi1996/career-hub",
-    "portfolio_url": "https://sailakshminl.netlify.app/",
+    "portfolio_url": "https://sailakshmi1996.github.io/career-hub/",
     "experience_years": "8+",
     "work_auth_status": "Unrestricted Dutch labor market access",
     "ind_endorsement": "Arbeid vrij toegestaan, TWV niet vereist",

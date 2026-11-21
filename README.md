@@ -7,7 +7,7 @@
 [![Microsoft Certified](https://img.shields.io/badge/Microsoft%20Certified-PL--300%20%7C%20DP--600%20%7C%20DP--900%20%7C%20AZ--900%20%7C%20AI--900-0078D4?style=for-the-badge&logo=microsoft&logoColor=white)](#-microsoft-certifications)
 [![IND Work Authorization](https://img.shields.io/badge/IND%20Netherlands-Arbeid%20Vrij%20Toegestaan%20%E2%9C%94%EF%B8%8F-22C55E?style=for-the-badge)](#-work-authorization--residency)
 [![Experience](https://img.shields.io/badge/Experience-8%2B%20Years%20Enterprise%20Analytics-0F172A?style=for-the-badge)](#-professional-experience)
-[![Live Portfolio](https://img.shields.io/badge/Live%20Portfolio-sailakshminl.netlify.app-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://sailakshminl.netlify.app/)
+[![Live Portfolio](https://img.shields.io/badge/Live%20Website-sailakshmi1996.github.io%2Fcareer--hub-22C55E?style=for-the-badge&logo=github&logoColor=white)](https://sailakshmi1996.github.io/career-hub/)
 
 <br/>
 
@@ -20,7 +20,7 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/sailakshmielusuri-data-analyst/)
 [![Email](https://img.shields.io/badge/Email-sailakshmi.elusuri%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:sailakshmi.elusuri@gmail.com)
-[![Website](https://img.shields.io/badge/Portfolio-sailakshminl.netlify.app-2563EB?style=flat-square&logo=googlechrome&logoColor=white)](https://sailakshminl.netlify.app/)
+[![Website](https://img.shields.io/badge/Portfolio-sailakshmi1996.github.io%2Fcareer--hub-2563EB?style=flat-square&logo=github&logoColor=white)](https://sailakshmi1996.github.io/career-hub/)
 
 </div>
 
@@ -228,7 +228,7 @@ Actively deepening expertise in **Microsoft Fabric Copilot, GenAI-ready lakehous
 | **Power BI Developer CV (PDF)** | Deep-Dive Technical CV (DAX, VertiPaq, Fabric, Modeling) | [📊 View / Download](./cv_power_bi_developer.pdf) |
 | **BI Delivery Lead CV (PDF)** | Delivery Coordinator CV (Agile, Governance, Qlik Migration) | [📋 View / Download](./cv_bi_project_delivery.pdf) |
 | **Candidate Bundle (ZIP)** | Complete offline bundle with all CVs & manifest | [📦 Download Archive](./Netherlands_Career_Hub_Sai_Lakshmi.zip) |
-| **Live Interactive Hub** | Browser-accessible portfolio with live metric simulator | [🌐 Visit Website](https://sailakshminl.netlify.app/) |
+| **Live Interactive Hub** | Browser-accessible portfolio with live metric simulator | [🌐 Visit Website](https://sailakshmi1996.github.io/career-hub/) |
 
 ---
 
@@ -238,8 +238,8 @@ Actively deepening expertise in **Microsoft Fabric Copilot, GenAI-ready lakehous
 * **Location:** Utrecht Region, Netherlands
 * **Email:** [sailakshmi.elusuri@gmail.com](mailto:sailakshmi.elusuri@gmail.com)
 * **LinkedIn:** [linkedin.com/in/sailakshmielusuri-data-analyst](https://www.linkedin.com/in/sailakshmielusuri-data-analyst/)
-* **Portfolio Website:** [sailakshminl.netlify.app](https://sailakshminl.netlify.app/)
+* **Portfolio Website:** [sailakshmi1996.github.io/career-hub](https://sailakshmi1996.github.io/career-hub/)
 
 <div align="center">
-<sub>Designed to European ATS & Enterprise Recruiter Standards · Hosted on Netlify</sub>
+<sub>Designed to European ATS & Enterprise Recruiter Standards · Hosted on GitHub Pages</sub>
 </div>

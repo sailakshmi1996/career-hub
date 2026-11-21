@@ -3,7 +3,7 @@
 
 **Location:** Utrecht region, Netherlands  
 **Email:** sailakshmi.elusuri@gmail.com | **Phone:** +91 8142674401  
-**LinkedIn:** [linkedin.com/in/sailakshmielusuri-data-analyst](https://www.linkedin.com/in/sailakshmielusuri-data-analyst/) | **Portfolio:** [sailakshminl.netlify.app](https://sailakshminl.netlify.app/) | **GitHub:** [github.com/sailakshmi1996/career-hub](https://github.com/sailakshmi1996/career-hub)  
+**LinkedIn:** [linkedin.com/in/sailakshmielusuri-data-analyst](https://www.linkedin.com/in/sailakshmielusuri-data-analyst/) | **Portfolio:** [sailakshmi1996.github.io/career-hub](https://sailakshmi1996.github.io/career-hub/) | **GitHub:** [github.com/sailakshmi1996/career-hub](https://github.com/sailakshmi1996/career-hub)  
 
 > **Work Authorization Status:** Based in the Utrecht region, Netherlands. Full unrestricted labor market access under official IND endorsement: *"Arbeid vrij toegestaan, TWV niet vereist"* (no employer sponsorship or work permit / TWV required · immediate Dutch contract start).
 
