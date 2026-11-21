@@ -20,7 +20,6 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/sailakshmielusuri-data-analyst/)
 [![Email](https://img.shields.io/badge/Email-sailakshmi.elusuri%40gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:sailakshmi.elusuri@gmail.com)
-[![Direct / WhatsApp](https://img.shields.io/badge/Direct%20%2F%20WhatsApp-%2B91%208142674401-25D366?style=flat-square&logo=whatsapp&logoColor=white)](https://wa.me/918142674401)
 [![Website](https://img.shields.io/badge/Portfolio-sailakshminl.netlify.app-2563EB?style=flat-square&logo=googlechrome&logoColor=white)](https://sailakshminl.netlify.app/)
 
 </div>
@@ -221,22 +220,6 @@ Actively deepening expertise in **Microsoft Fabric Copilot, GenAI-ready lakehous
 
 ---
 
-## 🤖 Repository Quality & Automation
-
-```
-✅ 156 Automated Tests   →  python3 tests/run_all_tests.py
-✅ GDPR/AVG Compliance   →  Zero third-party tracking scripts
-✅ CI/CD Pipeline        →  GitHub Actions → Netlify auto-deploy
-✅ Pre-commit Hook       →  Test gate on every git commit
-✅ 4-Tier Test Coverage  →  Integrity · Compliance · E2E · Recruiter Workflows
-```
-
-[![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions%20%E2%86%92%20Netlify-2088FF?style=flat-square&logo=github-actions&logoColor=white)](https://github.com/sailakshmi1996/career-hub/actions)
-[![Tests](https://img.shields.io/badge/Tests-156%20Passing-22C55E?style=flat-square&logo=pytest&logoColor=white)](#-repository-quality--automation)
-[![GDPR](https://img.shields.io/badge/Privacy-Zero%20Tracking%20%7C%20GDPR%20Compliant-6366F1?style=flat-square)](#-repository-quality--automation)
-
----
-
 ## 📂 Candidate Download & Asset Manifest
 
 | Asset Name | Target Audience / Purpose | Direct Link |
@@ -252,11 +235,11 @@ Actively deepening expertise in **Microsoft Fabric Copilot, GenAI-ready lakehous
 ## 🤝 Connect & Inquiries
 
 * **Candidate:** Sai Lakshmi Elusuri
+* **Location:** Utrecht Region, Netherlands
 * **Email:** [sailakshmi.elusuri@gmail.com](mailto:sailakshmi.elusuri@gmail.com)
-* **Phone / WhatsApp:** [+91 8142674401](https://wa.me/918142674401)
 * **LinkedIn:** [linkedin.com/in/sailakshmielusuri-data-analyst](https://www.linkedin.com/in/sailakshmielusuri-data-analyst/)
 * **Portfolio Website:** [sailakshminl.netlify.app](https://sailakshminl.netlify.app/)
 
 <div align="center">
-<sub>Designed to European ATS & Enterprise Recruiter Standards · 156 Automated Tests · CI/CD by GitHub Actions · Hosted on Netlify</sub>
+<sub>Designed to European ATS & Enterprise Recruiter Standards · Hosted on Netlify</sub>
 </div>
