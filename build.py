@@ -197,8 +197,8 @@ def step4_package_zip():
 
 if __name__ == "__main__":
     step1_compile_pdfs()
-    step2_run_tests()
     step3_assemble_dist()
+    step2_run_tests()
     step4_package_zip()
     print("=" * 60)
     print("🎉 BUILD SUCCESSFUL! FULLY READY FOR PRODUCTION NETLIFY DEPLOYMENT")

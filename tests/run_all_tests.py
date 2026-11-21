@@ -13,9 +13,28 @@ import sys
 import os
 
 def run_tests():
+    start_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.dirname(start_dir)
+
+    # Ensure local dist/ staging directory exists for test coverage on fresh clones & CI
+    dist_dir = os.path.join(base_dir, "dist")
+    dist_index = os.path.join(dist_dir, "index.html")
+    if not os.path.exists(dist_index):
+        import shutil
+        os.makedirs(dist_dir, exist_ok=True)
+        files_to_copy = [
+            "index.html", "dutch-career-hub.html", "shared.css",
+            "cv_power_bi_developer.html", "cv_bi_project_delivery.html", "resume.html",
+            "cv_power_bi_developer.pdf", "cv_bi_project_delivery.pdf", "Sai_Lakshmi_Elusuri_Resume.pdf"
+        ]
+        for f in files_to_copy:
+            src = os.path.join(base_dir, f)
+            dst = os.path.join(dist_dir, f)
+            if os.path.exists(src) and not os.path.exists(dst):
+                shutil.copy2(src, dst)
+
     # Discover and run tests in current directory
     loader = unittest.TestLoader()
-    start_dir = os.path.dirname(os.path.abspath(__file__))
     suite = loader.discover(start_dir, pattern='test_*.py')
 
     runner = unittest.TextTestRunner(verbosity=2)
