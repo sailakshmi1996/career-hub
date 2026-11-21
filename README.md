@@ -59,108 +59,29 @@ Actively deepening expertise in **Microsoft Fabric Copilot, GenAI-ready lakehous
 
 ---
 
-## 🗺️ Repository Navigation
+## 🛠️ Core Competencies & Market Alignment
 
-```text
-📂 sailakshmi1996/career-hub
-├── 🌐 index.html                            → Live portfolio & BI simulator
-├── 📄 resume.html                           → Master 2-page printable CV (HTML)
-├── 📋 cv_power_bi_developer.html/.pdf       → Technical Power BI Developer CV
-├── 📋 cv_bi_project_delivery.html/.pdf      → BI Delivery Coordinator CV
-├── 📄 Sai_Lakshmi_Elusuri_Resume.pdf        → Master resume (PDF download)
-├── 📦 Netherlands_Career_Hub_Sai_Lakshmi.zip→ Offline recruiter bundle
-├── 🔧 build.py                              → Automated asset compiler
-├── 🧪 tests/                                → 156-test automated compliance suite
-│   ├── run_all_tests.py                     → Master test runner
-│   ├── test_site_integrity.py               → Navigation anchors & asset checks
-│   ├── test_compliance_and_dates.py         → GDPR/AVG & legal compliance
-│   └── test_e2e_requirements.py             → 4-tier end-to-end scenario tests
-└── .github/workflows/ci-cd-netlify.yml      → Automated CI/CD pipeline
-```
-
----
-
-## 🛠️ Verified Technical Competencies
-
-| Domain | Core Technologies & Competencies |
+| Domain | Enterprise Skills & Technologies (Filling Dutch Market Gaps) |
 | :--- | :--- |
-| **Semantic Modeling & Architecture** | Kimball Dimensional Modeling, Star Schemas, Grain Definition, Snowflake Elimination, 1:* Single-Direction Relationships, Role-Playing Dimensions, Inactive Relationships & `USERELATIONSHIP`, Aggregations |
-| **DAX Measure Engineering** | Advanced `CALCULATE` Modifier Semantics (`ALL`, `ALLEXCEPT`, `KEEPFILTERS`, `REMOVEFILTERS`), Calculation Groups, Dynamic Format Strings, Context Transition Mastery, Iterator Optimization (`SUMX`, `AVERAGEX`), Semi-Additive Measures |
-| **VertiPaq Engine Optimization** | Storage Engine (SE) vs. Formula Engine (FE) Profiling, SE Cache Hit Maximization, Column Cardinality & Dictionary Pruning, Hash Partitioning, DAX Studio, Tabular Editor 3, Bravo, VertiPaq Analyzer |
-| **Cloud Data & Lakehouse** | Microsoft Fabric (OneLake, Direct Lake mode, Lakehouse, SQL Analytics Endpoint, Fabric Copilot), Azure Data Factory (ADF Pipelines), Azure Data Lake Storage (ADLS Gen2), Medallion Architecture (Bronze/Silver/Gold Delta Lake) |
-| **Database & Query Engineering** | Oracle SQL DB, SQL Server, T-SQL, Complex Common Table Expressions (CTEs), Analytical Window Functions (`ROW_NUMBER`, `RANK`, `DENSE_RANK`, `LEAD`/`LAG`), Indexing Strategies, Execution Plan Analysis |
-| **Governance & Security** | Row-Level Security (Static & Dynamic RLS using `USERPRINCIPALNAME()`), Tenant Administration, Deployment Pipelines, Workspace Organization, Git Version Control / CI/CD Automation |
-| **AI & GenAI Readiness** | AI-900 Certified, Microsoft Fabric Copilot awareness, GenAI-ready Lakehouse architecture fundamentals, Azure AI Services orientation |
-| **Delivery & Process Mining** | Celonis Process Mining, Agile/Scrum Sprint Coordination, Jira, Confluence, ServiceNow, Legacy BI Migration (Qlik Sense to Power BI), Stakeholder Scoping & User Adoption |
+| **Power BI & Advanced Semantic Layer** | Power BI Desktop & Service (**PL-300 Certified**), Complex DAX (Calculation Groups, Semi-Additive Measures, Time Intelligence, Dynamic Format Strings), **Tabular Editor 3**, **DAX Studio**, **VertiPaq Analyzer**, **Paginated Reports (RDL/SSRS)**, Composite Models, Power BI Embedded, Field Parameters, Row-Level Security (RLS) |
+| **Microsoft Fabric & Lakehouse Architecture** | Microsoft Fabric (**DP-600 Certified**), **OneLake**, **Direct Lake Mode**, Lakehouse, SQL Analytics Endpoint, Delta Parquet with **V-Order Optimization**, Medallion Architecture (Bronze, Silver, Gold Delta Lake), Fabric Copilot Integration |
+| **Modern Data Stack & Cloud Pipelines** | **Python & PySpark** (Fabric Notebooks), **dbt Core** (modular transformation & semantic layer), Azure Data Factory (ADF Data Ingestion Pipelines), ADLS Gen2, Azure Synapse Analytics, Incremental Refresh Partitions |
+| **Enterprise Governance, DevOps & ALM** | **Microsoft Purview** (Unified Data Governance, Lineage & Compliance), **Power BI Deployment Pipelines** (Dev/Test/Prod), Git Version Control & **CI/CD Automation**, **XMLA Endpoints**, ALM Toolkit, **Power BI Dataflows Gen2**, Power BI REST API |
+| **Database & High-Throughput SQL** | Oracle SQL DB, Microsoft SQL Server, T-SQL, Complex Common Table Expressions (CTEs), Analytical Window Functions (`DENSE_RANK`, `ROW_NUMBER`, `RANK`, `LEAD`/`LAG`), Partitioned Views, Indexing Strategies, Execution Plan Tuning |
+| **Delivery Leadership & Process Intelligence** | **Celonis Process Mining**, Legacy BI Migration (Qlik Sense to Power BI), Agile/Scrum Sprint Coordination, Jira, Confluence, ServiceNow, Stakeholder Scoping, **PRINCE2 & BiSL / DAMA Framework Awareness** |
 
 ---
 
-## 🏛️ Enterprise Lakehouse & Semantic Architecture
+## 🇳🇱 Dutch Enterprise Market Fit & Strategic Value
 
-```mermaid
-flowchart TD
-    subgraph SOURCELAYER[" 1. Operational & ERP Source Systems "]
-        A1["Oracle SQL DB<br/>(Transactional OLTP)"]
-        A2["Enterprise ERP & SAP<br/>(Operational Records)"]
-        A3["Financial Risk Feeds<br/>(Daily / Intraday)"]
-    end
-
-    subgraph INGESTION[" 2. Ingestion & Transformation "]
-        B1["Azure Data Factory (ADF)<br/>& Fabric Pipelines"]
-    end
-
-    subgraph MEDALLION[" 3. Microsoft Fabric Lakehouse (OneLake) "]
-        C1["Bronze Layer<br/>Raw Delta Parquet"] --> C2["Silver Layer<br/>Cleansed & Conformed Delta"]
-        C2 --> C3["Gold Layer<br/>Curated Kimball Star Schema"]
-    end
-
-    subgraph SEMANTICLAYER[" 4. High-Performance Semantic Layer "]
-        D1["Power BI Semantic Models<br/>• Direct Lake on OneLake<br/>• In-Memory VertiPaq (SE Optimized)<br/>• DAX Calculation Groups<br/>• Dynamic Row-Level Security (RLS)"]
-    end
-
-    subgraph CONSUMPTION[" 5. Executive Consumption & Telemetry "]
-        E1["Executive Scorecards<br/>(Sub-3s Visual Render)"]
-        E2["Financial Telemetry<br/>& Scenario Cockpit"]
-        E3["Celonis Process<br/>Intelligence Reports"]
-    end
-
-    SOURCELAYER --> B1
-    B1 --> C1
-    C3 --> D1
-    D1 --> CONSUMPTION
-```
-
----
-
-## 🔄 Migration Architecture: Qlik Sense → Power BI
-
-```mermaid
-flowchart LR
-    subgraph LEGACY[" Legacy Qlik Sense Estate "]
-        Q1["150+ Siloed Apps<br/>Set Analysis Logic"]
-        Q2["Diverging KPI<br/>Definitions"]
-        Q3["€350K+ Annual<br/>Licensing Cost"]
-    end
-
-    subgraph MIGRATION[" Migration Governance "]
-        M1["Jira/Confluence<br/>Catalogue & Triage"]
-        M2["DAX Calculation<br/>Group Conversion"]
-        M3["Centralized RLS<br/>& Azure AD Groups"]
-    end
-
-    subgraph MODERN[" Governed Power BI Estate "]
-        P1["40 Standardized<br/>Semantic Models"]
-        P2["Kimball Star Schema<br/>40% Load Time ↓"]
-        P3["Zero Licensing Cost<br/>Power BI Premium"]
-    end
-
-    Q1 --> M1
-    Q2 --> M2
-    Q3 --> M3
-    M1 --> P1
-    M2 --> P2
-    M3 --> P3
-```
+| Dutch Market Priority | How Sai Lakshmi Fills The Requirement | Proof & Impact |
+|:---|:---|:---|
+| **Immediate Unrestricted Employment** | Full Dutch labor market authorization under official IND endorsement: `"Arbeid vrij toegestaan, TWV niet vereist"` | Zero visa sponsorship required; immediate Dutch employment contract start. |
+| **Rare DP-600 + PL-300 Certified Combo** | Top percentile of Microsoft data professionals holding both Fabric Analytics Engineer & Power BI Analyst certifications | Microsoft Learn verified credentials (PL-300, DP-600, DP-900, AZ-900, AI-900). |
+| **Proven Cost Reduction & ROI** | Spearheaded enterprise legacy reporting migration from Qlik Sense to Power BI | **€350K+ saved annually** in software licensing fees across multi-national client portfolios. |
+| **Extreme Performance Engineering** | Deep-dive VertiPaq engine profiling (SE cache hit maximization, cardinality pruning) | **40% visual load-time reduction**; **45% data refresh latency reduction** over OneLake & Oracle SQL. |
+| **Modern Data Stack Integration** | Fills modern enterprise gaps across Python/PySpark, dbt, Microsoft Purview, and Fabric | Bridges classical BI dashboards and modern governed Lakehouse / AI pipelines. |
+| **Cultural & Regional Commitment** | Resident in Utrecht region, central to Amsterdam/Rotterdam/Utrecht (Randstad) tech corridor | English C1 (fluent corporate communication) + Dutch A1 (actively learning; committed to long-term integration). |
 
 ---
 
@@ -263,94 +184,6 @@ flowchart LR
 **Measurable Outcomes:**
 * ✅ Guaranteed **100% SLA compliance** for daily 07:00 AM executive financial briefings
 * 🔒 Zero data discrepancy across external SOX compliance audits
-
----
-
-## 💡 Production DAX Engineering Showcase
-
-```dax
-/* ═══════════════════════════════════════════════════════════════════════════════
-   CALCULATION GROUP: Time Intelligence & Dynamic Normalization
-   Demonstrates advanced modifier semantics, formula engine avoidance, and
-   reusable calculation item definitions for enterprise semantic models.
-   ═══════════════════════════════════════════════════════════════════════════════ */
-
-// Calculation Item: Year-to-Date (YTD)
-CALCULATE(
-    SELECTEDMEASURE(),
-    DATESYTD('Dim_Date'[DateKey])
-)
-
-// Calculation Item: Prior Year (PY)
-CALCULATE(
-    SELECTEDMEASURE(),
-    SAMEPERIODLASTYEAR('Dim_Date'[DateKey])
-)
-
-// Calculation Item: Year-over-Year Variance (YoY Var)
-VAR CurrentMeasure = SELECTEDMEASURE()
-VAR PriorYearMeasure = 
-    CALCULATE(
-        SELECTEDMEASURE(),
-        SAMEPERIODLASTYEAR('Dim_Date'[DateKey])
-    )
-RETURN
-    IF(
-        NOT ISBLANK(CurrentMeasure) && NOT ISBLANK(PriorYearMeasure),
-        CurrentMeasure - PriorYearMeasure,
-        BLANK()
-    )
-
-// Calculation Item: Year-over-Year Growth % (YoY %)
-VAR CurrentMeasure = SELECTEDMEASURE()
-VAR PriorYearMeasure = 
-    CALCULATE(
-        SELECTEDMEASURE(),
-        SAMEPERIODLASTYEAR('Dim_Date'[DateKey])
-    )
-RETURN
-    DIVIDE(
-        CurrentMeasure - PriorYearMeasure,
-        PriorYearMeasure,
-        BLANK()
-    )
-```
-
-```sql
-/* ═══════════════════════════════════════════════════════════════════════════════
-   Oracle SQL: High-Throughput Incremental Staging with Partition Elimination
-   Avoids full table scans on OLTP sources using DENSE_RANK window function
-   over RangeStart/RangeEnd boundaries — eliminating production database locks
-   ═══════════════════════════════════════════════════════════════════════════════ */
-
-WITH ranked_transactions AS (
-    SELECT
-        transaction_id,
-        customer_id,
-        transaction_date,
-        gross_amount,
-        currency_code,
-        DENSE_RANK() OVER (
-            PARTITION BY customer_id
-            ORDER BY transaction_date DESC
-        ) AS recency_rank
-    FROM
-        enterprise_transactions
-    WHERE
-        transaction_date >= :RangeStart
-        AND transaction_date < :RangeEnd
-        AND status_flag = 'ACTIVE'
-)
-SELECT
-    transaction_id,
-    customer_id,
-    transaction_date,
-    gross_amount,
-    currency_code
-FROM ranked_transactions
-WHERE recency_rank = 1
-ORDER BY transaction_date DESC;
-```
 
 ---
 
