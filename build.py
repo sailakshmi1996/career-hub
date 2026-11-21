@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
 Master Build Script for Sai Lakshmi Elusuri Portfolio & Career Bundle
-1. Compiles and updates PDF CVs from canonical HTML sources
-2. Executes pre-build automated tests for site integrity and compliance
-3. Assembles clean 'dist/' publish directory containing recruiter-facing assets
-4. Packages standalone deployment ZIP bundle with accurate README manifest
+1. Verifies synchronization with canonical single source of truth (canonical_data.py)
+2. Compiles and updates PDF CVs from canonical HTML sources with strict 2-page constraint
+3. Executes pre-build automated tests for site integrity and compliance
+4. Assembles clean 'dist/' publish directory containing recruiter-facing & hub assets
+5. Packages standalone deployment ZIP bundle with accurate README manifest
 """
 
 import os
@@ -18,6 +19,8 @@ try:
 except ImportError:
     fitz = None
 
+import canonical_data
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DIST_DIR = os.path.join(BASE_DIR, "dist")
 ZIP_NAME = "Netherlands_Career_Hub_Sai_Lakshmi.zip"
@@ -26,10 +29,14 @@ ZIP_PATH_DIST = os.path.join(DIST_DIR, ZIP_NAME)
 
 CHROME_BIN = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
-# Recruiter-facing public assets only
+# All production web assets to deploy to Netlify
 FILES_TO_DEPLOY = [
     "index.html",
     "dutch-career-hub.html",
+    "job-finder.html",
+    "linkedin-optimizer.html",
+    "strategy.html",
+    "influencer-insights.html",
     "shared.css",
     "cv_power_bi_developer.html",
     "cv_bi_project_delivery.html",
@@ -60,6 +67,18 @@ PDF_METADATA = {
     }
 }
 
+def step0_verify_canonical_sync():
+    print("=" * 60)
+    print("STEP 0: VERIFYING CANONICAL SOURCE OF TRUTH SYNCHRONIZATION")
+    print("=" * 60)
+    try:
+        canonical_data.validate_synchronization(BASE_DIR)
+        print("  + Canonical data verified across all portfolio files.")
+        print("  + Employer names, IND endorsement, and current dates synchronized.\n")
+    except Exception as e:
+        print(f"  ❌ Canonical Synchronization Error: {e}")
+        sys.exit(1)
+
 def step1_compile_pdfs():
     print("=" * 60)
     print("STEP 1: COMPILING & VERIFYING CANDIDATE PDF CVS")
@@ -87,7 +106,7 @@ def step1_compile_pdfs():
             if res.returncode != 0:
                 print(f"  ⚠️ Warning: Headless Chrome compilation had non-zero exit for {pdf_file}")
 
-        # Set clean metadata
+        # Set clean metadata and assert strict 2-page constraint
         if fitz is not None and os.path.exists(pdf_path):
             doc = fitz.open(pdf_path)
             meta = PDF_METADATA.get(pdf_file, {})
@@ -95,6 +114,9 @@ def step1_compile_pdfs():
             doc.save(pdf_path, incremental=True, encryption=fitz.PDF_ENCRYPT_KEEP)
             page_count = len(doc)
             doc.close()
+            if page_count != 2:
+                print(f"  ❌ Error: {pdf_file} has {page_count} pages! Must be strictly 2 pages.")
+                sys.exit(1)
             print(f"  + Verified PDF: {pdf_file} ({page_count} pages, {os.path.getsize(pdf_path):,} bytes)")
         elif os.path.exists(pdf_path):
             print(f"  + Verified PDF: {pdf_file} ({os.path.getsize(pdf_path):,} bytes)")
@@ -202,6 +224,7 @@ def step4_package_zip():
         print(f"📦 Archive compiled: {target_zip} ({os.path.getsize(target_zip):,} bytes)\n")
 
 if __name__ == "__main__":
+    step0_verify_canonical_sync()
     step1_compile_pdfs()
     step3_assemble_dist()
     step2_run_tests()

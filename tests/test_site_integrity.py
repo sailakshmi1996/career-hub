@@ -14,6 +14,22 @@ class TestSiteIntegrity(unittest.TestCase):
         with open(cls.hub_path, 'r', encoding='utf-8') as f:
             cls.hub_content = f.read()
 
+        cls.job_finder_path = os.path.join(cls.base_dir, 'job-finder.html')
+        with open(cls.job_finder_path, 'r', encoding='utf-8') as f:
+            cls.job_finder_content = f.read()
+
+        cls.strategy_path = os.path.join(cls.base_dir, 'strategy.html')
+        with open(cls.strategy_path, 'r', encoding='utf-8') as f:
+            cls.strategy_content = f.read()
+
+        cls.linkedin_path = os.path.join(cls.base_dir, 'linkedin-optimizer.html')
+        with open(cls.linkedin_path, 'r', encoding='utf-8') as f:
+            cls.linkedin_content = f.read()
+
+        cls.insights_path = os.path.join(cls.base_dir, 'influencer-insights.html')
+        with open(cls.insights_path, 'r', encoding='utf-8') as f:
+            cls.insights_content = f.read()
+
     def test_local_assets_exist(self):
         """Verify that all core portfolio files and PDF CVs exist on disk and are non-empty."""
         required_files = [
@@ -24,6 +40,11 @@ class TestSiteIntegrity(unittest.TestCase):
             'cv_bi_project_delivery.html',
             'resume.html',
             'dutch-career-hub.html',
+            'job-finder.html',
+            'linkedin-optimizer.html',
+            'strategy.html',
+            'influencer-insights.html',
+            'shared.css',
             'Netherlands_Career_Hub_Sai_Lakshmi.zip'
         ]
         for filename in required_files:
@@ -58,6 +79,37 @@ class TestSiteIntegrity(unittest.TestCase):
         self.assertIn("star schema", self.index_content.lower(), "Missing star schema reference")
         self.assertIn("Microsoft Fabric", self.index_content, "Missing Microsoft Fabric reference")
         self.assertIn("DAX", self.index_content, "Missing DAX reference")
+
+    def test_interactive_hub_elements(self):
+        """Verify interactive search, filtering, and localStorage checklist elements exist across tools."""
+        # dutch-career-hub.html
+        self.assertIn('id="community-search"', self.hub_content, "Missing community search input in dutch-career-hub.html")
+        self.assertIn('id="milestones"', self.hub_content, "Missing milestones checklist section in dutch-career-hub.html")
+        self.assertIn('nl_career_milestones_state_v1', self.hub_content, "Missing localStorage key in dutch-career-hub.html")
+
+        # job-finder.html
+        self.assertIn('panel-queries', self.job_finder_content, "Missing copyable queries panel in job-finder.html")
+        self.assertIn('copySnippet', self.job_finder_content, "Missing copySnippet function in job-finder.html")
+
+        # strategy.html
+        self.assertIn('id="company-search"', self.strategy_content, "Missing company search input in strategy.html")
+        self.assertIn('filterCompanies', self.strategy_content, "Missing filterCompanies function in strategy.html")
+
+        # linkedin-optimizer.html
+        self.assertIn('li_checklist_state_v1', self.linkedin_content, "Missing localStorage persistence in linkedin-optimizer.html")
+
+    def test_global_navigation_links(self):
+        """Verify global navigation seamlessly connects hub tools, regional hub, and PDF/ZIP downloads."""
+        hub_pages = [
+            ("job-finder.html", self.job_finder_content),
+            ("linkedin-optimizer.html", self.linkedin_content),
+            ("strategy.html", self.strategy_content),
+            ("influencer-insights.html", self.insights_content)
+        ]
+        for name, content in hub_pages:
+            self.assertIn('dutch-career-hub.html', content, f"{name} must link to dutch-career-hub.html")
+            self.assertIn('cv_power_bi_developer.pdf', content, f"{name} must provide direct CV download link")
+            self.assertIn('Netherlands_Career_Hub_Sai_Lakshmi.zip', content, f"{name} must link to ZIP bundle")
 
 if __name__ == '__main__':
     unittest.main()

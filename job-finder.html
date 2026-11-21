@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sai Lakshmi – Netherlands Job Finder | Power BI & Azure Analytics</title>
-  <meta name="description" content="Personalized Netherlands job finder for Sai Lakshmi Elusuri – Power BI Developer & Azure Data Analytics Specialist seeking visa-sponsored roles in the Netherlands." />
+  <title>Sai Lakshmi – Netherlands Job Finder | Power BI &amp; Azure Analytics</title>
+  <meta name="description" content="Personalized Netherlands job finder for Sai Lakshmi Elusuri – Senior Power BI Developer &amp; Lakehouse Analytics Specialist with unrestricted Dutch labor market access (TWV niet vereist) in the Utrecht region, Netherlands." />
   <link rel="stylesheet" href="shared.css" />
   <style>
     :root {
@@ -549,11 +549,16 @@
     </a>
     <div class="nav-links">
       <a href="index.html" class="nav-link">🏠 Home</a>
+      <a href="dutch-career-hub.html" class="nav-link">🇳🇱 Regional Hub</a>
       <a href="job-finder.html" class="nav-link active active-blue">🔍 Jobs</a>
       <a href="linkedin-optimizer.html" class="nav-link">💼 LinkedIn</a>
       <a href="resume.html" class="nav-link">📄 Resume</a>
       <a href="strategy.html" class="nav-link">🗺️ Strategy</a>
       <a href="influencer-insights.html" class="nav-link">✨ Insights</a>
+    </div>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <a href="cv_power_bi_developer.pdf" target="_blank" rel="noopener" class="copy-btn">📄 Power BI CV</a>
+      <a href="Netherlands_Career_Hub_Sai_Lakshmi.zip" class="copy-btn" style="border-color:rgba(16,185,129,0.4); color:#34d399;">📦 Bundle ZIP</a>
     </div>
   </div>
 </nav>
@@ -644,6 +649,7 @@
     <div class="tabs" id="main-tabs">
       <button class="tab-btn active" onclick="switchTab('jobs')" id="tab-jobs">🔍 Matched Jobs</button>
       <button class="tab-btn" onclick="switchTab('boards')" id="tab-boards">🌐 Job Boards</button>
+      <button class="tab-btn" onclick="switchTab('queries')" id="tab-queries">📋 Copyable Queries &amp; Outreach</button>
       <button class="tab-btn" onclick="switchTab('visa')" id="tab-visa">🛂 Visa Guide</button>
       <button class="tab-btn" onclick="switchTab('tips')" id="tab-tips">💡 Job Hunt Tips</button>
     </div>
@@ -831,6 +837,84 @@
           <div class="tip-icon">✉️</div>
           <div class="tip-title">Write a Compelling Cover Letter</div>
           <div class="tip-body">Dutch employers value directness and transparency. Open with: <em>"Senior Power BI Developer with 8+ years experience (Apexon, Accenture) and 5x Microsoft Certifications, based in Utrecht with unrestricted Dutch labor authorization (TWV niet vereist)."</em></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Tab: Copyable Search Queries & Outreach Templates ── -->
+    <div class="tab-panel" id="panel-queries">
+      <div style="margin-bottom:24px;">
+        <h3 style="font-family:'Space Grotesk',sans-serif; font-size:1.2rem; color:#fff; margin-bottom:8px;">🔍 High-Signal Boolean Search Queries</h3>
+        <p style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:16px;">Copy and paste these exact Boolean strings into LinkedIn Jobs, Indeed.nl, or Google to surface unadvertised Dutch BI roles.</p>
+        
+        <div class="tips-grid" style="grid-template-columns: 1fr;">
+          <div class="tip-card" style="background:var(--bg-card); display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+            <div style="flex:1; min-width:260px;">
+              <div style="font-size:0.8rem; font-weight:700; color:var(--accent-cyan); text-transform:uppercase; margin-bottom:4px;">Query 1: High-Yield Lakehouse &amp; DAX Roles (Randstad Corridor)</div>
+              <code id="query-1" style="display:block; background:rgba(0,0,0,0.3); padding:10px 14px; border-radius:8px; font-size:0.82rem; color:#e2f0ff; border:1px solid rgba(59,130,246,0.2);">("Power BI" OR "PowerBI") AND ("DAX" OR "Fabric" OR "Lakehouse") AND ("Utrecht" OR "Amsterdam" OR "Rotterdam")</code>
+            </div>
+            <button class="copy-btn" onclick="copySnippet('query-1', this)">📋 Copy Query</button>
+          </div>
+
+          <div class="tip-card" style="background:var(--bg-card); display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+            <div style="flex:1; min-width:260px;">
+              <div style="font-size:0.8rem; font-weight:700; color:var(--accent-purple); text-transform:uppercase; margin-bottom:4px;">Query 2: Enterprise Semantic Model &amp; Performance Engineering</div>
+              <code id="query-2" style="display:block; background:rgba(0,0,0,0.3); padding:10px 14px; border-radius:8px; font-size:0.82rem; color:#e2f0ff; border:1px solid rgba(59,130,246,0.2);">("Power BI" OR "Fabric Analytics") AND ("Kimball" OR "Star Schema" OR "VertiPaq") AND Netherlands</code>
+            </div>
+            <button class="copy-btn" onclick="copySnippet('query-2', this)">📋 Copy Query</button>
+          </div>
+
+          <div class="tip-card" style="background:var(--bg-card); display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;">
+            <div style="flex:1; min-width:260px;">
+              <div style="font-size:0.8rem; font-weight:700; color:var(--accent-green); text-transform:uppercase; margin-bottom:4px;">Query 3: BI Delivery Lead &amp; Migration Specialist</div>
+              <code id="query-3" style="display:block; background:rgba(0,0,0,0.3); padding:10px 14px; border-radius:8px; font-size:0.82rem; color:#e2f0ff; border:1px solid rgba(59,130,246,0.2);">("BI Delivery" OR "Analytics Lead") AND ("Power BI" OR "Qlik") AND ("Scrum" OR "Agile") AND Netherlands</code>
+            </div>
+            <button class="copy-btn" onclick="copySnippet('query-3', this)">📋 Copy Query</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:36px;">
+        <h3 style="font-family:'Space Grotesk',sans-serif; font-size:1.2rem; color:#fff; margin-bottom:8px;">✉️ Dutch Recruiter Outreach Templates</h3>
+        <p style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:16px;">Field-tested outreach messages emphasizing immediate Dutch labor clearance (TWV niet vereist) and 8+ years enterprise experience.</p>
+
+        <div class="tips-grid">
+          <div class="tip-card" style="background:var(--bg-card);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <div class="tip-title" style="color:var(--accent-cyan); margin-bottom:0;">Dutch Agency Recruiter InMail (Harnham, Yacht, Brunel)</div>
+              <button class="copy-btn" onclick="copySnippet('template-agency', this)">📋 Copy Message</button>
+            </div>
+            <pre id="template-agency" style="white-space:pre-wrap; background:rgba(0,0,0,0.3); padding:12px; border-radius:8px; font-size:0.8rem; color:#e2f0ff; border:1px solid rgba(59,130,246,0.2); font-family:var(--font-sans); line-height:1.5;">Hi [Recruiter Name],
+
+I noticed you specialize in BI and Data Analytics recruitment across the Randstad corridor.
+
+I am a Senior Power BI Developer &amp; Lakehouse Specialist with 8+ years enterprise experience (Apexon, Accenture) and 5x Microsoft certifications (PL-300, DP-600 Fabric). I specialize in Kimball star-schema semantic modeling, VertiPaq DAX tuning (40% load speedups), and Qlik-to-Power BI migrations saving €350K+.
+
+Critical for your clients: I am resident in the Utrecht region with full statutory Dutch labor market access under official IND endorsement: "Arbeid vrij toegestaan, TWV niet vereist" (zero visa sponsorship or work permit required). Available immediately for permanent or contract roles.
+
+Would you have 10 minutes this week for a brief exploratory call?
+
+Best regards,
+Sai Lakshmi Elusuri
+sailakshmi.elusuri@gmail.com | Utrecht, Netherlands</pre>
+          </div>
+
+          <div class="tip-card" style="background:var(--bg-card);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <div class="tip-title" style="color:var(--accent-purple); margin-bottom:0;">Hiring Manager Direct Message (Corporate Data Leads)</div>
+              <button class="copy-btn" onclick="copySnippet('template-manager', this)">📋 Copy Message</button>
+            </div>
+            <pre id="template-manager" style="white-space:pre-wrap; background:rgba(0,0,0,0.3); padding:12px; border-radius:8px; font-size:0.8rem; color:#e2f0ff; border:1px solid rgba(59,130,246,0.2); font-family:var(--font-sans); line-height:1.5;">Hi [Manager Name],
+
+I’ve been following [Company]'s analytics evolution and wanted to connect.
+
+I am a Senior Power BI Developer &amp; Fabric Analytics Specialist (PL-300 &amp; DP-600 certified) with 8+ years across enterprise consulting (Accenture, Apexon). Recently, I engineered a Qlik-to-Power BI migration consolidating 150 dashboards into 40 governed semantic models, and reduced dashboard load times by 40% using DAX Studio VertiPaq optimizations.
+
+I am based in the Utrecht region with full unrestricted Dutch labor rights ("Arbeid vrij toegestaan, TWV niet vereist" — no employer sponsorship needed). I'd love to learn about [Company]'s current BI priorities and share how I could contribute.
+
+Best regards,
+Sai Lakshmi Elusuri</pre>
+          </div>
         </div>
       </div>
     </div>
@@ -1077,6 +1161,62 @@
 
   // ── Init ──
   renderJobs(JOBS);
+
+  // ── One-Click Copy Helper ──
+  function copySnippet(elementId, btn) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    const text = el.innerText || el.textContent;
+    const originalText = btn.getAttribute('data-original') || btn.textContent;
+    btn.setAttribute('data-original', originalText);
+
+    function notifySuccess() {
+      btn.textContent = '✅ Copied!';
+      btn.classList.add('copied');
+      showToast('Copied to clipboard! ✓');
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.classList.remove('copied');
+      }, 2200);
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(notifySuccess).catch(() => fallbackCopy(text, notifySuccess));
+    } else {
+      fallbackCopy(text, notifySuccess);
+    }
+  }
+
+  function fallbackCopy(text, cb) {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      document.execCommand('copy');
+      if (cb) cb();
+    } catch (e) {
+      console.warn('Copy fallback failed', e);
+    }
+    document.body.removeChild(ta);
+  }
+
+  function showToast(msg) {
+    let toast = document.getElementById('hub-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'hub-toast';
+      toast.className = 'copy-toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.classList.add('show');
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 2200);
+  }
 </script>
 </body>
 </html>

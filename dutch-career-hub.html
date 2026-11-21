@@ -753,22 +753,25 @@
   </a>
 
   <div class="nav-links">
-    <a href="#about" class="nav-link">Overview</a>
-    <a href="#tracks" class="nav-link">Two Capabilities</a>
-    <a href="#showcase" class="nav-link">Live BI Showcase</a>
-    <a href="#architecture" class="nav-link">DAX VertiPaq</a>
-    <a href="#communities" class="nav-link" style="color:#ec4899; font-weight:600;">👭 Tech Communities</a>
-    <a href="#impact" class="nav-link">Dutch Fit & Work Rights</a>
-    <a href="#gdpr" class="nav-link" style="color:#a78bfa;">🔒 GDPR Privacy</a>
-    <a href="#contact" class="nav-link">Contact</a>
+    <a href="index.html" class="nav-link">🏠 Home</a>
+    <a href="dutch-career-hub.html" class="nav-link" style="color:#38bdf8; font-weight:700;">🇳🇱 Regional Hub</a>
+    <a href="job-finder.html" class="nav-link">🔍 Jobs</a>
+    <a href="linkedin-optimizer.html" class="nav-link">💼 LinkedIn</a>
+    <a href="strategy.html" class="nav-link">🗺️ Strategy</a>
+    <a href="influencer-insights.html" class="nav-link">✨ Insights</a>
+    <a href="#communities" class="nav-link" style="color:#ec4899; font-weight:600;">👭 Communities</a>
+    <a href="#milestones" class="nav-link" style="color:#34d399; font-weight:600;">📋 Milestones</a>
   </div>
 
   <div class="nav-actions">
-    <a href="cv_power_bi_developer.pdf" target="_blank" class="nav-btn nav-btn-primary">
-      📄 Power BI CV (PDF)
+    <a href="cv_power_bi_developer.pdf" target="_blank" rel="noopener" class="nav-btn nav-btn-primary">
+      📄 Power BI CV
     </a>
-    <a href="cv_bi_project_delivery.pdf" target="_blank" class="nav-btn nav-btn-outline">
-      📋 Delivery Lead CV (PDF)
+    <a href="cv_bi_project_delivery.pdf" target="_blank" rel="noopener" class="nav-btn nav-btn-outline">
+      📋 Delivery CV
+    </a>
+    <a href="Netherlands_Career_Hub_Sai_Lakshmi.zip" class="nav-btn" style="background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.4); color:#34d399;">
+      📦 Bundle ZIP
     </a>
   </div>
 </nav>
@@ -1264,13 +1267,28 @@ CALCULATE(
     </div>
   </div>
 
+  <!-- Community Search & Category Filter Bar -->
+  <div class="filter-deck-wrap" style="margin-bottom: 24px;">
+    <div style="position:relative;">
+      <span style="position:absolute; left:16px; top:50%; transform:translateY(-50%); font-size:1.1rem; color:#94a3b8; pointer-events:none;">🔍</span>
+      <input type="text" id="community-search" class="filter-search-input" placeholder="Search communities by name, technology focus (Power BI, Fabric, Python), or city..." oninput="filterCommunities()" />
+    </div>
+    <div class="filter-pills-bar" id="community-filter-pills">
+      <button type="button" class="filter-pill-btn active" onclick="setCommunityCategory('all', this)">All Communities (10)</button>
+      <button type="button" class="filter-pill-btn" onclick="setCommunityCategory('data-bi', this)">Enterprise Data &amp; BI</button>
+      <button type="button" class="filter-pill-btn" onclick="setCommunityCategory('hiring', this)">Hiring &amp; Speed-Interviews</button>
+      <button type="button" class="filter-pill-btn" onclick="setCommunityCategory('mentorship', this)">Mentorship &amp; Clubhouse</button>
+      <button type="button" class="filter-pill-btn" onclick="setCommunityCategory('ai-coding', this)">AI &amp; Coding</button>
+    </div>
+  </div>
+
   <!-- 10 Curated Communities Grid -->
-  <div class="community-cards-grid">
+  <div class="community-cards-grid" id="community-grid">
     <!-- 1. Equals Amsterdam -->
-    <div class="community-card">
+    <div class="community-card" data-category="mentorship">
       <div>
         <div class="comm-head">
-          <span style="font-size:0.75rem; font-weight:700; color:#ec4899;">1. CLUBHOUSE & SCALE-UPS</span>
+          <span style="font-size:0.75rem; font-weight:700; color:#ec4899;">1. CLUBHOUSE &amp; SCALE-UPS</span>
           <span class="comm-badge" style="background:rgba(236,72,153,0.15); color:#ec4899;">Physical Hub</span>
         </div>
         <h4 class="comm-title">Equals Amsterdam</h4>
@@ -1283,7 +1301,7 @@ CALCULATE(
     </div>
 
     <!-- 2. Women in Tech NL -->
-    <div class="community-card">
+    <div class="community-card" data-category="mentorship">
       <div>
         <div class="comm-head">
           <span style="font-size:0.75rem; font-weight:700; color:#6366f1;">2. NATIONAL CHAPTER</span>
@@ -1293,13 +1311,13 @@ CALCULATE(
         <p style="font-size:0.84rem; color:var(--text-secondary); margin:8px 0 12px; line-height:1.5;">
           Empowers women through structured mentorship programs, leadership summits, and cross-industry corporate networking across the Netherlands.
         </p>
-        <div style="font-size:0.76rem; color:var(--text-muted); margin-bottom:12px;">🎯 Executive mentorship and corporate sponsorship connections</div>
+        <div style="font-size:0.76rem; color:var(--text-muted); margin-bottom:12px;">🎯 Executive mentorship and corporate connections across the Netherlands</div>
       </div>
       <a href="https://womentech.net" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 womentech.net &rarr;</a>
     </div>
 
     <!-- 3. Women in Data Amsterdam -->
-    <div class="community-card">
+    <div class="community-card" data-category="data-bi">
       <div>
         <div class="comm-head">
           <span style="font-size:0.75rem; font-weight:700; color:#10b981;">3. ENTERPRISE DATA / BI</span>
@@ -1315,7 +1333,7 @@ CALCULATE(
     </div>
 
     <!-- 4. WomenHack Amsterdam -->
-    <div class="community-card">
+    <div class="community-card" data-category="hiring">
       <div>
         <div class="comm-head">
           <span style="font-size:0.75rem; font-weight:700; color:#f59e0b;">4. DIRECT HIRING FAIRS</span>
@@ -1331,10 +1349,10 @@ CALCULATE(
     </div>
 
     <!-- 5. Women in AI (WAI) NL -->
-    <div class="community-card">
+    <div class="community-card" data-category="ai-coding">
       <div>
         <div class="comm-head">
-          <span style="font-size:0.75rem; font-weight:700; color:#8b5cf6;">5. AI & GENAI ANALYTICS</span>
+          <span style="font-size:0.75rem; font-weight:700; color:#8b5cf6;">5. AI &amp; GENAI ANALYTICS</span>
           <span class="comm-badge" style="background:rgba(139,92,246,0.15); color:#8b5cf6;">Applied AI</span>
         </div>
         <h4 class="comm-title">Women in AI (WAI) NL</h4>
@@ -1347,10 +1365,10 @@ CALCULATE(
     </div>
 
     <!-- 6. PyLadies Amsterdam -->
-    <div class="community-card">
+    <div class="community-card" data-category="ai-coding">
       <div>
         <div class="comm-head">
-          <span style="font-size:0.75rem; font-weight:700; color:#3b82f6;">6. PYTHON & AUTOMATION</span>
+          <span style="font-size:0.75rem; font-weight:700; color:#3b82f6;">6. PYTHON &amp; AUTOMATION</span>
           <span class="comm-badge" style="background:rgba(59,130,246,0.15); color:#3b82f6;">Code Workshops</span>
         </div>
         <h4 class="comm-title">PyLadies Amsterdam</h4>
@@ -1363,7 +1381,7 @@ CALCULATE(
     </div>
 
     <!-- 7. Girl Code Amsterdam -->
-    <div class="community-card">
+    <div class="community-card" data-category="ai-coding">
       <div>
         <div class="comm-head">
           <span style="font-size:0.75rem; font-weight:700; color:#ec4899;">7. DEVELOPER COMMUNITY</span>
@@ -1379,7 +1397,7 @@ CALCULATE(
     </div>
 
     <!-- 8. She's Coding (Amsterdam) -->
-    <div class="community-card">
+    <div class="community-card" data-category="ai-coding">
       <div>
         <div class="comm-head">
           <span style="font-size:0.75rem; font-weight:700; color:#14b8a6;">8. PEER CODING CIRCLE</span>
@@ -1395,7 +1413,7 @@ CALCULATE(
     </div>
 
     <!-- 9. R-Ladies Amsterdam -->
-    <div class="community-card">
+    <div class="community-card" data-category="data-bi">
       <div>
         <div class="comm-head">
           <span style="font-size:0.75rem; font-weight:700; color:#06b6d4;">9. STATISTICAL ANALYTICS</span>
@@ -1411,10 +1429,10 @@ CALCULATE(
     </div>
 
     <!-- 10. Women in Tech Regatta -->
-    <div class="community-card">
+    <div class="community-card" data-category="mentorship">
       <div>
         <div class="comm-head">
-          <span style="font-size:0.75rem; font-weight:700; color:#e11d48;">10. PANELS & ALLIANCES</span>
+          <span style="font-size:0.75rem; font-weight:700; color:#e11d48;">10. PANELS &amp; ALLIANCES</span>
           <span class="comm-badge" style="background:rgba(225,29,72,0.15); color:#e11d48;">~320 Members</span>
         </div>
         <h4 class="comm-title">Women in Tech Regatta</h4>
@@ -1426,6 +1444,77 @@ CALCULATE(
       <a href="https://www.meetup.com/find/?keywords=Women%20in%20Tech%20Regatta" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 View WIT Regatta &rarr;</a>
     </div>
   </div>
+
+  <!-- NETHERLANDS CAREER COMMAND CHECKLIST (LocalStorage-Backed) -->
+  <section class="milestones-card" id="milestones">
+    <div class="milestones-header">
+      <div class="milestones-title">
+        <span>🇳🇱</span> Netherlands Career &amp; Application Milestones
+      </div>
+      <div class="milestones-badge" id="milestones-counter">0 of 8 Completed (0%)</div>
+    </div>
+    <div class="milestones-progress-track">
+      <div class="milestones-progress-fill" id="milestones-bar" style="width: 0%;"></div>
+    </div>
+    <div class="checklist-grid" id="milestones-grid">
+      <div class="checklist-item" data-id="m1" onclick="toggleMilestone(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-content">
+          <div class="checklist-text">Statutory IND Legal Work Authorization Verified</div>
+          <div class="checklist-sub">Official IND endorsement: "Arbeid vrij toegestaan, TWV niet vereist" (zero employer visa sponsorship or permit needed)</div>
+        </div>
+      </div>
+      <div class="checklist-item" data-id="m2" onclick="toggleMilestone(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-content">
+          <div class="checklist-text">Municipal BSN &amp; Dutch Payroll Readiness</div>
+          <div class="checklist-sub">Burgerservicenummer and local IBAN ready for direct Dutch payroll onboarding (loonheffingskorting)</div>
+        </div>
+      </div>
+      <div class="checklist-item" data-id="m3" onclick="toggleMilestone(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-content">
+          <div class="checklist-text">ATS-Optimized Dual-Track CV Compliance</div>
+          <div class="checklist-sub">Strict 2-page single-column PDFs highlighting 40% dashboard speedup, €350K+ savings, and 5x certifications</div>
+        </div>
+      </div>
+      <div class="checklist-item" data-id="m4" onclick="toggleMilestone(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-content">
+          <div class="checklist-text">LinkedIn Profile Localized to Utrecht, Netherlands</div>
+          <div class="checklist-sub">Open to Work enabled with "Authorized to work without sponsorship" and Randstad discovery keywords</div>
+        </div>
+      </div>
+      <div class="checklist-item" data-id="m5" onclick="toggleMilestone(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-content">
+          <div class="checklist-text">Live Architecture &amp; Telemetry Simulator Inspection</div>
+          <div class="checklist-sub">Explore Kimball Star Schema and DAX VertiPaq engine cache states at sailakshminl.netlify.app</div>
+        </div>
+      </div>
+      <div class="checklist-item" data-id="m6" onclick="toggleMilestone(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-content">
+          <div class="checklist-text">Qlik-to-Power BI Enterprise Migration Narrative</div>
+          <div class="checklist-sub">Rehearsed STAR breakdown of 150-to-40 semantic model consolidation and €350K+ licensing cost reduction</div>
+        </div>
+      </div>
+      <div class="checklist-item" data-id="m7" onclick="toggleMilestone(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-content">
+          <div class="checklist-text">Randstad Women in Tech Network Engagement</div>
+          <div class="checklist-sub">Connect with Equals Amsterdam, Women in Data Amsterdam, and WomenHack hiring summits</div>
+        </div>
+      </div>
+      <div class="checklist-item" data-id="m8" onclick="toggleMilestone(this)">
+        <div class="checklist-checkbox"></div>
+        <div class="checklist-content">
+          <div class="checklist-text">Specialized Dutch Recruiter Agency InMail Outreach</div>
+          <div class="checklist-sub">Direct engagement with senior data recruitment leads at Harnham, Yacht, Michael Page, and Brunel</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- DUTCH WORKPLACE FIT & IND WORK AUTHORIZATION -->
   <section class="sec-head" id="impact">
@@ -1588,6 +1677,86 @@ CALCULATE(
       barUtr.style.width = '0%'; valUtr.innerText = '€0.0M';
       barAme.style.width = '100%'; valAme.innerText = '€9.7M';
     }
+  }
+
+  // ── Community Interactive Filtering ──
+  let activeCommunityCategory = 'all';
+
+  function setCommunityCategory(category, btn) {
+    activeCommunityCategory = category;
+    document.querySelectorAll('#community-filter-pills .filter-pill-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+    filterCommunities();
+  }
+
+  function filterCommunities() {
+    const searchInput = document.getElementById('community-search');
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    const cards = document.querySelectorAll('#community-grid .community-card');
+
+    cards.forEach(card => {
+      const category = card.getAttribute('data-category') || '';
+      const text = card.innerText.toLowerCase();
+      const matchesCategory = (activeCommunityCategory === 'all' || category === activeCommunityCategory);
+      const matchesQuery = (!query || text.includes(query));
+
+      if (matchesCategory && matchesQuery) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  // ── LocalStorage Milestones Checklist ──
+  const NL_MILESTONES_STORAGE_KEY = 'nl_career_milestones_state_v1';
+
+  function initMilestones() {
+    const saved = JSON.parse(localStorage.getItem(NL_MILESTONES_STORAGE_KEY) || '{}');
+    document.querySelectorAll('#milestones-grid .checklist-item').forEach(item => {
+      const id = item.getAttribute('data-id');
+      if (id && saved[id]) {
+        item.classList.add('done');
+        const box = item.querySelector('.checklist-checkbox');
+        if (box) box.textContent = '✓';
+      }
+    });
+    updateMilestonesUI();
+  }
+
+  function toggleMilestone(item) {
+    const isDone = item.classList.toggle('done');
+    const box = item.querySelector('.checklist-checkbox');
+    if (box) box.textContent = isDone ? '✓' : '';
+
+    const id = item.getAttribute('data-id');
+    if (id) {
+      const saved = JSON.parse(localStorage.getItem(NL_MILESTONES_STORAGE_KEY) || '{}');
+      saved[id] = isDone;
+      localStorage.setItem(NL_MILESTONES_STORAGE_KEY, JSON.stringify(saved));
+    }
+
+    updateMilestonesUI();
+  }
+
+  function updateMilestonesUI() {
+    const total = document.querySelectorAll('#milestones-grid .checklist-item').length;
+    const done = document.querySelectorAll('#milestones-grid .checklist-item.done').length;
+    const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+
+    const counter = document.getElementById('milestones-counter');
+    const bar = document.getElementById('milestones-bar');
+
+    if (counter) counter.textContent = `${done} of ${total} Completed (${pct}%)`;
+    if (bar) bar.style.width = `${pct}%`;
+  }
+
+  // Run on page load
+  document.addEventListener('DOMContentLoaded', () => {
+    initMilestones();
+  });
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    initMilestones();
   }
 </script>
 

@@ -6,22 +6,33 @@ class TestComplianceAndDates(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        cls.index_path = os.path.join(base_dir, 'index.html')
-        with open(cls.index_path, 'r', encoding='utf-8') as f:
-            cls.index_content = f.read()
+        cls.html_files = {}
+        for fname in [
+            'index.html',
+            'dutch-career-hub.html',
+            'job-finder.html',
+            'linkedin-optimizer.html',
+            'strategy.html',
+            'influencer-insights.html',
+            'resume.html',
+            'cv_power_bi_developer.html',
+            'cv_bi_project_delivery.html'
+        ]:
+            fpath = os.path.join(base_dir, fname)
+            if os.path.exists(fpath):
+                with open(fpath, 'r', encoding='utf-8') as f:
+                    cls.html_files[fname] = f.read()
 
-        cls.cv_path = os.path.join(base_dir, 'cv_power_bi_developer.html')
-        with open(cls.cv_path, 'r', encoding='utf-8') as f:
-            cls.cv_content = f.read()
+        cls.index_content = cls.html_files.get('index.html', '')
+        cls.cv_content = cls.html_files.get('cv_power_bi_developer.html', '')
 
     def test_no_future_employment_dates(self):
-        """Verify no future employment end dates exist (e.g. Dec 2026 when review date is Nov 16, 2026)."""
+        """Verify no future employment end dates exist across all HTML documents."""
         future_patterns = [r'December 2026', r'Dec 2026', r'2027', r'2028']
-        for pat in future_patterns:
-            matches_idx = re.findall(pat, self.index_content, re.IGNORECASE)
-            self.assertEqual(len(matches_idx), 0, f"Future date pattern '{pat}' found in index.html: {matches_idx}")
-            matches_cv = re.findall(pat, self.cv_content, re.IGNORECASE)
-            self.assertEqual(len(matches_cv), 0, f"Future date pattern '{pat}' found in cv_power_bi_developer.html: {matches_cv}")
+        for fname, content in self.html_files.items():
+            for pat in future_patterns:
+                matches = re.findall(pat, content, re.IGNORECASE)
+                self.assertEqual(len(matches), 0, f"Future date pattern '{pat}' found in {fname}: {matches}")
 
     def test_consistent_current_role(self):
         """Verify ongoing Apexon role is marked as Present consistently."""
@@ -29,10 +40,11 @@ class TestComplianceAndDates(unittest.TestCase):
         self.assertIn("Present", self.cv_content, "Apexon current role should specify Present in cv_power_bi_developer.html")
 
     def test_no_third_party_trackers(self):
-        """Verify that index.html contains no third-party tracking scripts."""
+        """Verify that all hub pages contain zero third-party tracking scripts."""
         trackers = ['google-analytics.com', 'googletagmanager.com', 'connect.facebook.net', 'hotjar.com']
-        for tracker in trackers:
-            self.assertNotIn(tracker, self.index_content.lower(), f"Privacy violation: Found tracking script {tracker}")
+        for fname, content in self.html_files.items():
+            for tracker in trackers:
+                self.assertNotIn(tracker, content.lower(), f"Privacy violation in {fname}: Found tracking script {tracker}")
 
     def test_ind_legal_endorsement(self):
         """Verify official IND legal work authorization endorsement is present."""

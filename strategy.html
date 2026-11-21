@@ -272,11 +272,16 @@
     </a>
     <div class="nav-links">
       <a href="index.html" class="nav-link">🏠 Home</a>
+      <a href="dutch-career-hub.html" class="nav-link">🇳🇱 Regional Hub</a>
       <a href="job-finder.html" class="nav-link">🔍 Jobs</a>
       <a href="linkedin-optimizer.html" class="nav-link">💼 LinkedIn</a>
       <a href="resume.html" class="nav-link">📄 Resume</a>
       <a href="strategy.html" class="nav-link active active-orange">🗺️ Strategy</a>
       <a href="influencer-insights.html" class="nav-link">✨ Insights</a>
+    </div>
+    <div style="display:flex; gap:8px; align-items:center;">
+      <a href="cv_power_bi_developer.pdf" target="_blank" rel="noopener" class="copy-btn">📄 Power BI CV</a>
+      <a href="Netherlands_Career_Hub_Sai_Lakshmi.zip" class="copy-btn" style="border-color:rgba(16,185,129,0.4); color:#34d399;">📦 Bundle ZIP</a>
     </div>
   </div>
 </nav>
@@ -557,79 +562,94 @@
   <div class="sec-wrap">
     <div class="sec-head">
       <div class="sec-icon">🏢</div>
-      <div class="sec-title">Priority Target Companies — IND Recognised Sponsors</div>
+      <div class="sec-title">Priority Target Companies &amp; Enterprise Data Platforms</div>
       <div class="sec-line"></div>
     </div>
     <div class="alert alert-green">
       <div class="alert-icon">✅</div>
-      <div><strong>Apply to these FIRST</strong> — All are IND-recognised sponsors with active NL offices and established visa processes for Indian candidates.</div>
+      <div><strong>Dutch Labor Market Positioning:</strong> Leading Dutch enterprises, Big 4 consultancies, and global cloud leaders in the Randstad. Because you hold <strong>unrestricted Dutch labor market rights ("Arbeid vrij toegestaan, TWV niet vereist")</strong>, you can be hired immediately on standard payroll without employer sponsorship overhead.</div>
     </div>
-    <div class="companies-grid">
-      <a href="https://www.accenture.com/nl-en/careers" target="_blank" class="co-card">
+
+    <!-- Company Search & Filter -->
+    <div class="filter-deck-wrap" style="margin-bottom: 20px;">
+      <div style="position:relative;">
+        <span style="position:absolute; left:16px; top:50%; transform:translateY(-50%); font-size:1.1rem; color:#94a3b8; pointer-events:none;">🔍</span>
+        <input type="text" id="company-search" class="filter-search-input" placeholder="Filter employers by name, sector (Banking, Big 4, Consulting, Tech), or city..." oninput="filterCompanies()" />
+      </div>
+      <div class="filter-pills-bar" id="company-filter-pills">
+        <button type="button" class="filter-pill-btn active" onclick="setCompanyCategory('all', this)">All Employers (12)</button>
+        <button type="button" class="filter-pill-btn" onclick="setCompanyCategory('consulting', this)">Consulting &amp; Big 4</button>
+        <button type="button" class="filter-pill-btn" onclick="setCompanyCategory('banking', this)">Banking &amp; FinTech</button>
+        <button type="button" class="filter-pill-btn" onclick="setCompanyCategory('enterprise', this)">Enterprise &amp; Tech</button>
+      </div>
+    </div>
+
+    <div class="companies-grid" id="companies-grid">
+      <a href="https://www.accenture.com/nl-en/careers" target="_blank" class="co-card" data-category="consulting">
         <div class="co-logo" style="background:linear-gradient(135deg,#6d2c91,#a855f7)">Ac</div>
         <div class="co-info">
           <div class="co-name">Accenture NL</div>
           <div class="co-detail">Amsterdam · Consulting</div>
-          <div class="co-visa">✅ Internal transfer possible</div>
+          <div class="co-visa">✅ Existing tenure advantage</div>
         </div>
       </a>
-      <a href="https://www2.deloitte.com/nl/en/pages/careers" target="_blank" class="co-card">
+      <a href="https://www2.deloitte.com/nl/en/pages/careers" target="_blank" class="co-card" data-category="consulting">
         <div class="co-logo" style="background:linear-gradient(135deg,#15803d,#22c55e)">De</div>
         <div class="co-info">
           <div class="co-name">Deloitte NL</div>
           <div class="co-detail">Amsterdam · Big 4</div>
-          <div class="co-visa">✅ Active HSM sponsor</div>
+          <div class="co-visa">✅ Enterprise BI practice</div>
         </div>
       </a>
-      <a href="https://www.kpmg.nl/carriere" target="_blank" class="co-card">
+      <a href="https://www.kpmg.nl/carriere" target="_blank" class="co-card" data-category="consulting">
         <div class="co-logo" style="background:linear-gradient(135deg,#0075BE,#00AEEF)">KP</div>
         <div class="co-info">
           <div class="co-name">KPMG NL</div>
           <div class="co-detail">Amsterdam · Big 4</div>
-          <div class="co-visa">✅ Active HSM sponsor</div>
+          <div class="co-visa">✅ Analytics advisory match</div>
         </div>
       </a>
-      <a href="https://www.capgemini.com/nl-en/careers" target="_blank" class="co-card">
+      <a href="https://www.capgemini.com/nl-en/careers" target="_blank" class="co-card" data-category="consulting">
         <div class="co-logo" style="background:linear-gradient(135deg,#0070AD,#00ADEF)">Ca</div>
         <div class="co-info">
           <div class="co-name">Capgemini NL</div>
           <div class="co-detail">Utrecht · IT Consulting</div>
-          <div class="co-visa">✅ Hires Indian talent actively</div>
+          <div class="co-visa">✅ Utrecht local office</div>
         </div>
       </a>
-      <a href="https://www.tata.com/careers" target="_blank" class="co-card">
+      <a href="https://www.tata.com/careers" target="_blank" class="co-card" data-category="consulting">
         <div class="co-logo" style="background:linear-gradient(135deg,#0033CC,#4466FF)">TCS</div>
         <div class="co-info">
           <div class="co-name">TCS Netherlands</div>
           <div class="co-detail">Amsterdam · IT Services</div>
-          <div class="co-visa">✅ Indian talent specialist</div>
+          <div class="co-visa">✅ Large data client base</div>
         </div>
       </a>
-      <a href="https://careers.cognizant.com" target="_blank" class="co-card">
+      <a href="https://careers.cognizant.com" target="_blank" class="co-card" data-category="consulting">
         <div class="co-logo" style="background:linear-gradient(135deg,#1D68D9,#4B8EF1)">Cg</div>
         <div class="co-info">
           <div class="co-name">Cognizant NL</div>
           <div class="co-detail">Amsterdam · IT Services</div>
-          <div class="co-visa">✅ Active HSM sponsor</div>
+          <div class="co-visa">✅ Cloud analytics hub</div>
         </div>
       </a>
-      <a href="https://careers.microsoft.com/global/en/search?q=power+bi&lc=Netherlands" target="_blank" class="co-card">
+      <a href="https://careers.microsoft.com/global/en/search?q=power+bi&lc=Netherlands" target="_blank" class="co-card" data-category="enterprise">
         <div class="co-logo" style="background:linear-gradient(135deg,#00A4EF,#0078D4)">MS</div>
         <div class="co-info">
           <div class="co-name">Microsoft NL</div>
-          <div class="co-detail">Amsterdam · FAANG</div>
-          <div class="co-visa">✅ Top-tier sponsor</div>
+          <div class="co-detail">Amsterdam · Cloud Giant</div>
+          <div class="co-visa">✅ Fabric / PL-300 direct match</div>
         </div>
       </a>
-      <a href="https://www.ing.jobs/netherlands" target="_blank" class="co-card">
+      <a href="https://www.ing.jobs/netherlands" target="_blank" class="co-card" data-category="banking">
         <div class="co-logo" style="background:linear-gradient(135deg,#FF6200,#FF8533)">ING</div>
         <div class="co-info">
           <div class="co-name">ING Bank NL</div>
           <div class="co-detail">Amsterdam · Banking</div>
-          <div class="co-visa">✅ Active HSM sponsor</div>
+          <div class="co-visa">✅ Risk &amp; financial analytics</div>
         </div>
       </a>
-      <a href="https://careers.shell.com" target="_blank" class="co-card">
+      <a href="https://careers.shell.com" target="_blank" class="co-card" data-category="enterprise">
         <div class="co-logo" style="background:linear-gradient(135deg,#FBCE07,#F59E0B)">Sh</div>
         <div class="co-info">
           <div class="co-name">Shell Netherlands</div>
@@ -637,28 +657,28 @@
           <div class="co-visa">✅ Sustainability BI match</div>
         </div>
       </a>
-      <a href="https://www.careers.philips.com" target="_blank" class="co-card">
+      <a href="https://www.careers.philips.com" target="_blank" class="co-card" data-category="enterprise">
         <div class="co-logo" style="background:linear-gradient(135deg,#0B5ED7,#3B82F6)">Ph</div>
         <div class="co-info">
           <div class="co-name">Philips NL</div>
           <div class="co-detail">Amsterdam · HealthTech</div>
-          <div class="co-visa">✅ Active HSM sponsor</div>
+          <div class="co-visa">✅ Global reporting standards</div>
         </div>
       </a>
-      <a href="https://www.werkenbijabnamro.nl" target="_blank" class="co-card">
+      <a href="https://www.werkenbijabnamro.nl" target="_blank" class="co-card" data-category="banking">
         <div class="co-logo" style="background:linear-gradient(135deg,#007A33,#10B981)">ABN</div>
         <div class="co-info">
           <div class="co-name">ABN AMRO</div>
           <div class="co-detail">Amsterdam · Banking</div>
-          <div class="co-visa">✅ Celonis+BI perfect match</div>
+          <div class="co-visa">✅ Celonis + Power BI match</div>
         </div>
       </a>
-      <a href="https://www.pwc.nl/nl/carriere.html" target="_blank" class="co-card">
+      <a href="https://www.pwc.nl/nl/carriere.html" target="_blank" class="co-card" data-category="consulting">
         <div class="co-logo" style="background:linear-gradient(135deg,#E0301E,#F87171)">PwC</div>
         <div class="co-info">
           <div class="co-name">PwC Netherlands</div>
           <div class="co-detail">Amsterdam · Big 4</div>
-          <div class="co-visa">✅ Active HSM sponsor</div>
+          <div class="co-visa">✅ Governed reporting focus</div>
         </div>
       </a>
     </div>
@@ -863,12 +883,85 @@ Sai Lakshmi Elusuri
 </footer>
 
 <script>
-// Copy function
+// One-click copy with fallback and toast
 function cp(btn, id) {
-  navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const text = el.innerText || el.textContent;
+  const orig = btn.getAttribute('data-original') || btn.textContent;
+  btn.setAttribute('data-original', orig);
+
+  function notifySuccess() {
     btn.textContent = '✅ Copied!';
     btn.classList.add('done');
-    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('done'); }, 2500);
+    showToast('Copied to clipboard! ✓');
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.classList.remove('done');
+    }, 2400);
+  }
+
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(notifySuccess).catch(() => fallbackCopy(text, notifySuccess));
+  } else {
+    fallbackCopy(text, notifySuccess);
+  }
+}
+
+function fallbackCopy(text, cb) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+    if (cb) cb();
+  } catch (e) {
+    console.warn('Copy error', e);
+  }
+  document.body.removeChild(ta);
+}
+
+function showToast(msg) {
+  let toast = document.getElementById('strat-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'strat-toast';
+    toast.className = 'copy-toast';
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => { toast.classList.remove('show'); }, 2200);
+}
+
+// Target Companies Interactive Filtering
+let activeCoCategory = 'all';
+
+function setCompanyCategory(cat, btn) {
+  activeCoCategory = cat;
+  document.querySelectorAll('#company-filter-pills .filter-pill-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  filterCompanies();
+}
+
+function filterCompanies() {
+  const q = (document.getElementById('company-search')?.value || '').toLowerCase().trim();
+  const cards = document.querySelectorAll('#companies-grid .co-card');
+
+  cards.forEach(card => {
+    const cat = card.getAttribute('data-category') || '';
+    const text = card.innerText.toLowerCase();
+    const matchCat = (activeCoCategory === 'all' || cat === activeCoCategory);
+    const matchQ = (!q || text.includes(q));
+
+    if (matchCat && matchQ) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
   });
 }
 
