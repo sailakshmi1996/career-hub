@@ -30,6 +30,43 @@
 
 ---
 
+## 📁 Repository Structure
+
+```text
+├── Sai_Lakshmi_Elusuri_Resume.pdf  # Master CV (Lakehouse Specialist & Power BI Architect)
+├── cv_power_bi_developer.pdf       # Senior Power BI Developer CV
+├── cv_bi_project_delivery.pdf      # BI Delivery Coordinator CV
+├── Netherlands_Career_Hub_Sai_Lakshmi.zip # Standalone recruiter distribution bundle
+├── resume.html                     # Semantic HTML source for Master CV
+├── cv_power_bi_developer.html      # Semantic HTML source for Technical CV
+├── cv_bi_project_delivery.html     # Semantic HTML source for Delivery CV
+├── index.html                      # Executive portfolio & interactive metric inspector
+├── dutch-career-hub.html           # Netherlands regional career command center
+├── shared.css                      # Modern design system (zero external tracker fonts)
+├── canonical_data.py               # Single source of truth for work dates, roles & certs
+├── build.py                        # Master build pipeline (PDF compilation & distribution)
+├── netlify.toml                    # Netlify production build & security header configuration
+├── _headers                        # CSP, HSTS, X-Frame-Options, and cache control headers
+├── .agents/skills/                 # Relevant Antigravity automation skills
+│   ├── career-hub-testing/         # Compliance & structural integrity test skill
+│   ├── git-cicd/                   # Version control & GitHub Actions CI/CD skill
+│   └── netlify-deploy/             # Netlify deployment & packaging automation
+├── .github/workflows/              # Cloud CI/CD automation
+│   └── ci-cd-netlify.yml           # Automated GitHub Actions test & deploy pipeline
+├── .githooks/                      # Git pre-commit verification gates
+│   └── pre-commit                  # Runs test suite before any commit is accepted
+├── scripts/                        # Production deployment utilities
+│   ├── deploy_netlify.py
+│   └── deploy_netlify.sh
+└── tests/                          # 4-tier automated test suite (156 passing tests)
+    ├── run_all_tests.py            # Master test runner
+    ├── test_site_integrity.py      # Assets & internal navigation anchor integrity
+    ├── test_compliance_and_dates.py# GDPR/AVG compliance & zero-date validation
+    └── test_e2e_requirements.py    # 23-feature comprehensive audit oracle
+```
+
+---
+
 ## 🛠️ Build & Test Automation
 
 The repository includes an automated build pipeline that compiles PDFs from semantic HTML sources using headless Chrome, embeds metadata via PyMuPDF, runs automated integrity and compliance tests, and packages production assets for Netlify.
