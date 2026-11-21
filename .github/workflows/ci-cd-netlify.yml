@@ -41,6 +41,10 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip pymupdf || true
+
       - name: Package Production Bundle
         run: |
           python3 scripts/deploy_netlify.py

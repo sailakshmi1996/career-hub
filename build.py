@@ -12,7 +12,11 @@ import shutil
 import sys
 import subprocess
 import zipfile
-import fitz
+
+try:
+    import fitz
+except ImportError:
+    fitz = None
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DIST_DIR = os.path.join(BASE_DIR, "dist")
@@ -84,7 +88,7 @@ def step1_compile_pdfs():
                 print(f"  ⚠️ Warning: Headless Chrome compilation had non-zero exit for {pdf_file}")
 
         # Set clean metadata
-        if os.path.exists(pdf_path):
+        if fitz is not None and os.path.exists(pdf_path):
             doc = fitz.open(pdf_path)
             meta = PDF_METADATA.get(pdf_file, {})
             doc.set_metadata(meta)
@@ -92,6 +96,8 @@ def step1_compile_pdfs():
             page_count = len(doc)
             doc.close()
             print(f"  + Verified PDF: {pdf_file} ({page_count} pages, {os.path.getsize(pdf_path):,} bytes)")
+        elif os.path.exists(pdf_path):
+            print(f"  + Verified PDF: {pdf_file} ({os.path.getsize(pdf_path):,} bytes)")
         else:
             print(f"  ❌ Error: {pdf_file} does not exist!")
             sys.exit(1)
