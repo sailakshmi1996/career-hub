@@ -27,11 +27,28 @@
 
 ---
 
+## 🎯 Recruiter Quick-Scan: Why Hire Sai Lakshmi?
+
+> **Available immediately** · No visa sponsorship needed · Utrecht region · Full Dutch labor market access
+
+| 🏅 | Signal | Proof |
+|:---:|:---|:---|
+| **5× Certified** | PL-300 · DP-600 · DP-900 · AZ-900 · AI-900 | Microsoft Learn credential links ↓ |
+| **€350K+ Saved** | Qlik → Power BI migration, 150 → 40 dashboards | Accenture, 4 years |
+| **40% Faster** | VertiPaq tuning, Kimball star schema refactor | Measured via DAX Studio |
+| **45% Latency Cut** | Direct Lake on OneLake, ADF incremental refresh | Apexon, current role |
+| **8+ Years** | Oracle · SQL Server · Power BI · Microsoft Fabric | Conduent → Genpact → Accenture → Apexon |
+| **🇳🇱 Dutch Ready** | No TWV needed · A1 Dutch (actively learning) | IND endorsement on file |
+
+---
+
 ## 🧭 Executive Summary
 
-Hands-on **Senior Power BI Developer & Lakehouse Analytics Specialist** with **8+ years of enterprise experience** designing, modeling, and deploying mission-critical analytics systems, decision-support dashboards, and modern data platforms across sustainability, financial risk, and enterprise business operations. 
+Hands-on **Senior Power BI Developer & Lakehouse Analytics Specialist** with **8+ years of enterprise experience** designing, modeling, and deploying mission-critical analytics systems, decision-support dashboards, and modern data platforms across sustainability, financial risk, and enterprise business operations.
 
 Dual-track leadership background combining deep technical engineering (**Power BI Service & Desktop, complex DAX measure engineering, VertiPaq engine tuning, Kimball star-schema semantic modeling, Oracle SQL, SQL Server, and Microsoft Fabric**) with structured **Agile BI Delivery Leadership** (legacy migration coordination, cross-functional squad leadership, stakeholder requirements scoping, and data governance).
+
+Actively deepening expertise in **Microsoft Fabric Copilot, GenAI-ready lakehouse design, and AI-900 certified AI fundamentals** — positioned at the intersection of classical BI engineering and next-generation AI-augmented analytics.
 
 ### 🏆 Key Career Highlights
 * **⚡ 40% Query & Load Time Reduction:** Optimized high-volume enterprise semantic models by refactoring wide denormalized tables into Kimball Star Schemas, pruning relationship cardinality, and tuning VertiPaq dictionary compression via Tabular Editor & DAX Studio.
@@ -42,6 +59,27 @@ Dual-track leadership background combining deep technical engineering (**Power B
 
 ---
 
+## 🗺️ Repository Navigation
+
+```text
+📂 sailakshmi1996/career-hub
+├── 🌐 index.html                            → Live portfolio & BI simulator
+├── 📄 resume.html                           → Master 2-page printable CV (HTML)
+├── 📋 cv_power_bi_developer.html/.pdf       → Technical Power BI Developer CV
+├── 📋 cv_bi_project_delivery.html/.pdf      → BI Delivery Coordinator CV
+├── 📄 Sai_Lakshmi_Elusuri_Resume.pdf        → Master resume (PDF download)
+├── 📦 Netherlands_Career_Hub_Sai_Lakshmi.zip→ Offline recruiter bundle
+├── 🔧 build.py                              → Automated asset compiler
+├── 🧪 tests/                                → 156-test automated compliance suite
+│   ├── run_all_tests.py                     → Master test runner
+│   ├── test_site_integrity.py               → Navigation anchors & asset checks
+│   ├── test_compliance_and_dates.py         → GDPR/AVG & legal compliance
+│   └── test_e2e_requirements.py             → 4-tier end-to-end scenario tests
+└── .github/workflows/ci-cd-netlify.yml      → Automated CI/CD pipeline
+```
+
+---
+
 ## 🛠️ Verified Technical Competencies
 
 | Domain | Core Technologies & Competencies |
@@ -49,9 +87,10 @@ Dual-track leadership background combining deep technical engineering (**Power B
 | **Semantic Modeling & Architecture** | Kimball Dimensional Modeling, Star Schemas, Grain Definition, Snowflake Elimination, 1:* Single-Direction Relationships, Role-Playing Dimensions, Inactive Relationships & `USERELATIONSHIP`, Aggregations |
 | **DAX Measure Engineering** | Advanced `CALCULATE` Modifier Semantics (`ALL`, `ALLEXCEPT`, `KEEPFILTERS`, `REMOVEFILTERS`), Calculation Groups, Dynamic Format Strings, Context Transition Mastery, Iterator Optimization (`SUMX`, `AVERAGEX`), Semi-Additive Measures |
 | **VertiPaq Engine Optimization** | Storage Engine (SE) vs. Formula Engine (FE) Profiling, SE Cache Hit Maximization, Column Cardinality & Dictionary Pruning, Hash Partitioning, DAX Studio, Tabular Editor 3, Bravo, VertiPaq Analyzer |
-| **Cloud Data & Lakehouse** | Microsoft Fabric (OneLake, Direct Lake mode, Lakehouse, SQL Analytics Endpoint), Azure Data Factory (ADF Pipelines), Azure Data Lake Storage (ADLS Gen2), Medallion Architecture (Bronze/Silver/Gold Delta Lake) |
+| **Cloud Data & Lakehouse** | Microsoft Fabric (OneLake, Direct Lake mode, Lakehouse, SQL Analytics Endpoint, Fabric Copilot), Azure Data Factory (ADF Pipelines), Azure Data Lake Storage (ADLS Gen2), Medallion Architecture (Bronze/Silver/Gold Delta Lake) |
 | **Database & Query Engineering** | Oracle SQL DB, SQL Server, T-SQL, Complex Common Table Expressions (CTEs), Analytical Window Functions (`ROW_NUMBER`, `RANK`, `DENSE_RANK`, `LEAD`/`LAG`), Indexing Strategies, Execution Plan Analysis |
 | **Governance & Security** | Row-Level Security (Static & Dynamic RLS using `USERPRINCIPALNAME()`), Tenant Administration, Deployment Pipelines, Workspace Organization, Git Version Control / CI/CD Automation |
+| **AI & GenAI Readiness** | AI-900 Certified, Microsoft Fabric Copilot awareness, GenAI-ready Lakehouse architecture fundamentals, Azure AI Services orientation |
 | **Delivery & Process Mining** | Celonis Process Mining, Agile/Scrum Sprint Coordination, Jira, Confluence, ServiceNow, Legacy BI Migration (Qlik Sense to Power BI), Stakeholder Scoping & User Adoption |
 
 ---
@@ -89,6 +128,38 @@ flowchart TD
     B1 --> C1
     C3 --> D1
     D1 --> CONSUMPTION
+```
+
+---
+
+## 🔄 Migration Architecture: Qlik Sense → Power BI
+
+```mermaid
+flowchart LR
+    subgraph LEGACY[" Legacy Qlik Sense Estate "]
+        Q1["150+ Siloed Apps<br/>Set Analysis Logic"]
+        Q2["Diverging KPI<br/>Definitions"]
+        Q3["€350K+ Annual<br/>Licensing Cost"]
+    end
+
+    subgraph MIGRATION[" Migration Governance "]
+        M1["Jira/Confluence<br/>Catalogue & Triage"]
+        M2["DAX Calculation<br/>Group Conversion"]
+        M3["Centralized RLS<br/>& Azure AD Groups"]
+    end
+
+    subgraph MODERN[" Governed Power BI Estate "]
+        P1["40 Standardized<br/>Semantic Models"]
+        P2["Kimball Star Schema<br/>40% Load Time ↓"]
+        P3["Zero Licensing Cost<br/>Power BI Premium"]
+    end
+
+    Q1 --> M1
+    Q2 --> M2
+    Q3 --> M3
+    M1 --> P1
+    M2 --> P2
+    M3 --> P3
 ```
 
 ---
@@ -135,42 +206,63 @@ flowchart TD
 ## 🔬 Featured Enterprise Case Studies
 
 ### 📌 Case Study 1: Enterprise Supply Chain Semantic Model & Fabric Direct Lake Migration
-* **Client / Domain:** Global Enterprise Operations & Supply Chain
-* **Business Challenge:** A multi-million row ERP supply chain reporting suite suffered from 25+ second visual load times, frequent DirectQuery timeouts on relational sources, and excessive gateway load during month-end closes.
-* **Architecture & Technical Decisions:**
-  * Re-architected 14 disjoint transactional tables into a clean **Kimball Star Schema** (1 centralized Fact Sales/Fulfillment table and 6 Conformed Dimensions).
-  * Transitioned storage from relational DirectQuery to **Microsoft Fabric Direct Lake** on Delta Parquet tables in OneLake.
-  * Pruned high-cardinality surrogate keys and split composite datetime columns to maximize **VertiPaq dictionary compression**.
-* **Measurable Outcomes:**
-  * Visual response times dropped from 25s to **< 2.5 seconds** across executive scorecards.
-  * Achieved **40% reduction in semantic model memory footprint**.
-  * Zero gateway refresh bottleneck; seamless Direct Lake synchronization with OneLake.
+
+| | |
+|:---|:---|
+| **Client Domain** | Global Enterprise Operations & Supply Chain |
+| **Business Problem** | 25+ second visual load times; DirectQuery timeouts; excessive gateway load at month-end close |
+| **My Role** | Lead BI Architect — end-to-end semantic model redesign & Fabric migration |
+| **Technologies** | Microsoft Fabric, OneLake, Delta Parquet, Direct Lake, Power BI, DAX Studio, VertiPaq Analyzer |
+
+**Architecture Decisions:**
+* Re-architected 14 disjoint transactional tables into a clean **Kimball Star Schema** (1 centralized Fact Sales/Fulfillment table and 6 Conformed Dimensions).
+* Transitioned storage from relational DirectQuery to **Microsoft Fabric Direct Lake** on Delta Parquet tables in OneLake.
+* Pruned high-cardinality surrogate keys and split composite datetime columns to maximize **VertiPaq dictionary compression**.
+
+**Measurable Outcomes:**
+* ⚡ Visual response times dropped from 25s to **< 2.5 seconds** across executive scorecards
+* 📉 Achieved **40% reduction in semantic model memory footprint**
+* ✅ Zero gateway refresh bottleneck; seamless Direct Lake synchronization with OneLake
 
 ---
 
 ### 📌 Case Study 2: Enterprise BI Modernization & Qlik Sense-to-Power BI Migration
-* **Client / Domain:** Fortune 500 Enterprise Analytics & Sustainability
-* **Business Challenge:** Multi-year reporting sprawl across 150+ siloed Qlik Sense apps led to diverging KPI definitions, €350K+ in redundant software licensing fees, and complex Set Analysis logic that hindered self-service adoption.
-* **Architecture & Technical Decisions:**
-  * Established a **centralized BI Delivery Governance framework** using Jira and Confluence to catalog, triage, and map 150+ dashboards into 40 core semantic models.
-  * Reverse-engineered complex Qlik Set Analysis into performant **DAX Calculation Groups** and parameterized measures.
-  * Enforced centralized **Dynamic Row-Level Security (RLS)** using Azure AD groups and `USERPRINCIPALNAME()`.
-* **Measurable Outcomes:**
-  * Saved **€350K+ annually** in legacy BI license fees.
-  * Consolidated reporting sprawl by **65%** while increasing active monthly executive usage by 40%.
-  * Shortened ad-hoc KPI release cycle from 6 weeks to **2-week Agile sprint cycles**.
+
+| | |
+|:---|:---|
+| **Client Domain** | Fortune 500 Enterprise Analytics & Sustainability |
+| **Business Problem** | 150+ siloed Qlik Sense apps; diverging KPIs; €350K+ redundant licensing; blocked self-service adoption |
+| **My Role** | BI Migration Lead — governance framework, DAX conversion, RLS architecture |
+| **Technologies** | Power BI, DAX Calculation Groups, Azure AD (Entra ID), Jira, Confluence |
+
+**Architecture Decisions:**
+* Established a **centralized BI Delivery Governance framework** using Jira and Confluence to catalogue, triage, and map 150+ dashboards into 40 core semantic models.
+* Reverse-engineered complex Qlik Set Analysis into performant **DAX Calculation Groups** and parameterized measures.
+* Enforced centralized **Dynamic Row-Level Security (RLS)** using Azure AD groups and `USERPRINCIPALNAME()`.
+
+**Measurable Outcomes:**
+* 💰 Saved **€350K+ annually** in legacy BI license fees
+* 📊 Consolidated reporting sprawl by **65%** while increasing active monthly executive usage by 40%
+* 🏃 Shortened ad-hoc KPI release cycle from 6 weeks to **2-week Agile sprint cycles**
 
 ---
 
 ### 📌 Case Study 3: Executive Financial Telemetry & Real-Time Variance Simulator
-* **Client / Domain:** Financial Risk & Executive Operations
-* **Business Challenge:** Executive finance leadership required real-time visibility into multi-currency gross margin variances across EMEA, with dynamic scenario modeling for supply chain inflation impact.
-* **Architecture & Technical Decisions:**
-  * Implemented disconnected parameter tables and DAX Calculation Groups for dynamic currency switching across EUR, USD, and GBP without measure proliferation.
-  * Optimized Storage Engine (SE) query patterns by utilizing integer surrogate keys and avoiding expensive Formula Engine context transitions on non-additive measures.
-* **Measurable Outcomes:**
-  * Guaranteed **100% SLA compliance** for daily 07:00 AM executive financial briefings.
-  * Zero data discrepancy across external SOX compliance audits.
+
+| | |
+|:---|:---|
+| **Client Domain** | Financial Risk & Executive Operations |
+| **Business Problem** | Real-time multi-currency gross margin visibility needed; dynamic scenario modeling required |
+| **My Role** | Senior BI Developer — DAX calculation group design & formula engine optimization |
+| **Technologies** | Power BI, DAX Calculation Groups, Disconnected Parameter Tables, SQL Server |
+
+**Architecture Decisions:**
+* Implemented disconnected parameter tables and DAX Calculation Groups for dynamic currency switching across EUR, USD, and GBP without measure proliferation.
+* Optimized Storage Engine (SE) query patterns by utilizing integer surrogate keys and avoiding expensive Formula Engine context transitions on non-additive measures.
+
+**Measurable Outcomes:**
+* ✅ Guaranteed **100% SLA compliance** for daily 07:00 AM executive financial briefings
+* 🔒 Zero data discrepancy across external SOX compliance audits
 
 ---
 
@@ -224,6 +316,42 @@ RETURN
     )
 ```
 
+```sql
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Oracle SQL: High-Throughput Incremental Staging with Partition Elimination
+   Avoids full table scans on OLTP sources using DENSE_RANK window function
+   over RangeStart/RangeEnd boundaries — eliminating production database locks
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+WITH ranked_transactions AS (
+    SELECT
+        transaction_id,
+        customer_id,
+        transaction_date,
+        gross_amount,
+        currency_code,
+        DENSE_RANK() OVER (
+            PARTITION BY customer_id
+            ORDER BY transaction_date DESC
+        ) AS recency_rank
+    FROM
+        enterprise_transactions
+    WHERE
+        transaction_date >= :RangeStart
+        AND transaction_date < :RangeEnd
+        AND status_flag = 'ACTIVE'
+)
+SELECT
+    transaction_id,
+    customer_id,
+    transaction_date,
+    gross_amount,
+    currency_code
+FROM ranked_transactions
+WHERE recency_rank = 1
+ORDER BY transaction_date DESC;
+```
+
 ---
 
 ## 🏆 Microsoft Certifications
@@ -262,6 +390,22 @@ RETURN
 
 ---
 
+## 🤖 Repository Quality & Automation
+
+```
+✅ 156 Automated Tests   →  python3 tests/run_all_tests.py
+✅ GDPR/AVG Compliance   →  Zero third-party tracking scripts
+✅ CI/CD Pipeline        →  GitHub Actions → Netlify auto-deploy
+✅ Pre-commit Hook       →  Test gate on every git commit
+✅ 4-Tier Test Coverage  →  Integrity · Compliance · E2E · Recruiter Workflows
+```
+
+[![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions%20%E2%86%92%20Netlify-2088FF?style=flat-square&logo=github-actions&logoColor=white)](https://github.com/sailakshmi1996/career-hub/actions)
+[![Tests](https://img.shields.io/badge/Tests-156%20Passing-22C55E?style=flat-square&logo=pytest&logoColor=white)](#-repository-quality--automation)
+[![GDPR](https://img.shields.io/badge/Privacy-Zero%20Tracking%20%7C%20GDPR%20Compliant-6366F1?style=flat-square)](#-repository-quality--automation)
+
+---
+
 ## 📂 Candidate Download & Asset Manifest
 
 | Asset Name | Target Audience / Purpose | Direct Link |
@@ -283,5 +427,5 @@ RETURN
 * **Portfolio Website:** [sailakshminl.netlify.app](https://sailakshminl.netlify.app/)
 
 <div align="center">
-<sub>Designed to European ATS & Enterprise Recruiter Standards · Automated CI/CD by GitHub Actions · Hosted on Netlify</sub>
+<sub>Designed to European ATS & Enterprise Recruiter Standards · 156 Automated Tests · CI/CD by GitHub Actions · Hosted on Netlify</sub>
 </div>
