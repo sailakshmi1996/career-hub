@@ -14,6 +14,7 @@
 [📥 **Download Master Resume (PDF)**](./Sai_Lakshmi_Elusuri_Resume.pdf) &nbsp;|&nbsp;
 [📊 **Technical Power BI CV (PDF)**](./cv_power_bi_developer.pdf) &nbsp;|&nbsp;
 [📋 **BI Delivery Lead CV (PDF)**](./cv_bi_project_delivery.pdf) &nbsp;|&nbsp;
+[💻 **Production Code Showcase**](./technical-showcase/) &nbsp;|&nbsp;
 [📦 **Complete Recruiter ZIP Bundle**](./Netherlands_Career_Hub_Sai_Lakshmi.zip)
 
 <br/>
@@ -71,7 +72,17 @@ Actively deepening expertise in **Microsoft Fabric Copilot, GenAI-ready lakehous
 
 ---
 
-## 🇳🇱 Dutch Enterprise Market Fit & Strategic Value
+## 💻 Production Code & Technical Showcase
+
+Inspect real production-grade code samples and architectural patterns implemented by Sai Lakshmi:
+
+| Area | Production Artifact | Technical Decision & Impact |
+| :--- | :--- | :--- |
+| **Advanced DAX** | [📄 `calculation_groups_and_semi_additive.dax`](./technical-showcase/dax/calculation_groups_and_semi_additive.dax) | Calculation Groups for dynamic multi-currency & time-intelligence; `KEEPFILTERS` to maximize Storage Engine (SE) multi-threading; VertiPaq-optimized semi-additive measures. |
+| **High-Throughput SQL** | [📄 `oracle_incremental_staging_cte.sql`](./technical-showcase/sql/oracle_incremental_staging_cte.sql) | Oracle SQL CTE staging queries with `ROW_NUMBER()`, `DENSE_RANK()`, and partition pruning for query-folded Power BI ingestion. |
+| **Fabric & PySpark** | [📄 `delta_lake_v_order_pipeline.py`](./technical-showcase/fabric_pyspark/delta_lake_v_order_pipeline.py) | Medallion Gold Lakehouse pipeline writing Delta Parquet with **V-Order optimization** for low-latency Microsoft Fabric Direct Lake reads. |
+
+---
 
 | Dutch Market Priority | How Sai Lakshmi Fills The Requirement | Proof & Impact |
 |:---|:---|:---|

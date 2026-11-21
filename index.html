@@ -66,7 +66,7 @@
             <div class="hero-primary-role">Senior Power BI Developer &amp; Lakehouse Analytics Specialist</div>
             <div class="hero-location">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>Utrecht region, Netherlands (Available for Hybrid / Onsite across Randstad)</span>
+              <span>Utrecht region, Netherlands · Immediate Local Availability (Randstad Onsite / Hybrid)</span>
             </div>
             
             <p class="hero-summary">
@@ -443,6 +443,18 @@
             </div>
           </article>
         </div>
+
+        <!-- Technical Code & Architectural Showcase Banner -->
+        <div style="margin-top: 32px; padding: 22px 28px; background: rgba(17, 28, 48, 0.7); border: 1px solid rgba(99, 216, 208, 0.3); border-radius: 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <div style="font-size: 0.85rem; font-weight: 700; color: #63D8D0; letter-spacing: 0.05em; text-transform: uppercase;">Runnable Technical Artifacts</div>
+            <h3 style="font-size: 1.25rem; font-weight: 800; color: #FFFFFF; margin-top: 4px;">Inspect Production DAX, Oracle SQL &amp; Fabric PySpark Code</h3>
+            <p style="color: #DDE5EA; font-size: 0.95rem; margin-top: 4px; max-width: 680px;">Review concrete calculation group expressions, window function queries, and Delta Lake V-Order pipelines in the repository showcase.</p>
+          </div>
+          <a href="https://github.com/sailakshmi1996/career-hub/tree/main/technical-showcase" target="_blank" rel="noopener" class="btn btn-hero-primary" style="padding: 12px 20px; font-size: 0.92rem;">
+            <span>Browse Code Showcase →</span>
+          </a>
+        </div>
       </div>
     </section>
 
@@ -737,6 +749,22 @@
             </div>
           </div>
 
+          <!-- Interactive Storage Engine vs Formula Engine Execution Breakdown -->
+          <div style="margin-top: 24px; padding: 18px 22px; background: rgba(11, 18, 32, 0.65); border: 1px solid rgba(221, 229, 234, 0.12); border-radius: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.88rem;">
+              <span style="color: #63D8D0; font-weight: 700;">Storage Engine (SE Multi-Threaded Batch)</span>
+              <span style="color: #E36A57; font-weight: 700;">Formula Engine (FE Single-Threaded Evaluation)</span>
+            </div>
+            <div style="height: 12px; border-radius: 6px; overflow: hidden; display: flex; background: rgba(221, 229, 234, 0.15);">
+              <div id="bar-se" style="width: 92%; background: #63D8D0; transition: width 0.35s ease;" title="Storage Engine (SE)"></div>
+              <div id="bar-fe" style="width: 8%; background: #E36A57; transition: width 0.35s ease;" title="Formula Engine (FE)"></div>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.8rem; color: #DDE5EA;">
+              <span>SE Ratio: <strong id="lbl-se" style="color: #63D8D0;">92%</strong> (High cache hit, multi-core vector scan)</span>
+              <span>FE Overhead: <strong id="lbl-fe" style="color: #E36A57;">8%</strong> (Minimal context transition)</span>
+            </div>
+          </div>
+
           <p style="font-size: 0.85rem; color: #DDE5EA; margin-top: 24px; line-height: 1.5; font-style: italic;">
             * Note: Values displayed above are synthetic illustrative samples demonstrating architectural differences between storage modes. Direct Lake loads Delta Parquet columns dynamically without scheduled data movement; fallback to DirectQuery occurs if query memory exceeds SKU limits.
           </p>
@@ -770,18 +798,8 @@
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               </div>
               <div>
-                <div class="contact-lbl">Email Address</div>
+                <div class="contact-lbl">Email Address (Primary Contact)</div>
                 <div class="contact-val">sailakshmi.elusuri@gmail.com</div>
-              </div>
-            </a>
-
-            <a href="tel:+918142674401" class="contact-link-item">
-              <div class="contact-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              </div>
-              <div>
-                <div class="contact-lbl">Telephone / WhatsApp</div>
-                <div class="contact-val">+91 8142674401</div>
               </div>
             </a>
 
@@ -792,6 +810,16 @@
               <div>
                 <div class="contact-lbl">LinkedIn Profile</div>
                 <div class="contact-val">linkedin.com/in/sailakshmielusuri-data-analyst</div>
+              </div>
+            </a>
+
+            <a href="tel:+918142674401" class="contact-link-item">
+              <div class="contact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </div>
+              <div>
+                <div class="contact-lbl">Direct WhatsApp / Mobile</div>
+                <div class="contact-val">+91 8142674401 · Local Utrecht Availability</div>
               </div>
             </a>
 
@@ -834,19 +862,25 @@
         latency: '120 ms',
         storage: '92% SE',
         memory: '0.4 GB',
-        refresh: 'Real-Time'
+        refresh: 'Real-Time',
+        se: '92%',
+        fe: '8%'
       },
       import: {
         latency: '240 ms',
         storage: '85% SE',
         memory: '1.8 GB',
-        refresh: 'Scheduled Batch'
+        refresh: 'Scheduled Batch',
+        se: '85%',
+        fe: '15%'
       },
       dq: {
         latency: '850 ms',
         storage: '35% SE',
         memory: '0.05 GB',
-        refresh: 'Source DB Bound'
+        refresh: 'Source DB Bound',
+        se: '35%',
+        fe: '65%'
       }
     };
 
@@ -857,6 +891,10 @@
     const statStorage = document.getElementById('stat-storage');
     const statMemory = document.getElementById('stat-memory');
     const statRefresh = document.getElementById('stat-refresh');
+    const barSe = document.getElementById('bar-se');
+    const barFe = document.getElementById('bar-fe');
+    const lblSe = document.getElementById('lbl-se');
+    const lblFe = document.getElementById('lbl-fe');
 
     function selectTelemetryMode(mode, activeBtn) {
       [btnDirectLake, btnImport, btnDQ].forEach(b => {
@@ -875,6 +913,10 @@
         statStorage.textContent = data.storage;
         statMemory.textContent = data.memory;
         statRefresh.textContent = data.refresh;
+        if (barSe) barSe.style.width = data.se;
+        if (barFe) barFe.style.width = data.fe;
+        if (lblSe) lblSe.textContent = data.se;
+        if (lblFe) lblFe.textContent = data.fe;
       }
     }
 

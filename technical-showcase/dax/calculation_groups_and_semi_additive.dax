@@ -1,0 +1,83 @@
+/*
+================================================================================
+PRODUCTION DAX PATTERNS: SEMANTIC MODEL OPTIMIZATION
+Candidate: Sai Lakshmi Elusuri
+Target: VertiPaq Storage Engine (SE) Batch Maximization
+Tooling: Tabular Editor 3 / DAX Studio / Power BI Desktop
+================================================================================
+*/
+
+--------------------------------------------------------------------------------
+-- 1. CALCULATION GROUP: TIME INTELLIGENCE WITH KEEPFILTERS
+-- Eliminates measure explosion across 40+ KPIs while protecting SE cache.
+--------------------------------------------------------------------------------
+CALCULATION GROUP 'Time Intelligence'[Period]
+
+  CALCULATION ITEM "Current Period" = 
+    SELECTEDMEASURE()
+
+  CALCULATION ITEM "YTD" = 
+    CALCULATE(
+        SELECTEDMEASURE(),
+        DATESYTD('Dim_Date'[DateKey]),
+        -- KEEPFILTERS ensures existing visual cross-filters are intersected,
+        -- preventing unintended context clearing and preserving SE scan batching.
+        KEEPFILTERS('Dim_Date'[IsWorkingDay] = TRUE)
+    )
+
+  CALCULATION ITEM "Prior Year (PY)" = 
+    CALCULATE(
+        SELECTEDMEASURE(),
+        SAMEPERIODLASTYEAR('Dim_Date'[DateKey])
+    )
+
+  CALCULATION ITEM "YoY Growth %" = 
+    VAR _Current = SELECTEDMEASURE()
+    VAR _Prior = CALCULATE(SELECTEDMEASURE(), SAMEPERIODLASTYEAR('Dim_Date'[DateKey]))
+    RETURN
+        DIVIDE(_Current - _Prior, _Prior, BLANK())
+    -- Format String Expression for Dynamic Formatting:
+    -- "0.0%"
+
+--------------------------------------------------------------------------------
+-- 2. CALCULATION GROUP: DYNAMIC MULTI-CURRENCY CONVERSION
+-- Avoids creating separate EUR, USD, GBP measures across all financial facts.
+--------------------------------------------------------------------------------
+CALCULATION GROUP 'Currency'[Selected Currency]
+
+  CALCULATION ITEM "EUR (Base)" = 
+    SELECTEDMEASURE()
+
+  CALCULATION ITEM "USD" = 
+    VAR _Rate = 
+        LOOKUPVALUE(
+            'Fact_Exchange_Rates'[RateToUSD],
+            'Fact_Exchange_Rates'[DateKey], SELECTEDVALUE('Dim_Date'[DateKey], MAX('Dim_Date'[DateKey]))
+        )
+    RETURN
+        SELECTEDMEASURE() * COALESCE(_Rate, 1.0)
+
+  CALCULATION ITEM "GBP" = 
+    VAR _Rate = 
+        LOOKUPVALUE(
+            'Fact_Exchange_Rates'[RateToGBP],
+            'Fact_Exchange_Rates'[DateKey], SELECTEDVALUE('Dim_Date'[DateKey], MAX('Dim_Date'[DateKey]))
+        )
+    RETURN
+        SELECTEDMEASURE() * COALESCE(_Rate, 1.0)
+
+--------------------------------------------------------------------------------
+-- 3. HIGH-PERFORMANCE SEMI-ADDITIVE MEASURE (CLOSING HEADCOUNT / INVENTORY)
+-- Replaces expensive row-by-row FILTER(ALL(...)) with VertiPaq SE-friendly pattern.
+--------------------------------------------------------------------------------
+[Closing Inventory Value] = 
+VAR _LastNonEmptyDate = 
+    CALCULATE(
+        MAX('Fact_Inventory_Snapshot'[SnapshotDateKey]),
+        ALLEXCEPT('Fact_Inventory_Snapshot', 'Dim_Date')
+    )
+RETURN
+    CALCULATE(
+        SUM('Fact_Inventory_Snapshot'[EndingValuation_EUR]),
+        'Fact_Inventory_Snapshot'[SnapshotDateKey] = _LastNonEmptyDate
+    )
