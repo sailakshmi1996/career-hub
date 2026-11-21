@@ -97,7 +97,7 @@ Inspect real production-grade code samples and architectural patterns implemente
 
 ## 💼 Professional Experience
 
-### **Apexon** | *Senior Power BI Developer*
+### **Apexon** | *Senior Data Analyst*
 **Apr 2026 – Present** · *Enterprise Analytics Division (Remote / European Client Engagements)*
 * **Oracle SQL DB to Power BI Ingestion Automation:** Architected and deployed automated data ingestion pipelines bridging high-volume Oracle SQL DB instances into Power BI Service via DirectQuery and incremental refresh partitions, eliminating 30+ hours/month of manual exports and reducing data refresh latency by 45%.
 * **High-Performance Oracle Query Optimization:** Authored complex Oracle SQL queries utilizing CTEs, analytical window functions (`ROW_NUMBER`, `RANK`), and partitioned views to extract and stage transactional data, shrinking staging query runtimes by 35%.

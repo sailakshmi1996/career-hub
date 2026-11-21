@@ -138,7 +138,7 @@ def step2_run_tests():
 
 def step3_assemble_dist():
     print("=" * 60)
-    print("STEP 3: ASSEMBLING CLEAN 'dist/' DIRECTORY FOR NETLIFY")
+    print("STEP 3: ASSEMBLING CLEAN 'dist/' DIRECTORY FOR PRODUCTION DEPLOYMENT")
     print("=" * 60)
     if os.path.exists(DIST_DIR):
         shutil.rmtree(DIST_DIR)
@@ -153,6 +153,13 @@ def step3_assemble_dist():
         else:
             print(f"  ❌ Error: Required asset {fname} missing from source!")
             sys.exit(1)
+
+    # Copy technical showcase directory into dist
+    showcase_src = os.path.join(BASE_DIR, "technical-showcase")
+    showcase_dst = os.path.join(DIST_DIR, "technical-showcase")
+    if os.path.isdir(showcase_src):
+        shutil.copytree(showcase_src, showcase_dst, dirs_exist_ok=True)
+        print("  + Copied directory: dist/technical-showcase")
 
     # Copy bundle README into dist
     readme_src = os.path.join(BASE_DIR, "README_BUNDLE.txt")
@@ -305,5 +312,5 @@ if __name__ == "__main__":
     step4_package_zip()
     step5_package_netlify_deploy_zip()
     print("=" * 60)
-    print("🎉 BUILD SUCCESSFUL! FULLY READY FOR PRODUCTION NETLIFY DEPLOYMENT")
+    print("🎉 BUILD SUCCESSFUL! FULLY READY FOR GITHUB PAGES & PRODUCTION DEPLOYMENT")
     print("=" * 60)
