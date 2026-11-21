@@ -166,7 +166,7 @@ flowchart LR
 
 ## 💼 Professional Experience
 
-### **Apexon** | *Senior Data Analyst*
+### **Apexon** | *Senior Power BI Developer*
 **Apr 2026 – Present** · *Enterprise Analytics Division (Remote / European Client Engagements)*
 * **Oracle SQL DB to Power BI Ingestion Automation:** Architected and deployed automated data ingestion pipelines bridging high-volume Oracle SQL DB instances into Power BI Service via DirectQuery and incremental refresh partitions, eliminating 30+ hours/month of manual exports and reducing data refresh latency by 45%.
 * **High-Performance Oracle Query Optimization:** Authored complex Oracle SQL queries utilizing CTEs, analytical window functions (`ROW_NUMBER`, `RANK`), and partitioned views to extract and stage transactional data, shrinking staging query runtimes by 35%.
@@ -370,14 +370,12 @@ ORDER BY transaction_date DESC;
 
 ### **Education**
 * **Bachelor of Technology (B.Tech.) in Computer Science & Engineering**
-  * *Institution:* Raghu Engineering College (Visakhapatnam, India)
-  * *Graduation Year:* 2017
+  * *Institution:* Raghu Engineering College, India
+  * *Year:* 2017
 
 ### **Languages**
 * **English:** Professional Working Proficiency (C1 Level)
 * **Dutch:** Elementary (A1 Level — actively learning; committed to continuous Netherlands language integration)
-* **Telugu:** Native Proficiency
-* **Hindi:** Conversational Working Proficiency
 
 ---
 

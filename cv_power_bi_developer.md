@@ -2,21 +2,22 @@
 **SENIOR POWER BI DEVELOPER | AZURE, FABRIC & LAKEHOUSE ANALYTICS SPECIALIST**
 
 **Location:** Utrecht region, Netherlands  
-**Email:** sailakshmi.elusuri@gmail.com | **Phone:** +91 8142674401 (Direct / WhatsApp)  
-**LinkedIn:** [linkedin.com/in/sailakshmielusuri-data-analyst](https://www.linkedin.com/in/sailakshmielusuri-data-analyst/)  
+**Email:** sailakshmi.elusuri@gmail.com | **Phone:** +91 8142674401  
+**LinkedIn:** [linkedin.com/in/sailakshmielusuri-data-analyst](https://www.linkedin.com/in/sailakshmielusuri-data-analyst/) | **Portfolio:** [sailakshminl.netlify.app](https://sailakshminl.netlify.app/) | **GitHub:** [github.com/sailakshmi1996/career-hub](https://github.com/sailakshmi1996/career-hub)  
 
 > **Work Authorization Status:** Based in the Utrecht region, Netherlands. Full unrestricted labor market access under official IND endorsement: *"Arbeid vrij toegestaan, TWV niet vereist"* (no employer sponsorship or work permit / TWV required · immediate Dutch contract start).
 
 ---
 
 ## PROFESSIONAL SUMMARY
-Hands-on **Senior Power BI Developer & Lakehouse Analytics Specialist** with **8+ years of enterprise experience** designing, modeling, and deploying decision-support dashboards and scalable analytics systems across sustainability, financial risk, and enterprise operations. Holder of **5 Microsoft Certifications** including Power BI Data Analyst (PL-300), Fabric Analytics Engineer (DP-600), Azure Data (DP-900), Azure Fundamentals (AZ-900), and AI Fundamentals (AI-900). Deep technical expertise in **Power BI Desktop & Service, complex DAX measure engineering, Power Query (M), Kimball star-schema semantic modeling, Oracle SQL DB, and SQL Server**. Proven track record of **reducing dashboard load times by up to 40%** and optimizing semantic model memory footprints by up to 35% through VertiPaq engine tuning, relationship cardinality cleanup, and DAX optimization. Experienced in modern lakehouse architectures including **Microsoft Fabric, Azure Data Factory (ADF), and ADLS Gen2 Medallion layers (Bronze/Silver/Gold)**, legacy BI migrations (Qlik Sense to Power BI), and process mining integration with **Celonis**. Combines technical depth with structured Agile sprint coordination and business stakeholder collaboration.
+**PL-300 & DP-600 certified Senior Power BI Developer** with 8+ years delivering enterprise analytics across sustainability, financial risk, and operations. Expert in DAX optimization, Kimball star-schema modeling, Microsoft Fabric (Direct Lake, OneLake), and Oracle SQL pipelines. Proven ROI: 40% dashboard load reduction, 45% latency cut, €350K+ licensing savings. Full Dutch IND work authorization — immediate contract start. Utrecht region.
 
 ---
 
 ## TECHNICAL & ANALYTICAL COMPETENCIES
 - **Microsoft Certifications:** Power BI Data Analyst (PL-300), Fabric Analytics Engineer (DP-600), Azure Data (DP-900), Azure Fundamentals (AZ-900), Azure AI Fundamentals (AI-900)
 - **Business Intelligence & Visualization:** Power BI Desktop & Service, DAX (Data Analysis Expressions), Power Query (M), Star Schema Semantic Modeling, Row-Level Security (RLS), KPI Scorecards, Qlik Sense to Power BI Migration
+- **Advanced BI Tooling:** Tabular Editor 3, DAX Studio, XMLA Endpoint, ALM Toolkit, Deployment Pipelines, Power BI Dataflows Gen2, Composite Models, Paginated Reports (RDL), Power BI Embedded, Power BI REST API, Field Parameters
 - **Databases & Query Tuning:** Oracle SQL DB, SQL Server, T-SQL, Query Optimization, Common Table Expressions (CTEs), Analytical Window Functions (ROW_NUMBER, RANK), Partitioned Views, Indexing
 - **Cloud Data & Lakehouse:** Microsoft Fabric (OneLake, Lakehouse, Direct Lake awareness), Azure Data Factory (ADF Data Ingestion Pipelines), ADLS Gen2, Medallion Architecture (Bronze, Silver, Gold layers)
 - **Process Mining & Tooling:** Celonis Process Mining, Jira, Confluence, ServiceNow, Git Version Control
@@ -29,12 +30,12 @@ Hands-on **Senior Power BI Developer & Lakehouse Analytics Specialist** with **8
 *Apr 2026–Present | Enterprise Analytics Division*
 - **Oracle SQL DB to Power BI Ingestion:** Architect and deploy automated data ingestion pipelines connecting high-volume Oracle SQL DB instances into Power BI Service via DirectQuery and incremental refresh partitions, eliminating 30+ hours/month of manual exports and reducing data refresh latency by 45%.
 - **High-Performance Oracle Query Optimization:** Author complex Oracle SQL queries utilizing CTEs, analytical window functions (ROW_NUMBER, RANK), and partitioned views to extract and stage transactional data, shrinking staging query runtimes by 35%.
-- **PL-300 Certified Semantic Modeling & DAX:** Design enterprise star-schema semantic data models applying certified PL-300 best practices; develop performant DAX calculation patterns delivering low-latency visual rendering via Direct Lake memory paging, star-schema semantic models, and VertiPaq engine optimization for operational executive reviews.
+- **PL-300 Certified Semantic Modeling & DAX:** Reduced executive dashboard rendering latency by 45% and eliminated manual refresh cycles for 30+ reports by engineering PL-300-compliant star-schema semantic models with optimized DAX calculation groups, Direct Lake memory paging, and VertiPaq engine tuning across Oracle SQL DB pipelines.
 - **Cross-Functional Stakeholder Delivery:** Partner with cross-functional leadership across product, finance, and operations to translate operational requirements into governed KPIs, driving a 40% increase in weekly active report adoption.
 
 ### **Power BI Developer | Accenture**
 *February 2022 – April 2026 | Hyderabad, India*
-- **Enterprise Dashboard Engineering:** Architected and delivered enterprise-scale Power BI reporting solutions for sustainability, operational metrics, and environmental KPIs, translating complex business requirements into governed executive scorecards.
+- **Enterprise Dashboard Engineering:** Accelerated executive decision-making for 200+ stakeholders across 5 international business units by engineering 15+ governed Power BI scorecards — translating sustainability and environmental KPI requirements into star-schema semantic models with sub-5-second visual render cycles.
 - **Semantic Model & DAX Optimization:** Refactored semantic models into optimized star schemas and streamlined DAX calculations and SQL queries, reducing dashboard load times by up to 40% and shrinking model memory footprints by up to 35% across multi-million row datasets.
 - **Legacy BI Migration Leadership:** Coordinated end-to-end migration of legacy Qlik Sense dashboards to Power BI; redesigned underlying data structures, standardized KPI definitions, converted complex set analysis logic into DAX, and established consistent corporate visualization standards.
 - **Azure Cloud Integration:** Contributed to Azure Data Factory (ADF) data ingestion pipelines and organized curated data assets in ADLS Gen2 across Bronze, Silver, and Gold layers to feed high-performance semantic models.
@@ -77,9 +78,7 @@ Hands-on **Senior Power BI Developer & Lakehouse Analytics Specialist** with **8
 ---
 
 ## EDUCATION & LANGUAGES
-- **Bachelor of Technology (B.Tech.) in Computer Science & Engineering** — Raghu Engineering College, Visakhapatnam, India | Graduated: 2017
+- **Bachelor of Technology (B.Tech.) in Computer Science & Engineering** — Raghu Engineering College, India | 2017
 - **Languages:**
   - **English:** Professional working proficiency (C1)
   - **Dutch:** Elementary A1 (actively learning; committed to Dutch language integration)
-  - **Telugu:** Native proficiency
-  - **Hindi:** Conversational working proficiency
