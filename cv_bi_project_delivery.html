@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sai Lakshmi Elusuri - BI Project Delivery CV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sai Lakshmi Elusuri - BI Delivery Coordinator &amp; Analytics Lead CV</title>
 <style>
   @page {
     size: A4 portrait;
-    margin: 12mm 15mm 12mm 15mm;
+    margin: 10mm 13mm 10mm 13mm;
   }
   * {
     box-sizing: border-box;
@@ -14,104 +15,109 @@
     padding: 0;
   }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #0f172a;
     background-color: #ffffff;
-    font-size: 9.5pt;
-    line-height: 1.38;
+    font-size: 8.8pt;
+    line-height: 1.34;
+    -webkit-font-smoothing: antialiased;
   }
   .cv-container {
     max-width: 100%;
     margin: 0 auto;
   }
+
   /* Header */
-  header {
+  header.main-header {
     border-bottom: 2px solid #0d9488;
-    padding-bottom: 8px;
-    margin-bottom: 11px;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
   }
   h1 {
-    font-size: 20pt;
+    font-size: 18pt;
     font-weight: 700;
     color: #0f172a;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
     text-transform: uppercase;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
   .target-title {
-    font-size: 10.8pt;
+    font-size: 10pt;
     font-weight: 600;
     color: #0d9488;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
+    letter-spacing: 0.4px;
+    margin-bottom: 5px;
   }
   .contact-info {
-    font-size: 8.8pt;
-    color: #475569;
+    font-size: 8.4pt;
+    color: #334155;
     display: flex;
     flex-wrap: wrap;
-    gap: 6px 14px;
+    gap: 4px 14px;
+    align-items: center;
   }
   .contact-info a {
     color: #0d9488;
     text-decoration: none;
   }
-  .auth-badge {
-    margin-top: 6px;
-    padding: 5px 8px;
+  .auth-banner {
+    margin-top: 5px;
+    padding: 4px 8px;
     background-color: #f0fdfa;
     border-left: 3px solid #0d9488;
-    font-size: 8.5pt;
-    color: #334155;
-    line-height: 1.3;
+    font-size: 8.1pt;
+    color: #134e4a;
+    line-height: 1.28;
   }
-  .auth-badge strong {
+  .auth-banner strong {
     color: #0f172a;
   }
 
   /* Section Styling */
   section {
-    margin-bottom: 10px;
+    margin-bottom: 7px;
   }
   h2 {
-    font-size: 10.8pt;
+    font-size: 9.8pt;
     font-weight: 700;
     color: #0f172a;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.5px;
     border-bottom: 1px solid #cbd5e1;
-    padding-bottom: 3px;
-    margin-bottom: 7px;
+    padding-bottom: 2px;
+    margin-bottom: 5px;
   }
 
   /* Summary */
   .summary p {
     text-align: justify;
     color: #334155;
-    font-size: 9.3pt;
+    font-size: 8.6pt;
+    line-height: 1.32;
   }
 
-  /* Skills Grid */
+  /* Skills List */
   .skills-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 4px;
-    font-size: 9pt;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    font-size: 8.4pt;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .skill-group {
+    color: #334155;
+    line-height: 1.28;
   }
   .skill-group strong {
     color: #0f172a;
-    min-width: 175px;
-    display: inline-block;
-  }
-  .skill-group span {
-    color: #334155;
   }
 
-  /* Experience */
+  /* Jobs & Experience */
   .job {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    break-inside: avoid;
     page-break-inside: avoid;
   }
   .job-header {
@@ -121,7 +127,7 @@
     margin-bottom: 2px;
   }
   .job-title-company {
-    font-size: 10pt;
+    font-size: 9.3pt;
     font-weight: 700;
     color: #0f172a;
   }
@@ -130,58 +136,80 @@
     font-weight: 600;
   }
   .job-meta {
-    font-size: 8.8pt;
-    color: #64748b;
-    font-style: normal;
+    font-size: 8.2pt;
+    color: #475569;
     text-align: right;
   }
   ul.job-bullets {
-    margin-left: 18px;
-    margin-top: 3px;
+    margin-left: 15px;
+    margin-top: 2px;
     list-style-type: disc;
   }
   ul.job-bullets li {
-    font-size: 9pt;
+    font-size: 8.4pt;
     color: #334155;
-    margin-bottom: 3px;
+    margin-bottom: 2.5px;
     text-align: justify;
+    line-height: 1.3;
   }
   ul.job-bullets li strong {
     color: #0f172a;
   }
 
+  /* Page Break & Running Header */
+  .page-break {
+    page-break-before: always;
+    break-before: page;
+  }
+  .running-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #cbd5e1;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+    font-size: 7.8pt;
+    color: #475569;
+  }
+  .running-header a {
+    color: #0d9488;
+    text-decoration: none;
+  }
+  .running-header-name {
+    font-weight: 700;
+    color: #0f172a;
+  }
+
   /* Projects */
   .project-item {
-    margin-bottom: 7px;
+    margin-bottom: 5px;
+    break-inside: avoid;
     page-break-inside: avoid;
   }
   .project-title {
-    font-size: 9.6pt;
+    font-size: 9pt;
     font-weight: 700;
     color: #0f172a;
-    margin-bottom: 1px;
   }
   .project-tech {
-    font-size: 8.4pt;
+    font-size: 8pt;
     color: #0d9488;
     font-weight: 600;
-    margin-bottom: 2px;
+    margin-bottom: 1.5px;
   }
 
   /* Education & Languages */
-  .two-col-footer {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
+  .two-col-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 14px;
+    font-size: 8.3pt;
   }
-  .two-col-footer > div {
-    flex: 1;
-  }
-  .edu-item, .lang-item {
-    font-size: 9pt;
+  .edu-block, .lang-block {
     color: #334155;
+    line-height: 1.3;
   }
-  .edu-item strong, .lang-item strong {
+  .edu-block strong, .lang-block strong {
     color: #0f172a;
   }
 </style>
@@ -189,18 +217,18 @@
 <body>
 <div class="cv-container">
 
-  <!-- HEADER -->
-  <header>
+  <!-- PAGE 1 -->
+  <header class="main-header">
     <h1>Sai Lakshmi Elusuri</h1>
-    <div class="target-title">BI Project Coordinator | Analytics Delivery Lead | BI Specialist</div>
+    <div class="target-title">BI Delivery Coordinator | Analytics Delivery Lead &amp; BI Specialist</div>
     <div class="contact-info">
-      <span><strong>Location:</strong> Hyderabad, India (Relocating to Utrecht region, Netherlands on 4 Jan 2027)</span>
+      <span><strong>Location:</strong> Utrecht region, Netherlands</span>
       <span><strong>Email:</strong> <a href="mailto:sailakshmi.elusuri@gmail.com">sailakshmi.elusuri@gmail.com</a></span>
-      <span><strong>Phone:</strong> +91 8142674401</span>
-      <span><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/sailakshmielusuri">linkedin.com/in/sailakshmielusuri</a></span>
+      <span><strong>Phone:</strong> <a href="tel:+918142674401">+91 8142674401</a> (Direct / WhatsApp)</span>
+      <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sailakshmielusuri-data-analyst/" target="_blank">linkedin.com/in/sailakshmielusuri-data-analyst</a></span>
     </div>
-    <div class="auth-badge">
-      <strong>Relocation & Work Authorization Status:</strong> Relocating to the Utrecht region on 4 January 2027 as dependent partner of a Highly Skilled Migrant permit holder. Under Dutch immigration regulations, dependent partner residence documents are endorsed with <em>"Arbeid vrij toegestaan, TWV niet vereist"</em> (full labor market access upon IND card issuance; no employer sponsorship or work permit / TWV required).
+    <div class="auth-banner">
+      <strong>Work Authorization:</strong> Utrecht region, Netherlands. Full unrestricted Dutch labor market access under official IND endorsement: <em>"Arbeid vrij toegestaan, TWV niet vereist"</em> (no employer sponsorship or work permit / TWV required; available for immediate Dutch employment contract start).
     </div>
   </header>
 
@@ -208,57 +236,85 @@
   <section class="summary">
     <h2>Professional Summary</h2>
     <p>
-      Delivery-focused <strong>BI Project Coordinator and Analytics Professional</strong> with <strong>8+ years of experience</strong> bridging business strategy and technical implementation across enterprise analytics platforms. Proven expertise owning <strong>project scope definition, work planning, milestone tracking, risk and issue (RAID) governance, and cross-functional team delivery</strong> across data engineering and business reporting stakeholders. Backed by strong technical depth in <strong>Power BI, SQL Server, and Azure data architectures</strong>, enabling realistic sprint planning, data risk mitigation, and technical trade-off evaluation. Led complex reporting modernization initiatives—including migrating legacy Qlik Sense systems to standardized Power BI semantic models and delivering <strong>dashboard load-time improvements of up to 40%</strong>. Skilled in coordinating Agile and hybrid delivery workflows using <strong>Jira, Confluence, and ServiceNow</strong> to drive timely, governed analytics releases.
+      Delivery-focused <strong>BI Project Coordinator &amp; Analytics Delivery Lead</strong> with <strong>8+ years of enterprise experience</strong> bridging business strategy and technical execution across modern business intelligence platforms. Holder of <strong>5 Microsoft Certifications</strong> across Power BI (PL-300), Fabric Analytics (DP-600), Azure Data (DP-900), Cloud Architecture (AZ-900), and AI Fundamentals (AI-900). Proven track record owning <strong>project scope definition, work breakdown planning, milestone tracking, risk and issue (RAID) governance, and cross-functional team delivery</strong> across data engineers and executive reporting stakeholders. Backed by solid technical depth in <strong>Power BI, Oracle SQL DB, SQL Server, and Azure/Fabric lakehouse architectures</strong>, enabling realistic sprint planning, data risk mitigation, and architectural trade-off evaluations. Led complex reporting modernization initiatives—including coordinating the migration of legacy Qlik Sense systems to standardized Power BI semantic models and delivering <strong>dashboard load-time improvements of up to 40%</strong>. Skilled in coordinating Agile and hybrid delivery workflows using <strong>Jira, Confluence, and ServiceNow</strong> to drive timely, governed analytics releases.
     </p>
   </section>
 
-  <!-- DELIVERY COMPETENCIES -->
-  <section>
-    <h2>Project Delivery & Technical Competencies</h2>
+  <!-- PROJECT DELIVERY & TECHNICAL COMPETENCIES -->
+  <section class="skills">
+    <h2>Project Delivery &amp; Technical Competencies</h2>
     <div class="skills-list">
       <div class="skill-group">
-        <strong>Project & Delivery Management:</strong>
-        <span>Requirements Gathering & Scoping, Work Breakdown Planning, Milestone & Timeline Tracking, RAID Log (Risks, Assumptions, Issues, Dependencies), Stakeholder Alignment, Change Management</span>
+        <strong>Microsoft Certifications:</strong> Power BI Data Analyst (PL-300) · Fabric Analytics Engineer (DP-600) · Azure Data (DP-900) · Azure Fundamentals (AZ-900) · Azure AI Fundamentals (AI-900)
       </div>
       <div class="skill-group">
-        <strong>Governance & Delivery Tooling:</strong>
-        <span>Jira (Sprint Planning, Backlog Grooming), Confluence (Solution Documentation, SOPs), ServiceNow (Incident & Change Requests), Git (Version Control & Collaboration)</span>
+        <strong>Project &amp; Delivery Management:</strong> Requirements Gathering &amp; Scoping, Work Breakdown Planning, Milestone &amp; Timeline Tracking, RAID Log Governance, Stakeholder Alignment, Change Management
       </div>
       <div class="skill-group">
-        <strong>Business Intelligence Systems:</strong>
-        <span>Power BI Desktop & Service, DAX Optimization, Star-Schema Semantic Models, Row-Level Security Governance, Executive Scorecards, Qlik Sense Dashboard Migration</span>
+        <strong>Governance &amp; Delivery Tooling:</strong> Jira (Sprint Planning, Backlog Grooming), Confluence (Solution Documentation, SOPs), ServiceNow (Incident &amp; Change Requests), Git Version Control
       </div>
       <div class="skill-group">
-        <strong>Cloud Data & Platforms:</strong>
-        <span>SQL Server, T-SQL, Azure Data Factory (Pipeline Orchestration), ADLS Gen2, Medallion Architecture (Bronze/Silver/Gold), Microsoft Fabric Lakehouse Fundamentals</span>
+        <strong>Business Intelligence Systems:</strong> Power BI Desktop &amp; Service, DAX Optimization, Star-Schema Semantic Models, Row-Level Security Governance, Executive Scorecards, Qlik Sense Migration
       </div>
       <div class="skill-group">
-        <strong>Process Mining & Quality:</strong>
-        <span>Celonis Process Analytics (Bottleneck & Cycle Time Tracking), Data Validation & QA Frameworks, SLA Performance Monitoring</span>
+        <strong>Cloud Data &amp; Process Intelligence:</strong> Oracle SQL DB, SQL Server, T-SQL, Azure Data Factory Pipelines, ADLS Gen2 Medallion Architecture, Microsoft Fabric, Celonis Process Mining
       </div>
     </div>
   </section>
 
-  <!-- PROFESSIONAL EXPERIENCE -->
-  <section>
+  <!-- PROFESSIONAL EXPERIENCE: PART 1 -->
+  <section class="experience">
     <h2>Professional Experience</h2>
+
+    <!-- APEXON -->
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title-company">Senior Data Analyst | <span class="job-company">Apexon</span></span>
+        <span class="job-meta">Apr 2026–Present | Enterprise Analytics Division</span>
+      </div>
+      <ul class="job-bullets">
+        <li><strong>Enterprise Pipeline Delivery Coordination:</strong> Coordinate end-to-end delivery of automated reporting pipelines connecting Oracle SQL DB to Power BI Service via DirectQuery and incremental refresh partitions, eliminating 30+ hours/month of manual data extracts and cutting data latency by 45%.</li>
+        <li><strong>Requirement Scoping &amp; Governance:</strong> Partner with product and finance stakeholders to scope analytical requirements, write user stories, and govern semantic model testing, resulting in a 40% boost in weekly active report adoption.</li>
+        <li><strong>Technical Standards &amp; Quality Enforcement:</strong> Enforce Microsoft PL-300 certified modeling standards across reporting assets, ensuring standardized measure logic and low-latency visual rendering via star-schema semantic models and VertiPaq engine optimization for executive reviews.</li>
+        <li><strong>Sprint &amp; Backlog Management:</strong> Manage analytical delivery sprints in Jira; prioritize enhancements, resolve technical dependencies with database administrators, and conduct user acceptance testing (UAT).</li>
+      </ul>
+    </div>
 
     <!-- ACCENTURE -->
     <div class="job">
       <div class="job-header">
-        <span class="job-title-company">Power BI Developer (Delivery Lead Responsibilities) | <span class="job-company">Accenture</span></span>
-        <span class="job-meta">February 2022 – Present | Hyderabad, India</span>
+        <span class="job-title-company">Power BI Developer | <span class="job-company">Accenture</span></span>
+        <span class="job-meta">February 2022 – April 2026 | Hyderabad, India</span>
       </div>
       <ul class="job-bullets">
-        <li><strong>Delivery Coordination & Planning:</strong> Own delivery coordination for enterprise sustainability and operational analytics initiatives; translate broad stakeholder requirements into structured project scope, work packages, and sprint schedules.</li>
-        <li><strong>Milestone & Timeline Tracking:</strong> Establish delivery roadmaps and milestone schedules; actively monitor delivery progress, identify delivery risks and blockers, and drive mitigation actions across cross-functional engineering pods using Jira, Confluence, and ServiceNow.</li>
-        <li><strong>Legacy BI Migration Leadership:</strong> Coordinated the end-to-end migration of legacy Qlik Sense reporting platforms to enterprise Power BI semantic models, managing business logic translation, functional validation, stakeholder reviews, and user cutover.</li>
-        <li><strong>Performance SLA Delivery:</strong> Spearheaded semantic model redesign, DAX tuning, and SQL optimization initiatives, successfully <strong>reducing dashboard load times by up to 40%</strong> and ensuring strict adherence to executive reporting SLAs.</li>
+        <li><strong>Delivery Coordination &amp; Planning:</strong> Owned delivery coordination for enterprise sustainability and operational analytics initiatives; translated broad stakeholder requirements into structured project scope, work packages, and sprint schedules.</li>
+        <li><strong>Milestone &amp; Timeline Tracking:</strong> Established delivery roadmaps and milestone schedules; monitored progress, identified risks, and drove mitigation actions across cross-functional engineering pods using Jira, Confluence, and ServiceNow.</li>
+        <li><strong>Legacy BI Migration Leadership:</strong> Coordinated end-to-end migration of legacy Qlik Sense reporting platforms to enterprise Power BI semantic models, managing business logic translation, functional validation, stakeholder reviews, and user cutover.</li>
+        <li><strong>Performance SLA Delivery:</strong> Spearheaded semantic model redesign, DAX tuning, and SQL optimization initiatives, successfully reducing dashboard load times by up to 40% and ensuring strict adherence to executive reporting SLAs.</li>
         <li><strong>Cross-Functional Stakeholder Alignment:</strong> Acted as primary liaison between business functional owners, sustainability leads, and data engineering teams to align data ingestion pipelines in Azure Data Factory (ADF) with curated ADLS Gen2 Medallion storage.</li>
-        <li><strong>Process Intelligence Integration:</strong> Coordinated the integration of Celonis process mining telemetry into operational dashboards, facilitating leadership visibility into operational cycle times and process friction points.</li>
-        <li><strong>Data Governance & Security:</strong> Enforced data governance standards, user access controls, and Row-Level Security (RLS) across multi-departmental reporting suites.</li>
+        <li><strong>Process Intelligence Integration:</strong> Coordinated integration of Celonis process mining telemetry into operational dashboards, facilitating leadership visibility into operational cycle times and process friction points.</li>
+        <li><strong>Data Governance &amp; Security:</strong> Enforced data governance standards, user access controls, and Row-Level Security (RLS) across multi-departmental reporting suites.</li>
       </ul>
     </div>
+  </section>
+
+  <!-- PAGE BREAK -->
+  <div class="page-break"></div>
+
+  <!-- RUNNING HEADER PAGE 2 -->
+  <div class="running-header">
+    <div class="running-header-name">Sai Lakshmi Elusuri — BI Delivery Coordinator &amp; Analytics Lead</div>
+    <div>
+      <a href="mailto:sailakshmi.elusuri@gmail.com">sailakshmi.elusuri@gmail.com</a> |
+      <a href="tel:+918142674401">+91 8142674401</a> |
+      <a href="https://www.linkedin.com/in/sailakshmielusuri-data-analyst/" target="_blank">LinkedIn</a> |
+      <span>Page 2 of 2</span>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL EXPERIENCE: PART 2 -->
+  <section class="experience">
+    <h2>Professional Experience (Continued)</h2>
 
     <!-- GENPACT -->
     <div class="job">
@@ -268,7 +324,7 @@
       </div>
       <ul class="job-bullets">
         <li><strong>Risk Reporting Coordination:</strong> Managed delivery timelines for mortgage insurance risk reporting dashboards, ensuring timely data availability for underwriting committees and executive risk reviews.</li>
-        <li><strong>Stakeholder Engagement & Requirements:</strong> Partnered with credit risk managers to elicit reporting specifications, transforming regulatory guidelines into automated Power BI metrics and SQL Server datasets.</li>
+        <li><strong>Stakeholder Engagement &amp; Requirements:</strong> Partnered with credit risk managers to elicit reporting specifications, transforming regulatory guidelines into automated Power BI metrics and SQL Server datasets.</li>
         <li><strong>Data Quality Assurance:</strong> Conducted data audits, variance analysis, and validation routines across source databases to ensure reporting integrity and regulatory compliance.</li>
       </ul>
     </div>
@@ -287,9 +343,9 @@
     </div>
   </section>
 
-  <!-- SELECTED PROJECT ACHIEVEMENTS -->
-  <section>
-    <h2>Selected Key Projects</h2>
+  <!-- SELECTED KEY PROJECTS -->
+  <section class="projects">
+    <h2>Selected Delivery Projects</h2>
     <div class="project-item">
       <div class="project-title">Enterprise Sustainability Analytics Modernization | Accenture</div>
       <div class="project-tech">Environment: Power BI, Azure Data Factory, ADLS Gen2, Microsoft Fabric Lakehouse Fundamentals, Qlik Sense, Celonis</div>
@@ -299,7 +355,7 @@
       </ul>
     </div>
     <div class="project-item">
-      <div class="project-title">Operational Process Intelligence & Bottleneck Reporting | Accenture</div>
+      <div class="project-title">Operational Process Intelligence &amp; Bottleneck Reporting | Accenture</div>
       <div class="project-tech">Environment: Celonis Process Mining, Power BI, ServiceNow, Jira</div>
       <ul class="job-bullets">
         <li>Delivered cross-functional reporting solution integrating Celonis process mining telemetry into executive Power BI scorecards.</li>
@@ -309,16 +365,17 @@
   </section>
 
   <!-- EDUCATION & LANGUAGES -->
-  <section>
-    <h2>Education & Languages</h2>
-    <div class="two-col-footer">
-      <div>
-        <div class="edu-item"><strong>Bachelor of Technology (B.Tech.)</strong></div>
-        <div class="edu-item">Raghu Engineering College, Visakhapatnam, India | Graduated: 2017</div>
+  <section class="education-languages">
+    <h2>Education &amp; Languages</h2>
+    <div class="two-col-grid">
+      <div class="edu-block">
+        <div><strong>Bachelor of Technology (B.Tech.)</strong> in Computer Science &amp; Engineering</div>
+        <div>Raghu Engineering College, Visakhapatnam, India | Graduated: 2017</div>
       </div>
-      <div>
-        <div class="lang-item"><strong>English:</strong> Professional working proficiency</div>
-        <div class="lang-item"><strong>Dutch:</strong> Elementary beginner (currently learning; no prior formal knowledge)</div>
+      <div class="lang-block">
+        <div><strong>English:</strong> Professional working proficiency (C1)</div>
+        <div><strong>Dutch:</strong> Elementary A1 (actively learning; committed to Dutch language integration)</div>
+        <div><strong>Telugu:</strong> Native proficiency · <strong>Hindi:</strong> Conversational working proficiency</div>
       </div>
     </div>
   </section>

@@ -1,12 +1,11 @@
-# Netlify Configuration for Sai Lakshmi - Netherlands Career Command Center
+# Netlify Configuration for Sai Lakshmi Elusuri Portfolio & Career Assets
 # Target Domain: https://sailakshminl.netlify.app
-# Site ID: c48ae112-95f4-4603-bfbb-1201e50dd3fc
 
 [build]
   publish = "dist"
   command = "python3 build.py"
 
-# Enforce HTTPS, HSTS, and GDPR-Compliant Security Headers
+# Enforce HTTPS, HSTS, and Clean Security Headers
 [[headers]]
   for = "/*"
   [headers.values]
@@ -16,9 +15,9 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self';"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self';"
 
-# Optimized Caching for Static PDF CVs and CSS
+# Optimized Caching for Static PDF CVs, ZIP Archive, and CSS
 [[headers]]
   for = "/*.pdf"
   [headers.values]
@@ -26,11 +25,22 @@
     Content-Disposition = "inline"
 
 [[headers]]
+  for = "/*.zip"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, must-revalidate"
+    Content-Disposition = "attachment; filename=\"Netherlands_Career_Hub_Sai_Lakshmi.zip\""
+
+[[headers]]
   for = "/*.css"
   [headers.values]
     Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
 
 # Redirect rules
+[[redirects]]
+  from = "/resume"
+  to = "/Sai_Lakshmi_Elusuri_Resume.pdf"
+  status = 302
+
 [[redirects]]
   from = "/cv"
   to = "/cv_power_bi_developer.pdf"

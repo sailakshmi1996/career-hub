@@ -52,3 +52,33 @@ python3 -m unittest tests/test_compliance_and_dates.py
   - *Remediation*: Remove third-party telemetry or cookies. The site must remain strictly zero-cookie and zero-tracking.
 * **Failure: `Required asset missing on disk`**
   - *Remediation*: Rebuild the missing asset (e.g. compile PDF CV or regenerate ZIP bundle).
+
+---
+
+## Portfolio Layout & Architecture Invariants
+
+When authoring or revamping the career portfolio landing page, the following engineering invariants must be maintained:
+
+1. **Complete Section Encapsulation (Scroll-Spy Invariant)**:
+   - Navigable sections must encapsulate both the heading and all child cards/tables/grids inside `<section class="section-block" id="...">`.
+   - Never place cards in sibling `<div>`s outside the section container, or `IntersectionObserver` scroll-spy active state tracking will fail as soon as the small header scrolls out of view.
+
+2. **Single-Row Command Header**:
+   - The sticky navigation bar must remain on a single row across standard desktop viewports (1280px–1440px) with responsive tiering to avoid action button overflow or broken double rows.
+
+3. **Above-the-Fold Quantified HUD**:
+   - The hero block must feature an integrated quantified telemetry HUD (e.g., 8+ Years Lakehouse, 5x Certified, 40% Query Speedup, NS Rail commute) to immediately establish senior credibility.
+
+4. **Four-Pillar Tactical Architecture Standard**:
+   - Any senior enterprise BI / lakehouse architect showcase must feature concrete code comparisons across:
+     - *DAX VertiPaq Engine*: Vectorized Storage Engine (SE) scans vs Formula Engine (FE) iteration bottlenecks (`KEEPFILTERS`, integer `DateKey`).
+     - *Dimensional Rigor*: Flat Denormalized Wide Tables vs pure Kimball Star Schema memory footprints.
+     - *Microsoft Fabric Lakehouse (DP-600)*: Direct Lake mode vs Import vs DirectQuery, and OneLake Medallion layers.
+     - *High-Throughput RDBMS Ingestion*: Partition folding with analytical window functions (`DENSE_RANK()`) over `RangeStart`/`RangeEnd` to eliminate production database locks.
+
+5. **Live Capability Telemetry**:
+   - Interactive simulators must reflect dynamic engine telemetry (SE vs FE execution split, compression ratios, Direct Lake paging states) and active DAX measure queries rather than static text changes.
+
+6. **Legal & Compliance Guardrails**:
+   - Never include prohibited calendar months or countdown timeline years in `index.html`.
+   - Always preserve statutory BSN pre-employment protection notices, IND endorsement verbatim phrases (`"Arbeid vrij toegestaan, TWV niet vereist"`), and GDPR Art. 17 right to erasure (`clearTrackerData()`).

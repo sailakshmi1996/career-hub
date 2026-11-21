@@ -24,4 +24,6 @@ node_modules/
 
 # Preview images generated during inspection
 preview_*.png
+full_page_*.png
+hero_render.png
 test_*.html
