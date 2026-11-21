@@ -18,7 +18,7 @@ This skill governs version control, pre-commit quality enforcement, and continuo
 │   ├── netlify-deploy/       # Netlify packaging & deployment skill
 │   └── git-cicd/             # Git & CI/CD workflow skill
 ├── .github/workflows/        # Automated GitHub Actions
-│   └── ci-cd-netlify.yml     # Continuous test & deploy pipeline
+│   └── deploy-pages.yml      # Continuous test & deploy pipeline for GitHub Pages
 ├── .githooks/                # Git client-side hooks
 │   └── pre-commit            # Automated test gate before any commit
 ├── tests/                    # Python unit test suite
@@ -45,28 +45,19 @@ To ensure that no broken navigation links, missing assets, or accidental date re
 2. **How it works:**
    Every time you execute `git commit`, git triggers `.githooks/pre-commit`, which runs `python3 tests/run_all_tests.py`. If any test fails, the commit is aborted immediately with detailed failure diagnostics.
 
-## GitHub Actions CI/CD Workflow (`.github/workflows/ci-cd-netlify.yml`)
+## GitHub Actions CI/CD Workflow (`.github/workflows/deploy-pages.yml`)
 
 The repository includes a 2-stage automated pipeline:
 
-1. **Job 1: Test & Lint**
-   - Triggered on every `push` and `pull_request` to `main` or `master`.
+1. **Job 1: Build & Validate**
+   - Triggered on every `push` to `main` (and manual `workflow_dispatch`).
    - Spins up Python 3.11 environment on `ubuntu-latest`.
-   - Runs `python3 tests/run_all_tests.py`.
-   - Halts pipeline if integrity or GDPR tests fail.
+   - Runs `python3 build.py` (executing canonical sync, PDF compilations, dist assembly, and all 158 tests).
+   - Generates `.nojekyll`, static routing fallback pages, and uploads the GitHub Pages artifact.
 
-2. **Job 2: Deploy to Netlify**
+2. **Job 2: Deploy to GitHub Pages**
    - Depends on Job 1 passing.
-   - Deploys automatically to `https://sailakshminl.netlify.app`.
-   - Produces preview deployments on Pull Requests and live production deployments on pushes to `main`.
-
-### Configuring GitHub Repository Secrets
-
-To enable automated zero-touch deployment on GitHub:
-1. Go to your GitHub repository: **Settings** → **Secrets and variables** → **Actions**.
-2. Add the following repository secrets:
-   * **`NETLIFY_AUTH_TOKEN`**: Personal Access Token generated at [https://app.netlify.com/user/applications](https://app.netlify.com/user/applications).
-   * **`NETLIFY_SITE_ID`**: `787b918a-9066-43e5-815f-4710abbfd307`
+   - Deploys automatically to `https://sailakshmi1996.github.io/career-hub/`.
 
 ## Standard Commit Workflow
 

@@ -194,7 +194,67 @@ def step3_assemble_dist():
 """
     with open(os.path.join(DIST_DIR, "_headers"), "w", encoding="utf-8") as f:
         f.write(headers_content)
-    print("  + Generated: dist/_headers\n")
+    print("  + Generated: dist/_headers")
+
+    # Generate GitHub Pages .nojekyll to prevent Jekyll asset filtering
+    with open(os.path.join(DIST_DIR, ".nojekyll"), "w", encoding="utf-8") as f:
+        f.write("")
+    print("  + Generated: dist/.nojekyll")
+
+    # Generate static fallback redirect pages for GitHub Pages
+    redirect_map = [
+        ("resume", "../Sai_Lakshmi_Elusuri_Resume.pdf", "Redirecting to Resume..."),
+        ("cv", "../cv_power_bi_developer.pdf", "Redirecting to Power BI Developer CV..."),
+        ("pm-cv", "../cv_bi_project_delivery.pdf", "Redirecting to Project Delivery CV..."),
+        ("hub", "../index.html", "Redirecting to Career Hub...")
+    ]
+    for folder, target, title in redirect_map:
+        folder_path = os.path.join(DIST_DIR, folder)
+        os.makedirs(folder_path, exist_ok=True)
+        html_redirect = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{title}</title>
+  <meta http-equiv="refresh" content="0; url={target}">
+  <script>location.replace("{target}");</script>
+</head>
+<body>
+  <p>{title} If not redirected, <a href="{target}">click here</a>.</p>
+</body>
+</html>"""
+        with open(os.path.join(folder_path, "index.html"), "w", encoding="utf-8") as f:
+            f.write(html_redirect)
+        print(f"  + Generated GitHub Pages redirect: dist/{folder}/index.html")
+
+    # Generate 404.html for GitHub Pages routing fallback
+    fallback_404 = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Page Not Found - Sai Lakshmi Elusuri Career Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="refresh" content="3; url=./index.html">
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #0b1120; color: #f8fafc; text-align: center; }
+    .box { max-width: 480px; padding: 2rem; background: #1e293b; border-radius: 12px; border: 1px solid #334155; }
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #38bdf8; }
+    p { color: #94a3b8; line-height: 1.6; margin-bottom: 1.5rem; }
+    a { display: inline-block; background: #2563eb; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
+    a:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>404 - Page Not Found</h1>
+    <p>The page you requested could not be found. Redirecting you to the home page in a few seconds...</p>
+    <a href="./index.html">Return to Career Hub</a>
+  </div>
+</body>
+</html>"""
+    with open(os.path.join(DIST_DIR, "404.html"), "w", encoding="utf-8") as f:
+        f.write(fallback_404)
+    print("  + Generated: dist/404.html\n")
 
 def step4_package_zip():
     print("=" * 60)
