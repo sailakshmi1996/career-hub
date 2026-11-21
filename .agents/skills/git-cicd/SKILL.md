@@ -66,7 +66,7 @@ To enable automated zero-touch deployment on GitHub:
 1. Go to your GitHub repository: **Settings** → **Secrets and variables** → **Actions**.
 2. Add the following repository secrets:
    * **`NETLIFY_AUTH_TOKEN`**: Personal Access Token generated at [https://app.netlify.com/user/applications](https://app.netlify.com/user/applications).
-   * **`NETLIFY_SITE_ID`**: `c48ae112-95f4-4603-bfbb-1201e50dd3fc`
+   * **`NETLIFY_SITE_ID`**: `787b918a-9066-43e5-815f-4710abbfd307`
 
 ## Standard Commit Workflow
 

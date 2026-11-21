@@ -2,7 +2,7 @@
 """
 Automated Deployment Script for Netlify
 Target: https://sailakshminl.netlify.app
-Site ID: c48ae112-95f4-4603-bfbb-1201e50dd3fc
+Site ID: 787b918a-9066-43e5-815f-4710abbfd307
 """
 
 import os
@@ -12,7 +12,7 @@ import urllib.error
 import json
 import subprocess
 
-SITE_ID = "c48ae112-95f4-4603-bfbb-1201e50dd3fc"
+SITE_ID = "787b918a-9066-43e5-815f-4710abbfd307"
 TARGET_URL = "https://sailakshminl.netlify.app"
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NETLIFY_ZIP_FILENAME = "netlify_deploy.zip"

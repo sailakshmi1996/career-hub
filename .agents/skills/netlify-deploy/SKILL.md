@@ -12,7 +12,7 @@ This skill governs the packaging, automated deployment, and live status verifica
 
 ## Site Specifications
 * **Target Domain:** `https://sailakshminl.netlify.app`
-* **Netlify Site ID:** `c48ae112-95f4-4603-bfbb-1201e50dd3fc`
+* **Netlify Site ID:** `787b918a-9066-43e5-815f-4710abbfd307`
 * **Configuration File:** `netlify.toml`
 * **Primary Deployable Bundle:** `Netherlands_Career_Hub_Sai_Lakshmi.zip`
 
@@ -33,10 +33,10 @@ This script executes four automated phases:
 If Node.js / Netlify CLI is installed:
 ```bash
 # Preview deploy
-npx netlify-cli deploy --dir=. --site=c48ae112-95f4-4603-bfbb-1201e50dd3fc
+npx netlify-cli deploy --dir=. --site=787b918a-9066-43e5-815f-4710abbfd307
 
 # Production deploy
-npx netlify-cli deploy --prod --dir=. --site=c48ae112-95f4-4603-bfbb-1201e50dd3fc --auth=$NETLIFY_AUTH_TOKEN
+npx netlify-cli deploy --prod --dir=. --site=787b918a-9066-43e5-815f-4710abbfd307 --auth=$NETLIFY_AUTH_TOKEN
 ```
 
 ### Method 3: Netlify Drop (Manual Drag & Drop)

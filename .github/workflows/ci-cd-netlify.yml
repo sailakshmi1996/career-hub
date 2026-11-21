@@ -56,7 +56,7 @@ jobs:
         run: |
           npx netlify-cli deploy \
             --dir=. \
-            --site=${{ secrets.NETLIFY_SITE_ID || 'c48ae112-95f4-4603-bfbb-1201e50dd3fc' }} \
+            --site=${{ secrets.NETLIFY_SITE_ID || '787b918a-9066-43e5-815f-4710abbfd307' }} \
             --auth=${{ secrets.NETLIFY_AUTH_TOKEN }} \
             ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main' && '--prod' || '' }}
         env:
