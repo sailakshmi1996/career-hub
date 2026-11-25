@@ -346,11 +346,12 @@ img, svg {
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(11, 18, 32, 0.98);
+    background: #080d1a;
     flex-direction: column;
     align-items: flex-start;
     padding: 20px 24px;
-    border-bottom: 1px solid rgba(221, 229, 234, 0.15);
+    border-bottom: 1px solid rgba(221, 229, 234, 0.18);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.72);
     gap: 14px;
     z-index: 600;
   }
@@ -515,12 +516,14 @@ img, svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .arch-window-dots {
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .arch-dot {
@@ -534,17 +537,23 @@ img, svg {
 
 .arch-tag {
   font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   color: var(--pale-blue-gray);
   text-transform: uppercase;
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .arch-badge-status {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
+  white-space: nowrap;
   font-family: var(--font-mono);
   font-size: 0.72rem;
   font-weight: 700;
