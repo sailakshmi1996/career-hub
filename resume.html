@@ -17,32 +17,35 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       color: #0f172a;
-      background-color: #f8fafc;
+      background-color: #f1f5f9;
       font-size: 8.8pt;
-      line-height: 1.34;
+      line-height: 1.36;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Screen Toolbar */
+    /* Screen Toolbar (Responsive, wraps cleanly on 390px mobile) */
     .screen-toolbar {
       position: sticky;
       top: 0;
       left: 0;
       right: 0;
       z-index: 100;
-      background: #0f172a;
+      background: #0B1220;
       color: #f8fafc;
-      padding: 10px 24px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      border-bottom: 1px solid rgba(99, 216, 208, 0.25);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
     .toolbar-left {
       display: flex;
       align-items: center;
-      gap: 12px;
+      flex-wrap: wrap;
+      gap: 6px 12px;
     }
     .toolbar-title {
       font-size: 0.95rem;
@@ -50,37 +53,41 @@
       color: #ffffff;
     }
     .toolbar-sub {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: #94a3b8;
     }
     .toolbar-right {
       display: flex;
-      gap: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
+      min-height: 36px;
       gap: 6px;
-      padding: 6px 14px;
+      padding: 6px 12px;
       border-radius: 6px;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 600;
       text-decoration: none;
+      white-space: nowrap;
       transition: background 0.15s ease;
     }
     .btn-primary {
-      background: #2563eb;
+      background: #087F8C;
       color: #ffffff;
     }
     .btn-primary:hover {
-      background: #1d4ed8;
+      background: #0aa2b2;
     }
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.1);
       color: #f8fafc;
     }
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.18);
     }
 
     /* CV Paper Sheet */
@@ -89,7 +96,7 @@
       margin: 24px auto;
       background: #ffffff;
       padding: 36px 44px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       border-radius: 4px;
     }
 
@@ -108,7 +115,7 @@
       margin-bottom: 2px;
     }
     .target-title {
-      font-size: 10pt;
+      font-size: 9.7pt;
       font-weight: 600;
       color: #1e40af;
       text-transform: uppercase;
@@ -116,7 +123,7 @@
       margin-bottom: 5px;
     }
     .contact-info {
-      font-size: 8.4pt;
+      font-size: 8.3pt;
       color: #334155;
       display: flex;
       flex-wrap: wrap;
@@ -132,9 +139,9 @@
       padding: 4px 8px;
       background-color: #f1f5f9;
       border-left: 3px solid #1e40af;
-      font-size: 8.1pt;
+      font-size: 8pt;
       color: #1e293b;
-      line-height: 1.28;
+      line-height: 1.3;
     }
     .auth-banner strong {
       color: #0f172a;
@@ -142,19 +149,45 @@
 
     /* Section Styling */
     section {
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     h2 {
-      font-size: 9.8pt;
+      font-size: 9.5pt;
       font-weight: 700;
       color: #0f172a;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       border-bottom: 1px solid #cbd5e1;
       padding-bottom: 2px;
-      margin-bottom: 3px;
+      margin-bottom: 4px;
       break-after: avoid;
       page-break-after: avoid;
+    }
+
+    /* Impact Strip */
+    .impact-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin-top: 5px;
+      margin-bottom: 2px;
+    }
+    .impact-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-top: 2px solid #1e40af;
+      padding: 4px 6px;
+      border-radius: 3px;
+    }
+    .impact-num {
+      font-size: 9.2pt;
+      font-weight: 700;
+      color: #1e40af;
+    }
+    .impact-lbl {
+      font-size: 7.4pt;
+      color: #475569;
+      line-height: 1.2;
     }
 
     /* Certifications */
@@ -166,24 +199,24 @@
 
     /* Summary */
     .summary p {
-      text-align: justify;
+      text-align: left;
       color: #334155;
-      font-size: 8.6pt;
-      line-height: 1.32;
+      font-size: 8.55pt;
+      line-height: 1.34;
     }
 
     /* Skills List */
     .skills-list {
       display: flex;
       flex-direction: column;
-      gap: 3px;
-      font-size: 8.4pt;
+      gap: 2.5px;
+      font-size: 8.3pt;
       break-inside: avoid;
       page-break-inside: avoid;
     }
     .skill-group {
       color: #334155;
-      line-height: 1.28;
+      line-height: 1.3;
     }
     .skill-group strong {
       color: #0f172a;
@@ -199,12 +232,12 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 2px;
+      margin-bottom: 1.5px;
       break-after: avoid;
       page-break-after: avoid;
     }
     .job-title-company {
-      font-size: 9.3pt;
+      font-size: 9.2pt;
       font-weight: 700;
       color: #0f172a;
     }
@@ -213,9 +246,10 @@
       font-weight: 600;
     }
     .job-meta {
-      font-size: 8.2pt;
+      font-size: 8.1pt;
       color: #475569;
       text-align: right;
+      white-space: nowrap;
     }
     ul.job-bullets {
       margin-left: 15px;
@@ -223,11 +257,11 @@
       list-style-type: disc;
     }
     ul.job-bullets li {
-      font-size: 8.4pt;
+      font-size: 8.35pt;
       color: #334155;
-      margin-bottom: 1.5px;
-      text-align: justify;
-      line-height: 1.3;
+      margin-bottom: 2px;
+      text-align: left;
+      line-height: 1.32;
     }
     ul.job-bullets li strong {
       color: #0f172a;
@@ -242,12 +276,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 12px;
       border-bottom: 1px solid #cbd5e1;
-      padding-bottom: 3px;
+      padding-bottom: 4px;
       margin-bottom: 8px;
       font-size: 7.8pt;
       color: #475569;
-      white-space: nowrap;
     }
     .running-header a {
       color: #1e40af;
@@ -256,21 +290,25 @@
     .running-header-name {
       font-weight: 700;
       color: #0f172a;
+      white-space: nowrap;
+    }
+    .running-header-meta {
+      white-space: nowrap;
     }
 
     /* Projects */
     .project-item {
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       break-inside: avoid;
       page-break-inside: avoid;
     }
     .project-title {
-      font-size: 9pt;
+      font-size: 8.9pt;
       font-weight: 700;
       color: #0f172a;
     }
     .project-tech {
-      font-size: 8pt;
+      font-size: 7.9pt;
       color: #1e40af;
       font-weight: 600;
       margin-bottom: 1.5px;
@@ -279,16 +317,51 @@
     /* Education & Languages */
     .two-col-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.15fr 1fr;
       gap: 14px;
       font-size: 8.3pt;
     }
     .edu-block, .lang-block {
       color: #334155;
-      line-height: 1.3;
+      line-height: 1.34;
     }
     .edu-block strong, .lang-block strong {
       color: #0f172a;
+    }
+
+    @media (max-width: 768px) {
+      .toolbar-sub {
+        display: none;
+      }
+      .cv-wrapper {
+        margin: 12px;
+        padding: 20px 18px;
+      }
+      .impact-strip {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .certifications ul.job-bullets {
+        columns: 1;
+        -webkit-columns: 1;
+      }
+      .job-header {
+        flex-direction: column;
+        gap: 2px;
+      }
+      .job-meta {
+        white-space: normal;
+        text-align: left;
+      }
+      .two-col-grid {
+        grid-template-columns: 1fr;
+      }
+      .running-header {
+        flex-wrap: wrap;
+      }
+      .running-header-name,
+      .running-header-meta {
+        white-space: normal;
+      }
     }
 
     /* Print Overrides */
@@ -314,14 +387,14 @@
   <nav class="screen-toolbar" aria-label="Resume options">
     <div class="toolbar-left">
       <div class="toolbar-title">Sai Lakshmi Elusuri</div>
-      <div class="toolbar-sub">Senior Power BI Developer | PL-300 · DP-600 · DP-900 Certified</div>
+      <div class="toolbar-sub">Senior Power BI &amp; Fabric Engineer | PL-300 · DP-600</div>
     </div>
     <div class="toolbar-right">
       <a href="index.html" class="btn btn-secondary">← Portfolio</a>
-      <a href="dutch-career-hub.html" class="btn btn-secondary">🇳🇱 Regional Hub</a>
       <a href="Sai_Lakshmi_Elusuri_Resume.pdf" target="_blank" rel="noopener" class="btn btn-primary">Master PDF</a>
-      <a href="cv_power_bi_developer.pdf" target="_blank" rel="noopener" class="btn btn-secondary">Power BI CV</a>
+      <a href="cv_power_bi_developer.pdf" target="_blank" rel="noopener" class="btn btn-secondary">Technical CV</a>
       <a href="cv_bi_project_delivery.pdf" target="_blank" rel="noopener" class="btn btn-secondary">Delivery CV</a>
+      <a href="Netherlands_Career_Hub_Sai_Lakshmi.zip" class="btn btn-secondary">Bundle ZIP</a>
     </div>
   </nav>
 
@@ -330,34 +403,52 @@
     <!-- PAGE 1 CONTENT -->
     <header class="main-header">
       <h1>Sai Lakshmi Elusuri</h1>
-      <div class="target-title">Senior Power BI Developer &amp; Lakehouse Analytics Specialist | Microsoft Fabric Engineer</div>
+      <div class="target-title">Senior Power BI Developer · Microsoft Fabric Engineer · Analytics Delivery Lead</div>
       <div class="contact-info">
         <span><strong>Location:</strong> Utrecht region, Netherlands</span>
         <span><strong>Email:</strong> <a href="mailto:sailakshmi.elusuri@gmail.com">sailakshmi.elusuri@gmail.com</a></span>
-        <span><strong>Phone:</strong> <a href="tel:+918142674401">+91 8142674401</a></span>
+        <span><strong>WhatsApp / Mobile:</strong> <a href="tel:+918142674401">+91 8142674401</a></span>
         <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sailakshmielusuri-data-analyst/" target="_blank">linkedin.com/in/sailakshmielusuri-data-analyst</a></span>
         <span><strong>Portfolio:</strong> <a href="https://sailakshmi1996.github.io/career-hub/" target="_blank">sailakshmi1996.github.io/career-hub</a></span>
-        <span><strong>GitHub:</strong> <a href="https://github.com/sailakshmi1996/career-hub" target="_blank">github.com/sailakshmi1996/career-hub</a></span>
+        <span><strong>Code:</strong> <a href="https://github.com/sailakshmi1996/career-hub/tree/main/technical-showcase" target="_blank">github.com/sailakshmi1996/career-hub</a></span>
       </div>
       <div class="auth-banner">
-        <strong>Work Authorization:</strong> Utrecht region, Netherlands. Full unrestricted Dutch labor market access under official IND endorsement: <em>"Arbeid vrij toegestaan, TWV niet vereist"</em> (no employer sponsorship or work permit / TWV required; available for immediate Dutch employment contract start).
+        <strong>Dutch Work Authorization:</strong> Utrecht region, Netherlands. Full unrestricted Dutch labor market access under official IND endorsement: <em>"Arbeid vrij toegestaan, TWV niet vereist"</em> (no employer sponsorship or TWV work permit required; immediate Dutch contract start).
       </div>
     </header>
 
-    <!-- PROFESSIONAL SUMMARY -->
+    <!-- PROFESSIONAL SUMMARY & QUANTIFIED ROI STRIP -->
     <section class="summary">
-      <h2>Professional Summary</h2>
+      <h2>Executive Summary &amp; Verified Outcomes</h2>
       <p>
-        PL-300 &amp; DP-600 certified Senior Power BI Developer with 8+ years delivering enterprise analytics across sustainability, financial risk, and operations. Expert in DAX optimization, Kimball star-schema modeling, Microsoft Fabric (Direct Lake, OneLake), and Oracle SQL pipelines. Proven ROI: 40% dashboard load reduction, 45% latency cut, €350K+ licensing savings. Full Dutch IND work authorization — immediate contract start. Utrecht region.
+        <strong>PL-300 &amp; DP-600 certified Senior Power BI &amp; Fabric Engineer</strong> with <strong>8+ years</strong> uniting hands-on semantic modeling, VertiPaq tuning, and SQL/Lakehouse pipelines with Agile BI programme delivery across sustainability, mortgage risk, and enterprise operations.
       </p>
+      <div class="impact-strip">
+        <div class="impact-box">
+          <div class="impact-num">Up to 40%</div>
+          <div class="impact-lbl">Dashboard load-time reduction &amp; 35% RAM shrink</div>
+        </div>
+        <div class="impact-box">
+          <div class="impact-num">€350K+ / yr</div>
+          <div class="impact-lbl">Licensing saved via Qlik → Power BI consolidation</div>
+        </div>
+        <div class="impact-box">
+          <div class="impact-num">45% Faster</div>
+          <div class="impact-lbl">Oracle SQL → Power BI incremental refresh latency</div>
+        </div>
+        <div class="impact-box">
+          <div class="impact-num">5× Microsoft</div>
+          <div class="impact-lbl">DP-600, PL-300, DP-900, AZ-900, AI-900 Certified</div>
+        </div>
+      </div>
     </section>
 
     <!-- CERTIFICATIONS -->
     <section class="certifications">
       <h2>Microsoft Certifications</h2>
       <ul class="job-bullets">
-        <li><strong>PL-300</strong> — Power BI Data Analyst Associate</li>
         <li><strong>DP-600</strong> — Fabric Analytics Engineer Associate</li>
+        <li><strong>PL-300</strong> — Power BI Data Analyst Associate</li>
         <li><strong>DP-900</strong> — Azure Data Fundamentals</li>
         <li><strong>AZ-900</strong> — Azure Fundamentals</li>
         <li><strong>AI-900</strong> — Azure AI Fundamentals</li>
@@ -366,19 +457,19 @@
 
     <!-- TECHNICAL & ANALYTICAL COMPETENCIES -->
     <section class="skills">
-      <h2>Technical &amp; Analytical Competencies</h2>
+      <h2>Technical &amp; Delivery Competencies</h2>
       <div class="skills-list">
         <div class="skill-group">
-          <strong>BI &amp; Visualization:</strong> Power BI Desktop &amp; Service, DAX (Data Analysis Expressions), Power Query (M), Star Schema Semantic Modeling, Composite models, Power BI Embedded, Paginated Reports (RDL), Row-Level Security (RLS), KPI Scorecards, Qlik Sense to Power BI Migration
+          <strong>BI &amp; Semantic Layer:</strong> Power BI Desktop &amp; Service, DAX (Calculation Groups, Time Intelligence, Semi-Additive Patterns), Power Query (M), Kimball Star Schema, Tabular Editor 3, DAX Studio, VertiPaq Analyzer, Paginated Reports (RDL), Dynamic RLS
         </div>
         <div class="skill-group">
-          <strong>Databases &amp; Query Tuning:</strong> Oracle SQL DB, SQL Server, T-SQL, Query Optimization, Common Table Expressions (CTEs), Analytical Window Functions (ROW_NUMBER, RANK), Partitioned Views, Indexing
+          <strong>Fabric, Cloud &amp; DevOps:</strong> Microsoft Fabric (OneLake, Direct Lake, Dataflows Gen2, Fabric Copilot), Python &amp; PySpark, Delta Parquet (V-Order), Azure Data Factory (ADF), ADLS Gen2 Medallion, XMLA Endpoint, Deployment Pipelines, Azure DevOps / Git, Microsoft Purview
         </div>
         <div class="skill-group">
-          <strong>Cloud Data &amp; Lakehouse:</strong> Microsoft Fabric (OneLake, Lakehouse, Direct Lake mode, Fabric Copilot, SQL Analytics Endpoint, Deployment Pipelines, Power BI Dataflows (Gen1/Gen2), Tabular Editor 3, DAX Studio, XMLA Endpoint), Azure Data Factory (ADF Data Ingestion Pipelines), ADLS Gen2, Medallion Architecture (Bronze, Silver, Gold layers), Delta Parquet, V-Order Optimization
+          <strong>Databases &amp; SQL:</strong> Oracle SQL DB, SQL Server (T-SQL), Sargable CTEs, Analytical Window Functions (<code>ROW_NUMBER</code>, <code>DENSE_RANK</code>), Partitioned Views, Query Folding, dbt Core (awareness)
         </div>
         <div class="skill-group">
-          <strong>Process Mining, Tooling &amp; AI:</strong> Celonis Process Mining, Microsoft Fabric Copilot (GenAI-ready analytics), Jira, Confluence, ServiceNow, Git Version Control, GitHub Actions CI/CD
+          <strong>Delivery &amp; Process Mining:</strong> Qlik Sense-to-Power BI Migration, Celonis Process Mining, Agile / Scrum, Product Backlog Ownership, Jira, Confluence, ServiceNow, PRINCE2 &amp; BiSL awareness
         </div>
       </div>
     </section>
@@ -391,13 +482,13 @@
       <div class="job">
         <div class="job-header">
           <span class="job-title-company">Senior Data Analyst | <span class="job-company">Apexon</span></span>
-          <span class="job-meta">Apr 2026–Present | Enterprise Analytics Division</span>
+          <span class="job-meta">Apr 2026–Present | Enterprise Analytics Division (Remote)</span>
         </div>
         <ul class="job-bullets">
-          <li><strong>Oracle SQL DB to Power BI Ingestion:</strong> Architect and deploy automated data ingestion pipelines connecting high-volume Oracle SQL DB instances into Power BI Service via DirectQuery and incremental refresh partitions, eliminating 30+ hours/month of manual exports and reducing data refresh latency by 45%.</li>
-          <li><strong>High-Performance Oracle Query Optimization:</strong> Author complex Oracle SQL queries utilizing CTEs, analytical window functions (ROW_NUMBER, RANK), and partitioned views to extract and stage transactional data, shrinking staging query runtimes by 35%.</li>
-          <li><strong>PL-300 Certified Semantic Modeling &amp; DAX:</strong> Reduced executive dashboard rendering latency by 45% and eliminated manual refresh cycles for 30+ reports by engineering PL-300-compliant star-schema semantic models with optimized DAX calculation groups, Direct Lake memory paging, and VertiPaq engine tuning across Oracle SQL DB pipelines.</li>
-          <li><strong>Cross-Functional Stakeholder Delivery:</strong> Partner with cross-functional leadership across product, finance, and operations to translate operational requirements into governed KPIs, driving a 40% increase in weekly active report adoption.</li>
+          <li><strong>Automated Oracle Ingestion:</strong> Engineered Oracle SQL DB-to-Power BI Service pipelines via DirectQuery and incremental refresh partitions, eliminating 30+ hours/month of manual exports and cutting refresh latency by 45%.</li>
+          <li><strong>Oracle CTE &amp; Window Tuning:</strong> Refactored nested subqueries into sargable CTEs, <code>ROW_NUMBER</code>/<code>DENSE_RANK</code> window functions, and partitioned views preserving query folding and shrinking staging runtime by 35%.</li>
+          <li><strong>PL-300 Semantic Modeling &amp; Fabric:</strong> Architected Kimball star schemas with DAX Calculation Groups and VertiPaq tuning across 30+ operational reports, alongside OneLake / Direct Lake evaluation patterns.</li>
+          <li><strong>Stakeholder KPI Enablement:</strong> Led backlog scoping and enablement workshops across product, finance, and operations teams, driving a 40% increase in weekly active report adoption.</li>
         </ul>
       </div>
 
@@ -408,13 +499,10 @@
           <span class="job-meta">February 2022 – April 2026 | Hyderabad, India</span>
         </div>
         <ul class="job-bullets">
-          <li><strong>Enterprise Dashboard Engineering:</strong> Accelerated executive decision-making for 200+ stakeholders across 5 international business units by engineering 15+ governed Power BI scorecards — translating sustainability and environmental KPI requirements into star-schema semantic models with sub-5-second visual render cycles.</li>
-          <li><strong>Semantic Model &amp; DAX Optimization:</strong> Refactored semantic models into optimized star schemas and streamlined DAX calculations and SQL queries, reducing dashboard load times by up to 40% and shrinking model memory footprints by up to 35% across multi-million row datasets.</li>
-          <li><strong>Legacy BI Migration Leadership:</strong> Coordinated end-to-end migration of legacy Qlik Sense dashboards to Power BI; redesigned underlying data structures, standardized KPI definitions, converted complex set analysis logic into DAX, and established consistent corporate visualization standards.</li>
-          <li><strong>Azure Cloud Integration:</strong> Contributed to Azure Data Factory (ADF) data ingestion pipelines and organized curated data assets in ADLS Gen2 across Bronze, Silver, and Gold layers to feed high-performance semantic models.</li>
-          <li><strong>Governance &amp; Row-Level Security:</strong> Configured robust Row-Level Security (RLS) rules to guarantee granular data access control across multi-region organizational units and business departments.</li>
-          <li><strong>Process Intelligence Integration:</strong> Connected Celonis process-mining insights into operational Power BI reports, enabling leadership teams to visualize process friction, identify bottlenecks, and monitor cycle-time reductions.</li>
-          <li><strong>Delivery Coordination:</strong> Owned delivery work plans, milestone schedules, risk/issue registers, and cross-functional sprint execution across technical engineers and business stakeholders using Jira, Confluence, and ServiceNow.</li>
+          <li><strong>Executive Sustainability Scorecards:</strong> Delivered 15+ governed Power BI scorecards for 200+ stakeholders across 5 international business units, translating ESG and operational KPIs into certified semantic models.</li>
+          <li><strong>VertiPaq &amp; Star Schema Tuning:</strong> Replaced wide flat models and bi-directional filters with 1:* Kimball star schemas and <code>KEEPFILTERS</code> DAX patterns — cutting load times by up to 40% and model memory by up to 35%.</li>
+          <li><strong>Qlik-to-Power BI Programme Delivery:</strong> Coordinated 3 cross-functional pods across 6 Agile sprints in Jira/Confluence to migrate 50+ Qlik Sense assets to Power BI, saving €350K+ annually in licensing.</li>
+          <li><strong>Azure Medallion, Celonis &amp; RLS:</strong> Built Azure Data Factory (ADF) + ADLS Gen2 Bronze/Silver/Gold pipelines, integrated Celonis process-mining bottlenecks into Power BI, and enforced dynamic RLS via <code>USERPRINCIPALNAME()</code>.</li>
         </ul>
       </div>
     </section>
@@ -424,8 +512,8 @@
 
     <!-- RUNNING HEADER PAGE 2 -->
     <div class="running-header">
-      <div class="running-header-name">Sai Lakshmi Elusuri — Senior Power BI Developer</div>
-      <div>
+      <div class="running-header-name">Sai Lakshmi Elusuri — Master Executive Resume</div>
+      <div class="running-header-meta">
         <a href="mailto:sailakshmi.elusuri@gmail.com">sailakshmi.elusuri@gmail.com</a> |
         <a href="tel:+918142674401">+91 8142674401</a> |
         <a href="https://www.linkedin.com/in/sailakshmielusuri-data-analyst/" target="_blank">LinkedIn</a> |
@@ -444,9 +532,9 @@
           <span class="job-meta">April 2021 – January 2022 | Noida, India</span>
         </div>
         <ul class="job-bullets">
-          <li><strong>Risk Analytics &amp; Reporting:</strong> Enabled daily risk exposure monitoring for a €2B+ mortgage insurance portfolio by designing 8 Power BI dashboards connected to SQL Server — delivering automated underwriting compliance and loss metrics that replaced 20+ hours/week of manual analyst reporting.</li>
-          <li><strong>Data Modeling &amp; Verification:</strong> Built structured SQL queries and automated data validation scripts to ensure 100% data reconciliation between transactional source systems and executive risk reports.</li>
-          <li><strong>Stakeholder Decision Support:</strong> Partnered directly with risk managers and underwriting executives to deliver interactive drill-through analyses, identifying portfolio concentration risks and supporting credit decisioning.</li>
+          <li><strong>Mortgage Insurance Risk Analytics:</strong> Delivered 8 SQL Server-backed Power BI dashboards monitoring underwriting compliance and loss exposure across a €2B+ mortgage portfolio, replacing 20+ hours/week of manual reporting.</li>
+          <li><strong>Automated T-SQL Reconciliation:</strong> Built SQL Server validation scripts and tie-out checks achieving 100% reconciliation between transactional databases and regulatory risk scorecards.</li>
+          <li><strong>Credit Committee Decision Support:</strong> Partnered with underwriting leaders on drill-through portfolio concentration analyses and audit defense workflows.</li>
         </ul>
       </div>
 
@@ -457,54 +545,54 @@
           <span class="job-meta">June 2018 – April 2021 | Visakhapatnam, India</span>
         </div>
         <ul class="job-bullets">
-          <li><strong>Operational Reporting Automation:</strong> Developed and maintained automated Power BI reporting suites replacing manual spreadsheet reporting workflows, saving 60+ person-hours monthly and reducing reporting discrepancies.</li>
-          <li><strong>SQL Pipeline Development:</strong> Accelerated operational reporting throughput by 35% by authoring 40+ optimized SQL views, CTEs, and stored procedures across enterprise databases — cutting data staging latency and eliminating ad-hoc query bottlenecks that delayed monthly financial close cycles.</li>
-          <li><strong>SLA &amp; Business Intelligence Insights:</strong> Modeled operational throughput, billing accuracy, and service level agreements (SLAs), generating executive insight packs that helped management elevate SLA compliance from 91% to 98%.</li>
+          <li><strong>Operational Reporting Automation:</strong> Automated manual spreadsheet reporting suites into Power BI dashboards, saving 60+ person-hours monthly across operations teams.</li>
+          <li><strong>Database Query Engineering:</strong> Authored 40+ optimized T-SQL views, CTEs, and stored procedures accelerating staging throughput by 35% ahead of monthly financial close cycles.</li>
+          <li><strong>SLA Elevation:</strong> Built queue bottleneck and billing accuracy scorecards that helped operations leadership improve SLA compliance from 91% to 98%.</li>
         </ul>
       </div>
     </section>
 
-    <!-- SELECTED KEY PROJECTS -->
+    <!-- SELECTED ARCHITECTURE & DELIVERY CASE STUDIES -->
     <section class="projects">
-      <h2>Selected Key Projects</h2>
+      <h2>Selected Architecture &amp; Delivery Case Studies</h2>
       <div class="project-item">
-        <div class="project-title">Enterprise Sustainability Analytics Platform | Accenture</div>
-        <div class="project-tech">Tech Stack: Power BI, Azure Data Factory, ADLS Gen2, Microsoft Fabric (OneLake · Direct Lake · Fabric Copilot), Qlik Sense, Celonis</div>
+        <div class="project-title">1. VertiPaq Memory &amp; DAX Calculation Group Modernization | Accenture</div>
+        <div class="project-tech">Tech Stack: Power BI, Tabular Editor 3, DAX Studio, VertiPaq Analyzer, Dynamic RLS</div>
         <ul class="job-bullets">
-          <li>Spearheaded reporting modernization from Qlik Sense to Power BI, rationalizing disparate KPI calculations across international business units into unified semantic models, eliminating €350K+ in annual licensing costs.</li>
-          <li>Architected Azure Medallion data lakehouse layers (Bronze/Silver/Gold on ADLS Gen2) and contributed to Microsoft Fabric OneLake migration with Direct Lake semantic models, delivering curated data structures for executive consumption.</li>
-          <li>Engineered optimized DAX Calculation Groups for scheduled refresh dashboards, achieving high user adoption, reduced Formula Engine overhead, and robust reporting governance across multi-national sustainability KPI portfolios.</li>
+          <li>Split high-cardinality datetime columns into integer <code>DateKey</code> / <code>TimeKey</code> keys and pruned unused fields to cut RAM footprint by 35% while shifting DAX evaluation from single-threaded FE to vectorized Storage Engine (SE).</li>
+          <li>Replaced redundant KPI/time-intelligence measures with Calculation Groups and enforced Azure AD group-backed RLS via Deployment Pipelines (Dev/Test/Prod).</li>
         </ul>
       </div>
       <div class="project-item">
-        <div class="project-title">High-Throughput Oracle-to-Power BI Semantic Pipeline | Apexon</div>
-        <div class="project-tech">Tech Stack: Oracle SQL DB, Power BI Service, DirectQuery, DAX Optimization, Incremental Refresh, Analytical Window Functions (DENSE_RANK)</div>
+        <div class="project-title">2. Sargable Oracle Incremental Folding &amp; OneLake PySpark Gold Pipeline | Apexon &amp; Showcase</div>
+        <div class="project-tech">Tech Stack: Oracle SQL DB, Power BI Incremental Refresh, Microsoft Fabric PySpark, V-Order Delta Parquet</div>
         <ul class="job-bullets">
-          <li>Architected an enterprise reporting pipeline staging data directly from Oracle SQL DB into Power BI using DirectQuery with incremental refresh partitions, avoiding OLTP table contention and eliminating 30+ hours/month of manual exports.</li>
-          <li>Authored optimized Oracle SQL CTEs, window functions (DENSE_RANK over RangeStart/RangeEnd boundaries), and partitioned views, cutting data prep cycles by 30% and reporting latency by 45%.</li>
+          <li>Kept <code>RangeStart</code> / <code>RangeEnd</code> timestamp filters sargable with <code>ROW_NUMBER()</code> deduplication CTEs so Power BI Gateway folds partition refreshes cleanly without OLTP locks.</li>
+          <li>Authored PySpark Silver-to-Gold Delta Parquet transformations with V-Order sorting and Z-Ordering for Direct Lake memory paging with transparent DirectQuery fallback.</li>
         </ul>
       </div>
       <div class="project-item">
-        <div class="project-title">Operational Process Intelligence Dashboard | Accenture</div>
-        <div class="project-tech">Tech Stack: Celonis Process Mining, Power BI, SQL Server</div>
+        <div class="project-title">3. Celonis Process Intelligence &amp; Enterprise BI Migration Governance | Accenture</div>
+        <div class="project-tech">Tech Stack: Celonis Process Mining, Qlik Sense → Power BI, Jira, Confluence, ServiceNow</div>
         <ul class="job-bullets">
-          <li>Extracted process execution telemetry via Celonis, mapping end-to-end customer request workflows and identifying systemic throughput bottlenecks across enterprise operations.</li>
-          <li>Synthesized complex process event logs into intuitive Power BI dashboards, providing operations leadership with actionable root-cause analysis and KPI benchmarking, contributing to SLA visibility improvements.</li>
+          <li>Consolidated 50+ legacy Qlik reports under a Confluence KPI dictionary and integrated Celonis activity-event logs into Power BI scorecards, giving leadership end-to-end process bottleneck visibility.</li>
         </ul>
       </div>
     </section>
 
     <!-- EDUCATION & LANGUAGES -->
     <section class="education-languages">
-      <h2>Education &amp; Languages</h2>
+      <h2>Education, Languages &amp; Interactive Portfolio</h2>
       <div class="two-col-grid">
         <div class="edu-block">
           <div><strong>Bachelor of Technology (B.Tech.)</strong> in Computer Science &amp; Engineering</div>
-          <div>Raghu Engineering College, India | 2017</div>
+          <div>Raghu Engineering College, Visakhapatnam, India | 2017</div>
+          <div style="margin-top:3px;"><strong>Interactive Website:</strong> <a href="https://sailakshmi1996.github.io/career-hub/" target="_blank" style="color:#1e40af; text-decoration:none;">sailakshmi1996.github.io/career-hub</a></div>
         </div>
         <div class="lang-block">
           <div><strong>English:</strong> Professional working proficiency (C1)</div>
-          <div><strong>Dutch:</strong> Elementary A1 (actively learning; committed to Dutch language integration)</div>
+          <div><strong>Dutch:</strong> Elementary (A1 — actively learning toward B1 integration)</div>
+          <div><strong>Additional Languages:</strong> Telugu (Native), Hindi (Conversational)</div>
         </div>
       </div>
     </section>

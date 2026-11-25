@@ -33,10 +33,10 @@
 
 | 🏅 | Signal | Proof |
 |:---:|:---|:---|
-| **5× Certified** | PL-300 · DP-600 · DP-900 · AZ-900 · AI-900 | Microsoft Learn credential links ↓ |
-| **€350K+ Saved** | Qlik → Power BI migration, 150 → 40 dashboards | Accenture, 4 years |
+| **5× Certified** | PL-300 · DP-600 · DP-900 · AZ-900 · AI-900 | Microsoft Learn specifications ↓ |
+| **€350K+ Saved** | Qlik → Power BI migration, 50+ reporting assets | Accenture, 4 years |
 | **40% Faster** | VertiPaq tuning, Kimball star schema refactor | Measured via DAX Studio |
-| **45% Latency Cut** | Direct Lake on OneLake, ADF incremental refresh | Apexon, current role |
+| **45% Latency Cut** | Oracle SQL incremental partitions & DirectQuery | Apexon, current role |
 | **8+ Years** | Oracle · SQL Server · Power BI · Microsoft Fabric | Conduent → Genpact → Accenture → Apexon |
 | **🇳🇱 Dutch Ready** | No TWV needed · A1 Dutch (actively learning) | IND endorsement on file |
 
@@ -51,9 +51,9 @@ Dual-track leadership background combining deep technical engineering (**Power B
 Actively deepening expertise in **Microsoft Fabric Copilot, GenAI-ready lakehouse design, and AI-900 certified AI fundamentals** — positioned at the intersection of classical BI engineering and next-generation AI-augmented analytics.
 
 ### 🏆 Key Career Highlights
-* **⚡ 40% Query & Load Time Reduction:** Optimized high-volume enterprise semantic models by refactoring wide denormalized tables into Kimball Star Schemas, pruning relationship cardinality, and tuning VertiPaq dictionary compression via Tabular Editor & DAX Studio.
-* **💰 €350K+ Annual Licensing Saved:** Spearheaded enterprise-scale legacy migration from Qlik Sense to Power BI for a Fortune 500 client, consolidating 150+ siloed dashboards into 40 standardized, governed semantic models.
-* **☁️ Microsoft Fabric & OneLake Enablement:** Architected Direct Lake and hybrid semantic models on Delta Parquet tables in OneLake, reducing data refresh latency across multi-million row operational datasets by 45%.
+* **⚡ Up to 40% Query & Load Time Reduction:** Optimized high-volume enterprise semantic models by refactoring wide denormalized tables into Kimball Star Schemas, pruning relationship cardinality, and tuning VertiPaq dictionary compression via Tabular Editor & DAX Studio.
+* **💰 €350K+ Annual Licensing Saved:** Coordinated enterprise legacy migration from Qlik Sense to Power BI, consolidating 50+ reporting assets into standardized, governed semantic models.
+* **☁️ Microsoft Fabric & OneLake Enablement:** Designed Gold Delta Parquet layers in OneLake for Direct Lake evaluation alongside Oracle SQL DB incremental refresh partitions, cutting reporting refresh latency by 45%.
 * **🎖️ 5 Microsoft Certifications:** Certified in Power BI Data Analysis (**PL-300**), Fabric Analytics Engineering (**DP-600**), Azure Data Fundamentals (**DP-900**), Azure Cloud (**AZ-900**), and Azure AI (**AI-900**).
 * **🇳🇱 Unrestricted Dutch Labor Market Access:** Residing in the Utrecht region with full legal work authorization under official IND endorsement (*"Arbeid vrij toegestaan, TWV niet vereist"*).
 
@@ -101,7 +101,7 @@ Inspect real production-grade code samples and architectural patterns implemente
 **Apr 2026 – Present** · *Enterprise Analytics Division (Remote / European Client Engagements)*
 * **Oracle SQL DB to Power BI Ingestion Automation:** Architected and deployed automated data ingestion pipelines bridging high-volume Oracle SQL DB instances into Power BI Service via DirectQuery and incremental refresh partitions, eliminating 30+ hours/month of manual exports and reducing data refresh latency by 45%.
 * **High-Performance Oracle Query Optimization:** Authored complex Oracle SQL queries utilizing CTEs, analytical window functions (`ROW_NUMBER`, `RANK`), and partitioned views to extract and stage transactional data, shrinking staging query runtimes by 35%.
-* **PL-300 Certified Semantic Modeling & DAX:** Designed enterprise star-schema semantic data models applying certified PL-300 best practices; developed performant DAX calculation patterns delivering low-latency visual rendering via Direct Lake memory paging, star-schema semantic models, and VertiPaq engine optimization for operational executive reviews.
+* **PL-300 Certified Semantic Modeling & DAX:** Designed enterprise star-schema semantic data models applying certified PL-300 best practices; developed performant DAX calculation patterns and evaluated Microsoft Fabric Direct Lake over OneLake Delta Parquet for multi-million-row executive reviews.
 * **Cross-Functional Stakeholder Delivery:** Partnered with cross-functional leadership across product, finance, and operations to translate operational requirements into governed KPIs, driving a 40% increase in weekly active report adoption.
 
 ---
@@ -151,8 +151,8 @@ Inspect real production-grade code samples and architectural patterns implemente
 * Pruned high-cardinality surrogate keys and split composite datetime columns to maximize **VertiPaq dictionary compression**.
 
 **Measurable Outcomes:**
-* ⚡ Visual response times dropped from 25s to **< 2.5 seconds** across executive scorecards
-* 📉 Achieved **40% reduction in semantic model memory footprint**
+* ⚡ Visual response times dropped significantly across executive scorecards
+* 📉 Achieved **35% reduction in semantic model memory footprint** and up to **40% faster load times**
 * ✅ Zero gateway refresh bottleneck; seamless Direct Lake synchronization with OneLake
 
 ---
@@ -161,13 +161,13 @@ Inspect real production-grade code samples and architectural patterns implemente
 
 | | |
 |:---|:---|
-| **Client Domain** | Fortune 500 Enterprise Analytics & Sustainability |
-| **Business Problem** | 150+ siloed Qlik Sense apps; diverging KPIs; €350K+ redundant licensing; blocked self-service adoption |
+| **Client Domain** | Enterprise Analytics & Sustainability |
+| **Business Problem** | 50+ siloed Qlik Sense reporting assets; diverging KPIs; €350K+ redundant licensing; blocked self-service adoption |
 | **My Role** | BI Migration Lead — governance framework, DAX conversion, RLS architecture |
 | **Technologies** | Power BI, DAX Calculation Groups, Azure AD (Entra ID), Jira, Confluence |
 
 **Architecture Decisions:**
-* Established a **centralized BI Delivery Governance framework** using Jira and Confluence to catalogue, triage, and map 150+ dashboards into 40 core semantic models.
+* Established a **centralized BI Delivery Governance framework** using Jira and Confluence to catalogue, triage, and consolidate 50+ reporting assets into standardized semantic models.
 * Reverse-engineered complex Qlik Set Analysis into performant **DAX Calculation Groups** and parameterized measures.
 * Enforced centralized **Dynamic Row-Level Security (RLS)** using Azure AD groups and `USERPRINCIPALNAME()`.
 

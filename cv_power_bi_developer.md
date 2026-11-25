@@ -1,84 +1,78 @@
 # SAI LAKSHMI ELUSURI
-**SENIOR POWER BI DEVELOPER | AZURE, FABRIC & LAKEHOUSE ANALYTICS SPECIALIST**
+**SENIOR POWER BI DEVELOPER | SEMANTIC MODELING, DAX, SQL & MICROSOFT FABRIC**
 
 **Location:** Utrecht region, Netherlands  
-**Email:** sailakshmi.elusuri@gmail.com | **Phone:** +91 8142674401  
-**LinkedIn:** [linkedin.com/in/sailakshmielusuri-data-analyst](https://www.linkedin.com/in/sailakshmielusuri-data-analyst/) | **Portfolio:** [sailakshmi1996.github.io/career-hub](https://sailakshmi1996.github.io/career-hub/) | **GitHub:** [github.com/sailakshmi1996/career-hub](https://github.com/sailakshmi1996/career-hub)  
+**Email:** sailakshmi.elusuri@gmail.com | **WhatsApp / Mobile:** +91 8142674401  
+**LinkedIn:** [linkedin.com/in/sailakshmielusuri-data-analyst](https://www.linkedin.com/in/sailakshmielusuri-data-analyst/) | **Portfolio:** [sailakshmi1996.github.io/career-hub](https://sailakshmi1996.github.io/career-hub/) | **Code:** [github.com/sailakshmi1996/career-hub](https://github.com/sailakshmi1996/career-hub/tree/main/technical-showcase)  
 
-> **Work Authorization Status:** Based in the Utrecht region, Netherlands. Full unrestricted labor market access under official IND endorsement: *"Arbeid vrij toegestaan, TWV niet vereist"* (no employer sponsorship or work permit / TWV required · immediate Dutch contract start).
+> **Dutch Work Authorization:** Utrecht region, Netherlands. Full unrestricted Dutch labor market access under official IND endorsement: *"Arbeid vrij toegestaan, TWV niet vereist"* (no employer sponsorship or TWV work permit required; immediate Dutch contract start).
 
 ---
 
 ## PROFESSIONAL SUMMARY
-**PL-300 & DP-600 certified Senior Power BI Developer** with 8+ years delivering enterprise analytics across sustainability, financial risk, and operations. Expert in DAX optimization, Kimball star-schema modeling, Microsoft Fabric (Direct Lake, OneLake), and Oracle SQL pipelines. Proven ROI: 40% dashboard load reduction, 45% latency cut, €350K+ licensing savings. Full Dutch IND work authorization — immediate contract start. Utrecht region.
+**PL-300 & DP-600 certified Senior Power BI Developer** with **8+ years of enterprise experience** across sustainability, financial risk, and operations. Specializes in Kimball star-schema modeling, DAX & VertiPaq optimization, Oracle/SQL Server incremental pipelines, and Microsoft Fabric (OneLake, Direct Lake, PySpark). Documented impact: **up to 40% faster report loads**, **35% model memory shrink**, **45% lower refresh latency**, and **€350K+ in annual BI license savings**.
 
 ---
 
 ## TECHNICAL & ANALYTICAL COMPETENCIES
-- **Microsoft Certifications:** Power BI Data Analyst (PL-300), Fabric Analytics Engineer (DP-600), Azure Data (DP-900), Azure Fundamentals (AZ-900), Azure AI Fundamentals (AI-900)
-- **Business Intelligence & Visualization:** Power BI Desktop & Service, DAX (Data Analysis Expressions), Power Query (M), Star Schema Semantic Modeling, Row-Level Security (RLS), KPI Scorecards, Qlik Sense to Power BI Migration
-- **Advanced BI Tooling:** Tabular Editor 3, DAX Studio, XMLA Endpoint, ALM Toolkit, Deployment Pipelines, Power BI Dataflows Gen2, Composite Models, Paginated Reports (RDL), Power BI Embedded, Power BI REST API, Field Parameters
-- **Databases & Query Tuning:** Oracle SQL DB, SQL Server, T-SQL, Query Optimization, Common Table Expressions (CTEs), Analytical Window Functions (ROW_NUMBER, RANK), Partitioned Views, Indexing
-- **Cloud Data & Lakehouse:** Microsoft Fabric (OneLake, Lakehouse, Direct Lake awareness), Azure Data Factory (ADF Data Ingestion Pipelines), ADLS Gen2, Medallion Architecture (Bronze, Silver, Gold layers)
-- **Process Mining & Tooling:** Celonis Process Mining, Jira, Confluence, ServiceNow, Git Version Control
+- **Microsoft Certifications:** Fabric Analytics Engineer (DP-600) · Power BI Data Analyst (PL-300) · Azure Data (DP-900) · Azure Fundamentals (AZ-900) · Azure AI (AI-900)
+- **Power BI & Semantic Modeling:** Power BI Desktop & Service, DAX (Calculation Groups, Time Intelligence, Semi-Additive Patterns), Power Query (M), Kimball Star Schema, Composite Models, Paginated Reports (RDL), Dynamic RLS (`USERPRINCIPALNAME()`), Field Parameters
+- **Tuning, DevOps & Governance:** Tabular Editor 3, DAX Studio, VertiPaq Analyzer, XMLA Endpoint, ALM Toolkit, Power BI Deployment Pipelines (Dev/Test/Prod), Azure DevOps & Git CI/CD, Microsoft Purview Lineage, Power BI REST API
+- **Microsoft Fabric & Cloud Data:** Microsoft Fabric (OneLake, Lakehouse, Direct Lake Mode, Dataflows Gen2, Fabric Copilot), Python & PySpark Notebooks, Delta Parquet (V-Order), Medallion Architecture (Bronze/Silver/Gold), Azure Data Factory (ADF), ADLS Gen2, dbt Core (awareness)
+- **Databases & Query Engineering:** Oracle SQL DB, Microsoft SQL Server (T-SQL), Sargable CTEs, Analytical Window Functions (`ROW_NUMBER`, `DENSE_RANK`, `RANK`), Incremental Refresh Folding, Partitioned Views, Indexing
+- **Migration & Process Analytics:** Qlik Sense to Power BI Migration (Set Analysis to DAX), Celonis Process Mining, Jira, Confluence, ServiceNow, Agile / Scrum
 
 ---
 
 ## PROFESSIONAL EXPERIENCE
 
 ### **Senior Data Analyst | Apexon**
-*Apr 2026–Present | Enterprise Analytics Division*
-- **Oracle SQL DB to Power BI Ingestion:** Architect and deploy automated data ingestion pipelines connecting high-volume Oracle SQL DB instances into Power BI Service via DirectQuery and incremental refresh partitions, eliminating 30+ hours/month of manual exports and reducing data refresh latency by 45%.
-- **High-Performance Oracle Query Optimization:** Author complex Oracle SQL queries utilizing CTEs, analytical window functions (ROW_NUMBER, RANK), and partitioned views to extract and stage transactional data, shrinking staging query runtimes by 35%.
-- **PL-300 Certified Semantic Modeling & DAX:** Reduced executive dashboard rendering latency by 45% and eliminated manual refresh cycles for 30+ reports by engineering PL-300-compliant star-schema semantic models with optimized DAX calculation groups, Direct Lake memory paging, and VertiPaq engine tuning across Oracle SQL DB pipelines.
-- **Cross-Functional Stakeholder Delivery:** Partner with cross-functional leadership across product, finance, and operations to translate operational requirements into governed KPIs, driving a 40% increase in weekly active report adoption.
+*Apr 2026–Present | Enterprise Analytics Division (Remote)*
+- **Automated Oracle-to-Power BI Pipelines:** Engineered automated ingestion connecting Oracle SQL DB into Power BI Service using DirectQuery and incremental refresh partitions, eliminating 30+ hours/month of manual exports and reducing refresh latency by 45%.
+- **Sargable Oracle Query Tuning:** Refactored nested database subqueries into sargable CTEs, window functions (`ROW_NUMBER`, `DENSE_RANK`), and partitioned views to preserve query folding, cutting staging query runtimes by 35%.
+- **PL-300 Semantic Layer & Fabric Readiness:** Architected Kimball star-schema semantic models with DAX Calculation Groups and VertiPaq tuning across 30+ operational reports, alongside OneLake / Direct Lake evaluation patterns for high-volume datasets.
+- **Stakeholder KPI Adoption:** Partnered with product, finance, and operations leadership to standardize KPI definitions and run enablement workshops, driving a 40% increase in weekly active report usage.
 
 ### **Power BI Developer | Accenture**
 *February 2022 – April 2026 | Hyderabad, India*
-- **Enterprise Dashboard Engineering:** Accelerated executive decision-making for 200+ stakeholders across 5 international business units by engineering 15+ governed Power BI scorecards — translating sustainability and environmental KPI requirements into star-schema semantic models with sub-5-second visual render cycles.
-- **Semantic Model & DAX Optimization:** Refactored semantic models into optimized star schemas and streamlined DAX calculations and SQL queries, reducing dashboard load times by up to 40% and shrinking model memory footprints by up to 35% across multi-million row datasets.
-- **Legacy BI Migration Leadership:** Coordinated end-to-end migration of legacy Qlik Sense dashboards to Power BI; redesigned underlying data structures, standardized KPI definitions, converted complex set analysis logic into DAX, and established consistent corporate visualization standards.
-- **Azure Cloud Integration:** Contributed to Azure Data Factory (ADF) data ingestion pipelines and organized curated data assets in ADLS Gen2 across Bronze, Silver, and Gold layers to feed high-performance semantic models.
-- **Governance & Row-Level Security:** Configured robust Row-Level Security (RLS) rules to guarantee granular data access control across multi-region organizational units and business departments.
-- **Process Intelligence Integration:** Connected Celonis process-mining insights into operational Power BI reports, enabling leadership teams to visualize process friction, identify bottlenecks, and monitor cycle-time reductions.
-- **Delivery Coordination:** Owned delivery work plans, milestone schedules, risk/issue registers, and cross-functional sprint execution across technical engineers and business stakeholders using Jira, Confluence, and ServiceNow.
+- **Enterprise Sustainability Analytics:** Delivered 15+ governed Power BI scorecards for 200+ stakeholders across 5 international business units, translating sustainability and ESG metrics into certified star-schema semantic models.
+- **VertiPaq & DAX Performance Engineering:** Replaced flat tables and bi-directional filters with 1:* star schemas, integer surrogate keys, and `KEEPFILTERS` DAX patterns via DAX Studio and Tabular Editor — cutting dashboard load times by up to 40% and memory footprint by up to 35%.
+- **Qlik Sense-to-Power BI Consolidation:** Coordinated migration of 50+ legacy Qlik Sense reporting assets into standardized Power BI semantic models, converting Qlik set analysis to DAX and eliminating €350K+ in annual licensing spend.
+- **Azure Medallion & Governance:** Built Azure Data Factory (ADF) pipelines loading Bronze/Silver/Gold ADLS Gen2 assets and enforced dynamic Row-Level Security (RLS) across multi-country organizational units.
+- **Process Intelligence & Agile Delivery:** Integrated Celonis process-mining telemetry into Power BI bottleneck dashboards and owned sprint execution, risk logs, and UAT handoffs in Jira, Confluence, and ServiceNow.
 
 ### **Data Risk Analyst | Genpact**
 *April 2021 – January 2022 | Noida, India*
-- **Risk Analytics & Reporting:** Designed and deployed Power BI dashboards and supporting SQL Server datasets to monitor risk exposure, underwriting compliance, and loss metrics for mortgage insurance portfolios.
-- **Data Modeling & Verification:** Built structured SQL queries and automated data validation scripts to ensure 100% data reconciliation between transactional source systems and executive risk reports.
-- **Stakeholder Decision Support:** Partnered directly with risk managers and underwriting executives to deliver interactive drill-through analyses, identifying portfolio concentration risks and supporting credit decisioning.
+- **Mortgage Portfolio Risk Reporting:** Built 8 SQL Server-backed Power BI dashboards monitoring underwriting compliance and loss metrics across a €2B+ mortgage insurance portfolio, replacing 20+ hours/week of manual reporting.
+- **Automated T-SQL Reconciliation:** Authored stored procedures and validation tie-out checks across transactional source tables, guaranteeing 100% reconciliation between core ledgers and executive risk scorecards.
+- **Credit Concentration Insights:** Partnered with underwriting committees to implement drill-through exposure views supporting credit risk reviews and regulatory audit defense.
 
 ### **Data Analyst | Conduent**
 *June 2018 – April 2021 | Visakhapatnam, India*
-- **Operational Reporting Automation:** Developed and maintained automated Power BI reporting suites replacing manual spreadsheet reporting workflows, saving 60+ person-hours monthly and reducing reporting discrepancies.
-- **SQL Pipeline Development:** Authored 40+ optimized SQL queries, views, and stored procedures across enterprise databases to extract, aggregate, and stage financial and operational datasets.
-- **SLA & Business Intelligence Insights:** Modeled operational throughput, billing accuracy, and service level agreements (SLAs), generating executive insight packs that helped management elevate SLA compliance from 91% to 98%.
+- **Operational Reporting Automation:** Replaced manual spreadsheet packs with automated Power BI suites, saving 60+ person-hours monthly and eliminating cross-team reporting discrepancies.
+- **SQL Staging Optimization:** Authored 40+ T-SQL views, CTEs, and stored procedures across enterprise databases, increasing staging throughput by 35% for monthly financial close reporting.
+- **SLA Performance Visibility:** Modeled operational queue bottlenecks and billing accuracy scorecards that helped management raise SLA compliance from 91% to 98%.
 
 ---
 
-## SELECTED KEY PROJECTS
+## SELECTED ARCHITECTURE & ENGINEERING DEEP-DIVES
 
-### **Enterprise Sustainability Analytics Platform | Accenture**
-*Tech Stack: Power BI, Azure Data Factory, ADLS Gen2, Microsoft Fabric Lakehouse Fundamentals, Qlik Sense, Celonis*
-- Spearheaded reporting modernization from Qlik Sense to Power BI, rationalizing disparate KPI calculations across international business units into unified semantic models.
-- Collaborated on Azure Medallion data lakehouse layers (Bronze/Silver/Gold) to ensure curated, performant data structures for downstream executive consumption.
-- Delivered optimized DAX measures for scheduled refresh dashboards, achieving high user adoption and robust reporting governance.
+### **1. VertiPaq Storage Engine & Calculation Group Refactor | Accenture**
+*Stack: Power BI, Tabular Editor 3, DAX Studio, VertiPaq Analyzer, Dynamic RLS*
+- Split high-cardinality timestamps into integer `DateKey` / `TimeKey` fields and removed unused GUID columns to reclaim 35% RAM.
+- Consolidated redundant YTD/PY/YoY and multi-currency measures into reusable DAX Calculation Groups with `KEEPFILTERS`.
 
-### **High-Throughput Oracle-to-Power BI Semantic Pipeline | Apexon**
-*Tech Stack: Oracle SQL DB, Power BI Service, DirectQuery, DAX Optimization, Incremental Refresh*
-- Architected an enterprise reporting pipeline staging data directly from Oracle SQL DB into Power BI using DirectQuery with incremental refresh partitions, avoiding OLTP table contention.
-- Authored optimized Oracle SQL CTEs, window functions, and partitioned views, cutting data prep cycles by 30% and reporting latency by 45%.
+### **2. Partition-Folded Oracle Ingestion & OneLake Gold Pipeline | Apexon & Showcase**
+*Stack: Oracle SQL DB, Power BI Incremental Refresh, Deployment Pipelines, Microsoft Fabric PySpark (V-Order)*
+- Kept `transaction_timestamp` predicates sargable against `RangeStart`/`RangeEnd` parameters with `ROW_NUMBER()` deduplication so Power BI folds partitions cleanly without OLTP locks.
+- Designed Medallion Gold Delta Parquet tables using PySpark with write-time V-Order sorting and Z-Ordering (`DateKey`, `CustomerKey`) for Direct Lake memory paging with graceful DirectQuery fallback.
 
-### **Operational Process Intelligence Dashboard | Accenture**
-*Tech Stack: Celonis Process Mining, Power BI, SQL Server*
-- Extracted process execution telemetry via Celonis, mapping end-to-end customer request workflows and identifying systemic throughput bottlenecks.
-- Synthesized complex process event logs into intuitive Power BI dashboards, providing operations leadership with actionable root-cause analysis and KPI benchmarking.
+### **3. Celonis Process Mining & End-to-End SLA Telemetry | Accenture**
+*Stack: Celonis Event Logs, Power BI Service, SQL Server, Jira / ServiceNow*
+- Integrated Celonis activity-event telemetry into operational Power BI scorecards, exposing rework loops and approval bottlenecks across multi-region enterprise workflows.
 
 ---
 
 ## EDUCATION & LANGUAGES
 - **Bachelor of Technology (B.Tech.) in Computer Science & Engineering** — Raghu Engineering College, India | 2017
-- **Languages:**
-  - **English:** Professional working proficiency (C1)
-  - **Dutch:** Elementary A1 (actively learning; committed to Dutch language integration)
+- **English:** Professional working proficiency (C1) | **Dutch:** Elementary (A1 — actively learning toward B1 integration) | **Telugu:** Native | **Hindi:** Conversational

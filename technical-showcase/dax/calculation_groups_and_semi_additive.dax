@@ -8,36 +8,45 @@ Tooling: Tabular Editor 3 / DAX Studio / Power BI Desktop
 */
 
 --------------------------------------------------------------------------------
--- 1. CALCULATION GROUP: TIME INTELLIGENCE WITH KEEPFILTERS
+-- 1. CALCULATION GROUP: TIME INTELLIGENCE (WITH PROPER DATE COLUMN)
 -- Eliminates measure explosion across 40+ KPIs while protecting SE cache.
+-- Note: Dim_Date joins to Fact tables on integer DateKey (YYYYMMDD) for
+-- VertiPaq dictionary compression; Dim_Date[Date] (DATE type, marked as Date
+-- Table) drives native DAX time-intelligence functions cleanly.
 --------------------------------------------------------------------------------
 CALCULATION GROUP 'Time Intelligence'[Period]
 
-  CALCULATION ITEM "Current Period" = 
+  CALCULATION ITEM "Current Period" =
     SELECTEDMEASURE()
 
-  CALCULATION ITEM "YTD" = 
+  CALCULATION ITEM "YTD" =
     CALCULATE(
         SELECTEDMEASURE(),
-        DATESYTD('Dim_Date'[DateKey]),
-        -- KEEPFILTERS ensures existing visual cross-filters are intersected,
-        -- preventing unintended context clearing and preserving SE scan batching.
+        DATESYTD('Dim_Date'[Date])
+    )
+
+  CALCULATION ITEM "Working Days YTD" =
+    CALCULATE(
+        SELECTEDMEASURE(),
+        DATESYTD('Dim_Date'[Date]),
+        -- KEEPFILTERS intersects rather than overwrites existing visual filters,
+        -- preserving Storage Engine (SE) batch scan efficiency.
         KEEPFILTERS('Dim_Date'[IsWorkingDay] = TRUE)
     )
 
-  CALCULATION ITEM "Prior Year (PY)" = 
+  CALCULATION ITEM "Prior Year (PY)" =
     CALCULATE(
         SELECTEDMEASURE(),
-        SAMEPERIODLASTYEAR('Dim_Date'[DateKey])
+        SAMEPERIODLASTYEAR('Dim_Date'[Date])
     )
 
-  CALCULATION ITEM "YoY Growth %" = 
+  CALCULATION ITEM "YoY Growth %" =
     VAR _Current = SELECTEDMEASURE()
-    VAR _Prior = CALCULATE(SELECTEDMEASURE(), SAMEPERIODLASTYEAR('Dim_Date'[DateKey]))
+    VAR _Prior = CALCULATE(SELECTEDMEASURE(), SAMEPERIODLASTYEAR('Dim_Date'[Date]))
     RETURN
         DIVIDE(_Current - _Prior, _Prior, BLANK())
-    -- Format String Expression for Dynamic Formatting:
-    -- "0.0%"
+    -- Dynamic Format String Expression:
+    -- "0.0%;-0.0%;0.0%"
 
 --------------------------------------------------------------------------------
 -- 2. CALCULATION GROUP: DYNAMIC MULTI-CURRENCY CONVERSION
@@ -45,11 +54,11 @@ CALCULATION GROUP 'Time Intelligence'[Period]
 --------------------------------------------------------------------------------
 CALCULATION GROUP 'Currency'[Selected Currency]
 
-  CALCULATION ITEM "EUR (Base)" = 
+  CALCULATION ITEM "EUR (Base)" =
     SELECTEDMEASURE()
 
-  CALCULATION ITEM "USD" = 
-    VAR _Rate = 
+  CALCULATION ITEM "USD" =
+    VAR _Rate =
         LOOKUPVALUE(
             'Fact_Exchange_Rates'[RateToUSD],
             'Fact_Exchange_Rates'[DateKey], SELECTEDVALUE('Dim_Date'[DateKey], MAX('Dim_Date'[DateKey]))
@@ -57,8 +66,8 @@ CALCULATION GROUP 'Currency'[Selected Currency]
     RETURN
         SELECTEDMEASURE() * COALESCE(_Rate, 1.0)
 
-  CALCULATION ITEM "GBP" = 
-    VAR _Rate = 
+  CALCULATION ITEM "GBP" =
+    VAR _Rate =
         LOOKUPVALUE(
             'Fact_Exchange_Rates'[RateToGBP],
             'Fact_Exchange_Rates'[DateKey], SELECTEDVALUE('Dim_Date'[DateKey], MAX('Dim_Date'[DateKey]))
@@ -68,16 +77,15 @@ CALCULATION GROUP 'Currency'[Selected Currency]
 
 --------------------------------------------------------------------------------
 -- 3. HIGH-PERFORMANCE SEMI-ADDITIVE MEASURE (CLOSING HEADCOUNT / INVENTORY)
--- Replaces expensive row-by-row FILTER(ALL(...)) with VertiPaq SE-friendly pattern.
+-- Replaces row-by-row FILTER(ALL(...)) with single-scan SE integer lookup.
 --------------------------------------------------------------------------------
-[Closing Inventory Value] = 
-VAR _LastNonEmptyDate = 
+[Closing Inventory Value] =
+VAR _LastSnapshotDateKey =
     CALCULATE(
-        MAX('Fact_Inventory_Snapshot'[SnapshotDateKey]),
-        ALLEXCEPT('Fact_Inventory_Snapshot', 'Dim_Date')
+        MAX('Fact_Inventory_Snapshot'[SnapshotDateKey])
     )
 RETURN
     CALCULATE(
         SUM('Fact_Inventory_Snapshot'[EndingValuation_EUR]),
-        'Fact_Inventory_Snapshot'[SnapshotDateKey] = _LastNonEmptyDate
+        KEEPFILTERS('Dim_Date'[DateKey] = _LastSnapshotDateKey)
     )

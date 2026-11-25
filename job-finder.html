@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
   <title>Sai Lakshmi – Netherlands Job Finder | Power BI &amp; Azure Analytics</title>
   <meta name="description" content="Personalized Netherlands job finder for Sai Lakshmi Elusuri – Senior Power BI Developer &amp; Lakehouse Analytics Specialist with unrestricted Dutch labor market access (TWV niet vereist) in the Utrecht region, Netherlands." />
   <link rel="canonical" href="https://sailakshmi1996.github.io/career-hub/job-finder.html" />
@@ -24,78 +25,10 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://sailakshmi1996.github.io/career-hub/job-finder.html",
-        "url": "https://sailakshmi1996.github.io/career-hub/job-finder.html",
-        "name": "Netherlands Job Finder | Power BI & Azure Analytics",
-        "isPartOf": {
-          "@type": "WebSite",
-          "@id": "https://sailakshmi1996.github.io/career-hub/#website",
-          "url": "https://sailakshmi1996.github.io/career-hub/",
-          "name": "Sai Lakshmi Elusuri Career Hub"
-        }
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Power BI Developer",
-        "description": "Build enterprise dashboards and semantic models for financial services with VertiPaq and star-schema optimization.",
-        "datePosted": "2026-04-01",
-        "employmentType": "FULL_TIME",
-        "hiringOrganization": {
-          "@type": "Organization",
-          "name": "KPMG Netherlands"
-        },
-        "jobLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Amsterdam",
-            "addressCountry": "NL"
-          }
-        },
-        "baseSalary": {
-          "@type": "MonetaryAmount",
-          "currency": "EUR",
-          "value": {
-            "@type": "QuantitativeValue",
-            "minValue": 65000,
-            "maxValue": 80000,
-            "unitText": "YEAR"
-          }
-        }
-      },
-      {
-        "@type": "JobPosting",
-        "title": "Senior BI Developer – Power BI",
-        "description": "Lead BI transformation projects for global clients. Focus on Power BI, Azure Synapse, and enterprise business stakeholder enablement.",
-        "datePosted": "2026-04-01",
-        "employmentType": "FULL_TIME",
-        "hiringOrganization": {
-          "@type": "Organization",
-          "name": "Deloitte Netherlands"
-        },
-        "jobLocation": {
-          "@type": "Place",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Rotterdam",
-            "addressCountry": "NL"
-          }
-        },
-        "baseSalary": {
-          "@type": "MonetaryAmount",
-          "currency": "EUR",
-          "value": {
-            "@type": "QuantitativeValue",
-            "minValue": 70000,
-            "maxValue": 90000,
-            "unitText": "YEAR"
-          }
-        }
-      }
-    ]
+    "@type": "WebPage",
+    "@id": "https://sailakshmi1996.github.io/career-hub/job-finder.html",
+    "url": "https://sailakshmi1996.github.io/career-hub/job-finder.html",
+    "name": "Netherlands Job Finder | Power BI & Azure Analytics"
   }
   </script>
 
@@ -142,12 +75,29 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(5, 9, 20, 0.88);
+      background: rgba(5, 9, 20, 0.94);
       backdrop-filter: blur(16px) saturate(180%);
       -webkit-backdrop-filter: blur(16px) saturate(180%);
       border-bottom: 1px solid var(--border);
       transition: background-color 0.25s ease;
     }
+    .nav-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--gradient-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .nav-brand-text { line-height: 1.2; }
+    .nav-title { font-weight: 700; font-size: 0.92rem; color: #fff; white-space: nowrap; }
+    .nav-subtitle { font-size: 0.72rem; color: var(--text-secondary); white-space: nowrap; }
+    .nav-links { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 
     /* ── Touch Targets & Screen Reader Utilities ── */
     .nav-link, .tab-btn, .copy-btn, .apply-btn {
@@ -703,7 +653,7 @@
   <div class="orb orb-3"></div>
 </div>
 
-<div class="container">
+<main class="container">
 
   <!-- ── Header ── -->
   <header>
@@ -721,7 +671,7 @@
     </div>
     <h1 class="hero-title">
       Find Your Dream Job<br/>
-      <span class="gradient-text">in the Netherlands 🇳🇱</span>
+      <span class="gradient-text">in the Netherlands</span> 🇳🇱
     </h1>
     <p class="hero-sub">
       A snapshot of real Power BI, Fabric &amp; BI delivery postings in the Dutch market (Utrecht first), matched to your <strong style="color:#fff">8+ years of enterprise expertise</strong>. Last refreshed 25 Nov 2026.
@@ -796,7 +746,7 @@
       </div>
       <div id="search-live-status" class="sr-only" role="status" aria-live="polite"></div>
       <div style="background:rgba(245,158,11,0.10); border:1px solid rgba(245,158,11,0.35); border-radius:12px; padding:14px 18px; margin-bottom:18px; font-size:0.84rem; line-height:1.6; color:var(--text-secondary);">
-        <strong style="color:#fbbf24;">How to read this list.</strong> These are postings seen on job-board pages between February and November 2026, not a live feed, so some may have closed. Pay is the monthly gross figure the employer posted (annualised with the 8% holiday allowance; 13th months and bonuses are extra). <strong>Dutch needed</strong> means the posting is in Dutch or asks for Dutch fluency; with A1 Dutch, lead with the <strong>English OK</strong> roles and use the Dutch-language ones to find out whether the team works in English. Full evidence and sources: <code>research/NL_JOB_MARKET_RESEARCH_2026-11.md</code> in the repository.
+        <strong style="color:#fbbf24;">How to read this list.</strong> These are postings seen on job-board pages between February and November 2026, not a live feed, so some may have closed. Pay is the monthly gross figure the employer posted (annualised with the 8% holiday allowance; 13th months and bonuses are extra). <strong>Dutch needed</strong> means the posting is in Dutch or asks for Dutch fluency; with A1 Dutch, lead with the <strong>English OK</strong> roles and use the Dutch-language ones to find out whether the team works in English.
       </div>
       <div class="jobs-grid" id="jobs-grid">
         <!-- Populated by JS -->
@@ -1046,7 +996,7 @@ sailakshmi.elusuri@gmail.com | Utrecht, Netherlands</pre>
 
 I’ve been following [Company]'s analytics evolution and wanted to connect.
 
-I am a Senior Power BI Developer &amp; Fabric Analytics Specialist (PL-300 &amp; DP-600 certified) with 8+ years across enterprise consulting (Accenture, Apexon). Recently, I engineered a Qlik-to-Power BI migration consolidating 150 dashboards into 40 governed semantic models, and reduced dashboard load times by 40% using DAX Studio VertiPaq optimizations.
+I am a Senior Power BI Developer &amp; Fabric Analytics Specialist (PL-300 &amp; DP-600 certified) with 8+ years across enterprise consulting (Accenture, Apexon). Recently, I helped migrate 50+ legacy Qlik Sense reporting assets into governed Power BI semantic models and cut dashboard load times by up to 40% using DAX Studio and VertiPaq Analyzer optimizations.
 
 I am based in the Utrecht region with full unrestricted Dutch labor rights ("Arbeid vrij toegestaan, TWV niet vereist" — no employer sponsorship needed). I'd love to learn about [Company]'s current BI priorities and share how I could contribute.
 
@@ -1058,7 +1008,7 @@ Sai Lakshmi Elusuri</pre>
     </div>
   </section>
 
-</div>
+</main>
 
 <!-- Footer -->
 <footer class="site-footer">

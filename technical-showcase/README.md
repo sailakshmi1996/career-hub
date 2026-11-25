@@ -8,18 +8,18 @@ This directory provides concrete, runnable technical artifacts demonstrating ent
 ## 📂 Contents
 
 1. [📊 Advanced DAX & VertiPaq Optimization (`dax/`)](./dax/calculation_groups_and_semi_additive.dax)
-   - **Calculation Groups for Multi-Currency & Time-Intelligence:** Eliminates measure sprawl (from 150+ to 12 measures) while ensuring strict Storage Engine (SE) multi-threaded batching.
-   - **VertiPaq Engine Cache Optimization:** Utilizing `KEEPFILTERS` and relationship-based filtering instead of expensive Formula Engine (FE) context transitions.
-   - **Semi-Additive Measure Patterns:** Fast closing balance calculation on multi-million row transactional fact tables.
+   - **Calculation Groups for Multi-Currency & Time-Intelligence:** Eliminates measure sprawl (from 150+ derived combinations down to core base measures + Calculation Items) while protecting Storage Engine (SE) multi-threaded batching and passing `'Dim_Date'[Date]` properly to time-intelligence functions.
+   - **VertiPaq Engine Cache Optimization:** Utilizing `KEEPFILTERS` and integer `DateKey` relationships instead of expensive Formula Engine (FE) `FILTER(ALL(...))` row iterations.
+   - **Semi-Additive Measure Patterns:** Fast closing balance calculation using single-scan `MAX` snapshot lookup + `KEEPFILTERS`.
 
 2. [⚡ Oracle SQL & Relational Staging Queries (`sql/`)](./sql/oracle_incremental_staging_cte.sql)
-   - **Common Table Expressions (CTEs) & Analytical Window Functions:** Replaces iterative subqueries with `ROW_NUMBER()` and `DENSE_RANK()` partition pruning.
-   - **Incremental Refresh Query Folding:** Optimized where-clause boundaries ensuring Power BI Gateway query folding into the source database.
+   - **Common Table Expressions (CTEs) & Analytical Window Functions:** Replaces correlated subqueries with `ROW_NUMBER()` and `DENSE_RANK()` single-pass deduplication.
+   - **Incremental Refresh Query Folding:** Sargable `RangeStart` / `RangeEnd` predicates preserving Oracle range-partition pruning and Power BI query folding.
 
 3. [☁️ Microsoft Fabric & PySpark Delta Lake Pipeline (`fabric_pyspark/`)](./fabric_pyspark/delta_lake_v_order_pipeline.py)
-   - **Medallion Gold Table Lakehouse Pipeline:** PySpark transformation creating Delta Parquet tables in OneLake.
-   - **V-Order & Columnar Compression:** Enabling write-time V-Order sorting for maximum read-time decompression speed in **Direct Lake mode**.
-   - **Liquid Clustering / Partition Pruning:** Optimizing query selectivity across multi-year telemetry datasets.
+   - **Medallion Gold Table Lakehouse Pipeline:** PySpark transformation creating Delta Parquet tables in OneLake with integer `DateKey`/`TimeKey` splitting.
+   - **V-Order & Columnar Compression:** Enabling write-time V-Order sorting for optimal read-time decompression and memory paging in **Direct Lake mode**.
+   - **Z-Ordering / Data Skipping:** Co-locating high-selectivity `DateKey` and `CustomerKey` predicates to minimize file scans across multi-year telemetry.
 
 ---
 

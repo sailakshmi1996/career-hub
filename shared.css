@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════
    GOLDEN STANDARD MODERN DESIGN SYSTEM — Sai Lakshmi Elusuri
-   shared.css · v7.0 Executive Lakehouse Analytics Portfolio
-   Inspired by Linear, Vercel & Stripe Enterprise Design
+   shared.css · v8.0 Executive Lakehouse Analytics Portfolio
+   Clean Enterprise Dark-Glass & Editorial Architecture
    ═══════════════════════════════════════════════════════════ */
 
 :root {
@@ -25,10 +25,10 @@
   --color-text:      #172334;
   --text-dark:       #172334;
 
-  /* Modern Glass & Surface Tokens */
+  /* Modern Solid-Tinted Glass & Surface Tokens (compositor-safe) */
   --canvas-bg:       #0B1220;
-  --surface-glass:   rgba(17, 28, 48, 0.65);
-  --surface-elevated:rgba(23, 38, 65, 0.75);
+  --surface-glass:   rgba(16, 27, 47, 0.94);
+  --surface-elevated:rgba(23, 38, 65, 0.96);
   --border-subtle:   rgba(221, 229, 234, 0.1);
   --border-glass:    rgba(221, 229, 234, 0.16);
   --border-glow-teal:rgba(99, 216, 208, 0.4);
@@ -198,6 +198,7 @@ img, svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 
 .nav-brand {
@@ -206,6 +207,7 @@ img, svg {
   gap: 12px;
   text-decoration: none;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .brand-emblem {
@@ -241,7 +243,7 @@ img, svg {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 24px;
   list-style: none;
 }
 
@@ -252,6 +254,7 @@ img, svg {
   transition: color 0.18s ease;
   position: relative;
   padding: 6px 0;
+  white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -270,9 +273,17 @@ img, svg {
   box-shadow: 0 0 8px var(--bright-teal);
 }
 
+.nav-cta-wrap {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
 .nav-cta-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background: rgba(99, 216, 208, 0.1);
   border: 1px solid rgba(99, 216, 208, 0.35);
@@ -281,6 +292,8 @@ img, svg {
   border-radius: var(--radius-full);
   font-size: 0.88rem;
   font-weight: 600;
+  white-space: nowrap;
+  min-height: 44px;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -290,6 +303,10 @@ img, svg {
   border-color: var(--bright-teal);
   transform: translateY(-1px);
   box-shadow: 0 0 20px rgba(99, 216, 208, 0.4);
+}
+
+.nav-menu-cta {
+  display: none;
 }
 
 .nav-toggle {
@@ -304,9 +321,22 @@ img, svg {
   cursor: pointer;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .nav-inner {
+    padding: 0 20px;
+  }
+  .nav-cta-wrap {
+    display: none;
+  }
+  .nav-menu-cta {
+    display: block;
+    width: 100%;
+    padding-top: 8px;
+    border-top: 1px solid rgba(221, 229, 234, 0.12);
+  }
   .nav-toggle {
     display: inline-flex;
   }
@@ -317,12 +347,12 @@ img, svg {
     left: 0;
     right: 0;
     background: rgba(11, 18, 32, 0.98);
-    backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: flex-start;
-    padding: 24px 28px;
+    padding: 20px 24px;
     border-bottom: 1px solid rgba(221, 229, 234, 0.15);
-    gap: 18px;
+    gap: 14px;
+    z-index: 600;
   }
   .nav-menu.open {
     display: flex;
@@ -2053,31 +2083,226 @@ img, svg {
   margin-top: 14px;
 }
 
-/* Proof Card Refinement */
-.proof-card {
-  background: rgba(14, 23, 42, 0.75);
-  border: 1px solid rgba(221, 229, 234, 0.12);
+/* ═══════════════════════════════════════════════════════════
+   v8.0 — COMPOSITOR-SAFE CARDS & TECHNICAL CODE LAB
+   ═══════════════════════════════════════════════════════════ */
+
+/* Eliminate Chromium stacked backdrop-filter blank-box artifacts on scroll */
+.hero-auth-note,
+.architecture-diagram-card,
+.proof-card,
+.timeline-item,
+.project-card,
+.project-card.bento-item,
+.expertise-card,
+.section-certifications,
+.cv-card,
+.telemetry-container,
+.contact-link-item,
+.recruiter-quick-deck {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  background: rgba(15, 25, 45, 0.94);
+}
+
+.telemetry-stat-val {
+  white-space: nowrap;
+}
+
+/* Interactive Technical Code & VertiPaq Proof Lab */
+.code-lab-card {
+  margin-top: 32px;
+  background: rgba(14, 23, 42, 0.96);
+  border: 1px solid rgba(99, 216, 208, 0.28);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-dark);
+}
+
+.code-lab-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.code-lab-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.code-lab-tab {
+  min-height: 44px;
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(221, 229, 234, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--pale-blue-gray);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.code-lab-tab:hover {
+  border-color: var(--bright-teal);
+  color: #FFFFFF;
+}
+
+.code-lab-tab.active {
+  background: rgba(99, 216, 208, 0.16);
+  border-color: var(--bright-teal);
+  color: var(--bright-teal);
+}
+
+.code-lab-panel {
+  display: none;
+}
+
+.code-lab-panel.active {
+  display: block;
+}
+
+.code-viewer-wrap {
+  background: #070d18;
+  border: 1px solid rgba(221, 229, 234, 0.14);
   border-radius: var(--radius-md);
-  padding: 30px 26px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  position: relative;
-  transition: all 0.25s ease;
+  overflow: hidden;
 }
 
-.proof-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(99, 216, 208, 0.4);
-  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.6), 0 0 24px rgba(99, 216, 208, 0.15);
+.code-viewer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 16px;
+  background: rgba(23, 35, 56, 0.92);
+  border-bottom: 1px solid rgba(221, 229, 234, 0.12);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--pale-blue-gray);
 }
 
-.proof-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 20px;
-  right: 20px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--bright-teal), transparent);
+.code-viewer-pre {
+  margin: 0;
+  padding: 18px;
+  font-family: var(--font-mono);
+  font-size: 0.81rem;
+  line-height: 1.58;
+  color: #E2EEFA;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+.vertipaq-diff-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.vertipaq-table-wrap {
+  overflow-x: auto;
+  border: 1px solid rgba(221, 229, 234, 0.14);
+  border-radius: var(--radius-sm);
+}
+
+.vertipaq-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+  text-align: left;
+}
+
+.vertipaq-table th {
+  background: rgba(23, 35, 56, 0.95);
+  color: var(--bright-teal);
+  font-weight: 700;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(221, 229, 234, 0.14);
+}
+
+.vertipaq-table td {
+  padding: 10px 14px;
+  color: #DDE5EA;
+  border-bottom: 1px solid rgba(221, 229, 234, 0.08);
+}
+
+.vertipaq-table tr:last-child td {
+  border-bottom: none;
+}
+
+.nl-readiness-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.nl-readiness-card {
+  background: rgba(15, 25, 45, 0.94);
+  border: 1px solid rgba(99, 216, 208, 0.22);
+  border-radius: var(--radius-md);
+  padding: 20px 22px;
+}
+
+.nl-readiness-card h4 {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--bright-teal);
+  margin-bottom: 6px;
+}
+
+.nl-readiness-card p {
+  font-size: 0.86rem;
+  color: #DDE5EA;
+  line-height: 1.55;
+}
+
+.master-cv-strip {
+  margin-top: 24px;
+  padding: 22px 28px;
+  background: rgba(15, 25, 45, 0.94);
+  border: 1px solid rgba(221, 229, 234, 0.16);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 880px) {
+  .vertipaq-diff-grid,
+  .nl-readiness-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section {
+    padding: 56px 0 64px;
+  }
+  .section-experience,
+  .section-projects,
+  .section-expertise,
+  .section-cvs,
+  .section-telemetry {
+    padding: 56px 0;
+  }
+  .code-lab-card {
+    padding: 20px 16px;
+  }
+  .live-status-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
 }
 

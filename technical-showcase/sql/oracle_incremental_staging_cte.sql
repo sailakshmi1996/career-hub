@@ -2,7 +2,7 @@
 -- ORACLE SQL PRODUCTION STAGING QUERY
 -- Author: Sai Lakshmi Elusuri
 -- Purpose: High-throughput incremental data extraction for Power BI Ingestion
--- Key Optimizations: Window functions, CTE partition pruning, Query folding support
+-- Key Optimizations: Partition-pruned predicates, CTE deduplication, Query Folding
 -- ===============================================================================
 
 WITH RankedTelemetry AS (
@@ -15,15 +15,16 @@ WITH RankedTelemetry AS (
         t.net_amount_eur,
         t.tax_amount_eur,
         t.status_code,
-        -- Deduplication and latest revision selection in single scan
+        -- Single-scan deduplication selecting latest revision state
         ROW_NUMBER() OVER (
-            PARTITION BY t.transaction_id 
+            PARTITION BY t.transaction_id
             ORDER BY t.revision_sequence DESC, t.transaction_timestamp DESC
         ) AS row_rank
-    FROM 
+    FROM
         erp_owner.sales_transactions_partitioned t
-    WHERE 
-        -- Partition pruning against Oracle range-partitioned table
+    WHERE
+        -- Keep timestamp column unwrapped (sargable) for Oracle partition pruning
+        -- Mapped directly from Power BI RangeStart / RangeEnd Incremental Refresh parameters
         t.transaction_timestamp >= TO_TIMESTAMP(:RangeStart, 'YYYY-MM-DD HH24:MI:SS')
         AND t.transaction_timestamp < TO_TIMESTAMP(:RangeEnd, 'YYYY-MM-DD HH24:MI:SS')
         AND t.status_code IN ('SETTLED', 'POSTED', 'AUDITED')
@@ -38,15 +39,15 @@ AggregatedLineItems AS (
         rt.tax_amount_eur,
         NVL(cust.tier_code, 'STANDARD') AS customer_tier,
         DENSE_RANK() OVER (
-            PARTITION BY rt.date_key 
+            PARTITION BY rt.date_key
             ORDER BY rt.net_amount_eur DESC
         ) AS daily_revenue_rank
-    FROM 
+    FROM
         RankedTelemetry rt
-    LEFT JOIN 
+    LEFT JOIN
         erp_owner.dim_customer_account cust
         ON rt.customer_account_id = cust.customer_account_id
-    WHERE 
+    WHERE
         rt.row_rank = 1 -- Only the latest verified transaction state
 )
 SELECT
@@ -59,7 +60,7 @@ SELECT
     customer_tier,
     daily_revenue_rank,
     SYSDATE AS etl_ingestion_timestamp
-FROM 
+FROM
     AggregatedLineItems
-ORDER BY 
+ORDER BY
     date_key, transaction_id;

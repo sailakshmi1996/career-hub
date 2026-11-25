@@ -111,5 +111,41 @@ class TestSiteIntegrity(unittest.TestCase):
             self.assertIn('cv_power_bi_developer.pdf', content, f"{name} must provide direct CV download link")
             self.assertIn('Netherlands_Career_Hub_Sai_Lakshmi.zip', content, f"{name} must link to ZIP bundle")
 
+    def test_no_vercel_traces(self):
+        """Ensure zero references to out-of-scope Vercel platform remain in source files."""
+        files_to_check = [
+            'index.html', 'shared.css', 'dutch-career-hub.html', 'job-finder.html',
+            'strategy.html', 'linkedin-optimizer.html', 'influencer-insights.html',
+            'resume.html', 'cv_power_bi_developer.html', 'cv_bi_project_delivery.html',
+            'README.md', 'build.py'
+        ]
+        for fname in files_to_check:
+            fpath = os.path.join(self.base_dir, fname)
+            if os.path.exists(fpath):
+                with open(fpath, 'r', encoding='utf-8') as f:
+                    self.assertNotIn('vercel', f.read().lower(), f"Out-of-scope 'vercel' trace found in {fname}")
+
+    def test_balanced_div_tags_and_public_isolation(self):
+        """Ensure HTML pages have balanced <div> tags and index.html does not leak private tool links."""
+        for fname in ['index.html', 'dutch-career-hub.html', 'job-finder.html', 'strategy.html', 'linkedin-optimizer.html', 'influencer-insights.html', 'resume.html']:
+            fpath = os.path.join(self.base_dir, fname)
+            with open(fpath, 'r', encoding='utf-8') as f:
+                html = f.read()
+            opens = len(re.findall(r'<div\b', html))
+            closes = len(re.findall(r'</div>', html))
+            self.assertEqual(opens, closes, f"Unbalanced <div> tags in {fname}: {opens} opens vs {closes} closes")
+
+        for private_tool in ['job-finder.html', 'strategy.html', 'linkedin-optimizer.html', 'influencer-insights.html']:
+            self.assertNotIn(private_tool, self.index_content, f"Public index.html must not link to private tool {private_tool}")
+
+    def test_technical_showcase_accuracy(self):
+        """Verify DAX showcase passes Date column (not integer DateKey) to time-intelligence functions."""
+        dax_path = os.path.join(self.base_dir, 'technical-showcase', 'dax', 'calculation_groups_and_semi_additive.dax')
+        with open(dax_path, 'r', encoding='utf-8') as f:
+            dax = f.read()
+        self.assertIn("DATESYTD('Dim_Date'[Date])", dax)
+        self.assertIn("SAMEPERIODLASTYEAR('Dim_Date'[Date])", dax)
+        self.assertNotIn("DATESYTD('Dim_Date'[DateKey])", dax)
+
 if __name__ == '__main__':
     unittest.main()
