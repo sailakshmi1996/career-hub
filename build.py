@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """
-Master Build Script for Sai Lakshmi Elusuri Portfolio & Career Bundle
-1. Verifies synchronization with canonical single source of truth (canonical_data.py)
-2. Compiles and updates PDF CVs from canonical HTML sources with strict 2-page constraint
-3. Executes pre-build automated tests for site integrity and compliance
-4. Assembles clean 'dist/' publish directory containing recruiter-facing & hub assets
-5. Packages standalone deployment ZIP bundle with accurate README manifest
+Master Build Script for Sai Lakshmi Elusuri Public Portfolio
+1. Verifies canonical source of truth synchronization (canonical_data.py)
+2. Compiles unified 2-page A4 PDF CV (Sai_Lakshmi_Elusuri_CV.pdf) from resume.html
+3. Generates clean 1200x630 Open Graph preview image (og-cover.png)
+4. Assembles clean 'dist/' directory containing ONLY public portfolio assets
+5. Executes automated integrity, contrast, privacy, and compliance tests
 """
 
 import os
 import shutil
 import sys
 import subprocess
+import tempfile
 import zipfile
 
 try:
@@ -23,122 +24,151 @@ import canonical_data
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DIST_DIR = os.path.join(BASE_DIR, "dist")
-ZIP_NAME = "Netherlands_Career_Hub_Sai_Lakshmi.zip"
-ZIP_PATH_ROOT = os.path.join(BASE_DIR, ZIP_NAME)
-ZIP_PATH_DIST = os.path.join(DIST_DIR, ZIP_NAME)
-
 CHROME_BIN = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
-# All production web assets to deploy to Netlify
 FILES_TO_DEPLOY = [
     "index.html",
-    "dutch-career-hub.html",
-    "job-finder.html",
-    "linkedin-optimizer.html",
-    "strategy.html",
-    "influencer-insights.html",
-    "shared.css",
-    "cv_power_bi_developer.html",
-    "cv_bi_project_delivery.html",
     "resume.html",
-    "cv_power_bi_developer.pdf",
-    "cv_bi_project_delivery.pdf",
-    "Sai_Lakshmi_Elusuri_Resume.pdf"
+    "shared.css",
+    "Sai_Lakshmi_Elusuri_CV.pdf",
+    "og-cover.png",
+    "robots.txt",
+    "sitemap.xml",
 ]
 
 PDF_METADATA = {
-    "cv_power_bi_developer.pdf": {
-        "title": "Sai Lakshmi Elusuri - Senior Power BI Developer CV",
-        "author": "Sai Lakshmi Elusuri",
-        "subject": "Senior Power BI Developer CV - Semantic Modeling, DAX, SQL & Fabric Lakehouse",
-        "keywords": "Power BI, DAX, SQL, Fabric, Lakehouse, Semantic Modeling, Netherlands, Utrecht"
-    },
-    "cv_bi_project_delivery.pdf": {
-        "title": "Sai Lakshmi Elusuri - BI Delivery Coordinator & Analytics Lead CV",
-        "author": "Sai Lakshmi Elusuri",
-        "subject": "BI Delivery Coordinator & Analytics Delivery Lead CV",
-        "keywords": "BI Delivery, Project Coordination, Agile Analytics, Jira, Confluence, Qlik Migration, Netherlands"
-    },
-    "Sai_Lakshmi_Elusuri_Resume.pdf": {
-        "title": "Sai Lakshmi Elusuri – Master Resume | Senior Power BI Developer & Lakehouse Analytics Specialist",
-        "author": "Sai Lakshmi Elusuri",
-        "subject": "Master Curriculum Vitae - Senior Power BI Developer & Lakehouse Specialist",
-        "keywords": "Power BI, Lakehouse, DAX, SQL, Azure Data Factory, Celonis, Netherlands"
-    }
+    "title": "Sai Lakshmi Elusuri — Senior Power BI & Microsoft Fabric Developer CV",
+    "author": "Sai Lakshmi Elusuri",
+    "subject": "Senior Power BI & Microsoft Fabric Developer CV — Semantic Modeling, DAX, SQL & OneLake",
+    "keywords": "Power BI, Microsoft Fabric, DAX, VertiPaq, Kimball Star Schema, Oracle SQL, Utrecht, Netherlands",
 }
+
 
 def step0_verify_canonical_sync():
     print("=" * 60)
-    print("STEP 0: VERIFYING CANONICAL SOURCE OF TRUTH SYNCHRONIZATION")
+    print("STEP 0: VERIFYING CANONICAL SYNCHRONIZATION & PRIVACY")
     print("=" * 60)
     try:
         canonical_data.validate_synchronization(BASE_DIR)
-        print("  + Canonical data verified across all portfolio files.")
-        print("  + Employer names, IND endorsement, and current dates synchronized.\n")
+        print("  + Canonical data verified across public files.")
+        print("  + Unified role title, IND endorsement, and clean privacy confirmed.\n")
     except Exception as e:
-        print(f"  ❌ Canonical Synchronization Error: {e}")
+        print(f"  ❌ Synchronization Error: {e}")
         sys.exit(1)
 
-def step1_compile_pdfs():
-    print("=" * 60)
-    print("STEP 1: COMPILING & VERIFYING CANDIDATE PDF CVS")
-    print("=" * 60)
-    html_to_pdf_map = [
-        ("cv_power_bi_developer.html", "cv_power_bi_developer.pdf"),
-        ("cv_bi_project_delivery.html", "cv_bi_project_delivery.pdf"),
-        ("resume.html", "Sai_Lakshmi_Elusuri_Resume.pdf")
-    ]
 
-    for html_file, pdf_file in html_to_pdf_map:
-        html_path = os.path.join(BASE_DIR, html_file)
-        pdf_path = os.path.join(BASE_DIR, pdf_file)
-        
-        if os.path.exists(CHROME_BIN):
-            cmd = [
-                CHROME_BIN,
-                "--headless",
-                "--disable-gpu",
-                "--no-pdf-header-footer",
-                f"--print-to-pdf={pdf_path}",
-                html_path
-            ]
-            res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            if res.returncode != 0:
-                print(f"  ⚠️ Warning: Headless Chrome compilation had non-zero exit for {pdf_file}")
+def step1_compile_pdf():
+    print("=" * 60)
+    print("STEP 1: COMPILING CANONICAL 2-PAGE PDF CV")
+    print("=" * 60)
+    html_path = os.path.join(BASE_DIR, "resume.html")
+    pdf_path = os.path.join(BASE_DIR, "Sai_Lakshmi_Elusuri_CV.pdf")
 
-        # Set clean metadata and assert strict 2-page constraint
-        if fitz is not None and os.path.exists(pdf_path):
-            doc = fitz.open(pdf_path)
-            meta = PDF_METADATA.get(pdf_file, {})
-            doc.set_metadata(meta)
-            doc.save(pdf_path, incremental=True, encryption=fitz.PDF_ENCRYPT_KEEP)
-            page_count = len(doc)
-            doc.close()
-            if page_count != 2:
-                print(f"  ❌ Error: {pdf_file} has {page_count} pages! Must be strictly 2 pages.")
-                sys.exit(1)
-            print(f"  + Verified PDF: {pdf_file} ({page_count} pages, {os.path.getsize(pdf_path):,} bytes)")
-        elif os.path.exists(pdf_path):
-            print(f"  + Verified PDF: {pdf_file} ({os.path.getsize(pdf_path):,} bytes)")
-        else:
-            print(f"  ❌ Error: {pdf_file} does not exist!")
+    if os.path.exists(CHROME_BIN):
+        cmd = [
+            CHROME_BIN,
+            "--headless",
+            "--disable-gpu",
+            "--no-pdf-header-footer",
+            f"--print-to-pdf={pdf_path}",
+            html_path,
+        ]
+        res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        if res.returncode != 0:
+            print("  ⚠️ Warning: Headless Chrome exited non-zero during PDF build")
+
+    if fitz is not None and os.path.exists(pdf_path):
+        doc = fitz.open(pdf_path)
+        doc.set_metadata(PDF_METADATA)
+        doc.save(pdf_path, incremental=True, encryption=fitz.PDF_ENCRYPT_KEEP)
+        page_count = len(doc)
+        doc.close()
+        if page_count != 2:
+            print(f"  ❌ Error: Sai_Lakshmi_Elusuri_CV.pdf has {page_count} pages! Must be 2 pages.")
             sys.exit(1)
-    print()
-
-def step2_run_tests():
-    print("=" * 60)
-    print("STEP 2: EXECUTING AUTOMATED INTEGRITY & COMPLIANCE TESTS")
-    print("=" * 60)
-    test_runner = os.path.join(BASE_DIR, "tests", "run_all_tests.py")
-    res = subprocess.run([sys.executable, test_runner], cwd=BASE_DIR)
-    if res.returncode != 0:
-        print("\n❌ BUILD ABORTED: Test suite failed! Fix errors before deploying.")
+        print(f"  + Verified PDF: Sai_Lakshmi_Elusuri_CV.pdf ({page_count} pages, {os.path.getsize(pdf_path):,} bytes)\n")
+    elif os.path.exists(pdf_path):
+        print(f"  + Verified PDF: Sai_Lakshmi_Elusuri_CV.pdf ({os.path.getsize(pdf_path):,} bytes)\n")
+    else:
+        print("  ❌ Error: Sai_Lakshmi_Elusuri_CV.pdf missing!")
         sys.exit(1)
-    print("✅ All tests passed.\n")
+
+
+def step2_generate_og_image():
+    print("=" * 60)
+    print("STEP 2: GENERATING 1200x630 OPEN GRAPH COVER IMAGE")
+    print("=" * 60)
+    og_path = os.path.join(BASE_DIR, "og-cover.png")
+    if not os.path.exists(CHROME_BIN):
+        if os.path.exists(og_path):
+            print(f"  + Using existing og-cover.png ({os.path.getsize(og_path):,} bytes)\n")
+            return
+        print("  ⚠️ Warning: Chrome binary unavailable to generate og-cover.png")
+        return
+
+    og_html = """<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: #FAF9F5; color: #111827;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    padding: 64px 72px; display: flex; flex-direction: column; justify-content: space-between;
+    border: 1px solid #E5E3DC;
+  }
+  .top { font-family: ui-monospace, monospace; font-size: 20px; font-weight: 700; color: #1D4ED8; letter-spacing: 0.06em; text-transform: uppercase; }
+  h1 { font-size: 64px; font-weight: 700; letter-spacing: -0.025em; line-height: 1.08; margin: 16px 0 18px; }
+  .role { font-size: 32px; font-weight: 600; color: #1D4ED8; margin-bottom: 18px; }
+  .sub { font-size: 24px; color: #4B5563; line-height: 1.45; max-width: 960px; }
+  .foot {
+    border-top: 2px solid #E5E3DC; padding-top: 24px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: ui-monospace, monospace; font-size: 20px; color: #111827;
+  }
+  .badge { background: #ECFDF5; color: #047857; padding: 8px 16px; border-radius: 6px; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div>
+    <div class="top">PORTFOLIO &amp; TECHNICAL CASE-FILES · UTRECHT, NETHERLANDS</div>
+    <h1>Sai Lakshmi Elusuri</h1>
+    <div class="role">Senior Power BI &amp; Microsoft Fabric Developer</div>
+    <p class="sub">8+ years building Kimball 1:* semantic models, DAX Calculation Groups, VertiPaq optimization, and Oracle SQL / OneLake pipelines.</p>
+  </div>
+  <div class="foot">
+    <span>PL-300 &amp; DP-600 Certified</span>
+    <span class="badge">TWV niet vereist · Full NL Work Rights</span>
+  </div>
+</body>
+</html>"""
+
+    with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False, encoding="utf-8") as tmp:
+        tmp.write(og_html)
+        tmp_path = tmp.name
+
+    try:
+        cmd = [
+            CHROME_BIN,
+            "--headless",
+            "--disable-gpu",
+            "--hide-scrollbars",
+            "--window-size=1200,630",
+            f"--screenshot={og_path}",
+            tmp_path,
+        ]
+        subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, check=False)
+        if os.path.exists(og_path):
+            print(f"  + Generated og-cover.png ({os.path.getsize(og_path):,} bytes)\n")
+    finally:
+        if os.path.exists(tmp_path):
+            os.remove(tmp_path)
+
 
 def step3_assemble_dist():
     print("=" * 60)
-    print("STEP 3: ASSEMBLING CLEAN 'dist/' DIRECTORY FOR PRODUCTION DEPLOYMENT")
+    print("STEP 3: ASSEMBLING CLEAN PUBLIC 'dist/' DIRECTORY")
     print("=" * 60)
     if os.path.exists(DIST_DIR):
         shutil.rmtree(DIST_DIR)
@@ -151,34 +181,24 @@ def step3_assemble_dist():
             shutil.copy2(src, dst)
             print(f"  + Copied to dist/: {fname} ({os.path.getsize(dst):,} bytes)")
         else:
-            print(f"  ❌ Error: Required asset {fname} missing from source!")
+            print(f"  ❌ Error: Required public asset {fname} missing!")
             sys.exit(1)
 
-    # Copy technical showcase directory into dist
     showcase_src = os.path.join(BASE_DIR, "technical-showcase")
     showcase_dst = os.path.join(DIST_DIR, "technical-showcase")
     if os.path.isdir(showcase_src):
         shutil.copytree(showcase_src, showcase_dst, dirs_exist_ok=True)
         print("  + Copied directory: dist/technical-showcase")
 
-    # Copy bundle README into dist
-    readme_src = os.path.join(BASE_DIR, "README_BUNDLE.txt")
-    readme_dst = os.path.join(DIST_DIR, "README.txt")
-    if os.path.isfile(readme_src):
-        shutil.copy2(readme_src, readme_dst)
-        print(f"  + Copied manifest: dist/README.txt")
-
-    # Generate Netlify _redirects
-    redirects_content = """/resume   /Sai_Lakshmi_Elusuri_Resume.pdf 302
-/cv       /cv_power_bi_developer.pdf   302
-/pm-cv    /cv_bi_project_delivery.pdf  302
-/hub      /index.html                  301
+    redirects_content = """/resume   /Sai_Lakshmi_Elusuri_CV.pdf 302
+/cv       /Sai_Lakshmi_Elusuri_CV.pdf 302
+/pm-cv    /Sai_Lakshmi_Elusuri_CV.pdf 302
+/hub      /index.html                 301
 """
     with open(os.path.join(DIST_DIR, "_redirects"), "w", encoding="utf-8") as f:
         f.write(redirects_content)
     print("  + Generated: dist/_redirects")
 
-    # Generate Netlify _headers
     headers_content = """/*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
@@ -192,10 +212,6 @@ def step3_assemble_dist():
   Cache-Control: public, max-age=86400, must-revalidate
   Content-Disposition: inline
 
-/*.zip
-  Cache-Control: public, max-age=86400, must-revalidate
-  Content-Disposition: attachment; filename="Netherlands_Career_Hub_Sai_Lakshmi.zip"
-
 /*.css
   Cache-Control: public, max-age=604800, stale-while-revalidate=86400
 """
@@ -203,17 +219,14 @@ def step3_assemble_dist():
         f.write(headers_content)
     print("  + Generated: dist/_headers")
 
-    # Generate GitHub Pages .nojekyll to prevent Jekyll asset filtering
     with open(os.path.join(DIST_DIR, ".nojekyll"), "w", encoding="utf-8") as f:
         f.write("")
     print("  + Generated: dist/.nojekyll")
 
-    # Generate static fallback redirect pages for GitHub Pages
     redirect_map = [
-        ("resume", "../Sai_Lakshmi_Elusuri_Resume.pdf", "Redirecting to Resume..."),
-        ("cv", "../cv_power_bi_developer.pdf", "Redirecting to Power BI Developer CV..."),
-        ("pm-cv", "../cv_bi_project_delivery.pdf", "Redirecting to Project Delivery CV..."),
-        ("hub", "../index.html", "Redirecting to Career Hub...")
+        ("resume", "../Sai_Lakshmi_Elusuri_CV.pdf", "Redirecting to CV..."),
+        ("cv", "../Sai_Lakshmi_Elusuri_CV.pdf", "Redirecting to CV..."),
+        ("hub", "../index.html", "Redirecting to Portfolio..."),
     ]
     for folder, target, title in redirect_map:
         folder_path = os.path.join(DIST_DIR, folder)
@@ -227,35 +240,35 @@ def step3_assemble_dist():
   <script>location.replace("{target}");</script>
 </head>
 <body>
-  <p>{title} If not redirected, <a href="{target}">click here</a>.</p>
+  <p>{title} <a href="{target}">Open PDF</a>.</p>
 </body>
 </html>"""
         with open(os.path.join(folder_path, "index.html"), "w", encoding="utf-8") as f:
             f.write(html_redirect)
-        print(f"  + Generated GitHub Pages redirect: dist/{folder}/index.html")
+        print(f"  + Generated redirect: dist/{folder}/index.html")
 
-    # Generate 404.html for GitHub Pages routing fallback
     fallback_404 = """<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Page Not Found - Sai Lakshmi Elusuri Career Hub</title>
+  <title>Page Not Found — Sai Lakshmi Elusuri</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="3; url=./index.html">
+  <meta http-equiv="refresh" content="4; url=./index.html">
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #0b1120; color: #f8fafc; text-align: center; }
-    .box { max-width: 480px; padding: 2rem; background: #1e293b; border-radius: 12px; border: 1px solid #334155; }
-    h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #38bdf8; }
-    p { color: #94a3b8; line-height: 1.6; margin-bottom: 1.5rem; }
-    a { display: inline-block; background: #2563eb; color: #fff; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; }
-    a:hover { background: #1d4ed8; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #FAF9F5; color: #111827; padding: 20px; }
+    .box { max-width: 460px; padding: 28px; background: #FFFFFF; border-radius: 8px; border: 1px solid #E5E3DC; }
+    .code { font-family: ui-monospace, monospace; font-size: 0.85rem; font-weight: 700; color: #1D4ED8; margin-bottom: 8px; }
+    h1 { font-size: 1.5rem; margin-bottom: 10px; }
+    p { color: #4B5563; line-height: 1.55; margin-bottom: 18px; }
+    a { display: inline-flex; align-items: center; min-height: 44px; background: #1D4ED8; color: #FFFFFF; padding: 0 18px; border-radius: 6px; text-decoration: none; font-weight: 600; }
   </style>
 </head>
 <body>
   <div class="box">
-    <h1>404 - Page Not Found</h1>
-    <p>The page you requested could not be found. Redirecting you to the home page in a few seconds...</p>
-    <a href="./index.html">Return to Career Hub</a>
+    <div class="code">HTTP 404</div>
+    <h1>Page not found</h1>
+    <p>This link has been retired or moved during the portfolio redesign. Returning to the main portfolio.</p>
+    <a href="./index.html">Return to Portfolio</a>
   </div>
 </body>
 </html>"""
@@ -263,54 +276,25 @@ def step3_assemble_dist():
         f.write(fallback_404)
     print("  + Generated: dist/404.html\n")
 
-def step4_package_zip():
-    print("=" * 60)
-    print("STEP 4: COMPILING RECRUITER CAREER BUNDLE (ZIP)")
-    print("=" * 60)
-    bundle_files = [
-        ("cv_power_bi_developer.pdf", "cv_power_bi_developer.pdf"),
-        ("cv_bi_project_delivery.pdf", "cv_bi_project_delivery.pdf"),
-        ("Sai_Lakshmi_Elusuri_Resume.pdf", "Sai_Lakshmi_Elusuri_Resume.pdf"),
-        ("cv_power_bi_developer.html", "cv_power_bi_developer.html"),
-        ("cv_bi_project_delivery.html", "cv_bi_project_delivery.html"),
-        ("resume.html", "resume.html"),
-        ("index.html", "index.html"),
-        ("shared.css", "shared.css"),
-        ("README_BUNDLE.txt", "README.txt")
-    ]
 
-    for target_zip in [ZIP_PATH_DIST, ZIP_PATH_ROOT]:
-        with zipfile.ZipFile(target_zip, "w", zipfile.ZIP_DEFLATED) as zf:
-            for src_name, arc_name in bundle_files:
-                src_path = os.path.join(BASE_DIR, src_name)
-                if os.path.exists(src_path):
-                    zf.write(src_path, arcname=arc_name)
-                    print(f"  + Added to {os.path.basename(target_zip)}: {arc_name}")
-                else:
-                    print(f"  ⚠️ Warning: {src_name} missing for zip packaging")
-        print(f"📦 Archive compiled: {target_zip} ({os.path.getsize(target_zip):,} bytes)\n")
+def step4_run_tests():
+    print("=" * 60)
+    print("STEP 4: EXECUTING AUTOMATED INTEGRITY & COMPLIANCE TESTS")
+    print("=" * 60)
+    test_runner = os.path.join(BASE_DIR, "tests", "run_all_tests.py")
+    res = subprocess.run([sys.executable, test_runner], cwd=BASE_DIR)
+    if res.returncode != 0:
+        print("\n❌ BUILD ABORTED: Test suite failed!")
+        sys.exit(1)
+    print("✅ All tests passed.\n")
 
-def step5_package_netlify_deploy_zip():
-    print("=" * 60)
-    print("STEP 5: COMPILING COMPLETE NETLIFY DEPLOYMENT ZIP")
-    print("=" * 60)
-    netlify_zip_path = os.path.join(BASE_DIR, "netlify_deploy.zip")
-    with zipfile.ZipFile(netlify_zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
-        for root, _, files in os.walk(DIST_DIR):
-            for file in files:
-                file_path = os.path.join(root, file)
-                arcname = os.path.relpath(file_path, DIST_DIR)
-                zf.write(file_path, arcname)
-                print(f"  + Added to netlify_deploy.zip: {arcname}")
-    print(f"🚀 Netlify deployment package compiled: {netlify_zip_path} ({os.path.getsize(netlify_zip_path):,} bytes)\n")
 
 if __name__ == "__main__":
     step0_verify_canonical_sync()
-    step1_compile_pdfs()
+    step1_compile_pdf()
+    step2_generate_og_image()
     step3_assemble_dist()
-    step4_package_zip()
-    step2_run_tests()
-    step5_package_netlify_deploy_zip()
+    step4_run_tests()
     print("=" * 60)
-    print("🎉 BUILD SUCCESSFUL! FULLY READY FOR GITHUB PAGES & PRODUCTION DEPLOYMENT")
+    print("🎉 BUILD SUCCESSFUL! READY FOR GITHUB PAGES DEPLOYMENT")
     print("=" * 60)

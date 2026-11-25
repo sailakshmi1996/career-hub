@@ -1,11 +1,8 @@
-# Netlify Configuration for Sai Lakshmi Elusuri Portfolio & Career Assets
-# Target Domain: https://sailakshminl.netlify.app
-
+# Netlify Configuration for Sai Lakshmi Elusuri Public Portfolio
 [build]
   publish = "dist"
   command = "python3 build.py"
 
-# Enforce HTTPS, HSTS, and Clean Security Headers
 [[headers]]
   for = "/*"
   [headers.values]
@@ -17,7 +14,6 @@
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
     Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https:; connect-src 'self';"
 
-# Optimized Caching for Static PDF CVs, ZIP Archive, and CSS
 [[headers]]
   for = "/*.pdf"
   [headers.values]
@@ -25,30 +21,23 @@
     Content-Disposition = "inline"
 
 [[headers]]
-  for = "/*.zip"
-  [headers.values]
-    Cache-Control = "public, max-age=86400, must-revalidate"
-    Content-Disposition = "attachment; filename=\"Netherlands_Career_Hub_Sai_Lakshmi.zip\""
-
-[[headers]]
   for = "/*.css"
   [headers.values]
     Cache-Control = "public, max-age=604800, stale-while-revalidate=86400"
 
-# Redirect rules
 [[redirects]]
   from = "/resume"
-  to = "/Sai_Lakshmi_Elusuri_Resume.pdf"
+  to = "/Sai_Lakshmi_Elusuri_CV.pdf"
   status = 302
 
 [[redirects]]
   from = "/cv"
-  to = "/cv_power_bi_developer.pdf"
+  to = "/Sai_Lakshmi_Elusuri_CV.pdf"
   status = 302
 
 [[redirects]]
   from = "/pm-cv"
-  to = "/cv_bi_project_delivery.pdf"
+  to = "/Sai_Lakshmi_Elusuri_CV.pdf"
   status = 302
 
 [[redirects]]

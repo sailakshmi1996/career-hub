@@ -27,3 +27,8 @@ preview_*.png
 full_page_*.png
 hero_render.png
 test_*.html
+
+# Private local career prep & deploy archives (never publish publicly)
+.local-private/
+netlify_deploy.zip
+Netherlands_Career_Hub_Sai_Lakshmi.zip

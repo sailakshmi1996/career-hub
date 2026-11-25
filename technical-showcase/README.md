@@ -1,33 +1,29 @@
-# 🛠️ Senior Power BI & Lakehouse Architecture Technical Showcase
-### Real-World Production Code & Architectural Patterns by Sai Lakshmi Elusuri
+# Senior Power BI & Microsoft Fabric Technical Showcase
 
-This directory provides concrete, runnable technical artifacts demonstrating enterprise semantic modeling, advanced DAX optimization, high-throughput SQL staging, and Microsoft Fabric Lakehouse engineering.
+**Reference architectural patterns by Sai Lakshmi Elusuri**
 
----
+This folder holds clean, NDA-safe reference code illustrating the semantic modeling, DAX optimization, Oracle SQL query folding, and Microsoft Fabric Lakehouse patterns I deploy in enterprise BI delivery. Production `.pbix` files and client datasets remain confidential under NDA; anonymized synthetic `.pbip` demonstrations are in progress to pair with these code artifacts.
 
-## 📂 Contents
+## Contents
 
-1. [📊 Advanced DAX & VertiPaq Optimization (`dax/`)](./dax/calculation_groups_and_semi_additive.dax)
-   - **Calculation Groups for Multi-Currency & Time-Intelligence:** Eliminates measure sprawl (from 150+ derived combinations down to core base measures + Calculation Items) while protecting Storage Engine (SE) multi-threaded batching and passing `'Dim_Date'[Date]` properly to time-intelligence functions.
-   - **VertiPaq Engine Cache Optimization:** Utilizing `KEEPFILTERS` and integer `DateKey` relationships instead of expensive Formula Engine (FE) `FILTER(ALL(...))` row iterations.
-   - **Semi-Additive Measure Patterns:** Fast closing balance calculation using single-scan `MAX` snapshot lookup + `KEEPFILTERS`.
+1. **DAX Calculation Groups, Safe FX Translation & VertiPaq Patterns** (`dax/calculation_groups_and_semi_additive.dax`)
+   - Time Intelligence Calculation Group (`Precedence = 20`) operating on `'Dim_Date'[Date]` while Fact joins on integer `DateKey` (`YYYYMMDD`).
+   - Daily-grain Currency Calculation Group (`Precedence = 10`) using `SUMX(VALUES('Dim_Date'[DateKey]), ...)` with explicit ratio-measure protection (`NOT ISSELECTEDMEASURE(...)`) and strict `BLANK()` handling on missing rates.
+   - Semantically equivalent **Slow (FE iteration)** vs. **Tuned (SE vector scan)** benchmark pair (`FILTER('Fact_Sales', ...)` vs. `KEEPFILTERS(...)`).
+   - Semi-additive snapshot balance measure without redundant `CALCULATE` wrappers.
 
-2. [⚡ Oracle SQL & Relational Staging Queries (`sql/`)](./sql/oracle_incremental_staging_cte.sql)
-   - **Common Table Expressions (CTEs) & Analytical Window Functions:** Replaces correlated subqueries with `ROW_NUMBER()` and `DENSE_RANK()` single-pass deduplication.
-   - **Incremental Refresh Query Folding:** Sargable `RangeStart` / `RangeEnd` predicates preserving Oracle range-partition pruning and Power BI query folding.
+2. **Oracle SQL Partition-Pruned View for Power Query Folding** (`sql/oracle_incremental_staging_cte.sql`)
+   - Exposes deduplicated latest ERP revisions (`ROW_NUMBER()`) in a foldable view (`vw_sales_latest_revision`) with an unwrapped `transaction_timestamp` column so Power BI `RangeStart` / `RangeEnd` filters push directly to Oracle partition pruning without forcing unnecessary `ORDER BY` PGA sorts.
 
-3. [☁️ Microsoft Fabric & PySpark Delta Lake Pipeline (`fabric_pyspark/`)](./fabric_pyspark/delta_lake_v_order_pipeline.py)
-   - **Medallion Gold Table Lakehouse Pipeline:** PySpark transformation creating Delta Parquet tables in OneLake with integer `DateKey`/`TimeKey` splitting.
-   - **V-Order & Columnar Compression:** Enabling write-time V-Order sorting for optimal read-time decompression and memory paging in **Direct Lake mode**.
-   - **Z-Ordering / Data Skipping:** Co-locating high-selectivity `DateKey` and `CustomerKey` predicates to minimize file scans across multi-year telemetry.
+3. **Microsoft Fabric PySpark Incremental Delta Merge & V-Order** (`fabric_pyspark/delta_lake_v_order_pipeline.py`)
+   - Watermarked Silver-to-Gold incremental transform resolving true integer surrogate keys (`CustomerKey`, `ProductKey`, `StoreKey`) with `-1` unknown-member fallback.
+   - Pre-write data-quality assertions (null keys, negative amounts, grain uniqueness).
+   - Idempotent Delta `MERGE INTO` upsert with `spark.sql.parquet.vorder.enabled = true`, `optimizeWrite`, and Liquid Clustering (`clusterBy("DateKey", "StoreKey")`) for Fabric Direct Lake consumption.
 
----
+## Direct Lake vs. Import vs. DirectQuery Guardrails
 
-## 🎯 Architectural Philosophy
-
-| Principle | Anti-Pattern (What to Avoid) | Production Standard (What Sai Lakshmi Deploys) |
-| :--- | :--- | :--- |
-| **Data Modeling** | Wide flat denormalized tables; bi-directional filtering (`Both`); snowflaked dimensions | Strict **Kimball Star Schema** (Single-directional 1:* filtering, integer surrogate keys) |
-| **DAX Evaluation** | Iterative row-by-row filtering (`FILTER(ALL(...))`); excessive calculated columns | Set-based filtering via `KEEPFILTERS`; DAX Calculation Groups; Tabular Editor metadata script |
-| **Storage Engine** | Heavy Formula Engine (FE) bottleneck (> 40% query time spent in single-threaded FE) | Maximize Storage Engine (SE) batch processing (> 85% SE query resolution) |
-| **Lakehouse Architecture** | Fragile 30-minute scheduled ETL import batch refreshes | **Microsoft Fabric Direct Lake** over Delta Parquet tables with graceful fallback to DirectQuery |
+| Mode | When Chosen | Memory & Freshness Behavior | Fallback / Guardrail |
+| :--- | :--- | :--- | :--- |
+| **VertiPaq Import** | Sub-second SLA across complex DAX, incremental ERP tables (`RangeStart`/`RangeEnd`), and standard F-SKU/Pro capacities | Full in-memory columnar dictionary & RLE compression; predictable warm cache | Bound by capacity memory and scheduled/XMLA partition refresh windows |
+| **Direct Lake (OneLake)** | Large Fabric Gold Delta tables (`V-Order`) needing near-real-time freshness without Import duplication | Dynamically pages Delta Parquet columns into VertiPaq memory on demand | Transparently falls back to **DirectQuery** over the SQL Analytics Endpoint if capacity memory guardrails, SQL views, or unsupported DAX/RLS patterns trigger |
+| **DirectQuery** | Strict real-time operational reads or tables exceeding memory limits | Pushes SQL queries directly to source engine (`Oracle` / `Fabric SQL Endpoint`) | Sensitive to source latency, concurrency, and high-cardinality joins |

@@ -1,20 +1,19 @@
 /*
 ================================================================================
 PRODUCTION DAX PATTERNS: SEMANTIC MODEL OPTIMIZATION
-Candidate: Sai Lakshmi Elusuri
-Target: VertiPaq Storage Engine (SE) Batch Maximization
-Tooling: Tabular Editor 3 / DAX Studio / Power BI Desktop
+Author: Sai Lakshmi Elusuri
+Target: VertiPaq Storage Engine (SE) Batch Maximization & Safe Calculation Groups
+Tooling: Tabular Editor 3 (TMDL / C# Scripting) / DAX Studio / Power BI Desktop
 ================================================================================
 */
 
 --------------------------------------------------------------------------------
--- 1. CALCULATION GROUP: TIME INTELLIGENCE (WITH PROPER DATE COLUMN)
--- Eliminates measure explosion across 40+ KPIs while protecting SE cache.
--- Note: Dim_Date joins to Fact tables on integer DateKey (YYYYMMDD) for
--- VertiPaq dictionary compression; Dim_Date[Date] (DATE type, marked as Date
--- Table) drives native DAX time-intelligence functions cleanly.
+-- 1. CALCULATION GROUP: TIME INTELLIGENCE (Precedence = 20)
+-- Eliminates measure sprawl across core KPIs while protecting SE batch scans.
+-- Dim_Date joins to Fact tables on integer DateKey (YYYYMMDD) for dictionary
+-- compression; Dim_Date[Date] (marked as Date Table) drives time intelligence.
 --------------------------------------------------------------------------------
-CALCULATION GROUP 'Time Intelligence'[Period]
+CALCULATION GROUP 'Time Intelligence'[Period] (Precedence = 20)
 
   CALCULATION ITEM "Current Period" =
     SELECTEDMEASURE()
@@ -29,8 +28,6 @@ CALCULATION GROUP 'Time Intelligence'[Period]
     CALCULATE(
         SELECTEDMEASURE(),
         DATESYTD('Dim_Date'[Date]),
-        -- KEEPFILTERS intersects rather than overwrites existing visual filters,
-        -- preserving Storage Engine (SE) batch scan efficiency.
         KEEPFILTERS('Dim_Date'[IsWorkingDay] = TRUE)
     )
 
@@ -45,47 +42,65 @@ CALCULATION GROUP 'Time Intelligence'[Period]
     VAR _Prior = CALCULATE(SELECTEDMEASURE(), SAMEPERIODLASTYEAR('Dim_Date'[Date]))
     RETURN
         DIVIDE(_Current - _Prior, _Prior, BLANK())
-    -- Dynamic Format String Expression:
-    -- "0.0%;-0.0%;0.0%"
+    -- Dynamic Format String Expression: "0.0%;-0.0%;0.0%"
 
 --------------------------------------------------------------------------------
--- 2. CALCULATION GROUP: DYNAMIC MULTI-CURRENCY CONVERSION
--- Avoids creating separate EUR, USD, GBP measures across all financial facts.
+-- 2. CALCULATION GROUP: DAILY-GRAIN MULTI-CURRENCY CONVERSION (Precedence = 10)
+-- Fixes two common anti-patterns:
+--   (a) Translates at Dim_Date[DateKey] grain via SUMX instead of multiplying
+--       an entire period by a single MAX(DateKey) spot rate.
+--   (b) Guards ratio/percentage measures from being multiplied by FX rates,
+--       and returns BLANK() (never a silent 1.0 fallback) if an FX rate is missing.
 --------------------------------------------------------------------------------
-CALCULATION GROUP 'Currency'[Selected Currency]
+CALCULATION GROUP 'Currency'[Selected Currency] (Precedence = 10)
 
   CALCULATION ITEM "EUR (Base)" =
     SELECTEDMEASURE()
 
   CALCULATION ITEM "USD" =
-    VAR _Rate =
-        LOOKUPVALUE(
-            'Fact_Exchange_Rates'[RateToUSD],
-            'Fact_Exchange_Rates'[DateKey], SELECTEDVALUE('Dim_Date'[DateKey], MAX('Dim_Date'[DateKey]))
+    IF(
+        ISSELECTEDMEASURE([YoY Growth %], [Gross Margin %], [SLA Compliance %]),
+        SELECTEDMEASURE(),
+        SUMX(
+            VALUES('Dim_Date'[DateKey]),
+            VAR _DailyRate =
+                LOOKUPVALUE(
+                    'Fact_Exchange_Rates'[RateToUSD],
+                    'Fact_Exchange_Rates'[DateKey],
+                    'Dim_Date'[DateKey]
+                )
+            RETURN
+                IF(ISBLANK(_DailyRate), BLANK(), SELECTEDMEASURE() * _DailyRate)
         )
-    RETURN
-        SELECTEDMEASURE() * COALESCE(_Rate, 1.0)
-
-  CALCULATION ITEM "GBP" =
-    VAR _Rate =
-        LOOKUPVALUE(
-            'Fact_Exchange_Rates'[RateToGBP],
-            'Fact_Exchange_Rates'[DateKey], SELECTEDVALUE('Dim_Date'[DateKey], MAX('Dim_Date'[DateKey]))
-        )
-    RETURN
-        SELECTEDMEASURE() * COALESCE(_Rate, 1.0)
+    )
 
 --------------------------------------------------------------------------------
--- 3. HIGH-PERFORMANCE SEMI-ADDITIVE MEASURE (CLOSING HEADCOUNT / INVENTORY)
--- Replaces row-by-row FILTER(ALL(...)) with single-scan SE integer lookup.
+-- 3. SEMI-ADDITIVE MEASURE (CLOSING SNAPSHOT BALANCE)
+-- Avoids redundant CALCULATE(MAX(...)) wrappers; filters Fact snapshot cleanly
+-- on integer DateKey via KEEPFILTERS to preserve Storage Engine vector scans.
 --------------------------------------------------------------------------------
 [Closing Inventory Value] =
-VAR _LastSnapshotDateKey =
-    CALCULATE(
-        MAX('Fact_Inventory_Snapshot'[SnapshotDateKey])
-    )
+VAR _LastSnapshotDateKey = MAX('Fact_Inventory_Snapshot'[SnapshotDateKey])
 RETURN
     CALCULATE(
         SUM('Fact_Inventory_Snapshot'[EndingValuation_EUR]),
         KEEPFILTERS('Dim_Date'[DateKey] = _LastSnapshotDateKey)
     )
+
+--------------------------------------------------------------------------------
+-- 4. VERTIPAQ APPLES-TO-APPLES BENCHMARK: FE TABLE ITERATION VS. SE COLUMN FILTER
+-- Both expressions return identical results under any visual filter context.
+-- The slow version forces Formula Engine materialization over the full fact
+-- table; the tuned version pushes a single column bitmap filter into SE.
+--------------------------------------------------------------------------------
+[Revenue Delivered (Slow - FE Scan)] =
+CALCULATE(
+    SUM('Fact_Sales'[Revenue_EUR]),
+    FILTER('Fact_Sales', 'Fact_Sales'[StatusCode] = "DELIVERED")
+)
+
+[Revenue Delivered (Tuned - SE Vector Scan)] =
+CALCULATE(
+    [Total Revenue],
+    KEEPFILTERS('Fact_Sales'[StatusCode] = "DELIVERED")
+)

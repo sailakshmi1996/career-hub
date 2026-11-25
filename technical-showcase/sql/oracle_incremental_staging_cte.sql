@@ -1,21 +1,30 @@
 -- ===============================================================================
--- ORACLE SQL PRODUCTION STAGING QUERY
+-- ORACLE SQL PARTITION-PRUNED STAGING VIEW FOR POWER BI QUERY FOLDING
 -- Author: Sai Lakshmi Elusuri
--- Purpose: High-throughput incremental data extraction for Power BI Ingestion
--- Key Optimizations: Partition-pruned predicates, CTE deduplication, Query Folding
+-- Purpose: Expose latest deduplicated ERP revisions via a foldable view so
+--          Power BI Incremental Refresh (RangeStart / RangeEnd in Power Query M)
+--          pushes sargable timestamp predicates down to Oracle partition pruning.
+-- Notes:
+--   * No outer ORDER BY (VertiPaq re-sorts during columnar encoding; sorting in
+--     Oracle wastes PGA memory during extraction).
+--   * Pair in Power Query M with:
+--       Table.SelectRows(Source, each [transaction_timestamp] >= RangeStart
+--                                 and [transaction_timestamp] < RangeEnd)
+--     or Value.NativeQuery(..., null, [EnableFolding = true]) over a subquery.
 -- ===============================================================================
 
+CREATE OR REPLACE VIEW erp_owner.vw_sales_latest_revision AS
 WITH RankedTelemetry AS (
     SELECT
         t.transaction_id,
         t.customer_account_id,
         t.store_id,
+        t.product_id,
         t.transaction_timestamp,
-        TRUNC(t.transaction_timestamp) AS date_key,
+        CAST(TO_CHAR(t.transaction_timestamp, 'YYYYMMDD') AS NUMBER(8)) AS date_key,
         t.net_amount_eur,
         t.tax_amount_eur,
         t.status_code,
-        -- Single-scan deduplication selecting latest revision state
         ROW_NUMBER() OVER (
             PARTITION BY t.transaction_id
             ORDER BY t.revision_sequence DESC, t.transaction_timestamp DESC
@@ -23,44 +32,23 @@ WITH RankedTelemetry AS (
     FROM
         erp_owner.sales_transactions_partitioned t
     WHERE
-        -- Keep timestamp column unwrapped (sargable) for Oracle partition pruning
-        -- Mapped directly from Power BI RangeStart / RangeEnd Incremental Refresh parameters
-        t.transaction_timestamp >= TO_TIMESTAMP(:RangeStart, 'YYYY-MM-DD HH24:MI:SS')
-        AND t.transaction_timestamp < TO_TIMESTAMP(:RangeEnd, 'YYYY-MM-DD HH24:MI:SS')
-        AND t.status_code IN ('SETTLED', 'POSTED', 'AUDITED')
-),
-AggregatedLineItems AS (
-    SELECT
-        rt.transaction_id,
-        rt.customer_account_id,
-        rt.store_id,
-        rt.date_key,
-        rt.net_amount_eur,
-        rt.tax_amount_eur,
-        NVL(cust.tier_code, 'STANDARD') AS customer_tier,
-        DENSE_RANK() OVER (
-            PARTITION BY rt.date_key
-            ORDER BY rt.net_amount_eur DESC
-        ) AS daily_revenue_rank
-    FROM
-        RankedTelemetry rt
-    LEFT JOIN
-        erp_owner.dim_customer_account cust
-        ON rt.customer_account_id = cust.customer_account_id
-    WHERE
-        rt.row_rank = 1 -- Only the latest verified transaction state
+        t.status_code IN ('SETTLED', 'POSTED', 'AUDITED')
 )
 SELECT
-    transaction_id,
-    customer_account_id,
-    store_id,
-    date_key,
-    net_amount_eur,
-    tax_amount_eur,
-    customer_tier,
-    daily_revenue_rank,
-    SYSDATE AS etl_ingestion_timestamp
+    rt.transaction_id,
+    rt.customer_account_id,
+    rt.store_id,
+    rt.product_id,
+    -- Kept unwrapped (sargable) so Power BI RangeStart/RangeEnd filters prune partitions
+    rt.transaction_timestamp,
+    rt.date_key,
+    rt.net_amount_eur,
+    rt.tax_amount_eur,
+    NVL(cust.tier_code, 'STANDARD') AS customer_tier
 FROM
-    AggregatedLineItems
-ORDER BY
-    date_key, transaction_id;
+    RankedTelemetry rt
+LEFT JOIN
+    erp_owner.dim_customer_account cust
+    ON rt.customer_account_id = cust.customer_account_id
+WHERE
+    rt.row_rank = 1;
