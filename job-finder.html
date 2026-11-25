@@ -11,14 +11,14 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Sai Lakshmi Elusuri | Netherlands Career Hub" />
   <meta property="og:title" content="Sai Lakshmi – Netherlands Job Finder | Power BI &amp; Azure Analytics" />
-  <meta property="og:description" content="Curated senior Power BI, Microsoft Fabric, and Azure Lakehouse roles across the Netherlands with verified visa sponsorship details." />
+  <meta property="og:description" content="Snapshot of real senior Power BI, Microsoft Fabric and BI delivery postings in the Netherlands (Utrecht first), with posted pay and language requirements." />
   <meta property="og:url" content="https://sailakshmi1996.github.io/career-hub/job-finder.html" />
   <meta property="og:locale" content="en_NL" />
 
   <!-- Twitter / X Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Netherlands Job Finder | Power BI &amp; Azure Analytics" />
-  <meta name="twitter:description" content="Curated Power BI and Lakehouse job listings in the Netherlands with verified visa sponsorship details." />
+  <meta name="twitter:description" content="Real Power BI, Fabric and BI delivery postings in the Netherlands with posted pay and language requirements." />
 
   <!-- Schema.org Structured Data -->
   <script type="application/ld+json">
@@ -445,6 +445,9 @@
     .badge-remote { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.3); }
     .badge-hybrid { background: rgba(139,92,246,0.15); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
     .badge-onsite { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+    .badge-lang-en { background: rgba(16,185,129,0.15); color: #34d399; border: 1px solid rgba(16,185,129,0.3); }
+    .badge-lang-nl { background: rgba(245,158,11,0.15); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+    .badge-lang-check { background: rgba(148,163,184,0.15); color: #cbd5e1; border: 1px solid rgba(148,163,184,0.3); }
     .badge-senior { background: rgba(236,72,153,0.15); color: #f472b6; border: 1px solid rgba(236,72,153,0.3); }
 
     .job-title {
@@ -721,7 +724,7 @@
       <span class="gradient-text">in the Netherlands 🇳🇱</span>
     </h1>
     <p class="hero-sub">
-      Curated Power BI, Azure & Data Analytics roles for the Dutch market — tailored to your <strong style="color:#fff">8+ years of enterprise expertise</strong>.
+      A snapshot of real Power BI, Fabric &amp; BI delivery postings in the Dutch market (Utrecht first), matched to your <strong style="color:#fff">8+ years of enterprise expertise</strong>. Last refreshed 25 Nov 2026.
     </p>
     <div class="visa-note">
       🇳🇱 &nbsp;<strong>Work Authorization:</strong> Based in Utrecht region · Official IND endorsement: <em>"Arbeid vrij toegestaan, TWV niet vereist"</em> (Zero sponsorship needed · Immediate start)
@@ -792,6 +795,9 @@
         <input class="search-bar" type="text" id="job-search" placeholder="Filter jobs by title, company or skill…" oninput="filterJobs()" />
       </div>
       <div id="search-live-status" class="sr-only" role="status" aria-live="polite"></div>
+      <div style="background:rgba(245,158,11,0.10); border:1px solid rgba(245,158,11,0.35); border-radius:12px; padding:14px 18px; margin-bottom:18px; font-size:0.84rem; line-height:1.6; color:var(--text-secondary);">
+        <strong style="color:#fbbf24;">How to read this list.</strong> These are postings seen on job-board pages between February and November 2026, not a live feed, so some may have closed. Pay is the monthly gross figure the employer posted (annualised with the 8% holiday allowance; 13th months and bonuses are extra). <strong>Dutch needed</strong> means the posting is in Dutch or asks for Dutch fluency; with A1 Dutch, lead with the <strong>English OK</strong> roles and use the Dutch-language ones to find out whether the team works in English. Full evidence and sources: <code>research/NL_JOB_MARKET_RESEARCH_2026-11.md</code> in the repository.
+      </div>
       <div class="jobs-grid" id="jobs-grid">
         <!-- Populated by JS -->
       </div>
@@ -815,7 +821,7 @@
           <div class="board-icon">🔎</div>
           <div class="board-name">Indeed.nl</div>
           <div class="board-desc">Dutch job board with thousands of tech listings. Search "Power BI" or "Azure Data" with visa filter.</div>
-          <div class="board-tags"><span class="board-tag">All Levels</span><span class="board-tag">Visa Sponsors</span></div>
+          <div class="board-tags"><span class="board-tag">All Levels</span><span class="board-tag">Salary ranges</span></div>
         </a>
 
         <a href="https://www.glassdoor.nl/Job/netherlands-power-bi-developer-jobs-SRCH_IL.0,11_IN178_KO12,30.htm" target="_blank" class="board-card">
@@ -838,7 +844,7 @@
           <div class="board-arrow">↗</div>
           <div class="board-icon">👾</div>
           <div class="board-name">Monsterboard.nl</div>
-          <div class="board-desc">Large Dutch job portal with IT-specific filters. Good for consulting firms that sponsor visas.</div>
+          <div class="board-desc">Large Dutch job portal with IT-specific filters. Good for consulting firms and agencies.</div>
           <div class="board-tags"><span class="board-tag">IT Focus</span><span class="board-tag">Consulting</span></div>
         </a>
 
@@ -846,7 +852,7 @@
           <div class="board-arrow">↗</div>
           <div class="board-icon">🚀</div>
           <div class="board-name">Techleap.nl</div>
-          <div class="board-desc">Netherlands' startup & scaleup ecosystem. Many tech companies here actively sponsor knowledge migrant visas.</div>
+          <div class="board-desc">Netherlands' startup & scaleup ecosystem. Useful for English-speaking scale-ups.</div>
           <div class="board-tags"><span class="board-tag">Startups</span><span class="board-tag">Scaleups</span><span class="board-tag">Tech</span></div>
         </a>
 
@@ -903,7 +909,7 @@
           </div>
           <div class="visa-item">
             <h4>💰 Market Compensation</h4>
-            <p>Senior Power BI & Lakehouse Analytics Specialists with 8+ years and DP-600/PL-300 certifications benchmark at <strong>€70,000 – €90,000 gross/year</strong> (+ 8% holiday allowance) across the Randstad corridor.</p>
+            <p>Posted ranges for medior-to-senior Power BI / BI engineering roles in Utrecht and Amsterdam mostly sit at <strong>€4,200–€6,500 gross/month</strong> (about €54K–€84K a year with the 8% holiday allowance). Banks and consultancies reach <strong>€6,000–€8,700/month</strong>. Treat €70K+ as achievable at the top of that range, not as the typical offer.</p>
           </div>
           <div class="visa-item">
             <h4>🔒 GDPR & AVG Compliant</h4>
@@ -943,7 +949,7 @@
         <div class="tip-card">
           <div class="tip-icon">📧</div>
           <div class="tip-title">State Work Authorization Upfront</div>
-          <div class="tip-body">When connecting with Dutch agency recruiters (<strong>Yacht, Michael Page, Brunel, Computer Futures, Nigel Frank</strong>), lead with: <em>"Based in Utrecht with IND Arbeid vrij toegestaan / TWV niet vereist (no sponsorship needed) — immediate start."</em> This removes the #1 barrier!</div>
+          <div class="tip-body">When connecting with Dutch agency recruiters (<strong>Frank Recruitment Group (Nigel Frank), Harnham, Michael Page, Hays, Robert Walters, Yacht, Brunel</strong>), lead with: <em>"Based in Utrecht with IND Arbeid vrij toegestaan / TWV niet vereist (no sponsorship needed) — immediate start."</em> This removes the #1 barrier!</div>
         </div>
         <div class="tip-card">
           <div class="tip-icon">🌍</div>
@@ -953,7 +959,7 @@
         <div class="tip-card">
           <div class="tip-icon">💰</div>
           <div class="tip-title">Know Your Worth</div>
-          <div class="tip-body">Senior Power BI Developers & Lakehouse Specialists with 8+ years and DP-600/PL-300 command <strong>€70,000 – €90,000/year gross</strong> (+ 8% holiday allowance). Don't undersell your verified 40% performance optimization track record.</div>
+          <div class="tip-body">Aim for the upper half of the posted band for your level (roughly <strong>€5,500–€7,000/month gross</strong>) and anchor on the specific posting, not a generic benchmark. Dutch salary data is thin and conflicting (Glassdoor senior BI developer average about €77K; Payscale mid-career BI developer about €50K), so ask the recruiter for the band early. Keep the 40% load-time result for the interview, with the measurement method ready.</div>
         </div>
         <div class="tip-card">
           <div class="tip-icon">🤝</div>
@@ -1069,175 +1075,51 @@ Sai Lakshmi Elusuri</pre>
 <script>
   // ── Job Data ──
   const JOBS = [
-    {
-      title: "Power BI Developer",
-      company: "KPMG Netherlands",
-      location: "Amsterdam",
-      type: "Hybrid",
-      salary: "€65,000 – €80,000/yr",
-      visa: true,
-      tags: ["Power BI", "DAX", "SQL", "Data Modeling"],
-      badge: "Senior",
-      logo: "K",
-      color: "#0075BE",
-      url: "https://www.linkedin.com/jobs/search/?keywords=Power+BI+Developer+KPMG&location=Netherlands",
-      desc: "Build enterprise dashboards and semantic models for financial services. Premier Dutch client engagements and enterprise analytics practice."
-    },
-    {
-      title: "Senior BI Developer – Power BI",
-      company: "Deloitte Netherlands",
-      location: "Rotterdam",
-      type: "Hybrid",
-      salary: "€70,000 – €90,000/yr",
-      visa: true,
-      tags: ["Power BI", "Azure", "DAX", "ETL"],
-      badge: "Senior",
-      logo: "D",
-      color: "#86BC25",
-      url: "https://www2.deloitte.com/nl/en/pages/careers/solutions/jobs.html",
-      desc: "Lead BI transformation projects for global clients. Focus on Power BI, Azure Synapse, and enterprise business stakeholder enablement."
-    },
-    {
-      title: "Azure Data Engineer / BI Specialist",
-      company: "Capgemini Netherlands",
-      location: "Utrecht",
-      type: "Hybrid",
-      salary: "€60,000 – €78,000/yr",
-      visa: true,
-      tags: ["ADF", "ADLS Gen2", "Power BI", "Medallion"],
-      badge: "Mid-Senior",
-      logo: "C",
-      color: "#0070AD",
-      url: "https://www.capgemini.com/nl-en/careers/",
-      desc: "Work on Azure Data Platform projects with global clients. Large-scale enterprise Power BI and Medallion Lakehouse deployments."
-    },
-    {
-      title: "Power BI & Data Analytics Consultant",
-      company: "PwC Netherlands",
-      location: "Amsterdam",
-      type: "Hybrid",
-      salary: "€65,000 – €82,000/yr",
-      visa: true,
-      tags: ["Power BI", "Data Strategy", "KPI", "SQL"],
-      badge: "Senior",
-      logo: "P",
-      color: "#E0301E",
-      url: "https://www.pwc.nl/nl/carriere.html",
-      desc: "Drive analytics transformation across PwC client engagements. Strong focus on governed semantic models and executive reporting."
-    },
-    {
-      title: "BI Developer – Microsoft Fabric & Power BI",
-      company: "Ordina (Sopra Steria)",
-      location: "Nieuwegein / Remote",
-      type: "Remote",
-      salary: "€58,000 – €75,000/yr",
-      visa: true,
-      tags: ["Microsoft Fabric", "Power BI", "Lakehouse", "DAX"],
-      badge: "Mid-Senior",
-      logo: "O",
-      color: "#6D2C91",
-      url: "https://www.ordina.nl/vacatures",
-      desc: "Cutting-edge Microsoft Fabric projects. Your Lakehouse and DP-600 certified background are a direct match for their modern data practice."
-    },
-    {
-      title: "Data Analyst – Power BI & Azure",
-      company: "ING Bank Netherlands",
-      location: "Amsterdam",
-      type: "Hybrid",
-      salary: "€62,000 – €78,000/yr",
-      visa: true,
-      tags: ["Power BI", "Azure", "SQL", "Financial Analytics"],
-      badge: "Mid-Senior",
-      logo: "I",
-      color: "#FF6200",
-      url: "https://www.ing.jobs/netherlands",
-      desc: "Join ING's Data & Analytics tribe. Work on financial risk dashboards and KPI reporting with strict data governance."
-    },
-    {
-      title: "Power BI Developer – Sustainability Analytics",
-      company: "Shell Netherlands",
-      location: "The Hague",
-      type: "Hybrid",
-      salary: "€68,000 – €88,000/yr",
-      visa: true,
-      tags: ["Power BI", "Sustainability", "ADF", "RLS"],
-      badge: "Senior",
-      logo: "S",
-      color: "#FBCE07",
-      url: "https://www.shell.com/careers",
-      desc: "Your Accenture sustainability and ESG reporting background aligns directly with Shell's enterprise energy transition telemetry."
-    },
-    {
-      title: "Business Intelligence Developer",
-      company: "Philips Netherlands",
-      location: "Amsterdam / Eindhoven",
-      type: "Hybrid",
-      salary: "€63,000 – €80,000/yr",
-      visa: true,
-      tags: ["Power BI", "Data Modeling", "Star Schema", "KPI"],
-      badge: "Senior",
-      logo: "Ph",
-      color: "#0B5ED7",
-      url: "https://www.careers.philips.com",
-      desc: "Build healthcare analytics solutions at one of Europe's top tech companies. High-scale data modeling and star-schema semantic layers."
-    },
-    {
-      title: "Data & Analytics Specialist – Process Mining",
-      company: "ABN AMRO Bank",
-      location: "Amsterdam",
-      type: "Hybrid",
-      salary: "€60,000 – €76,000/yr",
-      visa: true,
-      tags: ["Power BI", "Celonis", "Process Mining", "SQL"],
-      badge: "Mid-Senior",
-      logo: "A",
-      color: "#009900",
-      url: "https://www.werkenbijabnamro.nl",
-      desc: "Your rare combination of Celonis process mining + Power BI skills makes you a standout candidate for banking process optimization."
-    },
-    {
-      title: "Senior Power BI Developer – Cloud Analytics",
-      company: "Cognizant Netherlands",
-      location: "Amsterdam",
-      type: "Hybrid",
-      salary: "€58,000 – €74,000/yr",
-      visa: true,
-      tags: ["Power BI", "Azure", "DAX", "ETL"],
-      badge: "Senior",
-      logo: "Cg",
-      color: "#1D68D9",
-      url: "https://careers.cognizant.com",
-      desc: "Cognizant Netherlands delivers enterprise cloud analytics and BI modernization programs across Dutch banking, retail, and manufacturing."
-    },
-    {
-      title: "Azure Data Analyst & BI Developer",
-      company: "Heineken International",
-      location: "Amsterdam",
-      type: "Hybrid",
-      salary: "€62,000 – €78,000/yr",
-      visa: true,
-      tags: ["Azure", "Power BI", "ADLS", "Analytics"],
-      badge: "Mid-Senior",
-      logo: "H",
-      color: "#007A33",
-      url: "https://careers.heineken.com",
-      desc: "Build global analytics solutions for the world's most international brewer. Amsterdam HQ with international teams."
-    },
-    {
-      title: "Power Platform & BI Consultant",
-      company: "Atos Netherlands",
-      location: "Utrecht / Remote",
-      type: "Remote",
-      salary: "€55,000 – €72,000/yr",
-      visa: true,
-      tags: ["Power BI", "Power Platform", "Azure", "Governance"],
-      badge: "Mid-Senior",
-      logo: "At",
-      color: "#3F51B5",
-      url: "https://atos.net/en/careers",
-      desc: "Consulting-driven role across multiple client sectors. Atos actively recruits internationally and supports visa processes."
-    },
+    // Fields: monthly = [min,max] gross EUR/month as posted (null if not posted); hours = contract hours basis
+    // lang: "en" = English listed/OK, "nl" = Dutch required or Dutch-language posting, "check" = unclear
+    // track: "tech" (Power BI / Fabric / BI engineering) or "delivery" (Scrum / Product Owner / BI lead)
+    // seen = month the posting was visible on the aggregator page. ALWAYS confirm it is still open.
+    { title: "BI Specialist – Power BI", company: "Diakonessenhuis", location: "Utrecht", type: "Hybrid", monthly: [4246, 6220], hours: 36, lang: "nl", track: "tech", level: "Medior-Senior", seen: "Oct 2026", source: "Indeed.nl", tags: ["Power BI", "Copilot", "Azure", "SQL Server", "Scrum"], url: "https://nl.indeed.com/q-power-bi-l-utrecht-noordoost-vacatures.html", note: "Hospital. Microsoft BI stack, two-week Scrum sprints. 1-year contract with prospect of permanent. Dutch-language posting." },
+    { title: "BI Developer", company: "Pensioenfonds Rail & OV", location: "Utrecht", type: "Hybrid", monthly: [4425, 8300], hours: null, lang: "en", track: "tech", level: "Medior-Senior", seen: "Jul 2026", source: "Glassdoor NL", tags: ["Power BI", "Azure", "SQL", "Financial reporting"], url: "https://www.glassdoor.com/Job/netherlands-bi-developer-jobs-SRCH_IL.0,11_IN178_KO12,24.htm", note: "Pension fund; financial and non-financial reporting. English is listed as a skill. Wide pay band: ask where a senior profile lands." },
+    { title: "BI Engineer (Microsoft Fabric, Azure, Power BI)", company: "Dura Vermeer", location: "Utrecht", type: "Hybrid", monthly: null, hours: null, lang: "check", track: "tech", level: "Senior", seen: "Feb 2026", source: "Glassdoor NL", tags: ["Microsoft Fabric", "Azure", "Power BI", "Data modelling"], url: "https://www.glassdoor.com/Job/amsterdam-power-bi-jobs-SRCH_IL.0,9_IC3064478_KO10,18.htm", note: "Central group-IT data/BI platform on Fabric. Closest match to the DP-600 profile; check the posting language." },
+    { title: "Microsoft Fabric / Power BI Admin Engineer", company: "ITSync", location: "Utrecht", type: "Hybrid", monthly: [5030, 5948], hours: null, lang: "en", track: "tech", level: "Medior-Senior", seen: "2026", source: "Glassdoor NL", tags: ["Microsoft Fabric", "Power BI admin", "Governance"], url: "https://www.glassdoor.nl/Vacature/power-bi-vacatures-SRCH_KO0,8.htm", note: "Platform/admin flavour (tenant, capacity, security) rather than report building. English-language posting." },
+    { title: "BI Developer", company: "Van Dam Datapartners", location: "Utrecht Oost", type: "Hybrid", monthly: [4500, 6500], hours: null, lang: "check", track: "tech", level: "Medior-Senior", seen: "2026", source: "SimplyHired NL", tags: ["Power BI", "Azure", "DevOps", "SQL"], url: "https://www.simplyhired.nl/search?q=power+bi+developer", note: "Utrecht Oost; part-time or full-time." },
+    { title: "Analytics Engineer / Power BI Developer", company: "Datakliniek", location: "Utrecht", type: "Hybrid", monthly: null, hours: null, lang: "check", track: "tech", level: "Medior-Senior", seen: "2026", source: "SimplyHired NL", tags: ["Analytics engineering", "Power BI"], url: "https://www.simplyhired.nl/search?q=power+bi+developer", note: "Analytics-engineer title matches the Medallion/dbt/SQL side of the profile." },
+    { title: "Data Analytics Consultant (Power BI & Fabric)", company: "Quanto", location: "Utrecht", type: "Hybrid", monthly: null, hours: null, lang: "check", track: "tech", level: "Medior", seen: "Feb 2026", source: "Glassdoor NL", tags: ["Power BI", "Microsoft Fabric", "Consulting"], url: "https://www.glassdoor.com/Job/amsterdam-power-bi-jobs-SRCH_IL.0,9_IC3064478_KO10,18.htm", note: "Asks for 2-5 years: below the 8+ year level, so use it to reach the firm and ask about senior openings." },
+    { title: "Power BI Developer (financial datasets, Databricks/Azure/Dynamics 365)", company: "Nationale-Nederlanden", location: "Amersfoort / Utrecht", type: "Hybrid", monthly: [5000, 6000], hours: null, lang: "nl", track: "tech", level: "Medior-Senior", seen: "2026", source: "freehire (aggregator, estimate)", tags: ["Power BI", "Databricks", "Azure", "Dynamics 365", "Scrum"], url: "https://freehire.me/jobs/developer-xa5khqwa", note: "Pay shown is an aggregator estimate, not a posted range. Dutch-language description; agile/scrum teams." },
+    { title: "BI Developer (Power BI & Microsoft Fabric), medior/senior", company: "REBO Vastgoed Groep", location: "Amersfoort", type: "Hybrid", monthly: null, hours: null, lang: "nl", track: "tech", level: "Medior-Senior", seen: "2026", source: "freehire (aggregator)", tags: ["Microsoft Fabric", "Lakehouse", "Power BI", "RLS", "Deployment pipelines"], url: "https://freehire.me/jobs/bi-developer-power-bi-microsoft-fabric-medior-senior-rebo-vastgoed-groep-i57wb67m", note: "Owns the whole Fabric platform for a real-estate group. Dutch-language posting." },
+    { title: "BI Engineer", company: "a.s.r.", location: "Zeist / Utrecht", type: "Hybrid", monthly: [4101, 6647], hours: 36, lang: "nl", track: "tech", level: "Senior", seen: "2026", source: "Glassdoor NL", tags: ["BI development", "Data warehousing", "Star schema", "Agile"], url: "https://www.glassdoor.nl/Vacature/utrecht-bi-engineer-vacatures-SRCH_IL.0,7_IC3045310_KO8,19.htm", note: "Wants 4+ years in BI development and DWH. a.s.r. also lists a 13th month on some roles. Dutch-language posting." },
+    { title: "Managing Consultant Business Intelligence", company: "Berenschot", location: "Utrecht", type: "Hybrid", monthly: [6283, 9573], hours: null, lang: "nl", track: "delivery", level: "Senior", seen: "Nov 2026", source: "Indeed.nl", tags: ["BI strategy", "Consulting", "Client delivery"], url: "https://nl.indeed.com/Power-Bi-vacatures-in-Utrecht-(provincie)", note: "Advisory/consulting, 0.8-1 FTE, university master expected. Stretch role for the delivery-lead profile." },
+    { title: "Data Product Owner – Tech4Engineering", company: "Rabobank", location: "Utrecht", type: "Hybrid", monthly: [5994, 8563], hours: null, lang: "check", track: "delivery", level: "Senior", seen: "2026", source: "Glassdoor NL", tags: ["Product Owner", "Data modelling", "Requirements analysis", "DevOps squads"], url: "https://www.glassdoor.nl/Vacature/utrecht-product-owner-vacatures-SRCH_IL.0,7_IC3045310_KO8,21.htm", note: "Works with onshore and offshore teams: relevant for someone who has led offshore-style delivery." },
+    { title: "Scrum Master", company: "a.s.r.", location: "Utrecht", type: "Hybrid", monthly: [4600, 6800], hours: 38, lang: "nl", track: "delivery", level: "Medior-Senior", seen: "2026", source: "Glassdoor NL", tags: ["Scrum", "Agile coaching"], url: "https://www.glassdoor.nl/Vacature/utrecht-product-owner-data-science-vacatures-SRCH_IL.0,7_IC3045310_KO8,34.htm", note: "Includes a 13th month plus 8% holiday allowance. Dutch-language posting." },
+    { title: "Scrum Master / Team Manager BI", company: "Bevolkingsonderzoek Oost", location: "Utrecht", type: "Hybrid", monthly: [3826, 5395], hours: 36, lang: "nl", track: "delivery", level: "Medior", seen: "2026", source: "Glassdoor NL", tags: ["Scrum", "Team management", "BI"], url: "https://www.glassdoor.nl/Vacature/nederland-master-data-management-vacatures-SRCH_IL.0,9_IN178_KO10,32.htm", note: "Public-sector pay scale (CAO Ziekenhuizen FWG 55). Lower ceiling, Dutch-language." },
+    { title: "Product Owner / Project Manager (data projects)", company: "CLEVER°FRANKE", location: "Utrecht", type: "Hybrid", monthly: null, hours: null, lang: "check", track: "delivery", level: "Medior-Senior", seen: "2026", source: "Indeed.nl", tags: ["Product Owner", "Data visualisation", "Project management"], url: "https://nl.indeed.com/m/jobs?q=Product+Owner+Data", note: "Data-driven projects with a design focus. Worth a direct approach even if no exact match is open." },
+    { title: "(Senior) Business Developer PowerBI / Management Reports (Controlling)", company: "ABN AMRO", location: "Amsterdam", type: "Hybrid", monthly: [6066, 8666], hours: null, lang: "en", track: "tech", level: "Senior", seen: "2026", source: "Glassdoor NL", tags: ["Power BI", "Data modelling", "Tableau", "Stakeholder lead"], url: "https://www.glassdoor.com/Job/amsterdam-bi-developer-jobs-SRCH_IL.0,9_IC3064478_KO10,22.htm", note: "Highest posted band among the senior Power BI roles I found. Leads projects from analysis to implementation and coaches others." },
+    { title: "Data Analyst – Transaction Banking", company: "ABN AMRO", location: "Amsterdam", type: "Hybrid", monthly: null, hours: null, lang: "en", track: "tech", level: "Medior-Senior", seen: "May 2026", source: "Glassdoor NL", tags: ["Power BI", "Azure", "Business intelligence"], url: "https://www.glassdoor.com/Job/netherlands-bi-data-analyst-jobs-SRCH_IL.0,11_IN178_KO12,27.htm", note: "English listed as a skill." },
+    { title: "BI Developer", company: "Tony's Chocolonely", location: "Amsterdam", type: "Hybrid", monthly: null, annual: [55000, 65000], hours: null, lang: "en", track: "tech", level: "Medior", seen: "Aug 2026", source: "Glassdoor NL", tags: ["Power BI", "Azure", "Supply chain"], url: "https://www.glassdoor.com/Job/amsterdam-bi-developer-jobs-SRCH_IL.0,9_IC3064478_KO10,22.htm", note: "Posted as €55-65K a year: shows the ceiling at mid-sized consumer brands." },
+    { title: "BI Engineer (Power BI & Microsoft Fabric)", company: "NIBC", location: "Den Haag", type: "On-site", monthly: null, hours: null, lang: "check", track: "tech", level: "Medior-Senior", seen: "2026", source: "SimplyHired NL", tags: ["Power BI", "Microsoft Fabric", "SQL"], url: "https://www.simplyhired.nl/search?q=power+bi+developer", note: "Bank; office-based." },
+    { title: "Senior Business Data Analyst", company: "SBM Offshore", location: "Rotterdam", type: "Hybrid", monthly: null, hours: null, lang: "en", track: "tech", level: "Senior", seen: "Aug 2026", source: "Glassdoor NL", tags: ["Power BI", "Azure", "DevOps", "Git", "AI & analytics"], url: "https://www.glassdoor.com/Job/nederland-business-intelligence-analyst-jobs-SRCH_IL.0,9_IN178_KO10,39.htm", note: "Offshore energy contractor; English-language posting." },
+    { title: "Business Intelligence Analyst (Power BI & Azure Fabric)", company: "Goudsmit Magnetics", location: "Waalre (Eindhoven region)", type: "Hybrid", monthly: null, hours: null, lang: "en", track: "tech", level: "Medior", seen: "Aug 2026", source: "Glassdoor NL", tags: ["Power BI", "Azure Fabric", "SQL"], url: "https://www.glassdoor.com/Job/nederland-business-intelligence-analyst-jobs-SRCH_IL.0,9_IN178_KO10,39.htm", note: "International technical organisation, outside the Randstad." },
+    { title: "Power BI Developer", company: "ITSolutionsWorldwide", location: "Rotterdam", type: "On-site", monthly: null, hours: null, lang: "en", track: "tech", level: "Medior", seen: "Jul 2026", source: "Glassdoor NL", tags: ["Power BI", "SQL Server", "ERP", "Supply chain"], url: "https://www.glassdoor.com/Job/netherlands-power-bi-jobs-SRCH_IL.0,11_IN178_KO12,20.htm", note: "Outsourcing/staffing company; English only, 3+ years, on-site. Ask which entity employs you and for how long." },
+    { title: "Client-facing Power BI Data & Analytics Consultant", company: "Ireckonu", location: "Amsterdam (remote option)", type: "Remote", monthly: null, hours: null, lang: "en", track: "tech", level: "Medior-Senior", seen: "2026", source: "jobinamsterdam.com", tags: ["Power BI", "Client-facing", "Data products"], url: "https://jobinamsterdam.com/?query=power+bi+consultant", note: "Data and BI consultant role with client-facing work; English-language listing." },
+    { title: "Power BI / Fabric / Power Platform roles (AI & automation)", company: "Brigital", location: "Amsterdam", type: "Hybrid", monthly: null, hours: null, lang: "en", track: "tech", level: "Medior-Senior", seen: "2026", source: "jobinamsterdam.com", tags: ["Microsoft Fabric", "Power BI", "Power Platform", "AI"], url: "https://jobinamsterdam.com/?query=power+bi+consultant", note: "Data, AI and automation consultancy; English-speaking listings." },
   ];
+
+  const LANG_LABEL = { en: "English OK", nl: "Dutch needed", check: "Check language" };
+
+  // Annualised pay incl. 8% holiday allowance (monthly x 12 x 1.08). 13th months or bonuses are extra.
+  function annualRange(j) {
+    if (j.annual) return j.annual;
+    if (!j.monthly) return null;
+    return [Math.round(j.monthly[0] * 12 * 1.08 / 1000) * 1000, Math.round(j.monthly[1] * 12 * 1.08 / 1000) * 1000];
+  }
+  function salaryText(j) {
+    const a = annualRange(j);
+    if (j.annual) return `€${(j.annual[0] / 1000)}K–€${(j.annual[1] / 1000)}K per year as posted`;
+    if (!j.monthly) return "Pay not shown in the posting";
+    const per = j.hours ? ` (${j.hours}h/week basis)` : "";
+    return `€${j.monthly[0].toLocaleString('en-GB')}–€${j.monthly[1].toLocaleString('en-GB')}/month gross${per} ≈ €${a[0] / 1000}K–€${a[1] / 1000}K/yr incl. holiday allowance`;
+  }
 
   // ── Render Jobs ──
   function renderJobs(data) {
@@ -1256,23 +1138,24 @@ Sai Lakshmi Elusuri</pre>
     grid.innerHTML = data.map((j, idx) => `
       <article class="job-card" aria-labelledby="job-title-${idx}">
         <div class="job-card-header">
-          <div class="company-logo" aria-hidden="true" style="background: linear-gradient(135deg, ${j.color}cc, ${j.color}88)">${j.logo}</div>
+          <div class="company-logo" aria-hidden="true" style="background: linear-gradient(135deg, #6366f1cc, #6366f188)">${j.company.charAt(0)}</div>
           <div class="job-badges">
-            ${j.visa ? '<span class="badge badge-visa"><span aria-hidden="true">✅</span> Visa Sponsor</span>' : ''}
+            <span class="badge ${j.lang === 'en' ? 'badge-lang-en' : j.lang === 'nl' ? 'badge-lang-nl' : 'badge-lang-check'}">${LANG_LABEL[j.lang]}</span>
             ${j.type === 'Remote' ? '<span class="badge badge-remote"><span aria-hidden="true">🌐</span> Remote</span>' : j.type === 'Hybrid' ? '<span class="badge badge-hybrid"><span aria-hidden="true">🏠</span> Hybrid</span>' : '<span class="badge badge-onsite"><span aria-hidden="true">🏢</span> On-site</span>'}
-            <span class="badge badge-senior">${j.badge}</span>
+            <span class="badge badge-senior">${j.track === 'delivery' ? 'Delivery track' : 'Technical track'}</span>
           </div>
         </div>
         <h3 class="job-title" id="job-title-${idx}">${j.title}</h3>
-        <div class="job-company">${j.company}</div>
+        <div class="job-company">${j.company} · ${j.level}</div>
         <div class="job-meta">
           <span class="job-meta-item"><span aria-hidden="true">📍</span> ${j.location}</span>
-          <span class="job-meta-item"><span aria-hidden="true">💰</span> ${j.salary}</span>
+          <span class="job-meta-item"><span aria-hidden="true">💰</span> ${salaryText(j)}</span>
         </div>
         <div class="job-tags">${j.tags.map(t => `<span class="job-tag">${t}</span>`).join('')}</div>
-        <p style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:16px; line-height:1.55;">${j.desc}</p>
-        <a href="${j.url}" target="_blank" rel="noopener noreferrer" class="apply-btn" aria-label="Apply for ${j.title} at ${j.company} (opens in new window)">
-          Apply / View Job &nbsp;<span aria-hidden="true">↗</span>
+        <p style="font-size:0.8rem; color:var(--text-secondary); margin-bottom:8px; line-height:1.55;">${j.note}</p>
+        <p style="font-size:0.74rem; color:var(--text-muted); margin-bottom:14px;">Seen ${j.seen} on ${j.source}. Confirm it is still open before applying.</p>
+        <a href="${j.url}" target="_blank" rel="noopener noreferrer" class="apply-btn" aria-label="View ${j.title} at ${j.company} (opens in new window)">
+          View listing / search page &nbsp;<span aria-hidden="true">↗</span>
           <span class="sr-only">(opens in new window)</span>
         </a>
       </article>
@@ -1288,7 +1171,9 @@ Sai Lakshmi Elusuri</pre>
         j.title.toLowerCase().includes(q) ||
         j.company.toLowerCase().includes(q) ||
         j.tags.some(t => t.toLowerCase().includes(q)) ||
-        j.location.toLowerCase().includes(q)
+        j.location.toLowerCase().includes(q) ||
+        (LANG_LABEL[j.lang] || '').toLowerCase().includes(q) ||
+        (j.track === 'delivery' ? 'delivery scrum product owner' : 'technical').includes(q)
       );
       renderJobs(filtered);
     }, 100);

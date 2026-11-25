@@ -951,7 +951,7 @@
     <span class="sec-tag">Interactive Capability Demonstration</span>
     <h2 class="sec-title">Enterprise BI Simulator & Case Studies</h2>
     <p class="sec-desc">
-      Interact with this live operational reporting simulation built to showcase data architecture, sub-second query latency, and DAX calculation patterns.
+      Interact with this live operational reporting simulation built to showcase data architecture, query-latency trade-offs, and DAX calculation patterns.
     </p>
   </section>
 
@@ -1276,12 +1276,11 @@ CALCULATE(
 
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:18px;">
       <div style="background:rgba(15,23,42,0.7); padding:20px; border-radius:12px; border:1px solid rgba(236,72,153,0.3);">
-        <div style="color:#ec4899; font-weight:700; font-size:1rem; margin-bottom:6px;">🏆 #1 Enterprise Data Match: Women in Data Amsterdam (Hosted by Xebia)</div>
+        <div style="color:#ec4899; font-weight:700; font-size:1rem; margin-bottom:6px;">🏆 #1 Power BI Match: Power BI Gebruikersdagen, next edition 4–6 March (Utrecht)</div>
         <p style="font-size:0.84rem; color:var(--text-secondary); line-height:1.55; margin-bottom:14px;">
-          Directly aligned with enterprise analytics engineering, modern data architectures (Fabric, Databricks, Azure Synapse, Power BI), and senior hiring managers from top Dutch enterprises (ING, ASML, Ahold Delhaize, Schiphol).
+          The Dutch Power BI user group's annual event at Jaarbeurs Utrecht: about 1,800 data professionals expected at the next edition, with a Fabric and Power BI programme and tickets from about €47.50. The best single room in the Netherlands for meeting Power BI hiring managers and consultancies. Also join the Dutch Fabric User Group (in-person sessions across the Netherlands; next planned dates 9 Feb, 25 Mar, 20 Apr, 11 May and 24 Jun).
         </p>
-        <a href="https://xebia.com/women-in-data" target="_blank" class="nav-btn" style="background:#ec4899; color:#fff; padding:6px 14px; font-size:0.78rem;">Visit Xebia Women in Data &rarr;</a>
-      </div>
+        <a href="https://pbig.nl/" target="_blank" rel="noopener noreferrer" class="nav-btn" style="background:#ec4899; color:#fff; padding:6px 14px; font-size:0.78rem;">Event details (pbig.nl) &rarr;</a>
 
       <div style="background:rgba(15,23,42,0.7); padding:20px; border-radius:12px; border:1px solid rgba(56,189,248,0.3);">
         <div style="color:#38bdf8; font-weight:700; font-size:1rem; margin-bottom:6px;">⚡ Fast-Track Tech Talent Matching: WomenHack Amsterdam</div>
@@ -1300,7 +1299,7 @@ CALCULATE(
       <input type="text" id="community-search" class="filter-search-input" placeholder="Search communities by name, technology focus (Power BI, Fabric, Python), or city..." oninput="filterCommunities()" />
     </div>
     <div class="filter-pills-bar" id="community-filter-pills">
-      <button type="button" class="filter-pill-btn active" onclick="setCommunityCategory('all', this)">All Communities (10)</button>
+      <button type="button" class="filter-pill-btn active" onclick="setCommunityCategory('all', this)">All Communities (12)</button>
       <button type="button" class="filter-pill-btn" onclick="setCommunityCategory('data-bi', this)">Enterprise Data &amp; BI</button>
       <button type="button" class="filter-pill-btn" onclick="setCommunityCategory('hiring', this)">Hiring &amp; Speed-Interviews</button>
       <button type="button" class="filter-pill-btn" onclick="setCommunityCategory('mentorship', this)">Mentorship &amp; Clubhouse</button>
@@ -1308,7 +1307,7 @@ CALCULATE(
     </div>
   </div>
 
-  <!-- 10 Curated Communities Grid -->
+  <!-- 12 Curated Communities Grid -->
   <div class="community-cards-grid" id="community-grid">
     <!-- 1. Equals Amsterdam -->
     <div class="community-card" data-category="mentorship">
@@ -1347,13 +1346,13 @@ CALCULATE(
       <div>
         <div class="comm-head">
           <span style="font-size:0.75rem; font-weight:700; color:#10b981;">3. ENTERPRISE DATA / BI</span>
-          <span class="comm-badge" style="background:rgba(16,185,129,0.15); color:#10b981;">Top BI Priority</span>
+          <span class="comm-badge" style="background:rgba(16,185,129,0.15); color:#10b981;">Data networking</span>
         </div>
         <h4 class="comm-title">Women in Data Amsterdam</h4>
         <p style="font-size:0.84rem; color:var(--text-secondary); margin:8px 0 12px; line-height:1.5;">
-          Specialized meetup series powered by Xebia sharing deep-dive case studies on enterprise analytics engineering, cloud data warehouses, and BI architecture.
+          Small meetup series hosted by Xebia Data in Amsterdam (about 130 members on Meetup) with technical and career talks. Topics seen include LLMs, Snowflake, negotiation and community building; it is not Power BI-specific, so treat it as a networking add-on.
         </p>
-        <div style="font-size:0.76rem; color:var(--text-muted); margin-bottom:12px;">💡 Stack: Power BI, Microsoft Fabric, Databricks, Azure, SQL</div>
+        <div style="font-size:0.76rem; color:var(--text-muted); margin-bottom:12px;">💡 Topics seen: LLMs, Snowflake, negotiation, community building</div>
       </div>
       <a href="https://xebia.com/women-in-data" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 xebia.com/women-in-data &rarr;</a>
     </div>
@@ -1468,6 +1467,38 @@ CALCULATE(
         <div style="font-size:0.76rem; color:var(--text-muted); margin-bottom:12px;">📍 Platform: Meetup: WIT Regatta</div>
       </div>
       <a href="https://www.meetup.com/find/?keywords=Women%20in%20Tech%20Regatta" target="_blank" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 View WIT Regatta &rarr;</a>
+    </div>
+
+    <!-- 11. Power BI Gebruikersgroep (PBIG) -->
+    <div class="community-card" data-category="data-bi">
+      <div>
+        <div class="comm-head">
+          <span style="font-size:0.75rem; font-weight:700; color:#10b981;">11. POWER BI USER GROUP</span>
+          <span class="comm-badge" style="background:rgba(16,185,129,0.15); color:#10b981;">Next: 4–6 Mar</span>
+        </div>
+        <h4 class="comm-title">Power BI Gebruikersgroep (PBIG)</h4>
+        <p style="font-size:0.84rem; color:var(--text-secondary); margin:8px 0 12px; line-height:1.5;">
+          Netherlands' Power BI community, running Power BI Gebruikersdagen at Jaarbeurs Utrecht (about 1,800 attendees expected at the next edition, its 10-year anniversary). Community Saturday with technical sessions and real-world cases, plus evening sessions hosted by partner firms during the year.
+        </p>
+        <div style="font-size:0.76rem; color:var(--text-muted); margin-bottom:12px;">📍 Utrecht · 💡 Power BI, Microsoft Fabric, DAX, governance</div>
+      </div>
+      <a href="https://pbig.nl/" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 PBIG event details &rarr;</a>
+    </div>
+
+    <!-- 12. Dutch Fabric User Group -->
+    <div class="community-card" data-category="data-bi">
+      <div>
+        <div class="comm-head">
+          <span style="font-size:0.75rem; font-weight:700; color:#10b981;">12. MICROSOFT FABRIC</span>
+          <span class="comm-badge" style="background:rgba(16,185,129,0.15); color:#10b981;">~366 Members</span>
+        </div>
+        <h4 class="comm-title">Dutch Fabric User Group</h4>
+        <p style="font-size:0.84rem; color:var(--text-secondary); margin:8px 0 12px; line-height:1.5;">
+          In-person Microsoft Fabric sessions at locations across the Netherlands, organised by community members. Next planned dates: 9 Feb, 25 Mar, 20 Apr, 11 May, 24 Jun, 6 Sep, 24 Oct and 4 Nov (confirm on Meetup before travelling).
+        </p>
+        <div style="font-size:0.76rem; color:var(--text-muted); margin-bottom:12px;">📍 Platform: meetup.com/dutch-fabric-user-group · 💡 Fabric, lakehouse, governance, analytics engineering</div>
+      </div>
+      <a href="https://www.meetup.com/dutch-fabric-user-group/" target="_blank" rel="noopener noreferrer" style="color:#38bdf8; font-size:0.82rem; font-weight:600; text-decoration:none;">🌐 Dutch Fabric User Group &rarr;</a>
     </div>
   </div>
 
