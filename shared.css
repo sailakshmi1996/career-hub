@@ -87,7 +87,6 @@ body {
   line-height: 1.55;
   overflow-x: hidden;
   overflow-wrap: break-word;
-  word-break: break-word;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1331,8 +1330,8 @@ img, svg {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  grid-template-columns: 0.86fr 1.14fr;
+  gap: 28px;
   align-items: center;
   margin-bottom: 28px;
 }
@@ -1413,10 +1412,10 @@ img, svg {
 }
 
 .contact-val {
-  font-size: 0.84rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #FFFFFF;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .site-footer {
@@ -1434,6 +1433,41 @@ img, svg {
 /* ═══════════════════════════════════════════════════════════
    SHARED INTERACTIVE UTILITIES (For Hub & Internal Tools)
    ═══════════════════════════════════════════════════════════ */
+nav.nav {
+  background: rgba(3, 12, 24, 0.92);
+  border-bottom: 1px solid rgba(59, 130, 246, 0.16);
+  position: relative;
+  z-index: 50;
+}
+nav.nav .nav-inner {
+  max-width: 1240px;
+  height: auto;
+  min-height: 60px;
+  padding: 10px 24px;
+  flex-wrap: wrap;
+}
+.nav-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.82rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.nav-title { font-size: 0.88rem; font-weight: 700; color: #FFFFFF; }
+.nav-subtitle { font-size: 0.72rem; color: #94a3b8; }
+.nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
 .copy-btn, .btn-copy {
   display: inline-flex;
   align-items: center;
@@ -1446,6 +1480,8 @@ img, svg {
   font-weight: 600;
   padding: 5px 11px;
   border-radius: var(--radius-xs);
+  white-space: nowrap;
+  flex-shrink: 0;
   cursor: pointer;
 }
 
